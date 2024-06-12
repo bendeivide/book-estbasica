@@ -1,0 +1,53 @@
+project:
+  type: book
+  output-dir: docs
+
+bibliography: bibliog.bib
+link-citations: true
+csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
+lang: pt-BR
+book:
+  page-navigation: true
+  reader-mode: true
+  cover-image: hardcover.png
+  favicon: favicon.ico
+  title: "Estatística Básica aplicada às Ciências Agrárias"
+  author: "Telde N. Custódio e </br> Ben Dêivide de O. Batista"
+  date: "06/10/2024"
+  page-footer:
+    left: |
+      Estatística Básica aplicada às Ciências Agrárias foi escrito por  Telde Natel Custódio e <a href="https://bendeivide.github.io/">Ben Dêivide de O. Batista.</a> 
+    right: |
+      Esse livro foi desenvolvido com o <a href="https://quarto.org/">Quarto</a>.
+  chapters:
+    - index.qmd
+    - cap01.qmd
+    - cap02.qmd
+    - cap03.qmd
+    - cap04.qmd
+    - cap05.qmd
+    - cap06.qmd
+    - cap07.qmd
+    - cap08.qmd
+    - cap09.qmd
+    - cap10.qmd
+    - cap11.qmd
+    - references.qmd
+  
+
+
+
+nocite: |
+  @st1980, @banzato2006, @barbin2003, @bolfarine2010, @bolfarinebussab2005,
+  @cochrancox2005, @crespo2009, @dantas2008, @drapersmith1998, @magalhaeslima2023,
+  @magalhaes2011, @meyer2000, @montgomery2021, @montgomery2019, @mood1974,
+  @pagano2004, @pimentelgomes2022, @silva2015, @souza1998
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+

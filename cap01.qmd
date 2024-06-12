@@ -1,0 +1,246 @@
+# Definições Gerais e Técnicas de Somatório
+
+## Introdução
+
+Em todo processo produtivo do setor agropecuário constantemente se busca a melhoria da qualidade de seus produtos e serviços. Uma porção significativa deste esforço de melhoria da qualidade será comandada por profissionais das ciências agrárias, pois esses profissionais projetam e desenvolvem novos sistemas e processos de produção, sendo também aqueles que melhoram os sistemas de produção existentes.
+
+Nas diferentes áreas das ciências agrárias frequentemente trabalha-se com um grande volume de dados, sendo necessário dar um tratamento matemático a esses dados. Assim surge a Ciência Estatística, pois seus métodos são uma importante ferramenta nessas atividades, porque eles proveem os profissionais envolvidos com métodos descritivos e analíticos, para lidar com a variabilidade nos dados observados.
+
+Para o entendimento da Estatística se faz necessário que uma série de termos, definições e apresentação de alguns teoremas sejam apresentados e compreendidos. Assim, ao longo de todo o livro será realizado uma abordagem de todas essas informações, sem se estender ao rigor matemático, para que de forma prática a base necessária para o conhecimento da Estatística seja acessível a todos os níveis de aprendizagem dentro das ciências agrárias.
+
+## Definições Gerais
+
+A seguir são apresentados alguns termos que serão empregados no decorrer deste livro.
+
+### Estatística 
+
+Estatística pode ser definida como sendo um conjunto de técnicas que permite: coletar, organizar, analisar e interpretar dados oriundos de estudos ou experimentos, realizados em qualquer área do conhecimento.
+
+::: {#exm-}
+
+Seja uma área cultivada com algodão em que se mede a altura de vinte plantas.
+
+- Coleta:
+  - 1ª planta: $1,0$ m;
+  - 2ª planta: $1,5$ m;
+  - 3ª planta: $1,3$ m;
+  
+    $\qquad\vdots$
+    
+  - 20ª planta: $0,8$ m.
+- Organização: Tabelas e gráficos.
+- Análise: Qual é a altura média?
+- Interpretação: Por que tão baixa (ou tão alta) essa altura média?
+
+:::
+
+### População
+
+Um conjunto de elementos com pelo menos uma característica em comum é chamado de população. Corresponde, portanto, ao grande conjunto de dados que contém a característica que se deseja descrever.
+
+::: {#exm-}
+
+- Plantas de uma determinada cultura;
+- Animais de um rebanho;
+- Árvores de um povoamento florestal;
+- Tratores de uma região produtora de grãos;
+- etc.
+
+:::
+
+O tamanho da população, ou seja, o número de elementos que a compõem, é representado pela letra maiúscula "$N$".
+
+### Censo
+
+Um estudo envolvendo todos os elementos de uma população é denominado censo.
+
+::: {#exm-}
+
+- Levantamento de dados referentes a situação sanitária do rebanho bovino leiteiro da região Sul de Minas Gerais;
+- Contagem do número de máquinas agrícolas nas propriedades rurais de uma determinada região;
+- Levantamento sócio-econômico das famílias de uma comunidade rural, de uma determinada região produtora de cana-de-açúcar;
+- etc.
+
+:::
+
+### Amostra
+
+Em muitos casos na execução de uma pesquisa é impossível avaliar todos os elementos de uma população, isto por problemas de custo e/ou tempo. Quando este é o caso, conhece-se a população a partir do estudo de uma parte dela, chamada amostra. Assim amostra é um subconjunto de elementos que pertence a uma população.
+
+::: {#exm-}
+
+- 30 plantas de uma determinada cultura;
+- 100 bovinos leiteiros da região sul de Minas Gerais;
+- 20 pés de café de uma lavoura;
+- 200 árvores de um povoamento florestal;
+- 15 tratores de uma região produtora de grãos;
+- etc.
+
+:::
+
+O tamanho da amostra, isto é, o número de elementos que a compõem, é representado pela letra minúscula "$n$".
+
+### Variável
+
+Uma variável é a característica pela qual deseja-se que a população seja descrita. Pode assumir diferentes valores de elemento para elemento.
+
+São usadas as seguintes notações para variável: $X$, $Y$, $Z$, etc. (letras maiúsculas).
+
+::: {#exm-}
+
+- $X$: Peso, em kg, de bovinos da raça nelore.
+
+:::
+
+As variáveis podem ser qualitativas ou quantitativas.
+
+#### Variável Qualitativa
+
+As variáveis qualitativas correspondem a atributos ou categorias. Subdivididas em:
+
+- **Variável Qualitativa Nominal**: Quando os atributos não são passíveis de ordenação.
+
+::: {#exm-}
+
+- $X$: Culturas predominantes numa região: milho, cana, soja, etc;
+- $Y$: Atividades exercidas pelos produtores rurais de uma determinada região: pecuária leiteira, avicultura, suinocultura, produção de hortaliças, etc.
+
+:::
+- **Variável Qualitativa Ordinal**:
+Quando os atributos são passíveis de ordenação.
+
+::: {#exm-}
+
+- $X$: Graus de ataque de insetos numa lavoura: baixo, médio, alto;
+- $Y$: Índice de tecnificação adotado pelos agricultores de uma determinada região: baixo, médio, alto;
+
+:::
+
+#### Variável Quantitativa
+
+As variáveis quantitativas correspondem a números resultantes de contagens ou medidas. Podem ser:
+
+- **Variável Quantitativa Discreta**: São próprias de dados de contagem, isto é, estão definidas em um conjunto enumerável de valores.
+
+::: {#exm-}
+
+- $X$: Número de ovos depositados por um inseto nas folhas de uma cultura: $5$, $3$, $10$, etc;
+- $Y$: Número de tratores nas propriedades rurais de uma região: $1$, $2$, $0$, $3$, $1$, etc;
+- $Z$: Número de animais infectados pela febre aftosa em fazendas leiteiras de uma região produtora de leite: $4$, $2$, $6$, $5$, etc.
+
+:::
+
+- **Variável Quantitativa Contínua**: São aquelas em que as realizações resultam de uma medida, e que podem assumir qualquer valor real dentro de um intervalo de valores.
+
+
+::: {#exm-}
+
+ - $X$: Altura dos pés de algodão: 1,0 m; 1,5 m; 0,8 m; etc;
+ - $Y$: Pesos  de  bezerras  da  raça holandesa de uma fazenda produtora de leite: 32,0 kg; 28,0 kg; 26,0 kg; etc.
+ 
+:::
+
+### Dado
+
+Dado é a realização de uma variável, ou seja, é o valor registrado para um elemento em particular. As notações utilizadas para o dado são: $x$, $y$, $z$, etc. (letras minúsculas).
+
+::: {#exm-}
+
+Considere a variável:
+
+<center>
+$X$: Peso, em kg, de bovinos da raça nelore.
+</center>
+
+Pode-se ter, por exemplo, os seguintes dados:
+
+- $x_1 = 322,0$ kg;
+- $x_2 = 335,0$ kg;
+- $x_3 = 318,0$ kg;
+- etc.
+
+:::
+
+### Divisão da Estatística
+
+A Estatística pode ser dividida basicamente em duas partes:
+
+- **Estatística Descritiva**:
+É utilizada na fase inicial da análise, ou seja, quando se tem um primeiro contato com os dados, onde se objetiva tirar conclusões de modo informal e direto de características de interesse. Pode ser definida como sendo um conjunto de técnicas para descrever e resumir um conjunto de dados, sejam eles amostrais ou populacionais.
+- **Inferência Estatística**: É um conjunto de técnicas responsáveis pela análise e interpretação dos dados, obtidos a partir de uma amostra, que possibilita a extrapolação dos resultados para toda a população de interesse.
+
+
+## Técnicas de Somatório
+
+Em estatística frequentemente trabalha-se com variáveis quantitativas, e nos próximos capítulos aparecerão diversas expressões que envolverão cálculos de somas, somas de termos ao quadrado, produtos de duas variáveis, e para isso é necessário uma simplificação da notação. Assim, é usual representar somas por um operador chamado somatório, que é representado pela letra grega sigma maiúscula ($\Sigma$).
+
+Por exemplo, a soma:
+\begin{align*}
+  x_1 + x_2 + x_3 + x_4 + x_5,
+\end{align*}
+pode ser representada em notação de somatório da seguinte forma:
+\begin{align*}
+  \sum_{i=1}^{5}x_i,
+\end{align*}
+ou seja, corresponde à soma dos termos $x_i$ onde o índice $i$ varia de $1$ a $5$.
+
+### Propriedades
+
+Sejam $X$, $Y$ e $Z$ variáveis quantitativas, e sejam $a$ e $b$ valores constantes. Assim o operador somatório apresenta as seguintes propriedades, dadas por:
+
+- $\sum_{i=1}^{n}a=a+a+\ldots+a=n a$;
+- $\sum_{i=1}^{n}ax_{i}=ax_{1}+ax_{2}+ \ldots +ax_{n}=a(x_{1}+x_{2}+\ldots+x_{n})=a\sum_{i=1}^{n}x_i$;
+- $\sum_{i=1}^{n}(a+bx_{i})=\sum_{i=1}^{n}a+\sum_{i=1}^{n}bx_{i}=na+b\sum_{i=1}^{n}x_i$;
+- $\sum_{i=1}^{n}(x_{i}+y_{i}+z_{i})=\sum_{i=1}^{n}x_i+\sum_{i=1}^{n}y_i+\sum_{i=1}^{n}z_i$;
+- $x_1y_1+x_2y_2+ \ldots +x_ny_n=\sum_{i=1}^{n}x_{i}y_{i}$.
+
+::: {#exm-}
+
+Sejam os seguintes conjuntos de dados:
+\begin{align*}
+    X = \left\{ 1, 3, 2, 0 \right\} \textrm{ e } Y = \left\{ 0, 2, 2, 1 \right\}.
+\end{align*}
+Assim, pode-se obter os seguintes somatórios:
+
+- $\sum_{i=1}^{4}x_i=x_1+x_2+x_3+x_4=1+3+2+0=6$;
+- $\sum_{j=1}^{4}y_j=y_1+y_2+y_3+y_4=0+2+2+1=5$;
+- $\sum_{i=2}^{4}x_i=x_2+x_3+x_4=3+2+0=5$;
+- $\sum_{j=2}^{4}y_j=y_2+y_3+y_4=2+2+1=5$;
+- $\sum_{i=1}^{4}x_{i}^{2}=x_{1}^{2}+x_{2}^{2}+x_{3}^{2}+x_{4}^{2}=1^2+3^2+2^2+0^2=14$;
+- $\sum_{j=1}^{4}y_{j}^{2}=y_{1}^{2}+y_{2}^{2}+y_{3}^{2}+y_{4}^{2}=0^2+2^2+2^2+1^2=9$;
+- $\left(\sum_{i=1}^{4}x_i \right)^2=6^2=36$;
+- $\left(\sum_{j=1}^{4}y_j \right)^2=5^2=25$;
+- $\sum_{i=1}^{4}4x_i=4\sum_{i=1}^{4}x_i=4(6)=24$;
+- $\sum_{j=1}^{4}3y_j=3\sum_{j=1}^{4}y_j=3(5)=15$;
+- $\sum_{i=1,j=1}^{n}x_iy_j=x_1y_1+x_2y_2+x_3y_3+x_4y_4=1(0)+3(2)+2(2)+0(1)=10$;
+- $\sum_{i=1,j=1}^{n}x_iy_j+\sum_{i=1}^{4}x_{i}^{2}+\sum_{i=1}^{4}y_{i}^{2}=10+14+9=33$;
+- $\bar{\text{x}}=\frac{\sum_{i=1}^{4}x_i}{n}=\frac{6}{4}=1,5$;
+- $\bar{\text{y}}=\frac{\sum_{j=1}^{4}y_j}{n}=\frac{5}{4}=1,25$.
+
+:::
+
+::: {#exm-}
+
+Expressando as seguintes somas usando notação de somatório, tem-se:
+
+i) $y_1+y_2+y_3+\cdots+y_{15}=\sum_{i=1}^{15}y_i$;
+ii) $x_{1}^{2}+x_{2}^{2}+x_{3}^{2}+\cdots+x_{n}^{2}=\sum_{i=1}^{n}x_{i}^{2}$;
+iii) $z_{1}^{1}+z_{3}^{2}+z_{5}^{3}+\cdots+z_{59}^{30}=\sum_{i=1}^{30}z_{2i-1}^{i}$;
+iv) $logx_1+logx_2+logx_3+\cdots+logx_{12}=\sum_{i=1}^{12}logx_i$;
+v) $(x_{1}-1)+(x_{2}^{2}-2^2)^2+(x_{3}^{3}-3^3)^3+\cdots+(x_{n}^{n}-n^n)^n=\sum_{i=1}^{n}(x_{i}^{i}-i^i)^i$.
+
+:::
+
+
+## Exercícios
+
+::: {#exr-}
+
+Apresente um exemplo para cada tipo de variável e inclua um possível valor (dado) para cada uma delas.
+
+a) Qualitativa nominal;
+b) Qualitativa ordinal;
+c) Quantitativa discreta;
+d) Quantitativa contínua.
+
+:::

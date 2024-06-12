@@ -1,0 +1,121 @@
+# Coleta, Organização e Apresentação de Dados
+
+## Introdução
+
+O material básico com que o pesquisador trabalha são os dados provenientes de variáveis, sendo que a coleta destes é o passo inicial na avaliação estatística de uma pesquisa. Os dados da forma como foram coletados representam os dados brutos, e sempre se apresentam desordenados. Os dados colocados em ordem crescente ou decrescente representam os dados elaborados.
+
+O passo seguinte é sintetizar os valores que uma ou mais variáveis podem assumir, para que se tenha uma visão global da variação dessa ou dessas variáveis. Inicialmente esses valores são apresentados em tabelas e gráficos, que irão nos fornecer rápidas e seguras informações a respeito das variáveis em estudo.
+
+## Representação Tabular
+
+Uma tabela é um quadro que resume um conjunto de dados.  Segundo @crespo2009, uma tabela pode ser dividida em duas partes: principais e secundárias. As partes principais são:
+
+i) **Corpo**: Conjunto de linhas e colunas que contêm informações sobre a variável em estudo.
+ii) **Cabeçalho**: Parte superior da tabela que especifica o conteúdo das colunas.
+iii) **Coluna indicadora**: Parte da tabela que especifica o conteúdo das linhas.
+iv) **Linhas**: Retas imaginárias que facilitam a leitura no sentido horizontal, de dados que se inscrevem nos seus cruzamentos com as colunas.
+v) **Casa ou célula**: Espaço destinado a um só valor.
+
+As partes secundárias são:
+
+i) **Título**: Conjunto de informações as mais completas possíveis. Deve responder as seguintes perguntas: O quê? Quando? Onde?, relativas à variável estudada.
+ii) **Rodapé**: É um espaço na parte inferior da tabela utilizado para colocar informações necessárias referentes aos dados.
+iii) Fonte: É a indicação da entidade responsável pela elaboração da tabela. Deve ser colocada no rodapé, no final da tabela. Esse procedimento garante a honestidade científica e serve como indicativo para posteriores consultas.
+iv) **Notas**: Também podem ser colocadas no rodapé, depois da fonte, de forma sintética. As notas têm caráter geral, referindo-se à totalidade da tabela. Devem ser enumeradas em algarismos romanos, quando existirem duas ou mais.
+v) **Chamadas**: As chamadas têm caráter particular, referindo-se a um item específico da tabela. São enumeradas em algarismos arábicos, entre parênteses.
+
+A seguir será abordado o @exm-tabela para se observar o desenvolvimento de uma tabela.
+
+::: {#exm-tabela}
+
+Considere o exemplo de tabela a seguir, que representa a produção de grãos, em ordem decrescente da quantidade produzida, segundo os principais produtos agrícolas, Brasil, 2005.
+
+![](images/tabela.png)
+
+:::
+
+
+## Tabela de distribuição de frequências}
+
+Um das maneiras de se organizar e resumir um conjunto de dados é através de uma tabela de distribuição de frequências, sendo que estas permitem identificar características de interesse dos dados sob análise. Essas  tabelas podem ser de dois tipos:
+
+i) **tabela de distribuição de frequências simples**^[Também pode ser chamada de tabela de distribuição com dados agrupados sem intervalo de classes.]:
+Os dados são agrupados sem intervalos de classes com as respectivas frequências de ocorrência.
+ii) **Tabela de Distribuição de Frequências com dados agrupados em intervalos de classes**:
+Os dados são agrupados em intervalos de classes com as respectivas frequências de ocorrência.
+
+Na Tabela de Distribuição de Frequências, podem ser identificadas as seguintes frequências:
+
+i) **Absoluta** $(F_i)$}: Número de dados ocorridos em cada nível ou categoria da variável sob estudo. A soma das frequências absolutas corresponde ao total de dados (tamanho da amostra ou população);
+ii) **Relativa** $(Fr_i)$}: Obtida pela divisão da frequência absoluta pelo número total de dados;
+iii) **Percentual** $(Fp_i)$}: Frequência relativa multiplicada por 100;
+iv) **Frequência acumulada para baixo** $(Fc\downarrow)$}: Mostra quantos dados são menores que um determinado valor;
+v) **Frequência acumulada para cima** $(Fc\uparrow)$}: Mostra quantos dados são maiores que um determinado valor.
+
+Para se organizar um conjunto de dados em uma tabela de distribuição de frequências, primeiro deve-se conhecer qual é o tipo de informação que se está trabalhando, isto é, que tipo de variável correspondem os dados coletados, se qualitativos ou quantitativos.
+
+## Variáveis qualitativas
+
+No caso de variáveis qualitativas, nominal ou ordinal, utiliza-se de uma tabela de distribuição de frequências simples para se organizar e resumir tais variáveis, sendo apresentado o @exm-quali a seguir.
+
+::: {#exm-quali}
+
+Um Engenheiro Agrônomo conduziu um estudo com o objetivo de se conhecer o nível de tecnificação (baixo, médio ou alto), adotado pelos produtores rurais da região do Alto Rio Grande, sul de Minas Gerais. Foi avaliada uma amostra de 50 produtores rurais e os resultados estão apresentados na @tbl-nivtec.
+
+|   |  |  |  |  |
+|---|---|---|---|---|
+|Baixo |	Baixo |	Alto |	Médio |	Médio| 
+|Baixo |	Alto |	Médio |	Alto |	Médio| 
+|Alto |	Baixo |	Alto |	Médio |	Médio| 
+|Baixo |	Médio |	Baixo |	Médio |	Médio| 
+|Médio |	Médio |	Médio |	Médio |	Baixo| 
+|Médio |	Baixo |	Médio |	Médio |	Médio| 
+|Alto |	Baixo |	Alto |	Médio |	Médio| 
+|Baixo |	Médio |	Médio |	Baixo |	Alto|  
+|Baixo |	Alto |	Médio |	Médio |	Médio| 
+|Médio |	Médio |	Baixo |	Médio |	Médio| 
+
+: Nível de tecnificação adotado pelos produtores rurais da região do Alto Rio Grande, sul de Minas Gerais, 2007 (dados brutos). {#tbl-nivtec .striped .hover}
+
+
+O próximo passo é ordenar os dados pelo nível de tecnificação (baixo, médio e alto), obtendo-se os dados elaborados dispostos na @tbl-nivtec02.
+
+|   |  |  |  |  |
+|---|---|---|---|---|
+|Baixo |	Baixo |	Médio |	Médio |	Médio |
+|Baixo |	Baixo |	Médio |	Médio |	Alto |
+|Baixo |	Baixo |	Médio |	Médio |	Alto |
+|Baixo |	Médio |	Médio |	Médio |	Alto |
+|Baixo |	Médio |	Médio |	Médio |	Alto |
+|Baixo |	Médio |	Médio |	Médio |	Alto |
+|Baixo |	Médio |	Médio |	Médio |	Alto |
+|Baixo |	Médio |	Médio |	Médio |	Alto |
+|Baixo |	Médio |	Médio |	Médio |	Alto |
+|Baixo |	Médio |	Médio |	Médio |	Alto |
+
+: Nível de tecnificação adotado pelos produtores rurais da região do Alto Rio Grande, sul de Minas Gerais, 2007 (dados elaborados). {#tbl-nivtec02 .striped .hover}
+
+A seguir conta-se o número de produtores rurais com nível de tecnificação baixo, médio e alto, ou seja, a frequência absoluta, e organiza-se os dados em uma tabela, dividida em classes (baixo, médio e alto) com as respectivas frequências de ocorrência. Os resultados estão apresentados na @tbl-nivtec03.
+
+| __Nível de Tecnificação__ | __$\mathbf{F_i}$__ | __$\mathbf{Fr_i}$__ | __$\mathbf{Fp_i(\%)}$__ |
+|---|---|---|---|
+|Baixo | 13 | 0,26 | 26,0 |
+|Médio | 28 | 0,56 | 56,0 |
+|Alto  | 9 | 0,18 | 18,0 |
+|Total | 50 | 1,00 | 100,0|
+
+:Nível de tecnificação adotado pelos produtores rurais da região do Alto Rio Grande, sul de Minas Gerais, 2007.^[Dados fictícios.] {#tbl-nivtec03 .striped .hover}
+
+Observando os resultados da @tbl-nivtec03, tem-se que 56,0% dos produtores rurais adotam em suas propriedades um nível médio de tecnologia, porém apenas 18,0% empregam altas tecnologias, e 26,0% utilizam-se de baixas tecnologias de produção. Esses resultados pode orientar melhor os trabalhos dos Extensionistas que trabalham na região.
+
+:::
+
+## Variáveis quantitativas
+
+i) __Discretas__: Se os dados de uma amostra ou população estiverem representados por variáveis quantitativas discretas, eles estarão naturalmente classificados, isto é, separados em grupos distintas. Para se ter uma ideia do modo como os dados se distribuem, basta escrever em uma coluna os valores da variável discreta estudada em ordem crescente e, assinalar em outra coluna paralela, o número de vezes em que cada um desses valores foi observado, isto é, a frequência absoluta de cada valor. Neste caso utiliza-se de uma tabela de distribuição de frequências simples para se organizar e resumir tais variáveis, sendo apresentado no @exm-dis.
+
+::: {#exm-dis}
+
+Um Engenheiro Agrônomo examinou um lote de 150 caixas de banana maçã, escolhidos aleatoriamente num carregamento de 10.000 caixas, no CEAGESP de São Paulo, SP, anotando o número de pencas com empedramento. Os dados estão apresentados na Tabela \ref{tab:numpecas}.
+
+:::

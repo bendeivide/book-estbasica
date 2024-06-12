@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Estatística Básica aplicada às Ciências Agrárias - 1&nbsp; Definições Gerais e Técnicas de Somatório</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./cap02.html" rel="next">
+<link href="./index.html" rel="prev">
+<link href="./favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap01.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Definições Gerais e Técnicas de Somatório</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Estatística Básica aplicada às Ciências Agrárias</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo de leitor">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Procurar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bem-vindo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap01.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Definições Gerais e Técnicas de Somatório</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Coleta, Organização e Apresentação de Dados</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Medidas de Posição</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Medidas de Dispersão</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidades</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuições de Probabilidades</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Amostragem</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Distribuições de Amostragem</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Teoria da Estimação</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Teoria da Decisão</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cap11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Correlação e Regressão Linear Simples</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referências</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><span class="header-section-number">1.1</span> Introdução</a></li>
+  <li><a href="#definições-gerais" id="toc-definições-gerais" class="nav-link" data-scroll-target="#definições-gerais"><span class="header-section-number">1.2</span> Definições Gerais</a>
+  <ul class="collapse">
+  <li><a href="#estatística" id="toc-estatística" class="nav-link" data-scroll-target="#estatística"><span class="header-section-number">1.2.1</span> Estatística</a></li>
+  <li><a href="#população" id="toc-população" class="nav-link" data-scroll-target="#população"><span class="header-section-number">1.2.2</span> População</a></li>
+  <li><a href="#censo" id="toc-censo" class="nav-link" data-scroll-target="#censo"><span class="header-section-number">1.2.3</span> Censo</a></li>
+  <li><a href="#amostra" id="toc-amostra" class="nav-link" data-scroll-target="#amostra"><span class="header-section-number">1.2.4</span> Amostra</a></li>
+  <li><a href="#variável" id="toc-variável" class="nav-link" data-scroll-target="#variável"><span class="header-section-number">1.2.5</span> Variável</a></li>
+  <li><a href="#dado" id="toc-dado" class="nav-link" data-scroll-target="#dado"><span class="header-section-number">1.2.6</span> Dado</a></li>
+  <li><a href="#divisão-da-estatística" id="toc-divisão-da-estatística" class="nav-link" data-scroll-target="#divisão-da-estatística"><span class="header-section-number">1.2.7</span> Divisão da Estatística</a></li>
+  </ul></li>
+  <li><a href="#técnicas-de-somatório" id="toc-técnicas-de-somatório" class="nav-link" data-scroll-target="#técnicas-de-somatório"><span class="header-section-number">1.3</span> Técnicas de Somatório</a>
+  <ul class="collapse">
+  <li><a href="#propriedades" id="toc-propriedades" class="nav-link" data-scroll-target="#propriedades"><span class="header-section-number">1.3.1</span> Propriedades</a></li>
+  </ul></li>
+  <li><a href="#exercícios" id="toc-exercícios" class="nav-link" data-scroll-target="#exercícios"><span class="header-section-number">1.4</span> Exercícios</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Definições Gerais e Técnicas de Somatório</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="introdução" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">1.1</span> Introdução</h2>
+<p>Em todo processo produtivo do setor agropecuário constantemente se busca a melhoria da qualidade de seus produtos e serviços. Uma porção significativa deste esforço de melhoria da qualidade será comandada por profissionais das ciências agrárias, pois esses profissionais projetam e desenvolvem novos sistemas e processos de produção, sendo também aqueles que melhoram os sistemas de produção existentes.</p>
+<p>Nas diferentes áreas das ciências agrárias frequentemente trabalha-se com um grande volume de dados, sendo necessário dar um tratamento matemático a esses dados. Assim surge a Ciência Estatística, pois seus métodos são uma importante ferramenta nessas atividades, porque eles proveem os profissionais envolvidos com métodos descritivos e analíticos, para lidar com a variabilidade nos dados observados.</p>
+<p>Para o entendimento da Estatística se faz necessário que uma série de termos, definições e apresentação de alguns teoremas sejam apresentados e compreendidos. Assim, ao longo de todo o livro será realizado uma abordagem de todas essas informações, sem se estender ao rigor matemático, para que de forma prática a base necessária para o conhecimento da Estatística seja acessível a todos os níveis de aprendizagem dentro das ciências agrárias.</p>
+</section>
+<section id="definições-gerais" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="definições-gerais"><span class="header-section-number">1.2</span> Definições Gerais</h2>
+<p>A seguir são apresentados alguns termos que serão empregados no decorrer deste livro.</p>
+<section id="estatística" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="estatística"><span class="header-section-number">1.2.1</span> Estatística</h3>
+<p>Estatística pode ser definida como sendo um conjunto de técnicas que permite: coletar, organizar, analisar e interpretar dados oriundos de estudos ou experimentos, realizados em qualquer área do conhecimento.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 1.1 </strong></span>Seja uma área cultivada com algodão em que se mede a altura de vinte plantas.</p>
+<ul>
+<li>Coleta:
+<ul>
+<li><p>1ª planta: <span class="math inline">\(1,0\)</span> m;</p></li>
+<li><p>2ª planta: <span class="math inline">\(1,5\)</span> m;</p></li>
+<li><p>3ª planta: <span class="math inline">\(1,3\)</span> m;</p>
+<p><span class="math inline">\(\qquad\vdots\)</span></p></li>
+<li><p>20ª planta: <span class="math inline">\(0,8\)</span> m.</p></li>
+</ul></li>
+<li>Organização: Tabelas e gráficos.</li>
+<li>Análise: Qual é a altura média?</li>
+<li>Interpretação: Por que tão baixa (ou tão alta) essa altura média?</li>
+</ul>
+</div>
+</section>
+<section id="população" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="população"><span class="header-section-number">1.2.2</span> População</h3>
+<p>Um conjunto de elementos com pelo menos uma característica em comum é chamado de população. Corresponde, portanto, ao grande conjunto de dados que contém a característica que se deseja descrever.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 1.2 </strong></span>&nbsp;</p>
+<ul>
+<li>Plantas de uma determinada cultura;</li>
+<li>Animais de um rebanho;</li>
+<li>Árvores de um povoamento florestal;</li>
+<li>Tratores de uma região produtora de grãos;</li>
+<li>etc.</li>
+</ul>
+</div>
+<p>O tamanho da população, ou seja, o número de elementos que a compõem, é representado pela letra maiúscula “<span class="math inline">\(N\)</span>”.</p>
+</section>
+<section id="censo" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="censo"><span class="header-section-number">1.2.3</span> Censo</h3>
+<p>Um estudo envolvendo todos os elementos de uma população é denominado censo.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 1.3 </strong></span>&nbsp;</p>
+<ul>
+<li>Levantamento de dados referentes a situação sanitária do rebanho bovino leiteiro da região Sul de Minas Gerais;</li>
+<li>Contagem do número de máquinas agrícolas nas propriedades rurais de uma determinada região;</li>
+<li>Levantamento sócio-econômico das famílias de uma comunidade rural, de uma determinada região produtora de cana-de-açúcar;</li>
+<li>etc.</li>
+</ul>
+</div>
+</section>
+<section id="amostra" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="amostra"><span class="header-section-number">1.2.4</span> Amostra</h3>
+<p>Em muitos casos na execução de uma pesquisa é impossível avaliar todos os elementos de uma população, isto por problemas de custo e/ou tempo. Quando este é o caso, conhece-se a população a partir do estudo de uma parte dela, chamada amostra. Assim amostra é um subconjunto de elementos que pertence a uma população.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 1.4 </strong></span>&nbsp;</p>
+<ul>
+<li>30 plantas de uma determinada cultura;</li>
+<li>100 bovinos leiteiros da região sul de Minas Gerais;</li>
+<li>20 pés de café de uma lavoura;</li>
+<li>200 árvores de um povoamento florestal;</li>
+<li>15 tratores de uma região produtora de grãos;</li>
+<li>etc.</li>
+</ul>
+</div>
+<p>O tamanho da amostra, isto é, o número de elementos que a compõem, é representado pela letra minúscula “<span class="math inline">\(n\)</span>”.</p>
+</section>
+<section id="variável" class="level3" data-number="1.2.5">
+<h3 data-number="1.2.5" class="anchored" data-anchor-id="variável"><span class="header-section-number">1.2.5</span> Variável</h3>
+<p>Uma variável é a característica pela qual deseja-se que a população seja descrita. Pode assumir diferentes valores de elemento para elemento.</p>
+<p>São usadas as seguintes notações para variável: <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>, etc. (letras maiúsculas).</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 1.5 </strong></span>&nbsp;</p>
+<ul>
+<li><span class="math inline">\(X\)</span>: Peso, em kg, de bovinos da raça nelore.</li>
+</ul>
+</div>
+<p>As variáveis podem ser qualitativas ou quantitativas.</p>
+<section id="variável-qualitativa" class="level4" data-number="1.2.5.1">
+<h4 data-number="1.2.5.1" class="anchored" data-anchor-id="variável-qualitativa"><span class="header-section-number">1.2.5.1</span> Variável Qualitativa</h4>
+<p>As variáveis qualitativas correspondem a atributos ou categorias. Subdivididas em:</p>
+<ul>
+<li><strong>Variável Qualitativa Nominal</strong>: Quando os atributos não são passíveis de ordenação.</li>
+</ul>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 1.6 </strong></span>&nbsp;</p>
+<ul>
+<li><span class="math inline">\(X\)</span>: Culturas predominantes numa região: milho, cana, soja, etc;</li>
+<li><span class="math inline">\(Y\)</span>: Atividades exercidas pelos produtores rurais de uma determinada região: pecuária leiteira, avicultura, suinocultura, produção de hortaliças, etc.</li>
+</ul>
+</div>
+<ul>
+<li><strong>Variável Qualitativa Ordinal</strong>: Quando os atributos são passíveis de ordenação.</li>
+</ul>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 1.7 </strong></span>&nbsp;</p>
+<ul>
+<li><span class="math inline">\(X\)</span>: Graus de ataque de insetos numa lavoura: baixo, médio, alto;</li>
+<li><span class="math inline">\(Y\)</span>: Índice de tecnificação adotado pelos agricultores de uma determinada região: baixo, médio, alto;</li>
+</ul>
+</div>
+</section>
+<section id="variável-quantitativa" class="level4" data-number="1.2.5.2">
+<h4 data-number="1.2.5.2" class="anchored" data-anchor-id="variável-quantitativa"><span class="header-section-number">1.2.5.2</span> Variável Quantitativa</h4>
+<p>As variáveis quantitativas correspondem a números resultantes de contagens ou medidas. Podem ser:</p>
+<ul>
+<li><strong>Variável Quantitativa Discreta</strong>: São próprias de dados de contagem, isto é, estão definidas em um conjunto enumerável de valores.</li>
+</ul>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 1.8 </strong></span>&nbsp;</p>
+<ul>
+<li><span class="math inline">\(X\)</span>: Número de ovos depositados por um inseto nas folhas de uma cultura: <span class="math inline">\(5\)</span>, <span class="math inline">\(3\)</span>, <span class="math inline">\(10\)</span>, etc;</li>
+<li><span class="math inline">\(Y\)</span>: Número de tratores nas propriedades rurais de uma região: <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(0\)</span>, <span class="math inline">\(3\)</span>, <span class="math inline">\(1\)</span>, etc;</li>
+<li><span class="math inline">\(Z\)</span>: Número de animais infectados pela febre aftosa em fazendas leiteiras de uma região produtora de leite: <span class="math inline">\(4\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(6\)</span>, <span class="math inline">\(5\)</span>, etc.</li>
+</ul>
+</div>
+<ul>
+<li><strong>Variável Quantitativa Contínua</strong>: São aquelas em que as realizações resultam de uma medida, e que podem assumir qualquer valor real dentro de um intervalo de valores.</li>
+</ul>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 1.9 </strong></span>&nbsp;</p>
+<ul>
+<li><span class="math inline">\(X\)</span>: Altura dos pés de algodão: 1,0 m; 1,5 m; 0,8 m; etc;</li>
+<li><span class="math inline">\(Y\)</span>: Pesos de bezerras da raça holandesa de uma fazenda produtora de leite: 32,0 kg; 28,0 kg; 26,0 kg; etc.</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="dado" class="level3" data-number="1.2.6">
+<h3 data-number="1.2.6" class="anchored" data-anchor-id="dado"><span class="header-section-number">1.2.6</span> Dado</h3>
+<p>Dado é a realização de uma variável, ou seja, é o valor registrado para um elemento em particular. As notações utilizadas para o dado são: <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span>, etc. (letras minúsculas).</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 1.10 </strong></span>Considere a variável:</p>
+<center>
+<span class="math inline">\(X\)</span>: Peso, em kg, de bovinos da raça nelore.
+</center>
+<p>Pode-se ter, por exemplo, os seguintes dados:</p>
+<ul>
+<li><span class="math inline">\(x_1 = 322,0\)</span> kg;</li>
+<li><span class="math inline">\(x_2 = 335,0\)</span> kg;</li>
+<li><span class="math inline">\(x_3 = 318,0\)</span> kg;</li>
+<li>etc.</li>
+</ul>
+</div>
+</section>
+<section id="divisão-da-estatística" class="level3" data-number="1.2.7">
+<h3 data-number="1.2.7" class="anchored" data-anchor-id="divisão-da-estatística"><span class="header-section-number">1.2.7</span> Divisão da Estatística</h3>
+<p>A Estatística pode ser dividida basicamente em duas partes:</p>
+<ul>
+<li><strong>Estatística Descritiva</strong>: É utilizada na fase inicial da análise, ou seja, quando se tem um primeiro contato com os dados, onde se objetiva tirar conclusões de modo informal e direto de características de interesse. Pode ser definida como sendo um conjunto de técnicas para descrever e resumir um conjunto de dados, sejam eles amostrais ou populacionais.</li>
+<li><strong>Inferência Estatística</strong>: É um conjunto de técnicas responsáveis pela análise e interpretação dos dados, obtidos a partir de uma amostra, que possibilita a extrapolação dos resultados para toda a população de interesse.</li>
+</ul>
+</section>
+</section>
+<section id="técnicas-de-somatório" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="técnicas-de-somatório"><span class="header-section-number">1.3</span> Técnicas de Somatório</h2>
+<p>Em estatística frequentemente trabalha-se com variáveis quantitativas, e nos próximos capítulos aparecerão diversas expressões que envolverão cálculos de somas, somas de termos ao quadrado, produtos de duas variáveis, e para isso é necessário uma simplificação da notação. Assim, é usual representar somas por um operador chamado somatório, que é representado pela letra grega sigma maiúscula (<span class="math inline">\(\Sigma\)</span>).</p>
+<p>Por exemplo, a soma: <span class="math display">\[\begin{align*}
+  x_1 + x_2 + x_3 + x_4 + x_5,
+\end{align*}\]</span> pode ser representada em notação de somatório da seguinte forma: <span class="math display">\[\begin{align*}
+  \sum_{i=1}^{5}x_i,
+\end{align*}\]</span> ou seja, corresponde à soma dos termos <span class="math inline">\(x_i\)</span> onde o índice <span class="math inline">\(i\)</span> varia de <span class="math inline">\(1\)</span> a <span class="math inline">\(5\)</span>.</p>
+<section id="propriedades" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="propriedades"><span class="header-section-number">1.3.1</span> Propriedades</h3>
+<p>Sejam <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> e <span class="math inline">\(Z\)</span> variáveis quantitativas, e sejam <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> valores constantes. Assim o operador somatório apresenta as seguintes propriedades, dadas por:</p>
+<ul>
+<li><span class="math inline">\(\sum_{i=1}^{n}a=a+a+\ldots+a=n a\)</span>;</li>
+<li><span class="math inline">\(\sum_{i=1}^{n}ax_{i}=ax_{1}+ax_{2}+ \ldots +ax_{n}=a(x_{1}+x_{2}+\ldots+x_{n})=a\sum_{i=1}^{n}x_i\)</span>;</li>
+<li><span class="math inline">\(\sum_{i=1}^{n}(a+bx_{i})=\sum_{i=1}^{n}a+\sum_{i=1}^{n}bx_{i}=na+b\sum_{i=1}^{n}x_i\)</span>;</li>
+<li><span class="math inline">\(\sum_{i=1}^{n}(x_{i}+y_{i}+z_{i})=\sum_{i=1}^{n}x_i+\sum_{i=1}^{n}y_i+\sum_{i=1}^{n}z_i\)</span>;</li>
+<li><span class="math inline">\(x_1y_1+x_2y_2+ \ldots +x_ny_n=\sum_{i=1}^{n}x_{i}y_{i}\)</span>.</li>
+</ul>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 1.11 </strong></span>Sejam os seguintes conjuntos de dados: <span class="math display">\[\begin{align*}
+    X = \left\{ 1, 3, 2, 0 \right\} \textrm{ e } Y = \left\{ 0, 2, 2, 1 \right\}.
+\end{align*}\]</span> Assim, pode-se obter os seguintes somatórios:</p>
+<ul>
+<li><span class="math inline">\(\sum_{i=1}^{4}x_i=x_1+x_2+x_3+x_4=1+3+2+0=6\)</span>;</li>
+<li><span class="math inline">\(\sum_{j=1}^{4}y_j=y_1+y_2+y_3+y_4=0+2+2+1=5\)</span>;</li>
+<li><span class="math inline">\(\sum_{i=2}^{4}x_i=x_2+x_3+x_4=3+2+0=5\)</span>;</li>
+<li><span class="math inline">\(\sum_{j=2}^{4}y_j=y_2+y_3+y_4=2+2+1=5\)</span>;</li>
+<li><span class="math inline">\(\sum_{i=1}^{4}x_{i}^{2}=x_{1}^{2}+x_{2}^{2}+x_{3}^{2}+x_{4}^{2}=1^2+3^2+2^2+0^2=14\)</span>;</li>
+<li><span class="math inline">\(\sum_{j=1}^{4}y_{j}^{2}=y_{1}^{2}+y_{2}^{2}+y_{3}^{2}+y_{4}^{2}=0^2+2^2+2^2+1^2=9\)</span>;</li>
+<li><span class="math inline">\(\left(\sum_{i=1}^{4}x_i \right)^2=6^2=36\)</span>;</li>
+<li><span class="math inline">\(\left(\sum_{j=1}^{4}y_j \right)^2=5^2=25\)</span>;</li>
+<li><span class="math inline">\(\sum_{i=1}^{4}4x_i=4\sum_{i=1}^{4}x_i=4(6)=24\)</span>;</li>
+<li><span class="math inline">\(\sum_{j=1}^{4}3y_j=3\sum_{j=1}^{4}y_j=3(5)=15\)</span>;</li>
+<li><span class="math inline">\(\sum_{i=1,j=1}^{n}x_iy_j=x_1y_1+x_2y_2+x_3y_3+x_4y_4=1(0)+3(2)+2(2)+0(1)=10\)</span>;</li>
+<li><span class="math inline">\(\sum_{i=1,j=1}^{n}x_iy_j+\sum_{i=1}^{4}x_{i}^{2}+\sum_{i=1}^{4}y_{i}^{2}=10+14+9=33\)</span>;</li>
+<li><span class="math inline">\(\bar{\text{x}}=\frac{\sum_{i=1}^{4}x_i}{n}=\frac{6}{4}=1,5\)</span>;</li>
+<li><span class="math inline">\(\bar{\text{y}}=\frac{\sum_{j=1}^{4}y_j}{n}=\frac{5}{4}=1,25\)</span>.</li>
+</ul>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 1.12 </strong></span>Expressando as seguintes somas usando notação de somatório, tem-se:</p>
+<ol type="i">
+<li><span class="math inline">\(y_1+y_2+y_3+\cdots+y_{15}=\sum_{i=1}^{15}y_i\)</span>;</li>
+<li><span class="math inline">\(x_{1}^{2}+x_{2}^{2}+x_{3}^{2}+\cdots+x_{n}^{2}=\sum_{i=1}^{n}x_{i}^{2}\)</span>;</li>
+<li><span class="math inline">\(z_{1}^{1}+z_{3}^{2}+z_{5}^{3}+\cdots+z_{59}^{30}=\sum_{i=1}^{30}z_{2i-1}^{i}\)</span>;</li>
+<li><span class="math inline">\(logx_1+logx_2+logx_3+\cdots+logx_{12}=\sum_{i=1}^{12}logx_i\)</span>;</li>
+<li><span class="math inline">\((x_{1}-1)+(x_{2}^{2}-2^2)^2+(x_{3}^{3}-3^3)^3+\cdots+(x_{n}^{n}-n^n)^n=\sum_{i=1}^{n}(x_{i}^{i}-i^i)^i\)</span>.</li>
+</ol>
+</div>
+</section>
+</section>
+<section id="exercícios" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="exercícios"><span class="header-section-number">1.4</span> Exercícios</h2>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 1.1 </strong></span>Apresente um exemplo para cada tipo de variável e inclua um possível valor (dado) para cada uma delas.</p>
+<ol type="a">
+<li>Qualitativa nominal;</li>
+<li>Qualitativa ordinal;</li>
+<li>Quantitativa discreta;</li>
+<li>Quantitativa contínua.</li>
+</ol>
+</div>
+
+
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-banzato2006" class="csl-entry" role="listitem">
+BANZATTO, D. A.; NASCIMENTO KRONKA, S. DO. <strong>Experimentação Agrícola</strong>. Jaboticabal: Funep, 2006. p. 237
+</div>
+<div id="ref-barbin2003" class="csl-entry" role="listitem">
+BARBIN, D. <strong>Planejamento e Análise Estatística de Experimentos Agrômica</strong>. Arapongas: Midas, 2003. p. 208
+</div>
+<div id="ref-bolfarinebussab2005" class="csl-entry" role="listitem">
+BOLFARINE, H.; BUSSAB, W. O. <strong>Elementos de Amostragem</strong>. São Paulo: Edgard Blucher, 2005. p. 274
+</div>
+<div id="ref-bolfarine2010" class="csl-entry" role="listitem">
+BOLFARINE, H.; SANDOVAL, M. C. <strong>Introdução à <span>I</span>nferência <span>E</span>statística</strong>. 2. ed. São Paulo: SBM, 2010. p. 159
+</div>
+<div id="ref-cochrancox2005" class="csl-entry" role="listitem">
+COCHRAN, W.; COX, G. M. <strong>Experimental <span>D</span>esigns</strong>. 2. ed. New York: John Wiley &amp; Sons, 2005. p. 618
+</div>
+<div id="ref-crespo2009" class="csl-entry" role="listitem">
+CRESPO, A. A. <strong>Estatística Fácil</strong>. 19. ed. São Paulo: Saraiva, 2009. p. 232
+</div>
+<div id="ref-dantas2008" class="csl-entry" role="listitem">
+DANTAS, C. A. B. <strong>Probabilidade: Um <span>C</span>urso <span>I</span>ntrodutório</strong>. 3. ed. São Paulo: EDUSP, 2008. p. 256
+</div>
+<div id="ref-drapersmith1998" class="csl-entry" role="listitem">
+DRAPER, N. R.; SMITH, H. <strong>Applied regression analysis</strong>. 3. ed. New York: Wiley, 1998. p. 736
+</div>
+<div id="ref-magalhaes2011" class="csl-entry" role="listitem">
+MAGALHAES, M. N. <strong>Probabilidade e variáveis aleatórias</strong>. 3. ed. São Paulo: EDUSP, 2011. p. 424
+</div>
+<div id="ref-magalhaeslima2023" class="csl-entry" role="listitem">
+MAGALHAES, M. N.; LIMA, A. C. P. <strong>Noções de <span>P</span>robabilidade e <span>E</span>statística</strong>. 7. ed. São Paulo: EDUSP, 2023. p. 428
+</div>
+<div id="ref-meyer2000" class="csl-entry" role="listitem">
+MEYER, P. L. <strong>Probabilidade: aplicações á estatística</strong>. 2. ed. Rio de <span>J</span>aneiro: LTC, 2000. p. 426
+</div>
+<div id="ref-montgomery2019" class="csl-entry" role="listitem">
+MONTGOMERY, D. C. <strong>Design and <span>A</span>nalysis of <span>E</span>xperiments</strong>. 9. ed. New Jersey: Wiley, 2019. p. 752
+</div>
+<div id="ref-montgomery2021" class="csl-entry" role="listitem">
+MONTGOMERY, D. C.; RUNGER, G. C. <strong>Estatísta <span>A</span>plicada e <span>P</span>robabilidade para <span>E</span>ngenheiros</strong>. 7. ed. Rio de <span>J</span>aneiro: LTC, 2021. p. 416
+</div>
+<div id="ref-mood1974" class="csl-entry" role="listitem">
+MOOD, A. M.; GRAYBILL, F. A.; BOES, D. C. <strong>Introduction to the <span>T</span>heory of <span>S</span>tatistics</strong>. New York: John <span>W</span>iley &amp; <span>S</span>ons, 1974. p. 564
+</div>
+<div id="ref-pagano2004" class="csl-entry" role="listitem">
+PAGANO, M.; GAUVREAU, K. <strong>Princípios de Bioestatística</strong>. São Paulo: Thomson, 2004. p. 506
+</div>
+<div id="ref-pimentelgomes2022" class="csl-entry" role="listitem">
+PIMENTEL-GOMES, F. <strong>Curso de <span>E</span>statística <span>E</span>xperimental</strong>. 15. ed. Piracicaba: FEALQ, 2022. p. 451
+</div>
+<div id="ref-silva2015" class="csl-entry" role="listitem">
+SILVA, N. N. <strong>Amostragem <span>P</span>robabilística</strong>. 3. ed. São Paulo: EDUSP, 2015. p. 136
+</div>
+<div id="ref-souza1998" class="csl-entry" role="listitem">
+SOUZA, G. S. <strong>Introdução aos <span>M</span>odelos de <span>R</span>egressão <span>L</span>inear e <span>N</span>ão-<span>L</span>inear</strong>. Brasília: EMBRAPA, 1998. p. 489
+</div>
+<div id="ref-st1980" class="csl-entry" role="listitem">
+STEEL, R. G. D.; TORRIE, J. H. <strong>Principles and procedures of statistics: A biometrical approach</strong>. 2. ed. New York: McGraw-Hill Book Company, 1980. p. 512
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiada");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bem-vindo</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./cap02.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Coleta, Organização e Apresentação de Dados</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Estatística Básica aplicada às Ciências Agrárias foi escrito por Telde Natel Custódio e <a href="https://bendeivide.github.io/">Ben Dêivide de O. Batista.</a></div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">Esse livro foi desenvolvido com o <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>
