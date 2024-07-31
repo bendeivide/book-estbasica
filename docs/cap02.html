@@ -505,8 +505,548 @@ div.csl-indent {
 <li><strong>Discretas</strong>: Se os dados de uma amostra ou população estiverem representados por variáveis quantitativas discretas, eles estarão naturalmente classificados, isto é, separados em grupos distintas. Para se ter uma ideia do modo como os dados se distribuem, basta escrever em uma coluna os valores da variável discreta estudada em ordem crescente e, assinalar em outra coluna paralela, o número de vezes em que cada um desses valores foi observado, isto é, a frequência absoluta de cada valor. Neste caso utiliza-se de uma tabela de distribuição de frequências simples para se organizar e resumir tais variáveis, sendo apresentado no <a href="#exm-dis">Exemplo&nbsp;<span>2.3</span></a>.</li>
 </ol>
 <div id="exm-dis" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.3 </strong></span>Um Engenheiro Agrônomo examinou um lote de 150 caixas de banana maçã, escolhidos aleatoriamente num carregamento de 10.000 caixas, no CEAGESP de São Paulo, SP, anotando o número de pencas com empedramento. Os dados estão apresentados na Tabela <span class="math inline">\(\ref{tab:numpecas}\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemplo 2.3 </strong></span>Um Engenheiro Agrônomo examinou um lote de 150 caixas de banana maçã, escolhidos aleatoriamente num carregamento de 10.000 caixas, no CEAGESP de São Paulo, SP, anotando o número de pencas com empedramento. Os dados estão apresentados na <a href="#tbl-numpecas">Tabela&nbsp;<span>2.4</span></a>.</p>
+<div id="tbl-numpecas" class="anchored">
+<table class="table-striped table-hover table">
+<caption>Tabela&nbsp;2.4: Número de pencas de banana maçã com empedramento (dados brutos).</caption>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>6</td>
+<td>5</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>4</td>
+<td>5</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>5</td>
+<td>0</td>
+<td>4</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>2</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>2</td>
+<td>5</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>5</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>3</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+<td>3</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>2</td>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>5</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>2</td>
+<td>6</td>
+<td>1</td>
+<td>5</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>6</td>
+<td>3</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>4</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>3</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </div>
+<p>Após coletar os dados o Engenheiro Agrônomo ordenou os dados em ordem crescente, obtendo-se assim os dados elaborados apresentados na <a href="#tbl-numpencas">Tabela&nbsp;<span>2.5</span></a>.</p>
+<div id="tbl-numpencas" class="anchored">
+<table class="table-striped table-hover table">
+<caption>Tabela&nbsp;2.5: Número de pencas de banana maçã com empedramento (dados elaborados).</caption>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td>6</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ordenado os dados o Engenheiro Agrônomo examinou as 150 caixas, e contou quantas caixas tinham nenhuma penca empedrada, quantas tinham uma penca empedrada, duas pencas empedradas e assim por diante, e organizou os dados com as respectivas frequências de ocorrência na <a href="#tbl-numpencas2">Tabela&nbsp;<span>2.6</span></a>.</p>
+<div id="tbl-numpencas2" class="anchored">
+<table class="table-striped table-hover table">
+<caption>Tabela&nbsp;2.6: Número de pencas de banana maçã com empedramento, CEAGESP, São Paulo, SP, 2007.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></caption>
+<colgroup>
+<col style="width: 21%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Número de pencas empedradas</strong></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbf{F_i}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbf{Fr_i}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbf{Fp_i(\%)}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: center;">38</td>
+<td style="text-align: center;">0,2533</td>
+<td style="text-align: center;">25,33</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: center;">37</td>
+<td style="text-align: center;">0,2467</td>
+<td style="text-align: center;">24,67</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">0,1667</td>
+<td style="text-align: center;">16,67</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">0,1333</td>
+<td style="text-align: center;">13,33</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0,1067</td>
+<td style="text-align: center;">10,67</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">0,0667</td>
+<td style="text-align: center;">6,67</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0,0266</td>
+<td style="text-align: center;">2,66</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: center;">150</td>
+<td style="text-align: center;">1,0000</td>
+<td style="text-align: center;">100,00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Observa-se pelos resultados apresentados na <a href="#tbl-numpencas2">Tabela&nbsp;<span>2.6</span></a> que: das <span class="math inline">\(150\)</span> caixas de banana inspecionadas, apenas <span class="math inline">\(38\)</span> caixas, ou seja, <span class="math inline">\(25,33\%\)</span>, não tinham nenhuma penca empedrada, e que <span class="math inline">\(10,67\%\)</span> tinham <span class="math inline">\(4\)</span> pencas empedradas. Estes resultados poderiam estar orientando o Engenheiro Agrônomo a direcionar suas ações, no sentido de melhorar a qualidade do produto.</p>
+</div>
+<ol start="2" type="i">
+<li><strong>Contínuas</strong>: Quando os dados de uma amostra ou população estiverem representados por variáveis quantitativas contínuas, é evidente que não existem classes naturais. Apesar disso pode-se usar o recurso de agrupar os dados em classes com um determinado número de intervalos. Tais classes terão dois valores limites, isto é, um limite inferior e um limite superior. Assim, utiliza-se de uma tabela de distribuição de frequências com dados agrupados em classes com intervalos de classes, para se organizar e resumir tais variáveis.</li>
+</ol>
+<p>Neste casso para a construção da tabela de distribuição de frequências devem ser seguidos os seguintes passos:</p>
+<ol type="a">
+<li>Determinar o número de classes <span class="math inline">\((K)\)</span>: A escolha do número de classes é arbitrária, e a experiência do pesquisador com os dados é que lhe indicará quantas classes devem ser usadas. No entanto deve ser observado que, com poucas classes perde-se informação, e com muitas classes o objetivo de se resumir um conjunto de dados pode ficar prejudicado. Pode-se, também, adotar o critério baseado no número de observações “<span class="math inline">\(n\)</span>”, conforme <a href="#tbl-numclasses">Tabela&nbsp;<span>2.7</span></a>.</li>
+</ol>
+<div id="tbl-numclasses" class="anchored">
+<table class="table-striped table-hover table">
+<caption>Tabela&nbsp;2.7: Determinação do número de classes (<span class="math inline">\(K\)</span>).</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Número de observações</strong> <span class="math inline">\((n)\)</span></th>
+<th style="text-align: center;"><strong>Número de classes</strong> <span class="math inline">\((K)\)</span></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Até <span class="math inline">\(100\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sqrt{n}\)</span> (inteiro mais próximo)</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Acima de <span class="math inline">\(100\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(5\log_{10}(n)\)</span> (inteiro mais próximo)</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol start="2" type="a">
+<li><p>Determinar a amplitude de classe <span class="math inline">\((c)\)</span>: A amplitude de classe é definida pela diferença entre os limites superior e inferior de uma determinada classe, dada por: <span class="math display">\[
+c=LS_{i} - LI_{i},
+\]</span> para <span class="math inline">\(i\)</span> <span class="math inline">\(=\)</span> <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(\ldots\)</span>, <span class="math inline">\(K\)</span>, sendo <span class="math inline">\(K\)</span> o número de classes. Porém, em termos práticos a amplitude de classe é determinada da seguinte forma: <span class="math display">\[
+c=\frac{A}{K-1},
+\]</span> em que:</p>
+<ul>
+<li><span class="math inline">\(A\)</span> é amplitude total, que representa a diferença entre a maior observação e a menor observação;</li>
+<li><span class="math inline">\(K\)</span> é o número de classes.</li>
+</ul></li>
+<li><p>Determinar o limite inferior da primeira classe <span class="math inline">\((LI_{1ª})\)</span>, dado por:</p></li>
+</ol>
+<p><span class="math display">\[
+LI_{1ª} = \textrm{Menor dado} - \frac{c}{2}.
+\]</span></p>
+<ol start="4" type="a">
+<li>Determinar o limite superior da primeira classe (<span class="math inline">\(LS_{1ª}\)</span>), dado por:</li>
+</ol>
+<p><span class="math display">\[
+LS_{1ª} = LI_{1ª} + c.
+\]</span></p>
+<ol start="5" type="a">
+<li>Os demais limites de classe são obtidos somando-se o valor de <span class="math inline">\(c\)</span> até completar as <span class="math inline">\(K\)</span> classes.</li>
+<li>Determinar os pontos médios das classes <span class="math inline">\((\tilde{X}_i)\)</span>, dado por:</li>
+</ol>
+<p><span class="math display">\[
+\tilde{X}_i=\frac{LI_{iª}+LS_{iª}}{2}.
+\]</span></p>
+Posteriormente, serão determinados as frequências: absoluta <span class="math inline">\((F_i)\)</span>, relativa <span class="math inline">\((Fr_i)\)</span> e percentual <span class="math inline">\((Fp_i)\)</span>, de forma similar como foi desenvolvido na tabela de distribuição de frequência simples. Em geral usa-se as seguintes notações para os intervalos de classes:
+<center>
+<span class="math inline">\([a;b)\)</span> ou <span class="math inline">\(a \vdash b\)</span>.
+</center>
+<p>Na contagem do número de dados contidos em um intervalo de uma determinada classe (frequência absoluta), deve-se incluir o valor do limite inferior <span class="math inline">\((a)\)</span> e excluir o valor do limite superior <span class="math inline">\((b)\)</span> de cada classe. O valor do limite superior passa a ser contado na classe posterior.</p>
 
 
 <div id="refs" class="references csl-bib-body" role="list" style="display: none">
@@ -574,6 +1114,7 @@ STEEL, R. G. D.; TORRIE, J. H. <strong>Principles and procedures of statistics: 
 <ol>
 <li id="fn1"><p>Também pode ser chamada de tabela de distribuição com dados agrupados sem intervalo de classes.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Dados fictícios.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Fonte: Dados fictícios.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

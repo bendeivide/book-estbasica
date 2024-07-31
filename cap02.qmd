@@ -116,6 +116,123 @@ i) __Discretas__: Se os dados de uma amostra ou população estiverem representa
 
 ::: {#exm-dis}
 
-Um Engenheiro Agrônomo examinou um lote de 150 caixas de banana maçã, escolhidos aleatoriamente num carregamento de 10.000 caixas, no CEAGESP de São Paulo, SP, anotando o número de pencas com empedramento. Os dados estão apresentados na Tabela \ref{tab:numpecas}.
+Um Engenheiro Agrônomo examinou um lote de 150 caixas de banana maçã, escolhidos aleatoriamente num carregamento de 10.000 caixas, no CEAGESP de São Paulo, SP, anotando o número de pencas com empedramento. Os dados estão apresentados na @tbl-numpecas.
+
+|  |  |  |  |  |  |  |  |  |  |  |
+|---|---|---|---|---|---|---|---|---|---|---|
+|2 |	3 |	1 |	1 |	0 |	0 |	2 |	2 |	3 |	5 |
+4 |	0 |	4 |	0 |	1 |	1 |	0 |	6 |	5 |	0 |
+|1 |	1 |	0 |	4 |	0 |	0 |	5 |	0 |	0 |	2 |
+0 |	4 |	5 |	0 |	4 |	0 |	2 |	1 |	1 |	1 |
+|2 |	0 |	0 |	1 |	0 |	4 |	0 |	5 |	0 | 0 |
+0 |	5 |	0 |	4 |	1 |	0 |	 1 |0 |	2 |	1 |
+|0 |	1 |	1 |	0 |	2 |	5 |	0 |	2 |	0 |	0 |
+3 |	5 |	0 |	1 |	0 |	0 |	1 |	4 |	3 |	3 |
+|2 |	0 |	4 |	0 |	3 |	4 |	0 |	0 |	1 |	1 |
+0 |	2 |	1 |	3 |	2 |	1 |	2 |	3 |	1 |	0 |
+|1 |	5 |	2 |	2 |	1 |	2 |	1 |	1 |	2 |	3 |
+3 |	2 |	6 |	1 |	5 |	3 |	2 |	1 |	1 |	1 |
+|6 |	2 |	2 |	4 |	1 |	4 |	1 |	6 |	3 |	4 |
+1 |	4 |	1 |	3 |	3 |	1 |	3 |	2 |	4 |	1 |
+|3 |	1 |	3 |	2 |	2 |	3 |	2 |	3 |	4 |	3 |
+
+: Número de pencas de banana maçã com empedramento (dados brutos). {#tbl-numpecas .striped .hover}
+
+
+Após coletar os dados o Engenheiro Agrônomo ordenou os dados em ordem crescente, obtendo-se assim os dados elaborados apresentados na @tbl-numpencas.
+
+|  |  |  |  |  |  |  |  |  |  |  |
+|---|---|---|---|---|---|---|---|---|---|---|
+|0 |	0 |	0 |	1 |	1 |	2 |	2 |	3 |	4 |	4 |
+0 |	0 |	0 |	1 |	1 |	2 |	2 |	3 |	4 |	5 |
+|0 |	0 |	0 |	1 |	1 |	2 |	2 |	3 |	4 |	5 |
+0 |	0 |	0 |	1 |	1 |	2 |	2 |	3 |	4 |	5 |
+|0 |	0 |	0 |	1 |	1 |	2 |	2 |	3 |	4 |	5 |
+0 |	0 |	0 |	1 |	1 |	2 |	2 |	3 |	4 |	5 |
+|0 |	0 |	0 |	1 |	1 |	2 |	2 |	3 |	4 |	5 |
+0 |	0 |	0 |	1 |	1 |	2 |	2 |	3 |	4 |	5 |
+|0 |	0 |	1 |	1 |	1 |	2 |	2 |	3 |	4 |	5 |
+0 |	0 |	1 |	1 |	1 |	2 |	2 |	3 |	4 |	5 |
+|0 |	0 |	1 |	1 |	1 |	2 |	3 |	3 |	4 |	5 |
+0 |	0 |	1 |	1 |	1 |	2 |	3 |	3 |	4 |	6 |
+|0 |	0 |	1 |	1 |	1 |	2 |	3 |	3 |	4 |	6 |
+0 |	0 |	1 |	1 |	1 |	2 |	3 |	3 |	4 |	6 |
+|0 |	0 |	1 |	1 |	1 |	2 |	3 |	3 |	4 |	6|
+
+: Número de pencas de banana maçã com empedramento (dados elaborados). {#tbl-numpencas .striped .hover}
+
+Ordenado os dados o Engenheiro Agrônomo examinou as 150 caixas, e contou quantas caixas tinham nenhuma penca empedrada, quantas tinham uma penca empedrada, duas pencas empedradas e assim por diante, e organizou os dados com as respectivas frequências de ocorrência na @tbl-numpencas2.
+
+
+| **Número de pencas empedradas**| $\mathbf{F_i}$ | $\mathbf{Fr_i}$ | $\mathbf{Fp_i(\%)}$ |
+|:---|:---:|:---:|:---:|
+| 0 | 38 | 0,2533 | 25,33 |
+1 | 37 | 0,2467 | 24,67  |
+|2 | 25 | 0,1667 | 16,67 |
+3 | 20 | 0,1333 | 13,33 |
+|4 | 16 | 0,1067 | 10,67 |
+5 | 10 | 0,0667 | 6,67 |
+|6  | 4 | 0,0266 | 2,66 |
+Total | 150 | 1,0000 | 100,00|
+
+
+: Número de pencas de banana maçã com empedramento, CEAGESP, São Paulo, SP, 2007.^[Fonte: Dados fictícios.] {#tbl-numpencas2 .striped .hover}
+
+
+Observa-se pelos resultados apresentados na @tbl-numpencas2 que: das $150$ caixas de banana inspecionadas, apenas $38$ caixas, ou seja, $25,33\%$, não tinham nenhuma penca empedrada, e que $10,67\%$ tinham $4$ pencas empedradas. Estes resultados poderiam estar orientando o Engenheiro Agrônomo a direcionar suas ações, no sentido de melhorar a qualidade do produto.
 
 :::
+
+ii) **Contínuas**: Quando os dados de uma amostra ou população estiverem representados por variáveis quantitativas contínuas, é evidente que não existem classes naturais. Apesar disso pode-se usar o recurso de agrupar os dados em classes com um determinado número de intervalos. Tais classes terão dois valores limites, isto é, um limite inferior e um limite superior. Assim, utiliza-se de uma tabela de distribuição de frequências com dados agrupados em classes com intervalos de classes, para se organizar e resumir tais variáveis.
+
+Neste casso para a construção da tabela de distribuição de frequências devem ser seguidos os seguintes passos:
+
+a) Determinar o número de classes $(K)$: A escolha do número de classes é arbitrária, e a experiência do pesquisador com os dados é que lhe indicará quantas classes devem ser usadas. No entanto deve ser observado que, com poucas classes perde-se informação, e com muitas classes o objetivo de se resumir um conjunto de dados pode ficar prejudicado. Pode-se, também, adotar o critério baseado no número de observações "$n$", conforme @tbl-numclasses.
+
+| **Número de observações** $(n)$ | **Número de classes** $(K)$|
+|:---|:---:|:---:|
+|Até $100$     |  $\sqrt{n}$ (inteiro mais próximo)|
+Acima de $100$    | $5\log_{10}(n)$ (inteiro mais próximo)|
+
+:Determinação do número de classes ($K$). {#tbl-numclasses .striped .hover}
+
+
+b) Determinar a amplitude de classe $(c)$: A amplitude de classe é definida pela diferença entre os limites superior e inferior de uma determinada classe, dada por:
+$$
+c=LS_{i} - LI_{i},
+$$
+para $i$ $=$ $1$, $2$, $\ldots$, $K$, sendo $K$ o número de classes. Porém, em termos práticos a amplitude de classe é determinada da seguinte forma:
+$$
+c=\frac{A}{K-1},
+$$
+em que:
+
+   - $A$ é amplitude total, que representa a diferença entre a maior observação e a menor observação;
+   -  $K$ é o número de classes.
+
+c) Determinar o limite inferior da primeira classe $(LI_{1ª})$, dado por:
+
+$$
+LI_{1ª} = \textrm{Menor dado} - \frac{c}{2}.
+$$
+
+d) Determinar o limite superior da primeira classe ($LS_{1ª}$), dado por:
+
+$$
+LS_{1ª} = LI_{1ª} + c.
+$$
+
+e) Os demais limites de classe são obtidos somando-se o valor de $c$ até completar as $K$ classes.
+f)  Determinar os pontos médios das classes $(\tilde{X}_i)$, dado por:
+
+$$
+\tilde{X}_i=\frac{LI_{iª}+LS_{iª}}{2}.
+$$
+
+Posteriormente, serão determinados as frequências: absoluta $(F_i)$, relativa $(Fr_i)$ e percentual $(Fp_i)$, de forma similar como foi desenvolvido na tabela de distribuição de frequência simples. Em geral usa-se as seguintes notações para os intervalos de classes:
+<center>
+$[a;b)$ ou $a \vdash b$.
+</center>
+
+Na contagem do número de dados contidos em um intervalo de uma determinada classe (frequência absoluta), deve-se incluir o valor do limite inferior $(a)$ e excluir o valor do limite superior $(b)$ de cada classe. O valor do limite superior passa a ser contado na classe posterior. 
+
