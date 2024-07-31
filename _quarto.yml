@@ -10,7 +10,7 @@ book:
   page-navigation: true
   reader-mode: true
   cover-image: hardcover.png
-  favicon: favicon.ico
+  favicon: hardcover.png
   title: "Estatística Básica aplicada às Ciências Agrárias"
   author: "Telde N. Custódio e </br> Ben Dêivide de O. Batista"
   date: "06/10/2024"
