@@ -1,1 +1,656 @@
 # Teoria da Estimação
+
+## Introdução
+
+Toda população é descrita por um certo modelo probabilístico $f(x | \theta)$, com parâmetro(s) $\theta$ desconhecido(s), e o interesse é obter algum tipo de informação acerca desse(s) parâmetro(s). O que se dispõe é de uma amostra, ou seja, de partes de elementos da população. A partir de uma amostra aleatória é possível obter aproximações numéricas para o(s) parâmetro(s) $\theta$ do modelo, e esse processo é chamado estimação. Assim, um dos objetivos da Estatística é obter informações sobre os parâmetros populacionais através das estimativas amostrais.
+
+## Conceitos Básicos
+Para formalizar as ideias que serão apresentadas alguns conceitos são úteis.
+
+### Parâmetro
+
+Um parâmetro é um valor desconhecido associado a uma característica da população, e em geral representado por letras gregas.
+
+::: {#exm-par}
+A média $\mu$ e a variância $\sigma^2$ de uma população são parâmetros.
+:::
+
+
+### Estimador
+
+O estimador é a função ou expressão algébrica que estima o valor de um parâmetro populacional, baseando-se nas observações de uma amostra aleatória.
+
+::: {#exm-estimador}
+
+- $\bar{x}=\frac{\sum_{i=1}^{n}x_i}{n}$ é um estimador da média populacional $\mu$;
+- $s^2=\frac{\sum_{i=1}^{n}x_i^2-\frac{\left(\sum_{i=1}^{n}x_i\right)^2}{n}}{n-1}$ é um estimador da variância populacional $\sigma^2$.
+
+:::
+
+### Estimativa
+
+Uma estimativa é uma aproximação numérica para um parâmetro associado a um modelo probabilístico, ou seja, é o valor obtido pelo estimador numa determinada amostra aleatória.
+
+
+::: {#exm-estimativa}
+Numa certa variedade de milho tem-se uma estimativa da altura média desta variedade, dada por:
+
+$$
+\bar{x}=200,0~\textrm{cm}.
+$$
+:::
+
+
+## Tipos de Estimativas
+
+Basicamente existem dois processos de estimação. O primeiro deles é a chamada \index{Estimação pontual}estimação pontual, pela qual um valor numérico é obtido através de um estimador, como sendo uma aproximação numérica para o parâmetro populacional.
+
+:::{#exm-tipoest}
+Numa amostra aleatória de n elementos os valores de $\bar{x}$ e $s^2$ estimam $\mu$ e $\sigma^2$, respectivamente, por ponto.
+:::
+
+:::{#exm-tipoest2}
+
+Seja uma amostra de 40 plantas de uma variedade de milho, em que a variável altura, apresentou uma média de $200,0$ cm e um desvio padrão de $10,0$ cm. 
+
+Nesta amostra a média amostral, $\bar{x}=200,0$ cm, é uma estimativa por ponto da média populacional $\mu$, e o desvio padrão amostral, $s = 10,0$ cm, é uma estimativa por ponto do desvio padrão populacional $\sigma$.
+:::
+
+O segundo processo de estimação é a estimação por intervalo, no qual algum tipo de intervalo é construído, de tal maneira que se possa atribuir probabilidades de que o valor real do parâmetro esteja ali contido. Neste caso, o parâmetro populacional é estimado por dois valores, obtidos através de cálculos com os dados amostrais, que formam um intervalo, dentro do qual se espera encontrar o verdadeiro valor do parâmetro. A vantagem desse processo é que mostra a precisão da estimativa.
+
+
+:::{#exm-tipoest3}
+
+Considerando o exemplo anterior tem-se que a expressão:
+$$
+IC_{95,0\%}(\mu):~[196,90~\textrm{cm};~ 203,10~\textrm{cm}],
+$$
+é uma estimativa por intervalo para $\mu$ com uma confiança de 95,0\% e um erro de 3,10 cm.
+:::
+
+Assim, a associação entre estimativas pontuais acerca de um parâmetro populacional, e o conhecimento de probabilidades de que o parâmetro esteja contido em certos intervalos, possibilitará, em geral, promover uma inferência informativa a respeito do parâmetro desconhecido.
+
+## Métodos de Estimação Pontual
+
+Os métodos de obtenção de estimativas pontuais, os quais não serão discutidos em detalhes aqui, são:
+
+- Método dos Momentos;
+- Método dos Quadrados Mínimos; 
+- Método da Máxima Verossimilhança.
+
+## Propriedades dos Estimadores Pontuais
+
+Em função da existência de vários métodos para estimação de parâmetros, é importante analisar algumas propriedades dos estimadores, que possa auxiliar na escolha de um estimador para um parâmetro em particular. Essas propriedades são:
+
+i) Vício: Um estimador $\hat{\theta}$ de um parâmetro $\theta$ é não viciado, ou não tendencioso, ou não viesado, se:
+$$
+E(\hat{\theta})=\theta.
+$$
+
+:::{#exm-vies}
+A média amostral, $\bar{x} = \sum_{i = 1}^{n}x_i / n$, é um estimador  não viciado da média populacional $\mu$, pois pode-se provar que:
+
+$$
+E(\bar{x})=\mu.
+$$
+:::
+
+
+
+Ou seja, um estimador é não viciado se o seu valor esperado coincide com o parâmetro de interesse.
+
+
+:::{#exm-vies2}
+
+A variância amostral, $\hat{\sigma}^2 = \sum_{i = 1}^{n}(x_i - \bar{x})^2 / n$, é um estimador viciado para $\sigma^2$. 
+
+Pode ser demonstrado que:
+
+$$
+E(\hat{\sigma}^2)=\left(\frac{n-1}{n}\right) \sigma^2.
+$$
+
+Por outro lado tem-se que:
+$$
+E\left(\frac{n}{n-1}\hat{\sigma}^2\right)=\sigma^2
+$$
+Note que:
+
+$$
+\left(\frac{n}{n-1}\hat{\sigma}^2\right)=\left(\frac{n}{n-1}\right)\frac{\sum_{i=1}^{n}\left(x_i- \bar{x} \right)^2}{n}=\frac{1}{n-1}\sum_{i=1}^{n}\left(x_i- \bar{x} \right)^2=s^2.
+$$
+
+Logo, $s^2$ é um estimador não viciado para $\sigma^2$.
+
+:::
+
+ii) Consistência: Um estimador $\hat{\theta}$ é consistente se à medida que o tamanho n da amostra aumenta, seu valor esperado converge para o parâmetro de interesse, e sua variância converge para zero. Ou seja, $\hat{\theta}$ é consistente se as duas propriedades são satisfeitas:
+  - $\lim_{n \to \infty} E(\hat{\theta}) = \theta$;
+  - $\lim_{n \to \infty} V(\hat{\theta}) = 0$.
+
+iii) Eficiência: Dados dois estimadores $\hat{\theta}_1$ e $\hat{\theta}_2$, não viciados para um parâmetro $\theta$, diz-se que $\hat{\theta}_1$ é mais eficiente que $\hat{\theta}_2$ se: $V(\hat{\theta}_1)$ < $V(\hat{\theta}_2)$. Isto é, dentre todos os estimadores não viciados de um parâmetro $\theta$, aquele que tiver menor variância é o estimador mais eficiente de $\theta$.
+
+:::{#exm-efcia}
+
+Numa amostra a média amostral $\bar{x}$ é um estimador mais eficiente da média populacional $\mu$ que a mediana $md$, pois pode-se provar que:
+$$
+V(\bar{x})=\frac{\sigma^2}{n}~\textrm{e}~ V(md)=\frac{\pi}{2}\times \frac{\sigma^2}{n}.
+$$
+
+Logo $V(\bar{\text{x}}) < V(md)$.
+:::
+
+No caso de uma estimativa por intervalo, o comprimento do intervalo de confiança dá uma idéia da eficiência da estimativa.
+
+## Estimação por intervalo
+
+Os estimadores pontuais fornecem como estimativa um único valor numérico para o parâmetro $\theta$ de interesse, associado ao modelo probabilístico $f(x | \theta)$. A inferência pode e deve ser complementada, sempre que possível, com pressuposições acerca de probabilidades de $\theta$ estarem próximos ou não de suas estimativas pontuais. Por serem variáveis aleatórias, os estimadores possuem uma distribuição de probabilidade, e levando este fato em consideração, pode-se apresentar uma estimativa mais informativa para o parâmetro de interesse, que inclua uma medida de precisão do valor obtido. Este método de estimação, denominado estimação por intervalo, incorpora à estimativa pontual do parâmetro, informações a respeito de sua variabilidade, permitindo a construção de intervalos com probabilidades conhecidas de que o valor paramétrico esteja contido nesse intervalo. 
+
+Assim, intervalos de confiança são obtidos através da distribuição amostral de seus estimadores.
+
+Seja $x_1$, $x_2$, $\cdots$, $x_n$ uma amostra aleatória coletada numa população descrita pelo modelo probabilístico $f(x | \theta)$. Sejam $T_1(x)$ e $T_2(x)$ duas  estatísticas  que satisfaçam: $T_1(x) < T_2(x)$, e também que: $P[T_1(x) < \theta < T_2(x)]=1 - \alpha$.
+
+O intervalo aleatório: $[T_1(x); T_2(x)]$ é chamado de intervalo de confiança para $\theta$ com $(1 - \alpha)100,0\%$ de probabilidade. A probabilidade $(1 - \alpha)$ é chamada coeficiente de confiança do intervalo. O comprimento do intervalo de confiança é dado por:
+\begin{align*}
+    L(x)=T_2(x) - T_1(x).
+\end{align*}
+
+Logo, a construção de intervalos de confiança consiste na obtenção de $T_1(x)$ e $T_2(x)$.
+
+## Construção de Intervalos de Confiança
+
+Basicamente os intervalos de confiança podem ser construídos utilizando a distribuição de quantidades pivotais. 
+
+Considere uma amostra aleatória $x_1$, $x_2$, $\cdots$, $x_n$ de uma população descrita pelo modelo probabilístico $f(x | \theta)$. Uma função $g(x; \theta)$, cuja distribuição não dependa de $\theta$, é chamada de quantidade pivotal.
+
+
+:::{#exm-estint}
+Considere um modelo probabilístico correspondente a uma distribuição normal de média $\mu$ e variância $\sigma^2$. Seja, 
+$$
+Z=\frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}}.
+$$
+
+Neste caso é $Z$ uma quantidade pivotal, pois $Z$ é uma variável aleatória com distribuição normal padronizada, ou seja, $Z\sim N(0,0; 1,0)$, e não depende de $\mu$ e $\sigma^2$. 
+:::
+
+Nas próximas seções, serão utilizados as distribuições de probabilidades e resultados, vistos no @sec-chap08, para a construção de intervalos de confiança para parâmetros populacionais de interesse.
+
+### Intervalo de Confiança para a Média de uma Distribuição Normal
+
+A média estimada a partir de uma amostra aleatória, é apenas uma estimativa por ponto da verdadeira média populacional $\mu$. A média verdadeira é um parâmetro que na grande maioria das vezes é desconhecida. Entretanto, a partir do conhecimento das distribuições teóricas de $Z$ e $t$, pode-se construir um intervalo que deve conter a verdadeira média populacional $\mu$.
+
+Para a construção do intervalo de confiança para a média, tem-se as seguintes situações, descritas a seguir.
+
+### Grandes Amostras ou Variância Populacional Conhecida
+
+O intervalo de confiança associado a um determinado nível de confiança, para a média populacional $\mu$, quando se tem grandes amostras $(n\geq 30)$, ou variância populacional $\sigma^2$ conhecida, pode ser deduzido da seguinte forma.
+
+Foi visto no capítulo anterior de acordo com o teorema central do limite que: 
+$$
+\bar{\text{x}} \sim N\left(\mu, \frac{\sigma^2}{n} \right)
+$$
+
+Logo, na distribuição de $\bar{x}$ o valor de $Z$ é obtido por:
+$$ 
+Z=\frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}},
+$$ {#eq-qpvt}
+em que $Z \sim N(0,0; 1,0)$. 
+
+Na distribuição de $\bar{x}$ pode-se esquematizar uma probabilidade de $(1 - \alpha)$, conforme @fig-cimedianormal. 
+
+![Área correspondente a probabilidade $P(-Z_{\alpha/2} < Z < Z_{\alpha/2})$.](images/cimedianormal01.png){#fig-cimedianormal width=50%}
+
+Logo,
+$$
+P\left[-Z_\frac{\alpha}{2} < Z < Z_\frac{\alpha}{2} \right]=1 - \alpha.
+$$ {#eq-intconfmedia}
+ 
+Substituindo (@eq-qpvt) em (@eq-intconfmedia), tem-se:
+$$
+P\left[-Z_\frac{\alpha}{2} < \frac{\bar{\text{x}}-\mu}{\frac{\sigma}{\sqrt{n}}} < Z_\frac{\alpha}{2} \right]=1 - \alpha.
+$$
+
+Multiplicando cada termo da desigualdade por: $\frac{\sigma}{\sqrt{n}}$, obtém-se:
+$$
+P\left[-Z_\frac{\alpha}{2}\times\frac{\sigma}{\sqrt{n}} < \bar{\text{x}}-\mu < Z_\frac{\alpha}{2}\times \frac{\sigma}{\sqrt{n}} \right]=1 - \alpha.
+$$
+
+Subtraindo $\bar{x}$ de cada termo da desigualdade a expressão fica:
+$$
+P\left[-\bar{\text{x}}-Z_\frac{\alpha}{2}\times\frac{\sigma}{\sqrt{n}} < -\mu < -\bar{\text{x}}+Z_\frac{\alpha}{2}\times\frac{\sigma}{\sqrt{n}} \right]=1 - \alpha.
+$$
+
+Multiplicando cada termo da desigualdade por (-1), tem-se:
+$$
+P\left[\bar{\text{x}}+Z_\frac{\alpha}{2}\times\frac{\sigma}{\sqrt{n}} > \mu > \bar{\text{x}}-Z_\frac{\alpha}{2}\times\frac{\sigma}{\sqrt{n}} \right]=1 - \alpha.
+$$
+
+Invertendo os extremos do intervalo obtém-se a expressão (@eq-icmedgra), para a construção do intervalo de confiança para $\mu$ com $(1 - \alpha)100,0\%$ de probabilidade.
+$$
+P\left[\bar{x}-Z_\frac{\alpha}{2}\times\frac{\sigma}{\sqrt{n}} < \mu < \bar{x}+Z_\frac{\alpha}{2}\times\frac{\sigma}{\sqrt{n}} \right]=1 - \alpha,
+$$ {#eq-icmedgra}
+em que:
+
+- $\bar{x} \pm Z_\frac{\alpha}{2}\times\frac{\sigma}{\sqrt{n}}$ são os limites de confiança;
+- $(1 - \alpha)100,0\%$ é o grau ou nível de confiança.
+
+A representação gráfica de (@eq-icmedgra) pode ser observada na @fig-cimedianormal02.
+
+![Região do estimador intervalar para $\mu$ de uma população normal.](images/cimedianormal02.png){#fig-cimedianormal02 width=50%}
+
+Não conhecendo-se o valor de $\sigma$ (desvio padrão populacional), pode-se usar o valor de $s$ (desvio padrão amostral), desde que $n\geq 30$. 
+
+
+:::{#exm-icmedia}
+Seja uma amostra de 40 plantas de uma variedade de milho, em que a variável altura, apresentou uma média de 200,0 cm e variância de 100,0 cm$^2$. Construir um intervalo de confiança de 95,0\% para a média populacional $\mu$.
+Neste caso, não se conhece a variância populacional $\sigma^2$, e sim, a variância amostral $s^2$. Como o tamanho da amostra é n = 40, considera-se razoável a utilização do desvio padrão amostral.
+Para construir um intervalo de confiança de 95,0\% para a média populacional $\mu$, tem-se:
+  
+  - $n=40$;
+  - $\bar{\text{x}}=200,0$ cm;
+  - $s^2=100,0$ cm$^2 \Rightarrow s=\sqrt{100,0}=10,0$ cm;
+  - $(1 - \alpha)=0,95 \Rightarrow \alpha=0,05 \Rightarrow \frac{\alpha}{2}=0,025$.
+$$
+Z_\frac{\alpha}{2}=Z_{0,025}=?
+$$
+
+Consultando a @tab-normal01, tem-se que o valor de Z que deixa uma probabilidade acima dele de 0,025 é igual a 1,96. Dentro do corpo da tabela consulta-se o valor referente a 0,025, conforme esquema abaixo.
+
+
+<center>
+![](images/tabZ01.png)
+</center>
+
+Logo,
+$$
+Z_{0,025}=1,96.
+$$
+
+Através da expressão (@eq-icmedgra), tem-se que:
+$$
+200,0-1,96\frac{10}{\sqrt{40}} < \mu < 200,0+1,96\frac{10}{\sqrt{40}}
+$$
+$$
+200,0 - 3,10 < \mu < 200,0 + 3,10 
+$$
+$$
+\Rightarrow IC_{0,95}(\mu): [196,90~\textrm{cm}; 203,10~\textrm{cm}].
+$$
+
+Esse resultado mostra que é de 95,0\% a confiança, da verdadeira altura média das plantas de milho estar entre 196,90 e 203,10 cm. Do ponto de vista de amostragem isto quer dizer que, se forem retiradas várias amostras aleatórias dentro desta população, calculando-se os valores de $\bar{x}$ e $s$ para cada amostra, e construindo o intervalo de confiança para $\mu$ em cada amostra, 95,0\% dos intervalos conterão em seu interior o verdadeiro valor da média populacional $\mu$.
+
+:::
+
+:::{#exm-icmedia02}
+Considerando o @exm-icmedia, construir um intervalo de confiança de 99,0\% para a média populacional $\mu$.
+
+Assim, tem-se:
+$$
+(1 - \alpha)=0,99 \Rightarrow \alpha=0,01 \Rightarrow \frac{\alpha}{2}=0,005.
+$$
+$$
+Z_\frac{\alpha}{2}=Z_{0,005}=?
+$$
+
+Consultando a @tab-normal01, o valor de Z que deixa uma probabilidade acima dele de 0,005 (média de 0,0051 e 0,0049) é igual a 2,575 ( média de 2,57 e 2,58). Dentro do corpo da tabela consulta-se o valor referente a 0,005 ou mais próximo, conforme esquema abaixo:
+
+<center>
+![](images/tabZ02.png){width=80%}
+</center>
+
+Logo,
+$$
+Z_{0,005}=2,575.
+$$
+Através da expressão (@eq-icmedgra), tem-se que:
+$$
+200,0-2,575\frac{10}{\sqrt{40}} < \mu < 200,0+2,575\frac{10}{\sqrt{40}}
+$$
+$$
+200,0 - 4,07 < \mu < 200,0 + 4,07
+$$
+$$
+\Rightarrow IC_{0,99}(\mu): [195,93~\textrm{cm}; 204,07~\textrm{cm}].
+$$
+
+Esse resultado mostra que é de 99,0\% a confiança, da verdadeira altura média das plantas de milho estar entre 195,93 e 204,07 cm.
+:::
+
+O erro da estimativa é dado pela expressão (@eq-erroic).
+$$
+e=\bar{\text{x}} - \mu.
+$${#eq-erroic}
+
+O erro máximo da estimativa na construção do intervalo de confiança é dado pela expressão (@eq-erromax).
+$$
+e=Z_\frac{\alpha}{2}\frac{\sigma}{\sqrt{n}}.
+$${#eq-erromax}
+
+:::{#exm-icmedia03}
+Nos Exemplos [-@exm-icmedia] e [-@exm-icmedia02],  tem-se que:	
+
+-  $\alpha=5,0\%=0,05 \Rightarrow e=3,10$ cm, ou seja, com 95,0\% de confiança, a média, $\bar{\text{x}}=200,0$ cm, estima a média populacional $\mu$ com um erro máximo de 3,10 cm;
+- $\alpha=1,0\%=0,01 \Rightarrow e=4,07$ cm, ou seja, com 99,0\% de confiança, a média, $\bar{\text{x}}=200,0$ cm, estima a média populacional $\mu$ com um erro máximo de 4,07 cm.
+
+As consequências da redução de $\alpha$ são:
+- O coeficiente de confiança $(1 - \alpha)100,0\%$ aumenta:
+$$
+95,0\% \Rightarrow 99,0\%.
+$$
+
+- O erro da estimativa aumenta:
+
+
+$$
+3,10~\textrm{cm}~\Rightarrow~4,07~\textrm{cm}.
+$$
+
+- O comprimento do intervalo de confiança aumenta:
+$$
+[196,9~\textrm{cm};~203,10~\textrm{cm}]~\Rightarrow~ [195,93~\textrm{cm};~204,07~\textrm{cm}].
+$$
+
+Tem-se que, a única forma de aumentar a confiança e reduzir o comprimento do intervalo, simultaneamente, é aumentando o tamanho da amostra.
+:::
+
+A partir do intervalo de confiança para a média $\mu$, pode-se dimensionar o tamanho da amostra estatisticamente para estimar a média $\mu$.
+
+Na abordagem estatística considerada para determinar o tamanho da amostra, o nível de precisão e o erro da estimativa são especificados antecipadamente. 
+
+A expressão do erro máximo é dada por.
+$$
+e=Z_\frac{\alpha}{2}\frac{\sigma}{\sqrt{n}}.
+$${#eq-erromax02}
+
+Isolando $n$ em (@eq-erromax02), obtém-se a expressão (@eq-tamamo) para dimensionar o tamanho da amostra estatisticamente.
+$$
+n=\left(\frac{Z_\frac{\alpha}{2}\sigma}{e} \right)^2.
+$${#eq-tamamo}
+
+:::{#exm-icmedia04}
+No @exm-icmedia, tem-se que:
+
+- n=40;
+- $\bar{\text{x}}=200,0$ cm;
+- $s=10,0$ cm;
+- $\alpha=5,0\%=0,05$;
+- $e=3,10$ cm.
+
+Quantas plantas deverão ser examinadas num próximo estudo, para estimar $\mu$ com um erro de 2,8 cm e uma confiança de 95,0\%? 
+
+Neste caso, tem-se que:
+
+- $e=2,8$ cm;
+- $\alpha=0,05 \Rightarrow \frac{\alpha}{2}=0,025$;
+- $Z_{0,025}=1,96$.
+
+Logo, através da expressão (@eq-tamamo), tem-se que:
+
+$$
+n=\left(\frac{1,96(10,0)}{2,8}\right)^2=49~\textrm{plantas}.
+$$
+:::
+
+
+#### Pequenas Amostras e Variância Populacional Desconhecida
+
+Geralmente não se conhece o valor da variância populacional $\sigma^2$. Foi visto que a variância populacional $\sigma^2$ pode ser estimada a partir da variância amostral $s^2$. Assim, é possível construir um intervalo de confiança de $(1 – \alpha)100,0\%$ para a média populacional $\mu$, utilizando a distribuição $t$ em lugar de $Z$. Deste modo, é possível obter o intervalo de confiança para pequenas amostras, $(n < 30)$, quando somente a variância amostral $s^2$ é conhecida. 
+
+Nesse caso, utiliza-se da distribuição da variável $t$, dada por:
+$$
+t=\frac{\bar{x}-\mu}{\frac{s}{\sqrt{n}}},
+$${#eq-test02}
+em que $t$ segue uma distribuição $t-Student$ com $\nu = n – 1$ graus de liberdade.
+
+O intervalo de confiança para $\mu$ com nível de confiança de $(1 – \alpha)100,0\%$, é dado pela expressão (@eq-icmedpeq).
+
+$$
+P\left[\bar{x}-t_{\left(\nu;\frac{\alpha}{2} \right)} \frac{s}{\sqrt{n}} < \mu < \bar{x}+t_{\left(\nu;\frac{\alpha}{2} \right)} \frac{s}{\sqrt{n}} \right]=1 - \alpha.
+$${#eq-icmedpeq}
+
+O erro máximo da estimativa é dado por:
+$$
+e=t_{\left(v;\frac{\alpha}{2} \right)} \frac{s}{\sqrt{n}}
+$$
+
+O tamanho da amostra para estimar a média é obtido pela expressão (@eq-tamamot).
+$$
+n=\left(\frac{t_{\left(v;\frac{\alpha}{2} \right)}s}{e} \right)^2.
+$${#eq-tamamot}
+
+:::{#exm-dap}
+Seja uma amostra de 20 árvores, de uma espécie de Eucalipto pertencente a um povoamento florestal, em que a variável DAP (diâmetro à altura do peito) apresentou uma média de 18,0 cm e um desvio padrão de 2,5 cm. 
+Construir um intervalo de confiança de 95,0\% para a média populacional $\mu$.
+
+Neste caso, tem-se:
+
+- $n=20 \Rightarrow v=n-1=20-1=19$ graus de liberdade;
+- $\bar{x}=18,0$ cm;
+- $s=2,5$ cm;
+- $(1 - \alpha)=0,95 \Rightarrow \alpha=0,05 \Rightarrow \frac{\alpha}{2}=0,025$.
+
+$$
+t_{\left(v;\frac{\alpha}{2} \right)}=t_{\left(19;0,025\right)}=?
+$$
+
+Consultando a @tab-tdist01, tem-se que o valor de $t$ que deixa uma probabilidade acima dele de 2,5\% com 19 graus de liberdade é igual a 2,0930, conforme esquema abaixo:
+
+<center>
+![](images/tabt01.png){width=80%}
+</center>
+Logo,
+$$
+t_{\left(19;0,025\right)}=2,0930.
+$$
+
+
+Através da expressão (@eq-icmedpeq), tem-se que:
+$$
+18,0-2,0930\frac{2,5}{\sqrt{20}} < \mu < 18,0+2,0930\frac{2,5}{\sqrt{20}}
+$$
+$$
+18,0 - 1,17 < \mu < 18,0 + 1,17 
+$$
+
+$$
+\Rightarrow IC_{0,95}(\mu):~[16,83~\textrm{cm};~ 19,17~\textrm{cm}].
+$$
+
+Esse resultado mostra que é de 95,0\% a confiança, do verdadeiro DAP médio das árvores de Eucalipto estar entre 16,83 e 19,17 cm. Do ponto de vista de amostragem isto quer dizer que, se forem retiradas várias amostras aleatórias dentro desta população, calculando-se os valores de $\bar{\text{x}}$ e $s$ para cada amostra, e construindo o intervalo de confiança para $\mu$ em cada amostra, 95,0\% dos intervalos conterão em seu interior o verdadeiro valor da média populacional $\mu$.
+:::
+
+### Intervalo de Confiança para a Diferença entre duas Médias Independentes
+
+A diferença de médias amostrais, $\bar{x}_1-\bar{x}_2$, estima a diferença de médias populacionais, $\mu_1 - \mu_2$, por ponto. A partir do conhecimento das distribuições teóricas $Z$ e $t$, pode-se construir um intervalo de confiança de $(1 – \alpha)100,0\%$  para a diferença de médias $\mu_1 - \mu_2$.
+
+Para a construção do intervalo de confiança para a diferença entre duas médias independentes, tem-se as seguintes situações, descritas a seguir.
+
+#### Grandes Amostras ou Variâncias Populacionais Conhecidas
+
+O intervalo de confiança associado a um determinado nível de confiança, para a diferença entre duas médias, $\mu_1 - \mu_2$, quando se tem grandes amostras, $n_1$ e $n_2 \geq 30$, ou variâncias populacionais, $\sigma_{1}^2$ e $\sigma_{2}^2$, conhecidas, é dado pela expressão (@eq-difmediaz).
+
+
+$$
+P\left[(\bar{x}_{1}-\bar{x}_{2})-Z_\frac{\alpha}{2}\sqrt{\frac{\sigma_{1}^2}{n_1}+\frac{\sigma_{2}^2}{n_2}} < (\mu_1 - \mu_2) <\right.
+$$
+$$
+\left.(\bar{x}_{1}-\bar{x}_{2})+Z_\frac{\alpha}{2}\sqrt{\frac{\sigma_{1}^2}{n_1}+\frac{\sigma_{2}^2}{n_2}}\right]=1 - \alpha.
+$${#eq-difmediaz}
+
+Não se conhecendo $\sigma_{1}^2$ e $\sigma_{2}^2$ pode-se usar $s_{1}^2$ e $s_{2}^2$, desde que $n_1$ e $n_2 \geq 30$.
+
+:::{#exm-suinos}
+Sejam:
+
+<center>
+$X_1:$ Peso de suínos da raça 1, em kg;
+</center>
+<center>
+$X_2:$ Peso de suínos da raça 2, em kg.
+</center>
+
+Em que:
+<center>
+$X_1 \sim N(\mu_1; 166,0)$
+</center>
+<center>
+$X_2 \sim N(\mu_2; 127,0)$
+</center>
+
+Se da população de suínos da raça 1 e da raça 2, são retiradas amostras de tamanhos: $n_1 = 10$ e $n_2 = 11$,  respectivamente, obtendo-se: $\bar{x}_{1}=110,0$ kg e $\bar{x}_{2}=107,0$ kg. Construir um intervalo com 95,0\% de confiança para a diferença de médias das duas raças.
+
+Tem-se então que:
+
+- $\sigma_{1}^2=166,0$ Kg$^2$ e $\sigma_{2}^2=127,0$ Kg$^2$;
+- $({\bar{\text{x}}_1-\bar{\text{x}_2}})=110,0 - 107,0 = 3,0$ kg $\Rightarrow$ estimativa por ponto de $(\mu_1 - \mu_2)$;
+- $(1 - \alpha)=0,95 \Rightarrow \alpha=0,05 \Rightarrow \frac{\alpha}{2}=0,025 \Rightarrow Z_{0,025}=1,96$ (@tab-normal01).
+
+Através da expressão (@eq-difmediaz), tem-se que:
+
+$$
+3,0-1,96\sqrt{\frac{166,0}{10}+\frac{127,0}{11}} < (\mu_1 - \mu_2) <
+$$
+$$
+3,0+1,96\sqrt{\frac{166,0}{10}+\frac{127,0}{11}}
+$$
+
+$$
+3,0-10,4 < (\mu_1 - \mu_2) < 3,0+10,4.
+$$
+
+Logo,
+
+<center>
+$\Rightarrow IC_{0,95}(\mu_1 - \mu_2)$:[-7,4 kg; 13,4 kg].
+</center>
+</br>
+Esse resultado mostra que é de 95,0\% a confiança, da verdadeira diferença dos pesos médios entre as duas raças de suínos estar entre -7,4 e 13,4 kg. Como o intervalo de confiança abrange o zero, pode-se concluir que o peso médio da raça 1 não difere do peso médio raça 2. Caso o intervalo de confiança não tivesse abrangido o zero, concluiria-se que as médias difeririam entre si.
+:::
+
+#### Pequenas Amostras e Variâncias Populacionais Desconhecidas
+
+O intervalo de confiança associado a um determinado nível de confiança, para a diferença entre duas médias, $\mu_1 - \mu_2$, quando se tem pequenas amostras, $n_1 < 30$ e $n_2 < 30$, e variâncias populacionais, $\sigma_{1}^2$ e $\sigma_{2}^2$, desconhecidas, pode ser determinado considerando as seguintes situações:
+
+- Variâncias Populacionais Iguais: Neste caso, para saber se as variâncias populacionais, $\sigma_{1}^2$ e $\sigma_{2}^2$, são iguais, deve-se fazer primeiro o Teste F, o qual será visto com detalhes no @sec-chap10.
+    
+Dessa forma, um intervalo de confiança de $(1 - \alpha)100,0\%$, para a diferença de médias, $\mu_1 - \mu_2$, pode ser construído utilizando a distribuição $t$, e é dado pela expressão (@eq-difmediat03).
+
+$$
+P\left[(\bar{x}_1-\bar{x}_2)-t_{\left(v;\frac{\alpha}{2}\right)}\sqrt{s_{p}^2\left(\frac{1}{n_1}+\frac{1}{n_2}\right)} < (\mu_1 - \mu_2) < \right. 
+$$ 
+$$
+\left.(\bar{x}_1-\bar{x}_2)-t_{\left(v;\frac{\alpha}{2}\right)}\sqrt{s_{p}^2\left(\frac{1}{n_1}+\frac{1}{n_2}\right)} \right]=1 - \alpha,
+$${#eq-difmediat03}
+
+em que:
+  
+  - $s_{p}^2=\frac{(n_{1}-1)s_{1}^2+(n_{2}-1)s_{2}^2}{n_{1}+n_{2}-2}$ (variância ponderada);
+  - $t_{\left(\nu; \frac{\alpha}{2}\right)}$ é o valor tabelado de $t$, para: $\nu=n_{1}+n_{2} -2$ graus de liberdade, que deixa uma probabilidade acima dele de $\frac{\alpha}{2}$.
+
+:::{#exm-suinosttest}
+Sejam:
+<center>
+$X_1:$ Peso de suínos da raça 1, em kg;
+</center>
+<center>
+$X_2:$ Peso de suínos da raça 2, em kg.
+</center>
+
+Se da população de suínos da raça 1 e da raça 2, são retiradas amostras de tamanhos: $n_1 = 10$ e $n_2 = 11$,  respectivamente, obtendo-se: $\bar{x}_{1}=112,0$ kg e $s_{1}^2=156,0$ kg$^2$; $\bar{x}_{2}=105,0$ kg e $s_{2}^2=165,0$ kg$^2$.
+
+Considerando que, $\sigma_{1}^2$ e $\sigma_{2}^2$ são iguais, construir um intervalo de confiança de 95,0\% de confiança para a diferença de médias das duas raças.
+
+Tem-se então que:
+
+- $({\bar{\text{x}}_1-\bar{\text{x}_2}})=112,0 - 105,0 = 7,0$ kg $\Rightarrow$ estimativa por ponto de $(\mu_1 - \mu_2)$;
+- $(1 - \alpha)=0,95 \Rightarrow \alpha=0,05 \Rightarrow \frac{\alpha}{2}=0,025$;
+- $s_{p}^2=\frac{(n_{1}-1)s_{1}^2+(n_{2}-1)s_{2}^2}{n_{1}+n_{2}-2}=\frac{(10-1)156,0+(11-1)165,0}{10+11-2}=160,74$ kg$^2$;
+- $v=n_{1}+n_{2} -2=10+11-2=19$ graus de liberdade.
+
+Consultando a @tab-tdist01, tem-se que o valor de $t$ que deixa uma probabilidade acima dele de 2,5\% com 19 graus de liberdade é igual a 2,0930.
+
+Logo,
+<center>
+$t_{\left(v;\frac{\alpha}{2}\right)}=t_{\left(19; 0,025\right)}=2,0930$.
+</center>
+
+Através da expressão (@eq-difmediat03), tem-se que:
+
+$$
+7,0-2,0930\sqrt{160,74\left(\frac{1}{10}+\frac{1}{11} \right)} < (\mu_1 - \mu_2) <
+$$
+$$
+7,0+2,0930\sqrt{160,74\left(\frac{1}{10}+\frac{1}{11} \right)}
+$$
+
+$$
+7,0-11,60 < (\mu_1 - \mu_2) < 7,0+11,60.
+$$
+
+Logo,
+<center>
+$\Rightarrow IC_{0,95}(\mu_1 - \mu_2)$:[-4,60 kg; 18,60 kg].
+</center>
+</br>
+Esse resultado mostra que é de 95,0\% a confiança, da verdadeira diferença dos pesos médios entre as duas raças de suínos estar entre -4,60 e 18,60 kg. Pode-se concluir que, as duas raças de suínos não diferem entre si com relação ao peso médio, pois o intervalo de confiança abrange o zero.
+:::
+
+- Variâncias Populacionais Diferentes:
+
+Neste caso, também deve-se fazer primeiro o Teste F para verificar se as variâncias são diferentes. 
+
+O intervalo de confiança de $(1 - \alpha)100,0\%$, para a diferença de médias, $\mu_1 - \mu_2$, é dado pela expressão @eq-difmediatd.
+$$
+P\left[(\bar{x}_1-\bar{x}_2)-t_{\left(v;\frac{\alpha}{2}\right)}\sqrt{\left(\frac{s_{1}^2}{n_1}+\frac{s_{2}^2}{n_2}\right)} < (\mu_1 - \mu_2) < \right.
+$$
+$$
+\left.(\bar{x}_1-\bar{x}_2)-t_{\left(v;\frac{\alpha}{2}\right)}\sqrt{\left(\frac{s_{1}^2}{n_1}+\frac{s_{2}^2}{n_2}\right)} \right]=1 - \alpha,
+$$ {#eq-difmediatd}
+em que: $t_{\left(\nu; \frac{\alpha}{2}\right)}$ é o valor tabelado de $t$ com $\nu$ graus de liberdade que deixa uma probabilidade acima dele de $\frac{\alpha}{2}$, sendo "$\nu$" dado pela expressão (@eq-Satterthwaite02).
+
+$$
+ \nu=\frac{\left(\frac{s_{1}^2}{n_1}+\frac{s_{2}^2}{n_2}\right)^2}{\frac{\left(\frac{s_{1}^2}{n_1}\right)^2}{n_{1}-1}+\frac{\left(\frac{s_{2}^2}{n_2}\right)^2}{n_{2}-1}},
+$${#eq-Satterthwaite02}
+conhecida como Fórmula de Satterthwaite.
+
+
+:::{#exm-duasracas}
+Considerando o @exm-suinosttest, e supondo que $\sigma_{1}^2$ e $\sigma_{2}^2$ sejam estatisticamente diferentes, construir um intervalo de confiança de 95,0\% de confiança para a diferença de médias das duas raças.
+
+Assim, tem-se que:
+
+- $({\bar{\text{x}}_1-\bar{\text{x}_2}})=112,0 - 105,0 = 7,0$ kg $\Rightarrow$ estimativa por ponto de $(\mu_1 - \mu_2)$;
+- $(1 - \alpha)=0,95 \Rightarrow \alpha=0,05 \Rightarrow \frac{\alpha}{2}=0,025$;
+- $\nu=\frac{\left(\frac{156,0}{10}+\frac{165,0}{11}\right)^2}{\frac{\left(\frac{156,0}{10}\right)^2}{10-1}+\frac{\left(\frac{165,0}{11}\right)^2}{11-1}}=19$ graus de liberdade.
+
+
+Consultando a @tab-tdist01, tem-se que o valor de $t$ que deixa uma probabilidade acima dele de 2,5\% com 19 graus de liberdade é igual a 2,0930. Logo,
+<center>
+$t_{\left(v;\frac{\alpha}{2}\right)}=t_{(19; 0,025)}=2,0930$.
+</center>
+</br>
+Através de (@eq-difmediatd), tem-se que:
+
+$$
+7,0-2,0930\sqrt{\left(\frac{156,0}{10}+\frac{165,0}{11} \right)} < (\mu_1 - \mu_2) <
+$$
+$$
+7,0+2,0930\sqrt{\left(\frac{156,0}{10}+\frac{165,0}{11} \right)}
+$$
+
+\begin{center}
+    $7,0-11,58 < (\mu_1 - \mu_2) < 7,0+11,58$.
+\end{center}
+
+Logo,
+<center>
+    $\Rightarrow IC_{0,95}(\mu_1 - \mu_2)$:[-4,58 kg; 18,58 kg].
+</center>
+</br>
+Esse resultado mostra que é de 95,0\% a confiança, da verdadeira diferença dos pesos médios entre as duas raças de suínos estar entre -4,58 e 18,58 kg. Pode-se concluir que, as duas raças de suínos não diferem entre si com relação ao peso médio, pois o intervalo de confiança abrange o zero.
+:::
+
+### Intervalo de Confiança para a Média em Amostras Dependentes
+
+A análise em amostras dependentes é apropriada quando a variável é medida antes e depois, por exemplo, peso de suínos antes e depois de serem submetidos a uma dieta com uma ração especial. 
+

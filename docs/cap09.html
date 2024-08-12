@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Estatística Básica aplicada às Ciências Agrárias - 9&nbsp; Teoria da Estimação</title>
+<title>9&nbsp; Teoria da Estimação – Estatística Básica aplicada às Ciências Agrárias</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -67,7 +68,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Nenhum resultado",
     "search-matching-documents-text": "documentos correspondentes",
@@ -76,13 +83,44 @@ div.csl-indent {
     "search-more-match-text": "mais correspondência neste documento",
     "search-more-matches-text": "mais correspondências neste documento",
     "search-clear-button-title": "Limpar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Procurar"
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="custom.scss">
 </head>
 
 <body class="nav-sidebar floating">
@@ -91,13 +129,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap09.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Teoria da Estimação</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap09.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Teoria da Estimação</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -106,7 +144,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Estatística Básica aplicada às Ciências Agrárias</a> 
@@ -200,6 +238,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./tabelas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tabelas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Referências</span></a>
   </div>
@@ -207,10 +251,33 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><span class="header-section-number">9.1</span> Introdução</a></li>
+  <li><a href="#conceitos-básicos" id="toc-conceitos-básicos" class="nav-link" data-scroll-target="#conceitos-básicos"><span class="header-section-number">9.2</span> Conceitos Básicos</a>
+  <ul class="collapse">
+  <li><a href="#parâmetro" id="toc-parâmetro" class="nav-link" data-scroll-target="#parâmetro"><span class="header-section-number">9.2.1</span> Parâmetro</a></li>
+  <li><a href="#estimador" id="toc-estimador" class="nav-link" data-scroll-target="#estimador"><span class="header-section-number">9.2.2</span> Estimador</a></li>
+  <li><a href="#estimativa" id="toc-estimativa" class="nav-link" data-scroll-target="#estimativa"><span class="header-section-number">9.2.3</span> Estimativa</a></li>
+  </ul></li>
+  <li><a href="#tipos-de-estimativas" id="toc-tipos-de-estimativas" class="nav-link" data-scroll-target="#tipos-de-estimativas"><span class="header-section-number">9.3</span> Tipos de Estimativas</a></li>
+  <li><a href="#métodos-de-estimação-pontual" id="toc-métodos-de-estimação-pontual" class="nav-link" data-scroll-target="#métodos-de-estimação-pontual"><span class="header-section-number">9.4</span> Métodos de Estimação Pontual</a></li>
+  <li><a href="#propriedades-dos-estimadores-pontuais" id="toc-propriedades-dos-estimadores-pontuais" class="nav-link" data-scroll-target="#propriedades-dos-estimadores-pontuais"><span class="header-section-number">9.5</span> Propriedades dos Estimadores Pontuais</a></li>
+  <li><a href="#estimação-por-intervalo" id="toc-estimação-por-intervalo" class="nav-link" data-scroll-target="#estimação-por-intervalo"><span class="header-section-number">9.6</span> Estimação por intervalo</a></li>
+  <li><a href="#construção-de-intervalos-de-confiança" id="toc-construção-de-intervalos-de-confiança" class="nav-link" data-scroll-target="#construção-de-intervalos-de-confiança"><span class="header-section-number">9.7</span> Construção de Intervalos de Confiança</a>
+  <ul class="collapse">
+  <li><a href="#intervalo-de-confiança-para-a-média-de-uma-distribuição-normal" id="toc-intervalo-de-confiança-para-a-média-de-uma-distribuição-normal" class="nav-link" data-scroll-target="#intervalo-de-confiança-para-a-média-de-uma-distribuição-normal"><span class="header-section-number">9.7.1</span> Intervalo de Confiança para a Média de uma Distribuição Normal</a></li>
+  <li><a href="#grandes-amostras-ou-variância-populacional-conhecida" id="toc-grandes-amostras-ou-variância-populacional-conhecida" class="nav-link" data-scroll-target="#grandes-amostras-ou-variância-populacional-conhecida"><span class="header-section-number">9.7.2</span> Grandes Amostras ou Variância Populacional Conhecida</a></li>
+  <li><a href="#intervalo-de-confiança-para-a-diferença-entre-duas-médias-independentes" id="toc-intervalo-de-confiança-para-a-diferença-entre-duas-médias-independentes" class="nav-link" data-scroll-target="#intervalo-de-confiança-para-a-diferença-entre-duas-médias-independentes"><span class="header-section-number">9.7.3</span> Intervalo de Confiança para a Diferença entre duas Médias Independentes</a></li>
+  <li><a href="#intervalo-de-confiança-para-a-média-em-amostras-dependentes" id="toc-intervalo-de-confiança-para-a-média-em-amostras-dependentes" class="nav-link" data-scroll-target="#intervalo-de-confiança-para-a-média-em-amostras-dependentes"><span class="header-section-number">9.7.4</span> Intervalo de Confiança para a Média em Amostras Dependentes</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -230,11 +297,502 @@ div.csl-indent {
   </div>
   
 
+
 </header>
 
 
+<section id="introdução" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">9.1</span> Introdução</h2>
+<p>Toda população é descrita por um certo modelo probabilístico <span class="math inline">\(f(x | \theta)\)</span>, com parâmetro(s) <span class="math inline">\(\theta\)</span> desconhecido(s), e o interesse é obter algum tipo de informação acerca desse(s) parâmetro(s). O que se dispõe é de uma amostra, ou seja, de partes de elementos da população. A partir de uma amostra aleatória é possível obter aproximações numéricas para o(s) parâmetro(s) <span class="math inline">\(\theta\)</span> do modelo, e esse processo é chamado estimação. Assim, um dos objetivos da Estatística é obter informações sobre os parâmetros populacionais através das estimativas amostrais.</p>
+</section>
+<section id="conceitos-básicos" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="conceitos-básicos"><span class="header-section-number">9.2</span> Conceitos Básicos</h2>
+<p>Para formalizar as ideias que serão apresentadas alguns conceitos são úteis.</p>
+<section id="parâmetro" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="parâmetro"><span class="header-section-number">9.2.1</span> Parâmetro</h3>
+<p>Um parâmetro é um valor desconhecido associado a uma característica da população, e em geral representado por letras gregas.</p>
+<div id="exm-par" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9.1</strong></span> A média <span class="math inline">\(\mu\)</span> e a variância <span class="math inline">\(\sigma^2\)</span> de uma população são parâmetros.</p>
+</div>
+</section>
+<section id="estimador" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="estimador"><span class="header-section-number">9.2.2</span> Estimador</h3>
+<p>O estimador é a função ou expressão algébrica que estima o valor de um parâmetro populacional, baseando-se nas observações de uma amostra aleatória.</p>
+<div id="exm-estimador" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9.2</strong></span> &nbsp;</p>
+<ul>
+<li><span class="math inline">\(\bar{x}=\frac{\sum_{i=1}^{n}x_i}{n}\)</span> é um estimador da média populacional <span class="math inline">\(\mu\)</span>;</li>
+<li><span class="math inline">\(s^2=\frac{\sum_{i=1}^{n}x_i^2-\frac{\left(\sum_{i=1}^{n}x_i\right)^2}{n}}{n-1}\)</span> é um estimador da variância populacional <span class="math inline">\(\sigma^2\)</span>.</li>
+</ul>
+</div>
+</section>
+<section id="estimativa" class="level3" data-number="9.2.3">
+<h3 data-number="9.2.3" class="anchored" data-anchor-id="estimativa"><span class="header-section-number">9.2.3</span> Estimativa</h3>
+<p>Uma estimativa é uma aproximação numérica para um parâmetro associado a um modelo probabilístico, ou seja, é o valor obtido pelo estimador numa determinada amostra aleatória.</p>
+<div id="exm-estimativa" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9.3</strong></span> Numa certa variedade de milho tem-se uma estimativa da altura média desta variedade, dada por:</p>
+<p><span class="math display">\[
+\bar{x}=200,0~\textrm{cm}.
+\]</span></p>
+</div>
+</section>
+</section>
+<section id="tipos-de-estimativas" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="tipos-de-estimativas"><span class="header-section-number">9.3</span> Tipos de Estimativas</h2>
+<p>Basicamente existem dois processos de estimação. O primeiro deles é a chamada estimação pontual, pela qual um valor numérico é obtido através de um estimador, como sendo uma aproximação numérica para o parâmetro populacional.</p>
+<div id="exm-tipoest" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9.4</strong></span> Numa amostra aleatória de n elementos os valores de <span class="math inline">\(\bar{x}\)</span> e <span class="math inline">\(s^2\)</span> estimam <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma^2\)</span>, respectivamente, por ponto.</p>
+</div>
+<div id="exm-tipoest2" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9.5</strong></span> Seja uma amostra de 40 plantas de uma variedade de milho, em que a variável altura, apresentou uma média de <span class="math inline">\(200,0\)</span> cm e um desvio padrão de <span class="math inline">\(10,0\)</span> cm.</p>
+<p>Nesta amostra a média amostral, <span class="math inline">\(\bar{x}=200,0\)</span> cm, é uma estimativa por ponto da média populacional <span class="math inline">\(\mu\)</span>, e o desvio padrão amostral, <span class="math inline">\(s = 10,0\)</span> cm, é uma estimativa por ponto do desvio padrão populacional <span class="math inline">\(\sigma\)</span>.</p>
+</div>
+<p>O segundo processo de estimação é a estimação por intervalo, no qual algum tipo de intervalo é construído, de tal maneira que se possa atribuir probabilidades de que o valor real do parâmetro esteja ali contido. Neste caso, o parâmetro populacional é estimado por dois valores, obtidos através de cálculos com os dados amostrais, que formam um intervalo, dentro do qual se espera encontrar o verdadeiro valor do parâmetro. A vantagem desse processo é que mostra a precisão da estimativa.</p>
+<div id="exm-tipoest3" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9.6</strong></span> Considerando o exemplo anterior tem-se que a expressão: <span class="math display">\[
+IC_{95,0\%}(\mu):~[196,90~\textrm{cm};~ 203,10~\textrm{cm}],
+\]</span> é uma estimativa por intervalo para <span class="math inline">\(\mu\)</span> com uma confiança de 95,0% e um erro de 3,10 cm.</p>
+</div>
+<p>Assim, a associação entre estimativas pontuais acerca de um parâmetro populacional, e o conhecimento de probabilidades de que o parâmetro esteja contido em certos intervalos, possibilitará, em geral, promover uma inferência informativa a respeito do parâmetro desconhecido.</p>
+</section>
+<section id="métodos-de-estimação-pontual" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="métodos-de-estimação-pontual"><span class="header-section-number">9.4</span> Métodos de Estimação Pontual</h2>
+<p>Os métodos de obtenção de estimativas pontuais, os quais não serão discutidos em detalhes aqui, são:</p>
+<ul>
+<li>Método dos Momentos;</li>
+<li>Método dos Quadrados Mínimos;</li>
+<li>Método da Máxima Verossimilhança.</li>
+</ul>
+</section>
+<section id="propriedades-dos-estimadores-pontuais" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="propriedades-dos-estimadores-pontuais"><span class="header-section-number">9.5</span> Propriedades dos Estimadores Pontuais</h2>
+<p>Em função da existência de vários métodos para estimação de parâmetros, é importante analisar algumas propriedades dos estimadores, que possa auxiliar na escolha de um estimador para um parâmetro em particular. Essas propriedades são:</p>
+<ol type="i">
+<li>Vício: Um estimador <span class="math inline">\(\hat{\theta}\)</span> de um parâmetro <span class="math inline">\(\theta\)</span> é não viciado, ou não tendencioso, ou não viesado, se: <span class="math display">\[
+E(\hat{\theta})=\theta.
+\]</span></li>
+</ol>
+<div id="exm-vies" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9.7</strong></span> A média amostral, <span class="math inline">\(\bar{x} = \sum_{i = 1}^{n}x_i / n\)</span>, é um estimador não viciado da média populacional <span class="math inline">\(\mu\)</span>, pois pode-se provar que:</p>
+<p><span class="math display">\[
+E(\bar{x})=\mu.
+\]</span></p>
+</div>
+<p>Ou seja, um estimador é não viciado se o seu valor esperado coincide com o parâmetro de interesse.</p>
+<div id="exm-vies2" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9.8</strong></span> A variância amostral, <span class="math inline">\(\hat{\sigma}^2 = \sum_{i = 1}^{n}(x_i - \bar{x})^2 / n\)</span>, é um estimador viciado para <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Pode ser demonstrado que:</p>
+<p><span class="math display">\[
+E(\hat{\sigma}^2)=\left(\frac{n-1}{n}\right) \sigma^2.
+\]</span></p>
+<p>Por outro lado tem-se que: <span class="math display">\[
+E\left(\frac{n}{n-1}\hat{\sigma}^2\right)=\sigma^2
+\]</span> Note que:</p>
+<p><span class="math display">\[
+\left(\frac{n}{n-1}\hat{\sigma}^2\right)=\left(\frac{n}{n-1}\right)\frac{\sum_{i=1}^{n}\left(x_i- \bar{x} \right)^2}{n}=\frac{1}{n-1}\sum_{i=1}^{n}\left(x_i- \bar{x} \right)^2=s^2.
+\]</span></p>
+<p>Logo, <span class="math inline">\(s^2\)</span> é um estimador não viciado para <span class="math inline">\(\sigma^2\)</span>.</p>
+</div>
+<ol start="2" type="i">
+<li>Consistência: Um estimador <span class="math inline">\(\hat{\theta}\)</span> é consistente se à medida que o tamanho n da amostra aumenta, seu valor esperado converge para o parâmetro de interesse, e sua variância converge para zero. Ou seja, <span class="math inline">\(\hat{\theta}\)</span> é consistente se as duas propriedades são satisfeitas:</li>
+</ol>
+<ul>
+<li><span class="math inline">\(\lim_{n \to \infty} E(\hat{\theta}) = \theta\)</span>;</li>
+<li><span class="math inline">\(\lim_{n \to \infty} V(\hat{\theta}) = 0\)</span>.</li>
+</ul>
+<ol start="3" type="i">
+<li>Eficiência: Dados dois estimadores <span class="math inline">\(\hat{\theta}_1\)</span> e <span class="math inline">\(\hat{\theta}_2\)</span>, não viciados para um parâmetro <span class="math inline">\(\theta\)</span>, diz-se que <span class="math inline">\(\hat{\theta}_1\)</span> é mais eficiente que <span class="math inline">\(\hat{\theta}_2\)</span> se: <span class="math inline">\(V(\hat{\theta}_1)\)</span> &lt; <span class="math inline">\(V(\hat{\theta}_2)\)</span>. Isto é, dentre todos os estimadores não viciados de um parâmetro <span class="math inline">\(\theta\)</span>, aquele que tiver menor variância é o estimador mais eficiente de <span class="math inline">\(\theta\)</span>.</li>
+</ol>
+<div id="exm-efcia" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9.9</strong></span> Numa amostra a média amostral <span class="math inline">\(\bar{x}\)</span> é um estimador mais eficiente da média populacional <span class="math inline">\(\mu\)</span> que a mediana <span class="math inline">\(md\)</span>, pois pode-se provar que: <span class="math display">\[
+V(\bar{x})=\frac{\sigma^2}{n}~\textrm{e}~ V(md)=\frac{\pi}{2}\times \frac{\sigma^2}{n}.
+\]</span></p>
+<p>Logo <span class="math inline">\(V(\bar{\text{x}}) &lt; V(md)\)</span>.</p>
+</div>
+<p>No caso de uma estimativa por intervalo, o comprimento do intervalo de confiança dá uma idéia da eficiência da estimativa.</p>
+</section>
+<section id="estimação-por-intervalo" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="estimação-por-intervalo"><span class="header-section-number">9.6</span> Estimação por intervalo</h2>
+<p>Os estimadores pontuais fornecem como estimativa um único valor numérico para o parâmetro <span class="math inline">\(\theta\)</span> de interesse, associado ao modelo probabilístico <span class="math inline">\(f(x | \theta)\)</span>. A inferência pode e deve ser complementada, sempre que possível, com pressuposições acerca de probabilidades de <span class="math inline">\(\theta\)</span> estarem próximos ou não de suas estimativas pontuais. Por serem variáveis aleatórias, os estimadores possuem uma distribuição de probabilidade, e levando este fato em consideração, pode-se apresentar uma estimativa mais informativa para o parâmetro de interesse, que inclua uma medida de precisão do valor obtido. Este método de estimação, denominado estimação por intervalo, incorpora à estimativa pontual do parâmetro, informações a respeito de sua variabilidade, permitindo a construção de intervalos com probabilidades conhecidas de que o valor paramétrico esteja contido nesse intervalo.</p>
+<p>Assim, intervalos de confiança são obtidos através da distribuição amostral de seus estimadores.</p>
+<p>Seja <span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(x_n\)</span> uma amostra aleatória coletada numa população descrita pelo modelo probabilístico <span class="math inline">\(f(x | \theta)\)</span>. Sejam <span class="math inline">\(T_1(x)\)</span> e <span class="math inline">\(T_2(x)\)</span> duas estatísticas que satisfaçam: <span class="math inline">\(T_1(x) &lt; T_2(x)\)</span>, e também que: <span class="math inline">\(P[T_1(x) &lt; \theta &lt; T_2(x)]=1 - \alpha\)</span>.</p>
+<p>O intervalo aleatório: <span class="math inline">\([T_1(x); T_2(x)]\)</span> é chamado de intervalo de confiança para <span class="math inline">\(\theta\)</span> com <span class="math inline">\((1 - \alpha)100,0\%\)</span> de probabilidade. A probabilidade <span class="math inline">\((1 - \alpha)\)</span> é chamada coeficiente de confiança do intervalo. O comprimento do intervalo de confiança é dado por: <span class="math display">\[\begin{align*}
+    L(x)=T_2(x) - T_1(x).
+\end{align*}\]</span></p>
+<p>Logo, a construção de intervalos de confiança consiste na obtenção de <span class="math inline">\(T_1(x)\)</span> e <span class="math inline">\(T_2(x)\)</span>.</p>
+</section>
+<section id="construção-de-intervalos-de-confiança" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="construção-de-intervalos-de-confiança"><span class="header-section-number">9.7</span> Construção de Intervalos de Confiança</h2>
+<p>Basicamente os intervalos de confiança podem ser construídos utilizando a distribuição de quantidades pivotais.</p>
+<p>Considere uma amostra aleatória <span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(x_n\)</span> de uma população descrita pelo modelo probabilístico <span class="math inline">\(f(x | \theta)\)</span>. Uma função <span class="math inline">\(g(x; \theta)\)</span>, cuja distribuição não dependa de <span class="math inline">\(\theta\)</span>, é chamada de quantidade pivotal.</p>
+<div id="exm-estint" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9.10</strong></span> Considere um modelo probabilístico correspondente a uma distribuição normal de média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>. Seja, <span class="math display">\[
+Z=\frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}}.
+\]</span></p>
+<p>Neste caso é <span class="math inline">\(Z\)</span> uma quantidade pivotal, pois <span class="math inline">\(Z\)</span> é uma variável aleatória com distribuição normal padronizada, ou seja, <span class="math inline">\(Z\sim N(0,0; 1,0)\)</span>, e não depende de <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma^2\)</span>.</p>
+</div>
+<p>Nas próximas seções, serão utilizados as distribuições de probabilidades e resultados, vistos no <a href="cap08.html" class="quarto-xref"><span>Capítulo 8</span></a>, para a construção de intervalos de confiança para parâmetros populacionais de interesse.</p>
+<section id="intervalo-de-confiança-para-a-média-de-uma-distribuição-normal" class="level3" data-number="9.7.1">
+<h3 data-number="9.7.1" class="anchored" data-anchor-id="intervalo-de-confiança-para-a-média-de-uma-distribuição-normal"><span class="header-section-number">9.7.1</span> Intervalo de Confiança para a Média de uma Distribuição Normal</h3>
+<p>A média estimada a partir de uma amostra aleatória, é apenas uma estimativa por ponto da verdadeira média populacional <span class="math inline">\(\mu\)</span>. A média verdadeira é um parâmetro que na grande maioria das vezes é desconhecida. Entretanto, a partir do conhecimento das distribuições teóricas de <span class="math inline">\(Z\)</span> e <span class="math inline">\(t\)</span>, pode-se construir um intervalo que deve conter a verdadeira média populacional <span class="math inline">\(\mu\)</span>.</p>
+<p>Para a construção do intervalo de confiança para a média, tem-se as seguintes situações, descritas a seguir.</p>
+</section>
+<section id="grandes-amostras-ou-variância-populacional-conhecida" class="level3" data-number="9.7.2">
+<h3 data-number="9.7.2" class="anchored" data-anchor-id="grandes-amostras-ou-variância-populacional-conhecida"><span class="header-section-number">9.7.2</span> Grandes Amostras ou Variância Populacional Conhecida</h3>
+<p>O intervalo de confiança associado a um determinado nível de confiança, para a média populacional <span class="math inline">\(\mu\)</span>, quando se tem grandes amostras <span class="math inline">\((n\geq 30)\)</span>, ou variância populacional <span class="math inline">\(\sigma^2\)</span> conhecida, pode ser deduzido da seguinte forma.</p>
+<p>Foi visto no capítulo anterior de acordo com o teorema central do limite que: <span class="math display">\[
+\bar{\text{x}} \sim N\left(\mu, \frac{\sigma^2}{n} \right)
+\]</span></p>
+<p>Logo, na distribuição de <span class="math inline">\(\bar{x}\)</span> o valor de <span class="math inline">\(Z\)</span> é obtido por: <span id="eq-qpvt"><span class="math display">\[
+Z=\frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}},
+\tag{9.1}\]</span></span> em que <span class="math inline">\(Z \sim N(0,0; 1,0)\)</span>.</p>
+<p>Na distribuição de <span class="math inline">\(\bar{x}\)</span> pode-se esquematizar uma probabilidade de <span class="math inline">\((1 - \alpha)\)</span>, conforme <a href="#fig-cimedianormal" class="quarto-xref">Figura&nbsp;<span>9.1</span></a>.</p>
+<div id="fig-cimedianormal" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cimedianormal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/cimedianormal01.png" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cimedianormal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;9.1: Área correspondente a probabilidade <span class="math inline">\(P(-Z_{\alpha/2} &lt; Z &lt; Z_{\alpha/2})\)</span>.
+</figcaption>
+</figure>
+</div>
+<p>Logo, <span id="eq-intconfmedia"><span class="math display">\[
+P\left[-Z_\frac{\alpha}{2} &lt; Z &lt; Z_\frac{\alpha}{2} \right]=1 - \alpha.
+\tag{9.2}\]</span></span></p>
+<p>Substituindo (<a href="#eq-qpvt" class="quarto-xref"><span>9.1</span></a>) em (<a href="#eq-intconfmedia" class="quarto-xref"><span>9.2</span></a>), tem-se: <span class="math display">\[
+P\left[-Z_\frac{\alpha}{2} &lt; \frac{\bar{\text{x}}-\mu}{\frac{\sigma}{\sqrt{n}}} &lt; Z_\frac{\alpha}{2} \right]=1 - \alpha.
+\]</span></p>
+<p>Multiplicando cada termo da desigualdade por: <span class="math inline">\(\frac{\sigma}{\sqrt{n}}\)</span>, obtém-se: <span class="math display">\[
+P\left[-Z_\frac{\alpha}{2}\times\frac{\sigma}{\sqrt{n}} &lt; \bar{\text{x}}-\mu &lt; Z_\frac{\alpha}{2}\times \frac{\sigma}{\sqrt{n}} \right]=1 - \alpha.
+\]</span></p>
+<p>Subtraindo <span class="math inline">\(\bar{x}\)</span> de cada termo da desigualdade a expressão fica: <span class="math display">\[
+P\left[-\bar{\text{x}}-Z_\frac{\alpha}{2}\times\frac{\sigma}{\sqrt{n}} &lt; -\mu &lt; -\bar{\text{x}}+Z_\frac{\alpha}{2}\times\frac{\sigma}{\sqrt{n}} \right]=1 - \alpha.
+\]</span></p>
+<p>Multiplicando cada termo da desigualdade por (-1), tem-se: <span class="math display">\[
+P\left[\bar{\text{x}}+Z_\frac{\alpha}{2}\times\frac{\sigma}{\sqrt{n}} &gt; \mu &gt; \bar{\text{x}}-Z_\frac{\alpha}{2}\times\frac{\sigma}{\sqrt{n}} \right]=1 - \alpha.
+\]</span></p>
+<p>Invertendo os extremos do intervalo obtém-se a expressão (<a href="#eq-icmedgra" class="quarto-xref"><span>9.3</span></a>), para a construção do intervalo de confiança para <span class="math inline">\(\mu\)</span> com <span class="math inline">\((1 - \alpha)100,0\%\)</span> de probabilidade. <span id="eq-icmedgra"><span class="math display">\[
+P\left[\bar{x}-Z_\frac{\alpha}{2}\times\frac{\sigma}{\sqrt{n}} &lt; \mu &lt; \bar{x}+Z_\frac{\alpha}{2}\times\frac{\sigma}{\sqrt{n}} \right]=1 - \alpha,
+\tag{9.3}\]</span></span> em que:</p>
+<ul>
+<li><span class="math inline">\(\bar{x} \pm Z_\frac{\alpha}{2}\times\frac{\sigma}{\sqrt{n}}\)</span> são os limites de confiança;</li>
+<li><span class="math inline">\((1 - \alpha)100,0\%\)</span> é o grau ou nível de confiança.</li>
+</ul>
+<p>A representação gráfica de (<a href="#eq-icmedgra" class="quarto-xref"><span>9.3</span></a>) pode ser observada na <a href="#fig-cimedianormal02" class="quarto-xref">Figura&nbsp;<span>9.2</span></a>.</p>
+<div id="fig-cimedianormal02" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cimedianormal02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/cimedianormal02.png" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cimedianormal02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;9.2: Região do estimador intervalar para <span class="math inline">\(\mu\)</span> de uma população normal.
+</figcaption>
+</figure>
+</div>
+<p>Não conhecendo-se o valor de <span class="math inline">\(\sigma\)</span> (desvio padrão populacional), pode-se usar o valor de <span class="math inline">\(s\)</span> (desvio padrão amostral), desde que <span class="math inline">\(n\geq 30\)</span>.</p>
+<div id="exm-icmedia" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9.11</strong></span> Seja uma amostra de 40 plantas de uma variedade de milho, em que a variável altura, apresentou uma média de 200,0 cm e variância de 100,0 cm<span class="math inline">\(^2\)</span>. Construir um intervalo de confiança de 95,0% para a média populacional <span class="math inline">\(\mu\)</span>. Neste caso, não se conhece a variância populacional <span class="math inline">\(\sigma^2\)</span>, e sim, a variância amostral <span class="math inline">\(s^2\)</span>. Como o tamanho da amostra é n = 40, considera-se razoável a utilização do desvio padrão amostral. Para construir um intervalo de confiança de 95,0% para a média populacional <span class="math inline">\(\mu\)</span>, tem-se:</p>
+<ul>
+<li><span class="math inline">\(n=40\)</span>;</li>
+<li><span class="math inline">\(\bar{\text{x}}=200,0\)</span> cm;</li>
+<li><span class="math inline">\(s^2=100,0\)</span> cm<span class="math inline">\(^2 \Rightarrow s=\sqrt{100,0}=10,0\)</span> cm;</li>
+<li><span class="math inline">\((1 - \alpha)=0,95 \Rightarrow \alpha=0,05 \Rightarrow \frac{\alpha}{2}=0,025\)</span>. <span class="math display">\[
+Z_\frac{\alpha}{2}=Z_{0,025}=?
+\]</span></li>
+</ul>
+<p>Consultando a <a href="tabelas.html#tab-normal01" class="quarto-xref">Tabela A&nbsp;<span>1</span></a>, tem-se que o valor de Z que deixa uma probabilidade acima dele de 0,025 é igual a 1,96. Dentro do corpo da tabela consulta-se o valor referente a 0,025, conforme esquema abaixo.</p>
+<center>
+<img src="images/tabZ01.png" class="img-fluid">
+</center>
+<p>Logo, <span class="math display">\[
+Z_{0,025}=1,96.
+\]</span></p>
+<p>Através da expressão (<a href="#eq-icmedgra" class="quarto-xref"><span>9.3</span></a>), tem-se que: <span class="math display">\[
+200,0-1,96\frac{10}{\sqrt{40}} &lt; \mu &lt; 200,0+1,96\frac{10}{\sqrt{40}}
+\]</span> <span class="math display">\[
+200,0 - 3,10 &lt; \mu &lt; 200,0 + 3,10
+\]</span> <span class="math display">\[
+\Rightarrow IC_{0,95}(\mu): [196,90~\textrm{cm}; 203,10~\textrm{cm}].
+\]</span></p>
+<p>Esse resultado mostra que é de 95,0% a confiança, da verdadeira altura média das plantas de milho estar entre 196,90 e 203,10 cm. Do ponto de vista de amostragem isto quer dizer que, se forem retiradas várias amostras aleatórias dentro desta população, calculando-se os valores de <span class="math inline">\(\bar{x}\)</span> e <span class="math inline">\(s\)</span> para cada amostra, e construindo o intervalo de confiança para <span class="math inline">\(\mu\)</span> em cada amostra, 95,0% dos intervalos conterão em seu interior o verdadeiro valor da média populacional <span class="math inline">\(\mu\)</span>.</p>
+</div>
+<div id="exm-icmedia02" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9.12</strong></span> Considerando o <a href="#exm-icmedia" class="quarto-xref">Exemplo&nbsp;<span>9.11</span></a>, construir um intervalo de confiança de 99,0% para a média populacional <span class="math inline">\(\mu\)</span>.</p>
+<p>Assim, tem-se: <span class="math display">\[
+(1 - \alpha)=0,99 \Rightarrow \alpha=0,01 \Rightarrow \frac{\alpha}{2}=0,005.
+\]</span> <span class="math display">\[
+Z_\frac{\alpha}{2}=Z_{0,005}=?
+\]</span></p>
+<p>Consultando a <a href="tabelas.html#tab-normal01" class="quarto-xref">Tabela A&nbsp;<span>1</span></a>, o valor de Z que deixa uma probabilidade acima dele de 0,005 (média de 0,0051 e 0,0049) é igual a 2,575 ( média de 2,57 e 2,58). Dentro do corpo da tabela consulta-se o valor referente a 0,005 ou mais próximo, conforme esquema abaixo:</p>
+<center>
+<img src="images/tabZ02.png" class="img-fluid" style="width:80.0%">
+</center>
+<p>Logo, <span class="math display">\[
+Z_{0,005}=2,575.
+\]</span> Através da expressão (<a href="#eq-icmedgra" class="quarto-xref"><span>9.3</span></a>), tem-se que: <span class="math display">\[
+200,0-2,575\frac{10}{\sqrt{40}} &lt; \mu &lt; 200,0+2,575\frac{10}{\sqrt{40}}
+\]</span> <span class="math display">\[
+200,0 - 4,07 &lt; \mu &lt; 200,0 + 4,07
+\]</span> <span class="math display">\[
+\Rightarrow IC_{0,99}(\mu): [195,93~\textrm{cm}; 204,07~\textrm{cm}].
+\]</span></p>
+<p>Esse resultado mostra que é de 99,0% a confiança, da verdadeira altura média das plantas de milho estar entre 195,93 e 204,07 cm.</p>
+</div>
+<p>O erro da estimativa é dado pela expressão (<a href="#eq-erroic" class="quarto-xref"><span>9.4</span></a>). <span id="eq-erroic"><span class="math display">\[
+e=\bar{\text{x}} - \mu.
+\tag{9.4}\]</span></span></p>
+<p>O erro máximo da estimativa na construção do intervalo de confiança é dado pela expressão (<a href="#eq-erromax" class="quarto-xref"><span>9.5</span></a>). <span id="eq-erromax"><span class="math display">\[
+e=Z_\frac{\alpha}{2}\frac{\sigma}{\sqrt{n}}.
+\tag{9.5}\]</span></span></p>
+<div id="exm-icmedia03" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9.13</strong></span> Nos Exemplos <a href="#exm-icmedia" class="quarto-xref"><span>9.11</span></a> e <a href="#exm-icmedia02" class="quarto-xref"><span>9.12</span></a>, tem-se que:</p>
+<ul>
+<li><span class="math inline">\(\alpha=5,0\%=0,05 \Rightarrow e=3,10\)</span> cm, ou seja, com 95,0% de confiança, a média, <span class="math inline">\(\bar{\text{x}}=200,0\)</span> cm, estima a média populacional <span class="math inline">\(\mu\)</span> com um erro máximo de 3,10 cm;</li>
+<li><span class="math inline">\(\alpha=1,0\%=0,01 \Rightarrow e=4,07\)</span> cm, ou seja, com 99,0% de confiança, a média, <span class="math inline">\(\bar{\text{x}}=200,0\)</span> cm, estima a média populacional <span class="math inline">\(\mu\)</span> com um erro máximo de 4,07 cm.</li>
+</ul>
+<p>As consequências da redução de <span class="math inline">\(\alpha\)</span> são: - O coeficiente de confiança <span class="math inline">\((1 - \alpha)100,0\%\)</span> aumenta: <span class="math display">\[
+95,0\% \Rightarrow 99,0\%.
+\]</span></p>
+<ul>
+<li>O erro da estimativa aumenta:</li>
+</ul>
+<p><span class="math display">\[
+3,10~\textrm{cm}~\Rightarrow~4,07~\textrm{cm}.
+\]</span></p>
+<ul>
+<li>O comprimento do intervalo de confiança aumenta: <span class="math display">\[
+[196,9~\textrm{cm};~203,10~\textrm{cm}]~\Rightarrow~ [195,93~\textrm{cm};~204,07~\textrm{cm}].
+\]</span></li>
+</ul>
+<p>Tem-se que, a única forma de aumentar a confiança e reduzir o comprimento do intervalo, simultaneamente, é aumentando o tamanho da amostra.</p>
+</div>
+<p>A partir do intervalo de confiança para a média <span class="math inline">\(\mu\)</span>, pode-se dimensionar o tamanho da amostra estatisticamente para estimar a média <span class="math inline">\(\mu\)</span>.</p>
+<p>Na abordagem estatística considerada para determinar o tamanho da amostra, o nível de precisão e o erro da estimativa são especificados antecipadamente.</p>
+<p>A expressão do erro máximo é dada por. <span id="eq-erromax02"><span class="math display">\[
+e=Z_\frac{\alpha}{2}\frac{\sigma}{\sqrt{n}}.
+\tag{9.6}\]</span></span></p>
+<p>Isolando <span class="math inline">\(n\)</span> em (<a href="#eq-erromax02" class="quarto-xref"><span>9.6</span></a>), obtém-se a expressão (<a href="#eq-tamamo" class="quarto-xref"><span>9.7</span></a>) para dimensionar o tamanho da amostra estatisticamente. <span id="eq-tamamo"><span class="math display">\[
+n=\left(\frac{Z_\frac{\alpha}{2}\sigma}{e} \right)^2.
+\tag{9.7}\]</span></span></p>
+<div id="exm-icmedia04" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9.14</strong></span> No <a href="#exm-icmedia" class="quarto-xref">Exemplo&nbsp;<span>9.11</span></a>, tem-se que:</p>
+<ul>
+<li>n=40;</li>
+<li><span class="math inline">\(\bar{\text{x}}=200,0\)</span> cm;</li>
+<li><span class="math inline">\(s=10,0\)</span> cm;</li>
+<li><span class="math inline">\(\alpha=5,0\%=0,05\)</span>;</li>
+<li><span class="math inline">\(e=3,10\)</span> cm.</li>
+</ul>
+<p>Quantas plantas deverão ser examinadas num próximo estudo, para estimar <span class="math inline">\(\mu\)</span> com um erro de 2,8 cm e uma confiança de 95,0%?</p>
+<p>Neste caso, tem-se que:</p>
+<ul>
+<li><span class="math inline">\(e=2,8\)</span> cm;</li>
+<li><span class="math inline">\(\alpha=0,05 \Rightarrow \frac{\alpha}{2}=0,025\)</span>;</li>
+<li><span class="math inline">\(Z_{0,025}=1,96\)</span>.</li>
+</ul>
+<p>Logo, através da expressão (<a href="#eq-tamamo" class="quarto-xref"><span>9.7</span></a>), tem-se que:</p>
+<p><span class="math display">\[
+n=\left(\frac{1,96(10,0)}{2,8}\right)^2=49~\textrm{plantas}.
+\]</span></p>
+</div>
+<section id="pequenas-amostras-e-variância-populacional-desconhecida" class="level4" data-number="9.7.2.1">
+<h4 data-number="9.7.2.1" class="anchored" data-anchor-id="pequenas-amostras-e-variância-populacional-desconhecida"><span class="header-section-number">9.7.2.1</span> Pequenas Amostras e Variância Populacional Desconhecida</h4>
+<p>Geralmente não se conhece o valor da variância populacional <span class="math inline">\(\sigma^2\)</span>. Foi visto que a variância populacional <span class="math inline">\(\sigma^2\)</span> pode ser estimada a partir da variância amostral <span class="math inline">\(s^2\)</span>. Assim, é possível construir um intervalo de confiança de <span class="math inline">\((1 – \alpha)100,0\%\)</span> para a média populacional <span class="math inline">\(\mu\)</span>, utilizando a distribuição <span class="math inline">\(t\)</span> em lugar de <span class="math inline">\(Z\)</span>. Deste modo, é possível obter o intervalo de confiança para pequenas amostras, <span class="math inline">\((n &lt; 30)\)</span>, quando somente a variância amostral <span class="math inline">\(s^2\)</span> é conhecida.</p>
+<p>Nesse caso, utiliza-se da distribuição da variável <span class="math inline">\(t\)</span>, dada por: <span id="eq-test02"><span class="math display">\[
+t=\frac{\bar{x}-\mu}{\frac{s}{\sqrt{n}}},
+\tag{9.8}\]</span></span> em que <span class="math inline">\(t\)</span> segue uma distribuição <span class="math inline">\(t-Student\)</span> com <span class="math inline">\(\nu = n – 1\)</span> graus de liberdade.</p>
+<p>O intervalo de confiança para <span class="math inline">\(\mu\)</span> com nível de confiança de <span class="math inline">\((1 – \alpha)100,0\%\)</span>, é dado pela expressão (<a href="#eq-icmedpeq" class="quarto-xref"><span>9.9</span></a>).</p>
+<p><span id="eq-icmedpeq"><span class="math display">\[
+P\left[\bar{x}-t_{\left(\nu;\frac{\alpha}{2} \right)} \frac{s}{\sqrt{n}} &lt; \mu &lt; \bar{x}+t_{\left(\nu;\frac{\alpha}{2} \right)} \frac{s}{\sqrt{n}} \right]=1 - \alpha.
+\tag{9.9}\]</span></span></p>
+<p>O erro máximo da estimativa é dado por: <span class="math display">\[
+e=t_{\left(v;\frac{\alpha}{2} \right)} \frac{s}{\sqrt{n}}
+\]</span></p>
+<p>O tamanho da amostra para estimar a média é obtido pela expressão (<a href="#eq-tamamot" class="quarto-xref"><span>9.10</span></a>). <span id="eq-tamamot"><span class="math display">\[
+n=\left(\frac{t_{\left(v;\frac{\alpha}{2} \right)}s}{e} \right)^2.
+\tag{9.10}\]</span></span></p>
+<div id="exm-dap" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9.15</strong></span> Seja uma amostra de 20 árvores, de uma espécie de Eucalipto pertencente a um povoamento florestal, em que a variável DAP (diâmetro à altura do peito) apresentou uma média de 18,0 cm e um desvio padrão de 2,5 cm. Construir um intervalo de confiança de 95,0% para a média populacional <span class="math inline">\(\mu\)</span>.</p>
+<p>Neste caso, tem-se:</p>
+<ul>
+<li><span class="math inline">\(n=20 \Rightarrow v=n-1=20-1=19\)</span> graus de liberdade;</li>
+<li><span class="math inline">\(\bar{x}=18,0\)</span> cm;</li>
+<li><span class="math inline">\(s=2,5\)</span> cm;</li>
+<li><span class="math inline">\((1 - \alpha)=0,95 \Rightarrow \alpha=0,05 \Rightarrow \frac{\alpha}{2}=0,025\)</span>.</li>
+</ul>
+<p><span class="math display">\[
+t_{\left(v;\frac{\alpha}{2} \right)}=t_{\left(19;0,025\right)}=?
+\]</span></p>
+<p>Consultando a <a href="tabelas.html#tab-tdist01" class="quarto-xref">Tabela A&nbsp;<span>3</span></a>, tem-se que o valor de <span class="math inline">\(t\)</span> que deixa uma probabilidade acima dele de 2,5% com 19 graus de liberdade é igual a 2,0930, conforme esquema abaixo:</p>
+<center>
+<img src="images/tabt01.png" class="img-fluid" style="width:80.0%">
+</center>
+<p>Logo, <span class="math display">\[
+t_{\left(19;0,025\right)}=2,0930.
+\]</span></p>
+<p>Através da expressão (<a href="#eq-icmedpeq" class="quarto-xref"><span>9.9</span></a>), tem-se que: <span class="math display">\[
+18,0-2,0930\frac{2,5}{\sqrt{20}} &lt; \mu &lt; 18,0+2,0930\frac{2,5}{\sqrt{20}}
+\]</span> <span class="math display">\[
+18,0 - 1,17 &lt; \mu &lt; 18,0 + 1,17
+\]</span></p>
+<p><span class="math display">\[
+\Rightarrow IC_{0,95}(\mu):~[16,83~\textrm{cm};~ 19,17~\textrm{cm}].
+\]</span></p>
+<p>Esse resultado mostra que é de 95,0% a confiança, do verdadeiro DAP médio das árvores de Eucalipto estar entre 16,83 e 19,17 cm. Do ponto de vista de amostragem isto quer dizer que, se forem retiradas várias amostras aleatórias dentro desta população, calculando-se os valores de <span class="math inline">\(\bar{\text{x}}\)</span> e <span class="math inline">\(s\)</span> para cada amostra, e construindo o intervalo de confiança para <span class="math inline">\(\mu\)</span> em cada amostra, 95,0% dos intervalos conterão em seu interior o verdadeiro valor da média populacional <span class="math inline">\(\mu\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="intervalo-de-confiança-para-a-diferença-entre-duas-médias-independentes" class="level3" data-number="9.7.3">
+<h3 data-number="9.7.3" class="anchored" data-anchor-id="intervalo-de-confiança-para-a-diferença-entre-duas-médias-independentes"><span class="header-section-number">9.7.3</span> Intervalo de Confiança para a Diferença entre duas Médias Independentes</h3>
+<p>A diferença de médias amostrais, <span class="math inline">\(\bar{x}_1-\bar{x}_2\)</span>, estima a diferença de médias populacionais, <span class="math inline">\(\mu_1 - \mu_2\)</span>, por ponto. A partir do conhecimento das distribuições teóricas <span class="math inline">\(Z\)</span> e <span class="math inline">\(t\)</span>, pode-se construir um intervalo de confiança de <span class="math inline">\((1 – \alpha)100,0\%\)</span> para a diferença de médias <span class="math inline">\(\mu_1 - \mu_2\)</span>.</p>
+<p>Para a construção do intervalo de confiança para a diferença entre duas médias independentes, tem-se as seguintes situações, descritas a seguir.</p>
+<section id="grandes-amostras-ou-variâncias-populacionais-conhecidas" class="level4" data-number="9.7.3.1">
+<h4 data-number="9.7.3.1" class="anchored" data-anchor-id="grandes-amostras-ou-variâncias-populacionais-conhecidas"><span class="header-section-number">9.7.3.1</span> Grandes Amostras ou Variâncias Populacionais Conhecidas</h4>
+<p>O intervalo de confiança associado a um determinado nível de confiança, para a diferença entre duas médias, <span class="math inline">\(\mu_1 - \mu_2\)</span>, quando se tem grandes amostras, <span class="math inline">\(n_1\)</span> e <span class="math inline">\(n_2 \geq 30\)</span>, ou variâncias populacionais, <span class="math inline">\(\sigma_{1}^2\)</span> e <span class="math inline">\(\sigma_{2}^2\)</span>, conhecidas, é dado pela expressão (<a href="#eq-difmediaz" class="quarto-xref"><span>9.11</span></a>).</p>
+<p><span class="math display">\[
+P\left[(\bar{x}_{1}-\bar{x}_{2})-Z_\frac{\alpha}{2}\sqrt{\frac{\sigma_{1}^2}{n_1}+\frac{\sigma_{2}^2}{n_2}} &lt; (\mu_1 - \mu_2) &lt;\right.
+\]</span> <span id="eq-difmediaz"><span class="math display">\[
+\left.(\bar{x}_{1}-\bar{x}_{2})+Z_\frac{\alpha}{2}\sqrt{\frac{\sigma_{1}^2}{n_1}+\frac{\sigma_{2}^2}{n_2}}\right]=1 - \alpha.
+\tag{9.11}\]</span></span></p>
+<p>Não se conhecendo <span class="math inline">\(\sigma_{1}^2\)</span> e <span class="math inline">\(\sigma_{2}^2\)</span> pode-se usar <span class="math inline">\(s_{1}^2\)</span> e <span class="math inline">\(s_{2}^2\)</span>, desde que <span class="math inline">\(n_1\)</span> e <span class="math inline">\(n_2 \geq 30\)</span>.</p>
+<div id="exm-suinos" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9.16</strong></span> Sejam:</p>
+<center>
+<span class="math inline">\(X_1:\)</span> Peso de suínos da raça 1, em kg;
+</center>
+<center>
+<span class="math inline">\(X_2:\)</span> Peso de suínos da raça 2, em kg.
+</center>
+Em que:
+<center>
+<span class="math inline">\(X_1 \sim N(\mu_1; 166,0)\)</span>
+</center>
+<center>
+<span class="math inline">\(X_2 \sim N(\mu_2; 127,0)\)</span>
+</center>
+<p>Se da população de suínos da raça 1 e da raça 2, são retiradas amostras de tamanhos: <span class="math inline">\(n_1 = 10\)</span> e <span class="math inline">\(n_2 = 11\)</span>, respectivamente, obtendo-se: <span class="math inline">\(\bar{x}_{1}=110,0\)</span> kg e <span class="math inline">\(\bar{x}_{2}=107,0\)</span> kg. Construir um intervalo com 95,0% de confiança para a diferença de médias das duas raças.</p>
+<p>Tem-se então que:</p>
+<ul>
+<li><span class="math inline">\(\sigma_{1}^2=166,0\)</span> Kg<span class="math inline">\(^2\)</span> e <span class="math inline">\(\sigma_{2}^2=127,0\)</span> Kg<span class="math inline">\(^2\)</span>;</li>
+<li><span class="math inline">\(({\bar{\text{x}}_1-\bar{\text{x}_2}})=110,0 - 107,0 = 3,0\)</span> kg <span class="math inline">\(\Rightarrow\)</span> estimativa por ponto de <span class="math inline">\((\mu_1 - \mu_2)\)</span>;</li>
+<li><span class="math inline">\((1 - \alpha)=0,95 \Rightarrow \alpha=0,05 \Rightarrow \frac{\alpha}{2}=0,025 \Rightarrow Z_{0,025}=1,96\)</span> (<a href="tabelas.html#tab-normal01" class="quarto-xref">Tabela A&nbsp;<span>1</span></a>).</li>
+</ul>
+<p>Através da expressão (<a href="#eq-difmediaz" class="quarto-xref"><span>9.11</span></a>), tem-se que:</p>
+<p><span class="math display">\[
+3,0-1,96\sqrt{\frac{166,0}{10}+\frac{127,0}{11}} &lt; (\mu_1 - \mu_2) &lt;
+\]</span> <span class="math display">\[
+3,0+1,96\sqrt{\frac{166,0}{10}+\frac{127,0}{11}}
+\]</span></p>
+<p><span class="math display">\[
+3,0-10,4 &lt; (\mu_1 - \mu_2) &lt; 3,0+10,4.
+\]</span></p>
+<p>Logo,</p>
+<center>
+<span class="math inline">\(\Rightarrow IC_{0,95}(\mu_1 - \mu_2)\)</span>:[-7,4 kg; 13,4 kg].
+</center>
+<p><br> Esse resultado mostra que é de 95,0% a confiança, da verdadeira diferença dos pesos médios entre as duas raças de suínos estar entre -7,4 e 13,4 kg. Como o intervalo de confiança abrange o zero, pode-se concluir que o peso médio da raça 1 não difere do peso médio raça 2. Caso o intervalo de confiança não tivesse abrangido o zero, concluiria-se que as médias difeririam entre si.</p>
+</div>
+</section>
+<section id="pequenas-amostras-e-variâncias-populacionais-desconhecidas" class="level4" data-number="9.7.3.2">
+<h4 data-number="9.7.3.2" class="anchored" data-anchor-id="pequenas-amostras-e-variâncias-populacionais-desconhecidas"><span class="header-section-number">9.7.3.2</span> Pequenas Amostras e Variâncias Populacionais Desconhecidas</h4>
+<p>O intervalo de confiança associado a um determinado nível de confiança, para a diferença entre duas médias, <span class="math inline">\(\mu_1 - \mu_2\)</span>, quando se tem pequenas amostras, <span class="math inline">\(n_1 &lt; 30\)</span> e <span class="math inline">\(n_2 &lt; 30\)</span>, e variâncias populacionais, <span class="math inline">\(\sigma_{1}^2\)</span> e <span class="math inline">\(\sigma_{2}^2\)</span>, desconhecidas, pode ser determinado considerando as seguintes situações:</p>
+<ul>
+<li>Variâncias Populacionais Iguais: Neste caso, para saber se as variâncias populacionais, <span class="math inline">\(\sigma_{1}^2\)</span> e <span class="math inline">\(\sigma_{2}^2\)</span>, são iguais, deve-se fazer primeiro o Teste F, o qual será visto com detalhes no <a href="cap10.html" class="quarto-xref"><span>Capítulo 10</span></a>.</li>
+</ul>
+<p>Dessa forma, um intervalo de confiança de <span class="math inline">\((1 - \alpha)100,0\%\)</span>, para a diferença de médias, <span class="math inline">\(\mu_1 - \mu_2\)</span>, pode ser construído utilizando a distribuição <span class="math inline">\(t\)</span>, e é dado pela expressão (<a href="#eq-difmediat03" class="quarto-xref"><span>9.12</span></a>).</p>
+<p><span class="math display">\[
+P\left[(\bar{x}_1-\bar{x}_2)-t_{\left(v;\frac{\alpha}{2}\right)}\sqrt{s_{p}^2\left(\frac{1}{n_1}+\frac{1}{n_2}\right)} &lt; (\mu_1 - \mu_2) &lt; \right.
+\]</span> <span id="eq-difmediat03"><span class="math display">\[
+\left.(\bar{x}_1-\bar{x}_2)-t_{\left(v;\frac{\alpha}{2}\right)}\sqrt{s_{p}^2\left(\frac{1}{n_1}+\frac{1}{n_2}\right)} \right]=1 - \alpha,
+\tag{9.12}\]</span></span></p>
+<p>em que:</p>
+<ul>
+<li><span class="math inline">\(s_{p}^2=\frac{(n_{1}-1)s_{1}^2+(n_{2}-1)s_{2}^2}{n_{1}+n_{2}-2}\)</span> (variância ponderada);</li>
+<li><span class="math inline">\(t_{\left(\nu; \frac{\alpha}{2}\right)}\)</span> é o valor tabelado de <span class="math inline">\(t\)</span>, para: <span class="math inline">\(\nu=n_{1}+n_{2} -2\)</span> graus de liberdade, que deixa uma probabilidade acima dele de <span class="math inline">\(\frac{\alpha}{2}\)</span>.</li>
+</ul>
+<div id="exm-suinosttest" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9.17</strong></span> &nbsp;</p>
+Sejam:
+<center>
+<span class="math inline">\(X_1:\)</span> Peso de suínos da raça 1, em kg;
+</center>
+<center>
+<span class="math inline">\(X_2:\)</span> Peso de suínos da raça 2, em kg.
+</center>
+<p>Se da população de suínos da raça 1 e da raça 2, são retiradas amostras de tamanhos: <span class="math inline">\(n_1 = 10\)</span> e <span class="math inline">\(n_2 = 11\)</span>, respectivamente, obtendo-se: <span class="math inline">\(\bar{x}_{1}=112,0\)</span> kg e <span class="math inline">\(s_{1}^2=156,0\)</span> kg<span class="math inline">\(^2\)</span>; <span class="math inline">\(\bar{x}_{2}=105,0\)</span> kg e <span class="math inline">\(s_{2}^2=165,0\)</span> kg<span class="math inline">\(^2\)</span>.</p>
+<p>Considerando que, <span class="math inline">\(\sigma_{1}^2\)</span> e <span class="math inline">\(\sigma_{2}^2\)</span> são iguais, construir um intervalo de confiança de 95,0% de confiança para a diferença de médias das duas raças.</p>
+<p>Tem-se então que:</p>
+<ul>
+<li><span class="math inline">\(({\bar{\text{x}}_1-\bar{\text{x}_2}})=112,0 - 105,0 = 7,0\)</span> kg <span class="math inline">\(\Rightarrow\)</span> estimativa por ponto de <span class="math inline">\((\mu_1 - \mu_2)\)</span>;</li>
+<li><span class="math inline">\((1 - \alpha)=0,95 \Rightarrow \alpha=0,05 \Rightarrow \frac{\alpha}{2}=0,025\)</span>;</li>
+<li><span class="math inline">\(s_{p}^2=\frac{(n_{1}-1)s_{1}^2+(n_{2}-1)s_{2}^2}{n_{1}+n_{2}-2}=\frac{(10-1)156,0+(11-1)165,0}{10+11-2}=160,74\)</span> kg<span class="math inline">\(^2\)</span>;</li>
+<li><span class="math inline">\(v=n_{1}+n_{2} -2=10+11-2=19\)</span> graus de liberdade.</li>
+</ul>
+<p>Consultando a <a href="tabelas.html#tab-tdist01" class="quarto-xref">Tabela A&nbsp;<span>3</span></a>, tem-se que o valor de <span class="math inline">\(t\)</span> que deixa uma probabilidade acima dele de 2,5% com 19 graus de liberdade é igual a 2,0930.</p>
+Logo,
+<center>
+<span class="math inline">\(t_{\left(v;\frac{\alpha}{2}\right)}=t_{\left(19; 0,025\right)}=2,0930\)</span>.
+</center>
+<p>Através da expressão (<a href="#eq-difmediat03" class="quarto-xref"><span>9.12</span></a>), tem-se que:</p>
+<p><span class="math display">\[
+7,0-2,0930\sqrt{160,74\left(\frac{1}{10}+\frac{1}{11} \right)} &lt; (\mu_1 - \mu_2) &lt;
+\]</span> <span class="math display">\[
+7,0+2,0930\sqrt{160,74\left(\frac{1}{10}+\frac{1}{11} \right)}
+\]</span></p>
+<p><span class="math display">\[
+7,0-11,60 &lt; (\mu_1 - \mu_2) &lt; 7,0+11,60.
+\]</span></p>
+Logo,
+<center>
+<span class="math inline">\(\Rightarrow IC_{0,95}(\mu_1 - \mu_2)\)</span>:[-4,60 kg; 18,60 kg].
+</center>
+<p><br> Esse resultado mostra que é de 95,0% a confiança, da verdadeira diferença dos pesos médios entre as duas raças de suínos estar entre -4,60 e 18,60 kg. Pode-se concluir que, as duas raças de suínos não diferem entre si com relação ao peso médio, pois o intervalo de confiança abrange o zero.</p>
+</div>
+<ul>
+<li>Variâncias Populacionais Diferentes:</li>
+</ul>
+<p>Neste caso, também deve-se fazer primeiro o Teste F para verificar se as variâncias são diferentes.</p>
+<p>O intervalo de confiança de <span class="math inline">\((1 - \alpha)100,0\%\)</span>, para a diferença de médias, <span class="math inline">\(\mu_1 - \mu_2\)</span>, é dado pela expressão <a href="#eq-difmediatd" class="quarto-xref"><span>9.13</span></a>. <span class="math display">\[
+P\left[(\bar{x}_1-\bar{x}_2)-t_{\left(v;\frac{\alpha}{2}\right)}\sqrt{\left(\frac{s_{1}^2}{n_1}+\frac{s_{2}^2}{n_2}\right)} &lt; (\mu_1 - \mu_2) &lt; \right.
+\]</span> <span id="eq-difmediatd"><span class="math display">\[
+\left.(\bar{x}_1-\bar{x}_2)-t_{\left(v;\frac{\alpha}{2}\right)}\sqrt{\left(\frac{s_{1}^2}{n_1}+\frac{s_{2}^2}{n_2}\right)} \right]=1 - \alpha,
+\tag{9.13}\]</span></span> em que: <span class="math inline">\(t_{\left(\nu; \frac{\alpha}{2}\right)}\)</span> é o valor tabelado de <span class="math inline">\(t\)</span> com <span class="math inline">\(\nu\)</span> graus de liberdade que deixa uma probabilidade acima dele de <span class="math inline">\(\frac{\alpha}{2}\)</span>, sendo “<span class="math inline">\(\nu\)</span>” dado pela expressão (<a href="#eq-Satterthwaite02" class="quarto-xref"><span>9.14</span></a>).</p>
+<p><span id="eq-Satterthwaite02"><span class="math display">\[
+\nu=\frac{\left(\frac{s_{1}^2}{n_1}+\frac{s_{2}^2}{n_2}\right)^2}{\frac{\left(\frac{s_{1}^2}{n_1}\right)^2}{n_{1}-1}+\frac{\left(\frac{s_{2}^2}{n_2}\right)^2}{n_{2}-1}},
+\tag{9.14}\]</span></span> conhecida como Fórmula de Satterthwaite.</p>
+<div id="exm-duasracas" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9.18</strong></span> Considerando o <a href="#exm-suinosttest" class="quarto-xref">Exemplo&nbsp;<span>9.17</span></a>, e supondo que <span class="math inline">\(\sigma_{1}^2\)</span> e <span class="math inline">\(\sigma_{2}^2\)</span> sejam estatisticamente diferentes, construir um intervalo de confiança de 95,0% de confiança para a diferença de médias das duas raças.</p>
+<p>Assim, tem-se que:</p>
+<ul>
+<li><span class="math inline">\(({\bar{\text{x}}_1-\bar{\text{x}_2}})=112,0 - 105,0 = 7,0\)</span> kg <span class="math inline">\(\Rightarrow\)</span> estimativa por ponto de <span class="math inline">\((\mu_1 - \mu_2)\)</span>;</li>
+<li><span class="math inline">\((1 - \alpha)=0,95 \Rightarrow \alpha=0,05 \Rightarrow \frac{\alpha}{2}=0,025\)</span>;</li>
+<li><span class="math inline">\(\nu=\frac{\left(\frac{156,0}{10}+\frac{165,0}{11}\right)^2}{\frac{\left(\frac{156,0}{10}\right)^2}{10-1}+\frac{\left(\frac{165,0}{11}\right)^2}{11-1}}=19\)</span> graus de liberdade.</li>
+</ul>
+Consultando a <a href="tabelas.html#tab-tdist01" class="quarto-xref">Tabela A&nbsp;<span>3</span></a>, tem-se que o valor de <span class="math inline">\(t\)</span> que deixa uma probabilidade acima dele de 2,5% com 19 graus de liberdade é igual a 2,0930. Logo,
+<center>
+<span class="math inline">\(t_{\left(v;\frac{\alpha}{2}\right)}=t_{(19; 0,025)}=2,0930\)</span>.
+</center>
+<p><br> Através de (<a href="#eq-difmediatd" class="quarto-xref"><span>9.13</span></a>), tem-se que:</p>
+<p><span class="math display">\[
+7,0-2,0930\sqrt{\left(\frac{156,0}{10}+\frac{165,0}{11} \right)} &lt; (\mu_1 - \mu_2) &lt;
+\]</span> <span class="math display">\[
+7,0+2,0930\sqrt{\left(\frac{156,0}{10}+\frac{165,0}{11} \right)}
+\]</span></p>
+Logo,
+<center>
+<span class="math inline">\(\Rightarrow IC_{0,95}(\mu_1 - \mu_2)\)</span>:[-4,58 kg; 18,58 kg].
+</center>
+<p><br> Esse resultado mostra que é de 95,0% a confiança, da verdadeira diferença dos pesos médios entre as duas raças de suínos estar entre -4,58 e 18,58 kg. Pode-se concluir que, as duas raças de suínos não diferem entre si com relação ao peso médio, pois o intervalo de confiança abrange o zero.</p>
+</div>
+</section>
+</section>
+<section id="intervalo-de-confiança-para-a-média-em-amostras-dependentes" class="level3" data-number="9.7.4">
+<h3 data-number="9.7.4" class="anchored" data-anchor-id="intervalo-de-confiança-para-a-média-em-amostras-dependentes"><span class="header-section-number">9.7.4</span> Intervalo de Confiança para a Média em Amostras Dependentes</h3>
+<p>A análise em amostras dependentes é apropriada quando a variável é medida antes e depois, por exemplo, peso de suínos antes e depois de serem submetidos a uma dieta com uma ração especial.</p>
 
-<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-banzato2006" class="csl-entry" role="listitem">
 BANZATTO, D. A.; NASCIMENTO KRONKA, S. DO. <strong>Experimentação Agrícola</strong>. Jaboticabal: Funep, 2006. p. 237
 </div>
@@ -293,6 +851,8 @@ SOUZA, G. S. <strong>Introdução aos <span>M</span>odelos de <span>R</span>egre
 STEEL, R. G. D.; TORRIE, J. H. <strong>Principles and procedures of statistics: A biometrical approach</strong>. 2. ed. New York: McGraw-Hill Book Company, 1980. p. 512
 </div>
 </div>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -330,18 +890,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -373,11 +922,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -387,8 +975,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -400,7 +997,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -444,6 +1164,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -469,6 +1190,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -530,12 +1277,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./cap08.html" class="pagination-link">
+      <a href="./cap08.html" class="pagination-link" aria-label="Distribuições de Amostragem">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Distribuições de Amostragem</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./cap10.html" class="pagination-link">
+      <a href="./cap10.html" class="pagination-link" aria-label="Teoria da Decisão">
         <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Teoria da Decisão</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -543,13 +1290,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Estatística Básica aplicada às Ciências Agrárias foi escrito por Telde Natel Custódio e <a href="https://bendeivide.github.io/">Ben Dêivide de O. Batista.</a></div>   
+    <div class="nav-footer-left">
+<p>Estatística Básica aplicada às Ciências Agrárias foi escrito por Telde Natel Custódio e <a href="https://bendeivide.github.io/">Ben Dêivide de O. Batista.</a></p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">Esse livro foi desenvolvido com o <a href="https://quarto.org/">Quarto</a>.</div>
+    <div class="nav-footer-right">
+<p>Esse livro foi desenvolvido com o <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
   </div>
 </footer>
+
 
 
 

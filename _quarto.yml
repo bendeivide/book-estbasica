@@ -32,8 +32,25 @@ book:
     - cap09.qmd
     - cap10.qmd
     - cap11.qmd
+    - tabelas.qmd
     - references.qmd
+#https://quarto.org/docs/reference/metadata/crossref.html#custom
+crossref:
+  custom:
+    - kind: float
+      caption-location: top
+      reference-prefix: "Tabela A"
+      key: tab
+  eq-prefix: ""
   
+# crossref:
+#   custom:
+#     - kind: float
+#       reference-prefix: Video
+#       key: vid
+#       latex-env: video
+  
+
 
 
 
@@ -46,6 +63,7 @@ nocite: |
 format:
   html:
     theme: cosmo
+    css: custom.scss
 
 
 

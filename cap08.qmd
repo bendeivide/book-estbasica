@@ -1,1 +1,1 @@
-# Distribuições de Amostragem
+# Distribuições de Amostragem {#sec-chap08}
