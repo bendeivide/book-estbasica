@@ -647,10 +647,16 @@ Logo,
     $\Rightarrow IC_{0,95}(\mu_1 - \mu_2)$:[-4,58 kg; 18,58 kg].
 </center>
 </br>
-Esse resultado mostra que é de 95,0\% a confiança, da verdadeira diferença dos pesos médios entre as duas raças de suínos estar entre -4,58 e 18,58 kg. Pode-se concluir que, as duas raças de suínos não diferem entre si com relação ao peso médio, pois o intervalo de confiança abrange o zero.
+Esse resultado mostra que é de 95,0\% a confiança, da verdadeira diferença dos pesos médios entre as duas raças de suínos estar entre -4,58 e 18,58 kg. Pode-se concluir que, as duas raças de suínos não diferem entre si com relação ao peso médio, pois o intervalo de confiança abrange o zero. Considere a @tbl-amostrasdep.
 :::
 
 ### Intervalo de Confiança para a Média em Amostras Dependentes
 
 A análise em amostras dependentes é apropriada quando a variável é medida antes e depois, por exemplo, peso de suínos antes e depois de serem submetidos a uma dieta com uma ração especial. 
+
+:::{#tbl-amostrasdep tbl-cap="Amostras dependentes."}
+![](/images/amostrasdep.png)
+
+
+:::
 

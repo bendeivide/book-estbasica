@@ -1,1 +1,84 @@
 # Medidas de Posição
+
+## Introdução
+
+No capítulo anterior vimos como organizar um conjunto de dados através de tabelas e gráficos, mas podemos ainda tirar mais informações importantes de um conjunto de dados através das medidas de posição. As medidas de posição, ou \index{Medidas de tendência central|see{Medidas de posição}}medidas de tendência central, são medidas representativas do valor central ao redor do qual se agrupam os dados, ou seja, procuram sintetizar um conjunto de dados em um único e informativo valor. 
+
+A média, a mediana e a moda são as três medidas de posição mais utilizadas para descrever um conjunto de dados, sejam eles populacionais ou amostrais.
+
+## Média
+
+### Dados Não Agrupados
+
+A média de uma população ou amostra é dada pela soma de todos os dados da população ou amostra, dividida pelo número de dados que a compõem.
+
+No caso dos dados provenientes de uma população, a média, denotada por $\mu$, é dada pela expressão (@eq-medpop).
+
+$$
+\mu=\frac{\sum_{i=1}^{N}x_i}{N}.
+$${#eq-medpop}
+
+E no caso dos dados provenientes de uma amostra, a média, denotada por $\bar{x}$, é dada pela expressão (@eq-medam).
+
+$$
+\bar{\text{x}}=\frac{\sum_{i=1}^{n}x_i}{n}.
+$${#eq-medam}
+
+A média funciona como um ponto de equilíbrio (de balanço), e é evidente que teremos dados acima e abaixo da média, mas todos os dados estarão na média, pois todos os dados fazem parte do cálculo da média.
+
+A unidade da média será a mesma unidade dos dados.
+
+::: {#exm-}
+
+Considere os dados do @exm-cont. Neste caso trata-se de uma amostra. Assim, utilizando-se da expressão (@eq-medam) tem-se que a média amostral é dada por:
+
+\begin{align}
+\bar{\text{x}} & = \frac{21,0+21,6+22,1+...+31,3+31,8+33,0}{50} \Rightarrow \bar{\text{x}}=26,6~\textrm{kg}.
+\end{align}
+
+:::
+
+### Dados Agrupados
+
+Se os dados estiverem agrupados em uma tabela de distribuição de frequências com intervalos de classes, a média é dada pela expressão (@eq-medag).
+$$
+\bar{\text{x}}=\frac{\sum_{i=1}^{K}F_{i}\tilde{X}_i}{\sum_{i=1}^{K}F_i},
+$${#eq-medag}
+em que: $\tilde{X}_i$ é o ponto médio da classe $i$ e $F_i$ é a frequência absoluta da classe $i$.
+
+:::{#exm-}
+
+Considere o @exm-cont. Alternativamente pode-se acrescentar mais uma coluna na tabela de distribuição de frequências referente a: $F_{i}\tilde{X}_i$, que pode ser observado pela @tbl-pesaonascer02.
+
+
+
+|**Peso** $\mathbf{(kg)}$ | $\mathbf{\tilde{X}_i}$ | $\mathbf{F_i}$ | $\mathbf{Fr_i}$ | $\mathbf{Fp_i(\%)}$ | $\mathbf{F_{i}\tilde{X}_i}$ |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|$\left[20,0;22,0\right)$ | 21,0 | 2 | 0,04 | 4,0 | 42,0|
+|$\left[22,0;24,0\right)$ | 23,0 | 5 | 0,10 | 10,0 |  115,0|
+|$\left[24,0;26,0\right)$ | 25,0 | 12 | 0,24 | 24,0 | 300,0|
+|$\left[26,0;28,0\right)$ | 27,0 | 16 | 0,32 | 32,0 | 432,0|
+|$\left[28,0;30,0\right)$ | 29,0 | 10 | 0,20 | 20,0 | 290,0|
+$\left[30,0;32,0\right)$ | 31,0 | 4 | 0,08 | 8,0 | 124,0|
+|$\left[32,0;34,0\right)$ | 33,0 | 1 | 0,02 | 2,0 | 33,0|
+|Total |	 | 50 | 1,00 | 100,0 | 1.336,0|
+
+
+
+: Pesos ao nascer, em kg, de 50 bezerros da raça nelore, Fazenda XX, 2007.^[Fonte: Dados fictícios.] {#tbl-pesaonascer02 .striped .hover}
+
+Logo, utilizando-se da expressão (@eq-medag) tem-se que a média é dada por:
+$$
+\bar{\text{x}}=\frac{1.336,0}{50}=26,7~\textrm{kg}.
+$$
+
+Observa-se que a média para os dados não agrupados (26,6 kg) foi calculada usando os verdadeiros dados, e a média para os dados agrupados (26,7 kg) foi calculada usando os dados representados pelo ponto médio da classe $(\tilde{X}_i)$. Como se observa, a média calculada com os dados agrupados foi diferente da média para os dados não agrupados. No cálculo com os dados agrupados existe um erro devido à perda de informação, porém, tal erro é mínimo e, portanto, desprezível, o que mostra a qualidade do algoritmo utilizado para agrupar os dados numa Tabela de Distribuição de Frequências.
+
+Neste caso o erro foi de:
+$$
+Erro = 26,7 – 26,6 = 0,1~\textrm{kg}.
+$$
+
+:::
+
+

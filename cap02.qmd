@@ -35,7 +35,7 @@ Considere o exemplo de tabela a seguir, que representa a produção de grãos, e
 :::
 
 
-## Tabela de distribuição de frequências}
+## Tabela de distribuição de frequências
 
 Um das maneiras de se organizar e resumir um conjunto de dados é através de uma tabela de distribuição de frequências, sendo que estas permitem identificar características de interesse dos dados sob análise. Essas  tabelas podem ser de dois tipos:
 
@@ -236,3 +236,19 @@ $[a;b)$ ou $a \vdash b$.
 
 Na contagem do número de dados contidos em um intervalo de uma determinada classe (frequência absoluta), deve-se incluir o valor do limite inferior $(a)$ e excluir o valor do limite superior $(b)$ de cada classe. O valor do limite superior passa a ser contado na classe posterior. 
 
+:::{#exm-cont}
+
+Um Zootecnista observou os pesos ao nascer, em kg, de uma amostra de 50 bezerros da raça nelore, provenientes da Fazenda de um grande criador. Os resultados estão apresentados na @tbl-pesnascer.
+
+|  |  |  |  |  |  |  |  |  |  |  |
+|---|---|---|---|---|---|---|---|---|---|---|
+|26,8 |	24,3 |	23,7 |	31,0 |	22,2 |	25,2 |	29,5 |	24,2 |	33,0 |	27,2|
+|25,9 |	23,0 |	25,6 |	26,5 |	26,0 |	22,8 |	31,8 |	21,0 |	29,3 |	27,8|
+|24,1 |	26,9 |	24,5 |	26,2 |	29,8 |	21,6 |	27,2 |	26,8 |	26,9 |	25,0|
+|29,6 |	31,3 |	22,1 |	26,1 |	29,2 |	25,3 |	26,0 |	27,2 |	28,1 |	26,2|
+| 28,5 |	27,2 |	28,6 |	25,8 |	26,5 |	28,1 |	24,9 |	30,5 |	28,7 |	24,5|
+
+
+: Pesos ao nascer, em kg, de 50 bezerros da raça nelore (dados brutos). {#tbl-pesnascer .striped .hover}
+
+:::
