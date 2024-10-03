@@ -263,6 +263,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#dados-não-agrupados" id="toc-dados-não-agrupados" class="nav-link" data-scroll-target="#dados-não-agrupados"><span class="header-section-number">3.2.1</span> Dados Não Agrupados</a></li>
   <li><a href="#dados-agrupados" id="toc-dados-agrupados" class="nav-link" data-scroll-target="#dados-agrupados"><span class="header-section-number">3.2.2</span> Dados Agrupados</a></li>
+  <li><a href="#propriedades" id="toc-propriedades" class="nav-link" data-scroll-target="#propriedades"><span class="header-section-number">3.2.3</span> Propriedades</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -425,6 +426,77 @@ Tabela&nbsp;3.1: Pesos ao nascer, em kg, de 50 bezerros da raça nelore, Fazenda
 <p>Neste caso o erro foi de: <span class="math display">\[
 Erro = 26,7 – 26,6 = 0,1~\textrm{kg}.
 \]</span></p>
+</div>
+</section>
+<section id="propriedades" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="propriedades"><span class="header-section-number">3.2.3</span> Propriedades</h3>
+<p>A média apresenta as seguintes propriedades:</p>
+<ol type="i">
+<li>A soma dos desvios <span class="math inline">\((SD)\)</span> de cada dado em relação à sua média é nula: <span class="math display">\[
+SD=\sum_{i=1}^{n}\left(x_i- \bar{\text{x}} \right)=0,0.
+\]</span></li>
+</ol>
+<div id="exm-prop" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3.3</strong></span> Seja uma amostra referente às alturas, em cm, de três plantas de uma variedade de milho, dada por: <span class="math display">\[
+182,0; 184,0; 189,0.
+\]</span></p>
+<p>Utilizando-se da expressão <a href="#eq-medam" class="quarto-xref"><span>3.2</span></a> a média é dada por:</p>
+<p><span class="math display">\[
+\bar{\text{x}}=\frac{182,0+184,0+189,0}{3}=\frac{555,0}{3}=185,0~\textrm{cm}.
+\]</span></p>
+<p>Assim, a soma dos desvios de cada dado em relação à média é dada por: <span class="math display">\[\begin{align}
+  SD &amp;= (182,0-185,0)+(184,0-185,0)+(189,0-185,0)\\
+     &amp;= (-3,0)+(-1,0)+(4,0)=0,0.
+\end{align}\]</span></p>
+<p>Que é um valor nulo comparado a qualquer outro valor diferente da média.</p>
+</div>
+<ol start="2" type="i">
+<li>A média é o valor que torna mínimo a soma de quadrados dos desvios <span class="math inline">\((SQD)\)</span>:</li>
+</ol>
+<p><span class="math display">\[
+SQD=\sum_{i=1}^{n}\left(x_i- \bar{\text{x}} \right)^2.
+\]</span></p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3.4</strong></span> Considere o <a href="#exm-prop" class="quarto-xref">Exemplo&nbsp;<span>3.3</span></a>, em que: <span class="math inline">\(\bar{x}=185,0\)</span> cm.</p>
+<p>Assim, tem-se que a soma de quadrados dos desvios <span class="math inline">\((SQD)\)</span> é dada por: <span class="math display">\[\begin{align*}
+  SQD &amp;= (182,0-185,0)^2+(184,0-185,0)^2+(189,0-185,0)^2\\
+      &amp;= (-3,0)^2+(-1,0)^2+(4,0)^2=9+1+16=26,0.
+\end{align*}\]</span> Que é um valor mínimo comparado a qualquer outro valor diferente da média.</p>
+</div>
+<ol start="3" type="i">
+<li>Somando-se ou subtraindo-se um mesmo valor constante <span class="math inline">\(k\)</span> a cada dado, a média fica acrescida ou subtraída deste valor:</li>
+</ol>
+<p><span class="math display">\[
+x_i \pm k \Rightarrow \bar{\text{x}} \pm k.
+\]</span></p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3.5</strong></span> Considere o Exemplo <a href="#exm-prop" class="quarto-xref">Exemplo&nbsp;<span>3.3</span></a>, em que: ${}=$185,0~cm.</p>
+<p>Somando-se <span class="math inline">\(k = 3,0\)</span> cm a cada valor da amostra tem-se: <span class="math display">\[
+185,0; 187,0; 192,0.
+\]</span></p>
+<p>Utilizando-se da expressão (<a href="#eq-medam" class="quarto-xref"><span>3.2</span></a>) a nova média é dada por:</p>
+<p><span class="math display">\[
+\bar{\text{x}}=\frac{185,0+187,0+192,0}{3}=\frac{564,0}{3}=188,0~\textrm{cm}.
+\]</span></p>
+<p>Ou seja, é a média anterior acrescida de <span class="math inline">\(3,0\)</span> cm.</p>
+</div>
+<ol start="4" type="i">
+<li>Multiplicando-se ou dividindo-se cada dado por um mesmo valor constante <span class="math inline">\(k\)</span>, diferente de 0, a média fica multiplicada ou dividida por este valor:</li>
+</ol>
+<p><span class="math display">\[
+x_{i}\times k \Rightarrow \bar{\text{x}} \times k.
+\]</span></p>
+<p><span class="math display">\[
+\frac{x_i}{k} \Rightarrow \frac{\bar{\text{x}}}{k}
+\]</span></p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3.6</strong></span> Considere o <a href="#exm-prop" class="quarto-xref">Exemplo&nbsp;<span>3.3</span></a>, em que: <span class="math inline">\(\bar{\text{x}}=185,0\)</span> cm. Multiplicando-se cada dado por <span class="math inline">\(k = 2\)</span> tem-se:</p>
+<p><span class="math display">\[
+364,0; 368,0; 378,0.
+\]</span></p>
+<p>A nova média é dada por: <span class="math display">\[
+\bar{\text{x}}=\frac{364,0+368,0+378,0}{3}=370,0~\textrm{cm}.
+\]</span> O que corresponde a média anterior multiplicada por 2.</p>
 </div>
 
 

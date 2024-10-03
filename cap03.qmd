@@ -78,7 +78,109 @@ Neste caso o erro foi de:
 $$
 Erro = 26,7 – 26,6 = 0,1~\textrm{kg}.
 $$
-
 :::
+
+
+### Propriedades
+
+A média apresenta as seguintes propriedades:
+
+i. A soma dos desvios $(SD)$ de cada dado em relação à sua média é nula:
+$$
+SD=\sum_{i=1}^{n}\left(x_i- \bar{\text{x}} \right)=0,0.
+$$
+
+:::{#exm-prop}
+
+Seja uma amostra referente às alturas, em cm, de três plantas de uma variedade de milho, dada por:
+$$
+182,0; 184,0; 189,0.
+$$
+
+Utilizando-se da expressão @eq-medam a média é dada por:
+
+$$
+\bar{\text{x}}=\frac{182,0+184,0+189,0}{3}=\frac{555,0}{3}=185,0~\textrm{cm}.
+$$
+
+Assim, a soma dos desvios de cada dado em relação à média é dada por:
+\begin{align}
+  SD &= (182,0-185,0)+(184,0-185,0)+(189,0-185,0)\\
+     &= (-3,0)+(-1,0)+(4,0)=0,0.
+\end{align}
+
+Que é um valor nulo comparado a qualquer outro valor diferente da média.
+:::
+
+ii. A média é o valor que torna mínimo a soma de quadrados dos desvios $(SQD)$:
+
+$$
+SQD=\sum_{i=1}^{n}\left(x_i- \bar{\text{x}} \right)^2.
+$$
+
+:::{#exm-}
+
+Considere o @exm-prop, em que: $\bar{x}=185,0$ cm. 
+
+Assim, tem-se que a soma de quadrados dos desvios $(SQD)$ é dada por:
+\begin{align*}
+  SQD &= (182,0-185,0)^2+(184,0-185,0)^2+(189,0-185,0)^2\\
+      &= (-3,0)^2+(-1,0)^2+(4,0)^2=9+1+16=26,0.
+\end{align*}
+Que é um valor mínimo comparado a qualquer outro valor diferente da média.
+:::
+
+
+
+iii. Somando-se ou subtraindo-se um mesmo valor constante $k$ a cada dado, a média fica acrescida ou subtraída deste valor:
+
+$$
+x_i \pm k \Rightarrow \bar{\text{x}} \pm k.
+$$
+
+:::{#exm-}
+
+Considere o Exemplo @exm-prop, em que: $\bar{\text{x}}=$185,0~cm.
+
+Somando-se $k = 3,0$ cm a cada valor da amostra tem-se: 
+$$
+185,0; 187,0; 192,0.
+$$
+
+Utilizando-se da expressão (@eq-medam) a nova média é dada por:
+
+$$
+\bar{\text{x}}=\frac{185,0+187,0+192,0}{3}=\frac{564,0}{3}=188,0~\textrm{cm}.
+$$
+
+Ou seja, é a média anterior acrescida de $3,0$ cm.
+:::
+
+iv. Multiplicando-se ou dividindo-se cada dado por um mesmo valor constante $k$, diferente de 0, a média fica multiplicada ou dividida por este valor:
+
+$$
+x_{i}\times k \Rightarrow \bar{\text{x}} \times k.
+$$
+
+$$
+\frac{x_i}{k} \Rightarrow \frac{\bar{\text{x}}}{k}
+$$
+
+:::{#exm-}
+
+Considere o @exm-prop, em que: $\bar{\text{x}}=185,0$ cm.  Multiplicando-se cada dado por $k = 2$ tem-se: 
+
+$$
+364,0; 368,0; 378,0.
+$$
+
+A nova média é dada por:
+$$
+\bar{\text{x}}=\frac{364,0+368,0+378,0}{3}=370,0~\textrm{cm}.
+$$
+O que corresponde a média anterior multiplicada por 2.
+:::
+
+
 
 
