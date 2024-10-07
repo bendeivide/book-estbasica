@@ -181,6 +181,236 @@ $$
 O que corresponde a média anterior multiplicada por 2.
 :::
 
+## Mediana
 
+A mediana é o valor central de um conjunto dados, isto é, divide os dados ordenados ascendente ou descendentemente em partes iguais, ou seja, 50,0\% dos dados estão acima e 50,0\% estão abaixo deste valor. A mediana tem a mesma unidade dos dados.
+
+### Dados Não Agrupados
+
+Neste caso os dados precisam primeiro serem ordenados de forma crescente ou decrescente. 
+
+A mediana no caso de uma amostra, sendo denotada por $md$, é expressa da seguinte forma:
+
+- Se $n$ for par a mediana é dada pela expressão (@eq-medpar).
+$$
+md = \frac{x_{\left(\frac{n}{2}\right)}+x_{\left(\frac{n+2}{2}\right)}}{2};
+$$ {#eq-medpar}
+
+- Se $n$ for impar a mediana é dada pela expressão (@eq-medimpar).
+$$
+md=x_{\left(\frac{n+1}{2}\right)}.
+$$ {#eq-medimpar}
+
+:::{#exm-}
+
+Considere uma amostra referente às alturas, em cm, de sete plantas de uma variedade de milho, dada por: 
+$$
+185,0; 182,0; 189,0; 182,0; 184,0; 188,0; 187,0.
+$$
+Para o cálculo da mediana os dados foram ordenados de forma crescente:
+$$
+182,0; 182,0; 184,0; 185,0; 187,0; 188,0; 189,0.
+$$
+Neste caso $n$ = 7 (ímpar). Utilizando-se da expressão (@eq-medimpar) tem-se que a mediana é dada por:
+$$
+md=x_{\left(\frac{7+1}{2}\right)}=x_{(4)},
+$$
+ou seja, corresponde ao 4º dado. Logo, a mediana é igual a $185,0$ cm.
+
+:::
+
+:::{#exm-}
+
+Seja uma amostra referente aos pesos, em kg, de oito leitões da raça Large White, dada por:
+$$
+38,2; 40,4; 38,5; 38,2; 37,4; 39,6; 40,1; 40,1.
+$$
+
+Para o cálculo da mediana os dados foram ordenados de forma crescente:
+$$
+37,4; 38,2; 38,2; 38,5; 39,6; 40,1; 40,1; 40,4
+$$
+
+Tem-se que $n$ = 8 (par).  Utilizando-se da expressão (@eq-medpar) tem-se que a mediana é dada por:
+$$
+md=\frac{x_{\left(\frac{8}{2}\right)}+x_{\left(\frac{8+2}{2}\right)}}{2}=\frac{x_{(4)}+x_{(5)}}{2},
+$$
+ou seja, é a média entre o 4º e o 5º dado, dada por:
+$$
+md=\frac{38,5+39,6}{2}=$39,05~\textrm{kg}.
+$$
+
+:::
+
+:::{#exm-}
+
+Seja o @exm-cont, e considerando os dados ordenados de forma crescente. 
+
+Neste caso tem-se que $n$ = 50 (par). Utilizando-se da expressão (@eq-medpar) tem-se que a mediana é dada por:
+$$
+md=\frac{x_{\left(\frac{50}{2}\right)}+x_{\left(\frac{50+2}{2}\right)}}{2}=\frac{x_{(25)}+x_{(26)}}{2},
+$$
+ou seja, é a média entre o 25º e o 26º dado, dada por:
+$$
+md=\frac{26,5+26,5}{2}=26,5~\textrm{kg}.
+$$
+
+:::
+
+### Dados Agrupados
+
+Se os dados estiverem agrupados em uma Tabela de Distribuição de Frequências com intervalos de classes, a mediana é dada pela expressão (@eq-mediana),
+
+$$ 
+md=LI_{md}+\left[\frac{\frac{n}{2}-F_{A}}{F_{md}}\right]c_{md},
+$$ {#eq-mediana}
+em que:
+
+- $LI_{md}$ é o limite inferior da classe mediana;
+- $F_A$ é a frequência acumulada anterior à classe mediana;
+- $F_{md}$ é a frequência absoluta da classe mediana;
+- $c_{md}$ é a amplitude da classe mediana.
+
+A classe mediana é a classe que contém o dado: $x_{\left(\frac{n}{2}\right)}$ (se $n$ for par), ou $x_{\left(\frac{n+1}{2}\right)}$ (se $n$ for impar), na Tabela de Distribuição de Frequências.
+
+:::{#exm-}
+
+Considere o @exm-cont. A classe mediana é:
+$$
+x_{\left(\frac{n}{2}\right)}=x_{\left(\frac{50}{2}\right)}=x_{(25)}=25º~\textrm{valor}.
+$$
+
+Conta-se  as  freqüências  absolutas  até  abranger  o  25º valor. Neste caso tem-se: 2 + 5 + 12 + 16, ou seja, a 4ª classe, isto é, $[26,0; 28,0)$.
+
+Assim, tem-se que:
+
+- $LI_{md}=$26,0~kg;
+- $F_A$=2+5+12=19;
+- $F_{md}$=16;
+- $c_{md}=$2,0~kg.
+
+
+Utilizando-se da expressão (@eq-mediana) tem-se que a mediana é dada por:
+
+$$
+md=26,0+\left[\frac{\frac{50}{2}-19}{16}\right]2,0=26,75~\textrm{kg}.
+$$
+Tem-se que a diferença entre os dois valores (26,5 kg e 26,75 kg) se deve ao erro de agrupamento.
+
+:::
+
+### Propriedades
+
+A mediana apresenta as seguintes propriedades:
+
+i) $\sum_{i=1}^{n}|x_i-md|$ é um valor mínimo se comparado com qualquer outra expressão da forma: $\sum_{i=1}^{n}|x_i-k|$ (sendo $k$ um valor qualquer);
+ii) Somando-se ou subtraindo-se um mesmo valor constante à cada dado, a mediana fica acrescida ou subtraída deste valor;
+iii) Multiplicando-se  ou  dividindo-se  cada  dado  por  uma mesmo valor constante, diferente de 0, a mediana fica multiplicada ou dividida por este valor.
+
+## Moda
+
+A moda de um conjunto de dados é o valor mais frequente, sendo denotada por $mo$. Um conjunto de dados pode ter mais de uma moda, ou também, pode não ter moda. A moda tem a mesma unidade dos dados. 
+
+### Dados Não Agrupados
+
+Deve-se primeiro ordenar os dados de forma crescente ou decrescente, e em seguida contar o valor que ocorre mais vezes no conjunto de dados, ou seja, o valor mais frequente.
+
+:::{#exm-}
+
+Considere uma amostra referente às alturas, em cm, de sete plantas de uma variedade de milho, dada por:
+$$
+185,0; 182,0; 189,0; 182,0; 184,0; 188,0; 187,0.
+$$
+
+Para o cálculo da moda os dados foram ordenados de forma crescente:
+$$
+182,0; 182,0; 184,0; 185,0; 187,0; 188,0; 189,0,
+$$
+então,
+$$
+mo=182,0~\textrm{cm (conjunto unimodal)}.
+$$
+:::
+
+:::{#exm-}
+
+Seja uma amostra referente aos pesos, em kg, de oito leitões da raça Large White, dada por:
+$$
+38,2; 40,4; 38,5; 38,2; 37,4; 39,6; 40,1; 40,1.
+$$
+
+Para o cálculo da moda os dados foram ordenados de forma crescente:
+$$
+37,4; 38,2; 38,2; 38,5; 39,6; 40,1; 40,1; 40,4.
+$$
+Portanto,
+$$
+mo=38,2\textrm{e}~40,1~\textrm{kg (conjunto bimodal)}.
+$$
+:::
+
+:::{#exm-}
+
+Seja uma amostra de cinco vacas leiteiras da raça holandesa, referentes a produção diária de leite, em kg,dada por:
+$$
+19,8; 18,2; 20,1; 20,9; 19,5.
+$$
+Para o cálculo da moda os dados foram ordenados de forma crescente:
+$$
+18,2; 19,5; 19,8; 20,1; 20,9.
+$$
+Neste caso a moda não existe (conjunto amodal).
+
+:::
+
+:::{#exm-}
+
+Considere o @exm-cont, e considerando os dados ordenados de forma crescente, tem-se que a moda é dada por:
+$$
+mo = 27,2~\textrm{kg}.
+$$
+:::
+
+:::{#exm-}
+
+Quando os dados estiverem agrupados em uma Tabela de Distribuição de Frequências com intervalos de classes, a moda se localiza na classe de maior frequência (classe modal), e é dada pela expressão (@eq-moda),
+$$
+mo=LI_{mo}+\left(\frac{\Delta_1}{\Delta_1+\Delta_2}\right) c_{mo},
+$${#eq-moda}
+em que:
+
+- $LI_{mo}$ é o limite inferior da classe modal;
+- $\Delta_1$ é a diferença entre a freqüência absoluta da classe modal e a classe anterior;
+- $\Delta_2$ é a diferença entre a freqüência absoluta da classe modal e a classe posterior;
+- $c_{mo}$ é a amplitude da classe modal.
+
+:::
+
+:::{#exm-}
+
+Considerando o @exm-cont, para o cálculo da moda tem-se:
+
+- Classe Modal: [26,0 ; 28,0);
+- $LI_{mo}=$26,0 kg;
+- $\Delta_1$=16-12=4;
+- $\Delta_2$=16-10=6;
+- $c_{mo}=2,0$ kg.
+
+Utilizando-se da expressão (@eq-moda) tem-se que a moda é dada por:
+$$
+mo=26,0+\left(\frac{4}{4+6}\right) 2,0=26,8~\textrm{kg}.
+$$
+
+A diferença entre os dois valores ($27,2$ kg e $26,8$ kg) se deve ao erro de agrupamento.
+
+:::
+
+### Propriedades
+
+A moda apresenta as seguintes propriedades:
+
+
+i) Somando-se ou subtraindo-se uma mesmo valor constante a cada dado, a moda fica acrescida ou subtraída deste valor;
+ii) Multiplicando-se ou dividindo-se cada dado por uma mesmo valor constante, diferente de 0, a moda fica multiplicada ou dividida por este valor.
 
 

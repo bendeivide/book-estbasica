@@ -265,6 +265,17 @@ window.Quarto = {
   <li><a href="#dados-agrupados" id="toc-dados-agrupados" class="nav-link" data-scroll-target="#dados-agrupados"><span class="header-section-number">3.2.2</span> Dados Agrupados</a></li>
   <li><a href="#propriedades" id="toc-propriedades" class="nav-link" data-scroll-target="#propriedades"><span class="header-section-number">3.2.3</span> Propriedades</a></li>
   </ul></li>
+  <li><a href="#mediana" id="toc-mediana" class="nav-link" data-scroll-target="#mediana"><span class="header-section-number">3.3</span> Mediana</a>
+  <ul class="collapse">
+  <li><a href="#dados-não-agrupados-1" id="toc-dados-não-agrupados-1" class="nav-link" data-scroll-target="#dados-não-agrupados-1"><span class="header-section-number">3.3.1</span> Dados Não Agrupados</a></li>
+  <li><a href="#dados-agrupados-1" id="toc-dados-agrupados-1" class="nav-link" data-scroll-target="#dados-agrupados-1"><span class="header-section-number">3.3.2</span> Dados Agrupados</a></li>
+  <li><a href="#propriedades-1" id="toc-propriedades-1" class="nav-link" data-scroll-target="#propriedades-1"><span class="header-section-number">3.3.3</span> Propriedades</a></li>
+  </ul></li>
+  <li><a href="#moda" id="toc-moda" class="nav-link" data-scroll-target="#moda"><span class="header-section-number">3.4</span> Moda</a>
+  <ul class="collapse">
+  <li><a href="#dados-não-agrupados-2" id="toc-dados-não-agrupados-2" class="nav-link" data-scroll-target="#dados-não-agrupados-2"><span class="header-section-number">3.4.1</span> Dados Não Agrupados</a></li>
+  <li><a href="#propriedades-2" id="toc-propriedades-2" class="nav-link" data-scroll-target="#propriedades-2"><span class="header-section-number">3.4.2</span> Propriedades</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -498,6 +509,166 @@ x_{i}\times k \Rightarrow \bar{\text{x}} \times k.
 \bar{\text{x}}=\frac{364,0+368,0+378,0}{3}=370,0~\textrm{cm}.
 \]</span> O que corresponde a média anterior multiplicada por 2.</p>
 </div>
+</section>
+</section>
+<section id="mediana" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="mediana"><span class="header-section-number">3.3</span> Mediana</h2>
+<p>A mediana é o valor central de um conjunto dados, isto é, divide os dados ordenados ascendente ou descendentemente em partes iguais, ou seja, 50,0% dos dados estão acima e 50,0% estão abaixo deste valor. A mediana tem a mesma unidade dos dados.</p>
+<section id="dados-não-agrupados-1" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="dados-não-agrupados-1"><span class="header-section-number">3.3.1</span> Dados Não Agrupados</h3>
+<p>Neste caso os dados precisam primeiro serem ordenados de forma crescente ou decrescente.</p>
+<p>A mediana no caso de uma amostra, sendo denotada por <span class="math inline">\(md\)</span>, é expressa da seguinte forma:</p>
+<ul>
+<li><p>Se <span class="math inline">\(n\)</span> for par a mediana é dada pela expressão (<a href="#eq-medpar" class="quarto-xref"><span>3.4</span></a>). <span id="eq-medpar"><span class="math display">\[
+md = \frac{x_{\left(\frac{n}{2}\right)}+x_{\left(\frac{n+2}{2}\right)}}{2};
+\tag{3.4}\]</span></span></p></li>
+<li><p>Se <span class="math inline">\(n\)</span> for impar a mediana é dada pela expressão (<a href="#eq-medimpar" class="quarto-xref"><span>3.5</span></a>). <span id="eq-medimpar"><span class="math display">\[
+md=x_{\left(\frac{n+1}{2}\right)}.
+\tag{3.5}\]</span></span></p></li>
+</ul>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3.7</strong></span> Considere uma amostra referente às alturas, em cm, de sete plantas de uma variedade de milho, dada por: <span class="math display">\[
+185,0; 182,0; 189,0; 182,0; 184,0; 188,0; 187,0.
+\]</span> Para o cálculo da mediana os dados foram ordenados de forma crescente: <span class="math display">\[
+182,0; 182,0; 184,0; 185,0; 187,0; 188,0; 189,0.
+\]</span> Neste caso <span class="math inline">\(n\)</span> = 7 (ímpar). Utilizando-se da expressão (<a href="#eq-medimpar" class="quarto-xref"><span>3.5</span></a>) tem-se que a mediana é dada por: <span class="math display">\[
+md=x_{\left(\frac{7+1}{2}\right)}=x_{(4)},
+\]</span> ou seja, corresponde ao 4º dado. Logo, a mediana é igual a <span class="math inline">\(185,0\)</span> cm.</p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3.8</strong></span> Seja uma amostra referente aos pesos, em kg, de oito leitões da raça Large White, dada por: <span class="math display">\[
+38,2; 40,4; 38,5; 38,2; 37,4; 39,6; 40,1; 40,1.
+\]</span></p>
+<p>Para o cálculo da mediana os dados foram ordenados de forma crescente: <span class="math display">\[
+37,4; 38,2; 38,2; 38,5; 39,6; 40,1; 40,1; 40,4
+\]</span></p>
+<p>Tem-se que <span class="math inline">\(n\)</span> = 8 (par). Utilizando-se da expressão (<a href="#eq-medpar" class="quarto-xref"><span>3.4</span></a>) tem-se que a mediana é dada por: <span class="math display">\[
+md=\frac{x_{\left(\frac{8}{2}\right)}+x_{\left(\frac{8+2}{2}\right)}}{2}=\frac{x_{(4)}+x_{(5)}}{2},
+\]</span> ou seja, é a média entre o 4º e o 5º dado, dada por: <span class="math display">\[
+md=\frac{38,5+39,6}{2}=$39,05~\textrm{kg}.
+\]</span></p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3.9</strong></span> Seja o <a href="cap02.html#exm-cont" class="quarto-xref">Exemplo&nbsp;<span>2.4</span></a>, e considerando os dados ordenados de forma crescente.</p>
+<p>Neste caso tem-se que <span class="math inline">\(n\)</span> = 50 (par). Utilizando-se da expressão (<a href="#eq-medpar" class="quarto-xref"><span>3.4</span></a>) tem-se que a mediana é dada por: <span class="math display">\[
+md=\frac{x_{\left(\frac{50}{2}\right)}+x_{\left(\frac{50+2}{2}\right)}}{2}=\frac{x_{(25)}+x_{(26)}}{2},
+\]</span> ou seja, é a média entre o 25º e o 26º dado, dada por: <span class="math display">\[
+md=\frac{26,5+26,5}{2}=26,5~\textrm{kg}.
+\]</span></p>
+</div>
+</section>
+<section id="dados-agrupados-1" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="dados-agrupados-1"><span class="header-section-number">3.3.2</span> Dados Agrupados</h3>
+<p>Se os dados estiverem agrupados em uma Tabela de Distribuição de Frequências com intervalos de classes, a mediana é dada pela expressão (<a href="#eq-mediana" class="quarto-xref"><span>3.6</span></a>),</p>
+<p><span id="eq-mediana"><span class="math display">\[
+md=LI_{md}+\left[\frac{\frac{n}{2}-F_{A}}{F_{md}}\right]c_{md},
+\tag{3.6}\]</span></span> em que:</p>
+<ul>
+<li><span class="math inline">\(LI_{md}\)</span> é o limite inferior da classe mediana;</li>
+<li><span class="math inline">\(F_A\)</span> é a frequência acumulada anterior à classe mediana;</li>
+<li><span class="math inline">\(F_{md}\)</span> é a frequência absoluta da classe mediana;</li>
+<li><span class="math inline">\(c_{md}\)</span> é a amplitude da classe mediana.</li>
+</ul>
+<p>A classe mediana é a classe que contém o dado: <span class="math inline">\(x_{\left(\frac{n}{2}\right)}\)</span> (se <span class="math inline">\(n\)</span> for par), ou <span class="math inline">\(x_{\left(\frac{n+1}{2}\right)}\)</span> (se <span class="math inline">\(n\)</span> for impar), na Tabela de Distribuição de Frequências.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3.10</strong></span> Considere o <a href="cap02.html#exm-cont" class="quarto-xref">Exemplo&nbsp;<span>2.4</span></a>. A classe mediana é: <span class="math display">\[
+x_{\left(\frac{n}{2}\right)}=x_{\left(\frac{50}{2}\right)}=x_{(25)}=25º~\textrm{valor}.
+\]</span></p>
+<p>Conta-se as freqüências absolutas até abranger o 25º valor. Neste caso tem-se: 2 + 5 + 12 + 16, ou seja, a 4ª classe, isto é, <span class="math inline">\([26,0; 28,0)\)</span>.</p>
+<p>Assim, tem-se que:</p>
+<ul>
+<li>$LI_{md}=$26,0~kg;</li>
+<li><span class="math inline">\(F_A\)</span>=2+5+12=19;</li>
+<li><span class="math inline">\(F_{md}\)</span>=16;</li>
+<li>$c_{md}=$2,0~kg.</li>
+</ul>
+<p>Utilizando-se da expressão (<a href="#eq-mediana" class="quarto-xref"><span>3.6</span></a>) tem-se que a mediana é dada por:</p>
+<p><span class="math display">\[
+md=26,0+\left[\frac{\frac{50}{2}-19}{16}\right]2,0=26,75~\textrm{kg}.
+\]</span> Tem-se que a diferença entre os dois valores (26,5 kg e 26,75 kg) se deve ao erro de agrupamento.</p>
+</div>
+</section>
+<section id="propriedades-1" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="propriedades-1"><span class="header-section-number">3.3.3</span> Propriedades</h3>
+<p>A mediana apresenta as seguintes propriedades:</p>
+<ol type="i">
+<li><span class="math inline">\(\sum_{i=1}^{n}|x_i-md|\)</span> é um valor mínimo se comparado com qualquer outra expressão da forma: <span class="math inline">\(\sum_{i=1}^{n}|x_i-k|\)</span> (sendo <span class="math inline">\(k\)</span> um valor qualquer);</li>
+<li>Somando-se ou subtraindo-se um mesmo valor constante à cada dado, a mediana fica acrescida ou subtraída deste valor;</li>
+<li>Multiplicando-se ou dividindo-se cada dado por uma mesmo valor constante, diferente de 0, a mediana fica multiplicada ou dividida por este valor.</li>
+</ol>
+</section>
+</section>
+<section id="moda" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="moda"><span class="header-section-number">3.4</span> Moda</h2>
+<p>A moda de um conjunto de dados é o valor mais frequente, sendo denotada por <span class="math inline">\(mo\)</span>. Um conjunto de dados pode ter mais de uma moda, ou também, pode não ter moda. A moda tem a mesma unidade dos dados.</p>
+<section id="dados-não-agrupados-2" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="dados-não-agrupados-2"><span class="header-section-number">3.4.1</span> Dados Não Agrupados</h3>
+<p>Deve-se primeiro ordenar os dados de forma crescente ou decrescente, e em seguida contar o valor que ocorre mais vezes no conjunto de dados, ou seja, o valor mais frequente.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3.11</strong></span> Considere uma amostra referente às alturas, em cm, de sete plantas de uma variedade de milho, dada por: <span class="math display">\[
+185,0; 182,0; 189,0; 182,0; 184,0; 188,0; 187,0.
+\]</span></p>
+<p>Para o cálculo da moda os dados foram ordenados de forma crescente: <span class="math display">\[
+182,0; 182,0; 184,0; 185,0; 187,0; 188,0; 189,0,
+\]</span> então, <span class="math display">\[
+mo=182,0~\textrm{cm (conjunto unimodal)}.
+\]</span></p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3.12</strong></span> Seja uma amostra referente aos pesos, em kg, de oito leitões da raça Large White, dada por: <span class="math display">\[
+38,2; 40,4; 38,5; 38,2; 37,4; 39,6; 40,1; 40,1.
+\]</span></p>
+<p>Para o cálculo da moda os dados foram ordenados de forma crescente: <span class="math display">\[
+37,4; 38,2; 38,2; 38,5; 39,6; 40,1; 40,1; 40,4.
+\]</span> Portanto, <span class="math display">\[
+mo=38,2\textrm{e}~40,1~\textrm{kg (conjunto bimodal)}.
+\]</span></p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3.13</strong></span> Seja uma amostra de cinco vacas leiteiras da raça holandesa, referentes a produção diária de leite, em kg,dada por: <span class="math display">\[
+19,8; 18,2; 20,1; 20,9; 19,5.
+\]</span> Para o cálculo da moda os dados foram ordenados de forma crescente: <span class="math display">\[
+18,2; 19,5; 19,8; 20,1; 20,9.
+\]</span> Neste caso a moda não existe (conjunto amodal).</p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3.14</strong></span> Considere o <a href="cap02.html#exm-cont" class="quarto-xref">Exemplo&nbsp;<span>2.4</span></a>, e considerando os dados ordenados de forma crescente, tem-se que a moda é dada por: <span class="math display">\[
+mo = 27,2~\textrm{kg}.
+\]</span></p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3.15</strong></span> Quando os dados estiverem agrupados em uma Tabela de Distribuição de Frequências com intervalos de classes, a moda se localiza na classe de maior frequência (classe modal), e é dada pela expressão (<a href="#eq-moda" class="quarto-xref"><span>3.7</span></a>), <span id="eq-moda"><span class="math display">\[
+mo=LI_{mo}+\left(\frac{\Delta_1}{\Delta_1+\Delta_2}\right) c_{mo},
+\tag{3.7}\]</span></span> em que:</p>
+<ul>
+<li><span class="math inline">\(LI_{mo}\)</span> é o limite inferior da classe modal;</li>
+<li><span class="math inline">\(\Delta_1\)</span> é a diferença entre a freqüência absoluta da classe modal e a classe anterior;</li>
+<li><span class="math inline">\(\Delta_2\)</span> é a diferença entre a freqüência absoluta da classe modal e a classe posterior;</li>
+<li><span class="math inline">\(c_{mo}\)</span> é a amplitude da classe modal.</li>
+</ul>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3.16</strong></span> Considerando o <a href="cap02.html#exm-cont" class="quarto-xref">Exemplo&nbsp;<span>2.4</span></a>, para o cálculo da moda tem-se:</p>
+<ul>
+<li>Classe Modal: [26,0 ; 28,0);</li>
+<li>$LI_{mo}=$26,0 kg;</li>
+<li><span class="math inline">\(\Delta_1\)</span>=16-12=4;</li>
+<li><span class="math inline">\(\Delta_2\)</span>=16-10=6;</li>
+<li><span class="math inline">\(c_{mo}=2,0\)</span> kg.</li>
+</ul>
+<p>Utilizando-se da expressão (<a href="#eq-moda" class="quarto-xref"><span>3.7</span></a>) tem-se que a moda é dada por: <span class="math display">\[
+mo=26,0+\left(\frac{4}{4+6}\right) 2,0=26,8~\textrm{kg}.
+\]</span></p>
+<p>A diferença entre os dois valores (<span class="math inline">\(27,2\)</span> kg e <span class="math inline">\(26,8\)</span> kg) se deve ao erro de agrupamento.</p>
+</div>
+</section>
+<section id="propriedades-2" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="propriedades-2"><span class="header-section-number">3.4.2</span> Propriedades</h3>
+<p>A moda apresenta as seguintes propriedades:</p>
+<ol type="i">
+<li>Somando-se ou subtraindo-se uma mesmo valor constante a cada dado, a moda fica acrescida ou subtraída deste valor;</li>
+<li>Multiplicando-se ou dividindo-se cada dado por uma mesmo valor constante, diferente de 0, a moda fica multiplicada ou dividida por este valor.</li>
+</ol>
 
 
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
