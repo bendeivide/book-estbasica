@@ -276,6 +276,10 @@ window.Quarto = {
   <li><a href="#dados-não-agrupados-2" id="toc-dados-não-agrupados-2" class="nav-link" data-scroll-target="#dados-não-agrupados-2"><span class="header-section-number">3.4.1</span> Dados Não Agrupados</a></li>
   <li><a href="#propriedades-2" id="toc-propriedades-2" class="nav-link" data-scroll-target="#propriedades-2"><span class="header-section-number">3.4.2</span> Propriedades</a></li>
   </ul></li>
+  <li><a href="#medidas-de-posição-e-natureza-da-distribuição" id="toc-medidas-de-posição-e-natureza-da-distribuição" class="nav-link" data-scroll-target="#medidas-de-posição-e-natureza-da-distribuição"><span class="header-section-number">3.5</span> Medidas de Posição e Natureza da Distribuição</a></li>
+  <li><a href="#quantis" id="toc-quantis" class="nav-link" data-scroll-target="#quantis"><span class="header-section-number">3.6</span> Quantis</a></li>
+  <li><a href="#esquema-dos-cinco-números" id="toc-esquema-dos-cinco-números" class="nav-link" data-scroll-target="#esquema-dos-cinco-números"><span class="header-section-number">3.7</span> Esquema dos Cinco Números</a></li>
+  <li><a href="#exercícios-propostos" id="toc-exercícios-propostos" class="nav-link" data-scroll-target="#exercícios-propostos">Exercícios propostos</a></li>
   </ul>
 </nav>
     </div>
@@ -481,7 +485,7 @@ SQD=\sum_{i=1}^{n}\left(x_i- \bar{\text{x}} \right)^2.
 x_i \pm k \Rightarrow \bar{\text{x}} \pm k.
 \]</span></p>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 3.5</strong></span> Considere o Exemplo <a href="#exm-prop" class="quarto-xref">Exemplo&nbsp;<span>3.3</span></a>, em que: ${}=$185,0~cm.</p>
+<p><span class="theorem-title"><strong>Exemplo 3.5</strong></span> Considere o <a href="#exm-prop" class="quarto-xref">Exemplo&nbsp;<span>3.3</span></a>, em que: <span class="math inline">\(\bar{x}=185,0\)</span> cm.</p>
 <p>Somando-se <span class="math inline">\(k = 3,0\)</span> cm a cada valor da amostra tem-se: <span class="math display">\[
 185,0; 187,0; 192,0.
 \]</span></p>
@@ -577,10 +581,10 @@ x_{\left(\frac{n}{2}\right)}=x_{\left(\frac{50}{2}\right)}=x_{(25)}=25º~\textrm
 <p>Conta-se as freqüências absolutas até abranger o 25º valor. Neste caso tem-se: 2 + 5 + 12 + 16, ou seja, a 4ª classe, isto é, <span class="math inline">\([26,0; 28,0)\)</span>.</p>
 <p>Assim, tem-se que:</p>
 <ul>
-<li>$LI_{md}=$26,0~kg;</li>
-<li><span class="math inline">\(F_A\)</span>=2+5+12=19;</li>
-<li><span class="math inline">\(F_{md}\)</span>=16;</li>
-<li>$c_{md}=$2,0~kg.</li>
+<li><span class="math inline">\(LI_{md}=26,0\)</span> kg;</li>
+<li><span class="math inline">\(F_A=2+5+12=19\)</span>;</li>
+<li><span class="math inline">\(F_{md}=164\)</span> ;</li>
+<li><span class="math inline">\(c_{md}=2,0\)</span> kg.</li>
 </ul>
 <p>Utilizando-se da expressão (<a href="#eq-mediana" class="quarto-xref"><span>3.6</span></a>) tem-se que a mediana é dada por:</p>
 <p><span class="math display">\[
@@ -651,7 +655,7 @@ mo=LI_{mo}+\left(\frac{\Delta_1}{\Delta_1+\Delta_2}\right) c_{mo},
 <p><span class="theorem-title"><strong>Exemplo 3.16</strong></span> Considerando o <a href="cap02.html#exm-cont" class="quarto-xref">Exemplo&nbsp;<span>2.4</span></a>, para o cálculo da moda tem-se:</p>
 <ul>
 <li>Classe Modal: [26,0 ; 28,0);</li>
-<li>$LI_{mo}=$26,0 kg;</li>
+<li><span class="math inline">\(LI_{mo}= 26,0\)</span> kg;</li>
 <li><span class="math inline">\(\Delta_1\)</span>=16-12=4;</li>
 <li><span class="math inline">\(\Delta_2\)</span>=16-10=6;</li>
 <li><span class="math inline">\(c_{mo}=2,0\)</span> kg.</li>
@@ -669,6 +673,434 @@ mo=26,0+\left(\frac{4}{4+6}\right) 2,0=26,8~\textrm{kg}.
 <li>Somando-se ou subtraindo-se uma mesmo valor constante a cada dado, a moda fica acrescida ou subtraída deste valor;</li>
 <li>Multiplicando-se ou dividindo-se cada dado por uma mesmo valor constante, diferente de 0, a moda fica multiplicada ou dividida por este valor.</li>
 </ol>
+<p>A média, a mediana e a moda apresentam as seguintes vantagens e desvantagens.</p>
+<ol type="i">
+<li>Vantagens:
+<ul>
+<li>Média: tratável matematicamente;</li>
+<li>Mediana: não é influenciada por valores extremos;</li>
+<li>Moda: não é influenciada por valores extremos.</li>
+</ul></li>
+<li>Desvantagens:
+<ul>
+<li>Média: é influenciada por valores extremos;</li>
+<li>Mediana: não é matematicamente tratável;</li>
+<li>Moda: não é matematicamente tratável.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="medidas-de-posição-e-natureza-da-distribuição" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="medidas-de-posição-e-natureza-da-distribuição"><span class="header-section-number">3.5</span> Medidas de Posição e Natureza da Distribuição</h2>
+<p>A exemplo do polígono de frequências, a determinação das medidas de posição também permite discutir sobre a simetria da distribuição dos dados. E assim, conforme a <a href="#fig-assimetriacmedidas2" class="quarto-xref">Figura&nbsp;<span>3.1</span></a>, pode-se observar a relação das medidas de posição com a natureza da distribuição.</p>
+<div id="fig-assimetriacmedidas2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-assimetriacmedidas2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/assimetria01.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-assimetriacmedidas2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3.1: Classificação da simetria dos dados baseados nas medidas de posição.
+</figcaption>
+</figure>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3.17</strong></span> No <a href="cap02.html#exm-cont" class="quarto-xref">Exemplo&nbsp;<span>2.4</span></a> tem-se:</p>
+<ul>
+<li><span class="math inline">\(\bar{x}=26,70\)</span> kg;</li>
+<li><span class="math inline">\(md=26,75\)</span> kg;</li>
+<li><span class="math inline">\(mo=26,80\)</span> kg.</li>
+</ul>
+<p>Logo, a distribuição é simétrica.</p>
+</div>
+</section>
+<section id="quantis" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="quantis"><span class="header-section-number">3.6</span> Quantis</h2>
+<p>De um modo geral, pode-se definir uma medida, chamada quantil de ordem <span class="math inline">\(p\)</span> ou <span class="math inline">\(p-quantil\)</span>, representada por <span class="math inline">\(q(p)\)</span>, sendo <span class="math inline">\(p\)</span> uma proporção <span class="math inline">\((0,0 &lt; p &lt; 1,0)\)</span>, de tal forma que 100<span class="math inline">\(p\)</span>% dos dados são menores do que <span class="math inline">\(q(p)\)</span>.</p>
+<p>Os quantis mais empregados são:</p>
+<ol type="i">
+<li>Quartis: Dividem os dados ordenados em ordem crescente em quatro partes iguais, sendo que: 25% dos dados serão inferiores ao primeiro quartil, 50% inferiores ao segundo quartil, que é a mediana, e 75% dos dados serão inferiores e 25% superiores ao terceiro quartil.</li>
+<li>Decis: Dividem os dados ordenados em ordem crescente em dez partes iguais.</li>
+<li>Percentis: Dividem os dados ordenados em ordem crescente em cem partes iguais.</li>
+</ol>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3.18</strong></span> &nbsp;</p>
+<ul>
+<li><span class="math inline">\(q(0,25): 1º\)</span> Quartil = <span class="math inline">\(25º\)</span> Percentil;</li>
+<li><span class="math inline">\(q(0,50): 2º\)</span> Quartil = Mediana = <span class="math inline">\(5º\)</span> Decil = <span class="math inline">\(50º\)</span> Percentil;</li>
+<li><span class="math inline">\(q(0,75): 3º\)</span> Quartil = <span class="math inline">\(75º\)</span> Percentil;</li>
+<li><span class="math inline">\(q(0,40): 4º\)</span> Decil;</li>
+<li><span class="math inline">\(q(0,95): 95º\)</span> Percentil.</li>
+</ul>
+</div>
+<p>Segundo <span class="citation" data-cites="bussabmorettin2003">Bussab e Morettin (<a href="references.html#ref-bussabmorettin2003" role="doc-biblioref">2010</a>)</span>, o quantil de ordem <span class="math inline">\(p\)</span> é definido pela expressão <a href="#eq-quantis" class="quarto-xref"><span>3.8</span></a>.</p>
+<p><span id="eq-quantis"><span class="math display">\[
+    q(p)=\begin{cases}
+        x_{(i)} &amp; \textrm{se } p = p_i, i=1,2,\ldots,n\\
+        (1-f_i)q(p_i)+f_iq(p_{i+1}) &amp; \textrm{se  } p_i&lt;p&lt;p_{i+1};\\
+        x_1 &amp; \textrm{se } p&lt;p_1;\\
+        X_n &amp; \textrm{se } p&gt;p_n,
+    \end{cases}
+\tag{3.8}\]</span></span> em que:</p>
+<ul>
+<li><span class="math inline">\(p_{i}=\frac{i-0,5}{n}\)</span>;</li>
+<li><span class="math inline">\(f_i=\frac{p-p_i}{p_{i+1}-p_i}\)</span>.</li>
+</ul>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3.19</strong></span> Considere o <a href="cap02.html#exm-cont" class="quarto-xref">Exemplo&nbsp;<span>2.4</span></a>, e usando a expressão <a href="#eq-quantis" class="quarto-xref"><span>3.8</span></a>. podem-se calcular, por exemplo, os seguintes quantis:</p>
+<ul>
+<li><span class="math inline">\(q(0,1)\)</span>;</li>
+<li><span class="math inline">\(q(0,2)\)</span>;</li>
+<li><span class="math inline">\(q(0,5)\)</span>;</li>
+<li><span class="math inline">\(q(0,75)\)</span>.</li>
+</ul>
+<p>Assumindo: <span class="math display">\[
+p_{i}=\frac{i-0,5}{n},
+\]</span> então segue que:</p>
+<ul>
+<li><span class="math inline">\(p_1=\frac{1-0,5}{50}=0,01\)</span>;</li>
+<li><span class="math inline">\(p_2=\frac{2-0,5}{50}=0,03\)</span>;</li>
+<li><span class="math inline">\(p_3=\frac{3-0,5}{50}=0,05\)</span>;</li>
+<li><span class="math inline">\(p_4=\frac{4-0,5}{50}=0,07\)</span>;</li>
+<li><span class="math inline">\(p_5=\frac{5-0,5}{50}=0,09\)</span>;</li>
+<li><span class="math inline">\(p_6=\frac{6-0,5}{50}=0,11\)</span>;</li>
+<li><span class="math inline">\(p_7=\frac{7-0,5}{50}=0,13\)</span>;</li>
+<li><span class="math inline">\(p_8=\frac{8-0,5}{50}=0,15\)</span>;</li>
+<li><span class="math inline">\(p_9=\frac{9-0,5}{50}=0,17\)</span>;</li>
+<li><span class="math inline">\(p_{10}=\frac{10-0,5}{50}=0,19\)</span>;</li>
+<li><span class="math inline">\(p_{11}=\frac{11-0,5}{50}=0,21\)</span>;</li>
+<li><span class="math inline">\(p_{12}=\frac{12-0,5}{50}=0,23\)</span>;</li>
+<li><span class="math inline">\(p_{13}=\frac{13-0,5}{50}=0,25\)</span>;</li>
+<li><span class="math inline">\(\qquad\vdots\)</span></li>
+<li><span class="math inline">\(p_{25}=\frac{25-0,5}{50}=0,49\)</span>;</li>
+<li><span class="math inline">\(p_{26}=\frac{26-0,5}{50}=0,51\)</span>;</li>
+<li><span class="math inline">\(\qquad\vdots\)</span></li>
+<li><span class="math inline">\(p_{37}=\frac{37-0,5}{50}=0,73\)</span>;</li>
+<li><span class="math inline">\(p_{38}=\frac{38-0,5}{50}=0,75\)</span>;</li>
+<li><span class="math inline">\(p_{39}=\frac{39-0,5}{50}=0,77\)</span>;</li>
+<li><span class="math inline">\(\qquad\vdots\)</span></li>
+<li><span class="math inline">\(p_{49}=\frac{49-0,5}{50}=0,97\)</span>;</li>
+<li><span class="math inline">\(p_{50}=\frac{50-0,5}{50}=0,99\)</span>.</li>
+</ul>
+<ol type="a">
+<li><span class="math inline">\(q(0,1)=?\)</span> <span class="math display">\[
+p_5&lt;0,1&lt;p_6 \Rightarrow 0,09&lt;0,1&lt;0,11.
+\]</span> <span class="math display">\[
+f_i=\frac{(p-p_i)}{(p_{i+1})-(p_i)}=\frac{0,1-0,09}{0,11-0,09}=0,5.
+\]</span></li>
+</ol>
+<p><span class="math display">\[
+q(p)=(1-f_i)q(p_i)+f_{i}q(p_{i+1}).
+\]</span></p>
+<p><span class="math display">\[
+q(0,1)=(1 – 0,5)q(p_5)+0,5q(p_6)=0,5(22,8) + 0,5(23,0)=$ 22,9~\textrm{kg}.
+\]</span></p>
+<ol start="2" type="a">
+<li><span class="math inline">\(q(0,2)=?\)</span></li>
+</ol>
+<p><span class="math display">\[
+p_{10}&lt;0,2&lt;p_{11} \Rightarrow 0,19&lt;0,2&lt;0,21.
+\]</span></p>
+<p><span class="math display">\[
+f_i=\frac{(p-p_i)}{(p_{i+1})-(p_i)}=\frac{0,2-0,19}{0,21-0,19}=0,5.
+\]</span></p>
+<p><span class="math display">\[
+q(p)=(1-f_i)q(p_i)+f_{i}q(p_{i+1}).
+\]</span></p>
+<p><span class="math display">\[
+q(0,2)=(1 – 0,5)q(p_{10})+0,5q(p_{11})=0,5(24,3) + 0,5(24,5)= 24,4~\textrm{kg}.
+\]</span></p>
+<ol start="3" type="a">
+<li><span class="math inline">\(q(0,5)=?\)</span></li>
+</ol>
+<p><span class="math display">\[
+p_{25}&lt;0,5&lt;p_{26} \Rightarrow 0,49&lt;0,5&lt;0,51.
+\]</span></p>
+<p><span class="math display">\[
+f_i=\frac{(p-p_i)}{(p_{i+1})-(p_i)}=\frac{0,5-0,49}{0,51-0,14}=0,5.
+\]</span></p>
+<p><span class="math display">\[
+q(p)=(1-f_i)q(p_i)+f_{i}q(p_{i+1}).
+\]</span></p>
+<p><span class="math display">\[
+q(0,5)=(1 – 0,5)q(p_{25})+0,5q(p_{26})=0,5(26,3) + 0,5(26,5)= 26,5~\textrm{kg}.
+\]</span></p>
+<ol start="4" type="a">
+<li><span class="math inline">\(q(0,75)=?\)</span></li>
+</ol>
+<p><span class="math display">\[
+q(0,75)=q(p_{38})=x_{38}=28,5~\textrm{kg}.
+\]</span></p>
+</div>
+</section>
+<section id="esquema-dos-cinco-números" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="esquema-dos-cinco-números"><span class="header-section-number">3.7</span> Esquema dos Cinco Números</h2>
+<p>O esquema dos cinco números são utilizados para se ter uma idéia da simetria da distribuição dos dados. A idéia é obter os cinco valores:</p>
+<ul>
+<li><span class="math inline">\(x_1 \Rightarrow\)</span> menor valor;</li>
+<li><span class="math inline">\(q_1 \Rightarrow q(0,25)\)</span>;</li>
+<li><span class="math inline">\(q_2 \Rightarrow q(0,50)\)</span>;</li>
+<li><span class="math inline">\(q_3 \Rightarrow q(0,75)\)</span>;</li>
+<li><span class="math inline">\(x_n \Rightarrow\)</span> maior valor.</li>
+</ul>
+<p>Para uma distribuição simétrica, ou aproximadamente simétrica, deve-se ter:</p>
+<ul>
+<li><span class="math inline">\(q_2-x_1 \cong x_n - q_2\)</span>;</li>
+<li><span class="math inline">\(q_2 - q_1 \cong q_3 - q_2\)</span>;</li>
+<li><span class="math inline">\(q_1 - x_1 \cong x_n - q_3\)</span>;</li>
+<li>distâncias entre a mediana e <span class="math inline">\(q_1\)</span>, <span class="math inline">\(q_3\)</span> menores do que distâncias entre os extremos e <span class="math inline">\(q_1\)</span> e <span class="math inline">\(q_3\)</span>.</li>
+</ul>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3.20</strong></span> No exm-cont tem-se que:</p>
+<ul>
+<li><span class="math inline">\(x_1=21,0\)</span> kg;</li>
+<li><span class="math inline">\(q_1=q(0,25)=24,9\)</span> kg;</li>
+<li><span class="math inline">\(q_2=q(0,50)=26,5\)</span> kg;</li>
+<li><span class="math inline">\(q_3=q(0,75)=28,5\)</span> kg;<br>
+</li>
+<li><span class="math inline">\(x_n=33,0\)</span> kg.</li>
+</ul>
+<p>Pelos resultados conclui-se que a distribuição é aproximadamente simétrica.</p>
+</div>
+</section>
+<section id="exercícios-propostos" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercícios-propostos">Exercícios propostos</h2>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 3.1</strong></span> Um Engenheiro Agrônomo interessado em estudar a produtividade de um canavial, demarcou nele em vários pontos escolhidos ao acaso, 10 pequenas áreas de 100 <span class="math inline">\(\textrm{m}^2\)</span> cada, cuja produção foi pesada. Os resultados obtidos, em kg, foram os seguintes: <span class="math display">\[
+650,0;  850,0;  710,0;  920,0;  780,0;  820,0;  900,0;  780,0;  740,0;  950,0.
+\]</span></p>
+<p>Calcule a média, a mediana e a moda, da produção de cana-de-açúcar por área de 100 <span class="math inline">\(\textrm{m}^2\)</span>.</p>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 3.2</strong></span> Em relação ao estudo do problema anterior o Engenheiro Agrônomo achou que a variabilidade dos dados era muito grande, e que apenas 10 áreas de 100 <span class="math inline">\(\textrm{m}^2\)</span> não representaram bem a produtividade do canavial. Assim ele avaliou no lugar de 10 uma amostra de 50 áreas de 100 <span class="math inline">\(\textrm{m}^2\)</span>, seguindo a mesma metodologia explicada no problema anterior. Os resultados obtidos, em kg, são apresentados na <a href="#tbl-prodcana" class="quarto-xref">Tabela&nbsp;<span>3.2</span></a>.</p>
+<p></p>
+<div id="tbl-prodcana" class="striped hover quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-prodcana-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;3.2: Produção de cana-de-açúcar, em kg, por áreas de 100 <span class="math inline">\(\textrm{m}^2\)</span>, Fazenda XX, 2007<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.
+</figcaption>
+<div aria-describedby="tbl-prodcana-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Produção</strong> <span class="math inline">\(\mathbf{(kg)}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbf{\tilde{X}_i}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbf{F_i}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\left[624,0  \right. ;\left. 668,0  \right)\)</span></td>
+<td style="text-align: center;">646,0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\left[668,0  \right. ;\left. 712,0  \right)\)</span></td>
+<td style="text-align: center;">690,0</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\left[712,0  \right. ;\left. 756,0  \right)\)</span></td>
+<td style="text-align: center;">734,0</td>
+<td style="text-align: center;">15</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\left[756,0 \right. ;\left. 800,0 \right)\)</span></td>
+<td style="text-align: center;">778,0</td>
+<td style="text-align: center;">13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\left[800,0  \right. ;\left. 844,0  \right)\)</span></td>
+<td style="text-align: center;">822,0</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\left[844,0  \right. ;\left. 888,0  \right)\)</span></td>
+<td style="text-align: center;">866,0</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\left[888,0  \right. ;\left. 932,0  \right)\)</span></td>
+<td style="text-align: center;">910,0</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\left[932,0  \right. ;\left. 976,0  \right)\)</span></td>
+<td style="text-align: center;">954,0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Total</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">50</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<ol type="a">
+<li>Calcule a média, a mediana e a moda da produção de cana-de-açúcar por área de 100 <span class="math inline">\(\textrm{m}^2\)</span>;</li>
+<li>Após registrada a produção de cada uma das 50 áreas de 100 <span class="math inline">\(\textrm{m}^2\)</span>, o Engenheiro Agrônomo descobriu um erro sistemático na pesagem da cana-de-açúcar. Para obter a pesagem certa ele determinou que em cada um dos 50 dados obtidos deveria ser acrescido 6,0 kg, e depois o resultado deveria ser multiplicado por 0,9. Qual o valor correto da média, da mediana e da moda?</li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 3.3</strong></span> Os pesos, em kg, de 6 novilhos nelore foram os seguintes: <span class="math display">\[
+184,0;  193,0;  198,0;  204,0;  196,0;  207,0.
+\]</span></p>
+<ol type="a">
+<li>Calcule a média dos pesos;</li>
+<li>Qual foi o desvio do <span class="math inline">\(2º\)</span> animal em relação à média. Explique o que ele significa;<br>
+</li>
+<li>Mostre que a soma dos desvios em relação à média é nula;</li>
+<li>Transforme os dados para arrobas. Calcule a média em arrobas partindo daquela obtida em (a);</li>
+<li>Adicione 20,0 kg em cada dado e encontre a média. Confronte o resultado com o obtido em (a). Qual a propriedade envolvida;</li>
+<li>Calcule a soma de quadrados dos desvios em relação à média e a 196,0. Discuta os resultados e tire conclusões.</li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 3.4</strong></span> Um agricultor da região Sul de Goiás plantou três lavouras de milho, utilizando sementes de três diferentes empresas produtoras de sementes. Por amostragem ele avaliou a produtividade, em t/ha, de cada uma delas, no ano de 2006, obtendo os seguintes resultados:</p>
+<table class="table-striped table-hover caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Empresa</strong></th>
+<th style="text-align: center;"><strong>Área plantada</strong> <span class="math inline">\(\mathbf{(ha)}\)</span></th>
+<th style="text-align: center;"><strong>Produtividade</strong> <span class="math inline">\(\mathbf{(t/ha)}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">200,0</td>
+<td style="text-align: center;">5,6</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">600,0</td>
+<td style="text-align: center;">5,9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1.000,0</td>
+<td style="text-align: center;">6,5</td>
+</tr>
+</tbody>
+</table>
+<p>O agricultor solicitou a um Engenheiro Agrônomo que trabalha na região, para calcular a produtividade média de milho de sua propriedade. Após análise dos dados, o Engenheiro respondeu ao agricultor que sua produtividade média de milho foi de 6,0 t/ha. Você concorda ou não com a afirmativa do Engenheiro Agrônomo?</p>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 3.5</strong></span> Os ganhos de peso, em kg, de 60 novilhos da raça guzerá, mantidos numa pastagem em determinado período foram os seguintes:</p>
+<table class="table-striped table-hover caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">36,0</td>
+<td style="text-align: center;">45,0</td>
+<td style="text-align: center;">60,0</td>
+<td style="text-align: center;">39,0</td>
+<td style="text-align: center;">57,0</td>
+<td style="text-align: center;">32,0</td>
+<td style="text-align: center;">39,0</td>
+<td style="text-align: center;">40,0</td>
+<td style="text-align: center;">63,0</td>
+<td style="text-align: center;">37,0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">42,0</td>
+<td style="text-align: center;">42,0</td>
+<td style="text-align: center;">44,0</td>
+<td style="text-align: center;">30,0</td>
+<td style="text-align: center;">47,0</td>
+<td style="text-align: center;">39,0</td>
+<td style="text-align: center;">15,0</td>
+<td style="text-align: center;">39,0</td>
+<td style="text-align: center;">25,0</td>
+<td style="text-align: center;">39,0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">57,0</td>
+<td style="text-align: center;">48,0</td>
+<td style="text-align: center;">44,0</td>
+<td style="text-align: center;">37,0</td>
+<td style="text-align: center;">44,0</td>
+<td style="text-align: center;">38,0</td>
+<td style="text-align: center;">21,0</td>
+<td style="text-align: center;">56,0</td>
+<td style="text-align: center;">52,0</td>
+<td style="text-align: center;">50,0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">31,0</td>
+<td style="text-align: center;">34,0</td>
+<td style="text-align: center;">36,0</td>
+<td style="text-align: center;">38,0</td>
+<td style="text-align: center;">43,0</td>
+<td style="text-align: center;">24,0</td>
+<td style="text-align: center;">38,0</td>
+<td style="text-align: center;">41,0</td>
+<td style="text-align: center;">46,0</td>
+<td style="text-align: center;">42,0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">28,0</td>
+<td style="text-align: center;">31,0</td>
+<td style="text-align: center;">32,0</td>
+<td style="text-align: center;">49,0</td>
+<td style="text-align: center;">39,0</td>
+<td style="text-align: center;">19,0</td>
+<td style="text-align: center;">49,0</td>
+<td style="text-align: center;">39,0</td>
+<td style="text-align: center;">42,0</td>
+<td style="text-align: center;">43,0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">20,0</td>
+<td style="text-align: center;">58,0</td>
+<td style="text-align: center;">34,0</td>
+<td style="text-align: center;">56,0</td>
+<td style="text-align: center;">35,0</td>
+<td style="text-align: center;">50,0</td>
+<td style="text-align: center;">27,0</td>
+<td style="text-align: center;">36,0</td>
+<td style="text-align: center;">40,0</td>
+<td style="text-align: center;">37,0</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>Calcule a média, a mediana e a moda do ganho de peso, em kg;</li>
+<li>Calcule os seguintes quantis:
+<ul>
+<li><span class="math inline">\(q(0,10)\)</span>;</li>
+<li><span class="math inline">\(q(0,20)\)</span>;</li>
+<li><span class="math inline">\(q(0,25)\)</span>;</li>
+<li><span class="math inline">\(q(0,50)\)</span>;</li>
+<li><span class="math inline">\(q(0,75)\)</span>;</li>
+<li><span class="math inline">\(q(0,80)\)</span>.</li>
+<li>Determine o esquema dos cinco números e discuta sobre a simetria da distribuição dos dados.</li>
+</ul></li>
+</ol>
+</div>
 
 
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
@@ -683,6 +1115,9 @@ BOLFARINE, H.; BUSSAB, W. O. <strong>Elementos de Amostragem</strong>. São Paul
 </div>
 <div id="ref-bolfarine2010" class="csl-entry" role="listitem">
 BOLFARINE, H.; SANDOVAL, M. C. <strong>Introdução à <span>I</span>nferência <span>E</span>statística</strong>. 2. ed. São Paulo: SBM, 2010. p. 159
+</div>
+<div id="ref-bussabmorettin2003" class="csl-entry" role="listitem">
+BUSSAB, W. O.; MORETTIN, P. A. <strong>Estatística Básica</strong>. 6. ed. São Paulo: Saraiva, 2010. p. 526
 </div>
 <div id="ref-cochrancox2005" class="csl-entry" role="listitem">
 COCHRAN, W.; COX, G. M. <strong>Experimental <span>D</span>esigns</strong>. 2. ed. New York: John Wiley &amp; Sons, 2005. p. 618
@@ -731,11 +1166,11 @@ STEEL, R. G. D.; TORRIE, J. H. <strong>Principles and procedures of statistics: 
 </div>
 </div>
 </section>
-</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn1"><p>Fonte: Dados fictícios.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Fonte: Dados fictícios.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

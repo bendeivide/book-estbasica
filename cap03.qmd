@@ -140,7 +140,7 @@ $$
 
 :::{#exm-}
 
-Considere o Exemplo @exm-prop, em que: $\bar{\text{x}}=$185,0~cm.
+Considere o @exm-prop, em que: $\bar{x}=185,0$ cm.
 
 Somando-se $k = 3,0$ cm a cada valor da amostra tem-se: 
 $$
@@ -284,10 +284,10 @@ Conta-se  as  freqüências  absolutas  até  abranger  o  25º valor. Neste cas
 
 Assim, tem-se que:
 
-- $LI_{md}=$26,0~kg;
-- $F_A$=2+5+12=19;
-- $F_{md}$=16;
-- $c_{md}=$2,0~kg.
+- $LI_{md}=26,0$ kg;
+- $F_A=2+5+12=19$;
+- $F_{md}=164$ ;
+- $c_{md}=2,0$ kg.
 
 
 Utilizando-se da expressão (@eq-mediana) tem-se que a mediana é dada por:
@@ -391,7 +391,7 @@ em que:
 Considerando o @exm-cont, para o cálculo da moda tem-se:
 
 - Classe Modal: [26,0 ; 28,0);
-- $LI_{mo}=$26,0 kg;
+- $LI_{mo}= 26,0$ kg;
 - $\Delta_1$=16-12=4;
 - $\Delta_2$=16-10=6;
 - $c_{mo}=2,0$ kg.
@@ -413,4 +413,314 @@ A moda apresenta as seguintes propriedades:
 i) Somando-se ou subtraindo-se uma mesmo valor constante a cada dado, a moda fica acrescida ou subtraída deste valor;
 ii) Multiplicando-se ou dividindo-se cada dado por uma mesmo valor constante, diferente de 0, a moda fica multiplicada ou dividida por este valor.
 
+\section{Vantagens e Desvantagens das Medidas de Posição}
 
+
+A média, a mediana e a moda apresentam as seguintes vantagens e desvantagens.
+
+i) Vantagens: 
+   - Média: tratável matematicamente;
+   - Mediana: não é influenciada por valores extremos;
+   - Moda: não é influenciada por valores extremos.
+ii) Desvantagens: 
+    - Média: é influenciada por valores extremos;
+    - Mediana: não é matematicamente tratável;
+    - Moda: não é matematicamente tratável.
+
+## Medidas de Posição e Natureza da Distribuição
+
+A exemplo do polígono de frequências, a determinação das medidas de posição também permite discutir sobre a simetria da distribuição dos dados. E assim, conforme a @fig-assimetriacmedidas2, pode-se observar a relação das medidas de posição com a natureza da distribuição. 
+
+![Classificação da simetria dos dados baseados nas medidas de posição.](images/assimetria01.png){#fig-assimetriacmedidas2}
+
+:::{#exm-}
+
+No @exm-cont tem-se:
+
+- $\bar{x}=26,70$ kg;
+- $md=26,75$ kg;
+- $mo=26,80$ kg.
+
+
+Logo, a distribuição é simétrica.
+
+:::
+
+
+## Quantis
+
+De um modo geral, pode-se definir uma medida, chamada quantil de ordem $p$ ou $p-quantil$, representada por $q(p)$, sendo $p$ uma proporção $(0,0 < p < 1,0)$, de tal forma que 100$p$\% dos dados são menores do que $q(p)$.
+
+Os quantis mais empregados são:
+
+i) Quartis: Dividem os dados ordenados em ordem crescente em quatro partes iguais, sendo que: 25\% dos dados serão inferiores ao primeiro quartil, 50\% inferiores ao segundo quartil, que é a mediana, e 75\% dos dados serão inferiores e 25\% superiores ao terceiro quartil.
+ii) Decis: Dividem os dados ordenados em ordem crescente em dez partes iguais.
+iii) Percentis: Dividem os dados ordenados em ordem crescente em cem partes iguais.
+
+
+:::{#exm-}
+
+- $q(0,25): 1º$ Quartil = $25º$ Percentil;
+- $q(0,50): 2º$ Quartil = Mediana = $5º$ Decil = $50º$ Percentil;
+- $q(0,75): 3º$ Quartil = $75º$ Percentil;
+- $q(0,40): 4º$ Decil;
+- $q(0,95): 95º$ Percentil.
+
+:::
+
+
+Segundo @bussabmorettin2003, o quantil de ordem $p$ é definido pela expressão @eq-quantis.
+
+$$
+    q(p)=\begin{cases}
+        x_{(i)} & \textrm{se } p = p_i, i=1,2,\ldots,n\\
+        (1-f_i)q(p_i)+f_iq(p_{i+1}) & \textrm{se  } p_i<p<p_{i+1};\\
+        x_1 & \textrm{se } p<p_1;\\
+        X_n & \textrm{se } p>p_n,
+    \end{cases}
+$$ {#eq-quantis}
+em que:
+
+- $p_{i}=\frac{i-0,5}{n}$;
+- $f_i=\frac{p-p_i}{p_{i+1}-p_i}$.
+
+
+:::{#exm-}
+
+Considere o @exm-cont, e usando a expressão @eq-quantis. podem-se calcular, por exemplo, os seguintes quantis:
+
+- $q(0,1)$;
+- $q(0,2)$;
+- $q(0,5)$;
+- $q(0,75)$.
+
+
+Assumindo:
+$$
+p_{i}=\frac{i-0,5}{n},
+$$
+então segue que:
+
+- $p_1=\frac{1-0,5}{50}=0,01$;
+- $p_2=\frac{2-0,5}{50}=0,03$;
+- $p_3=\frac{3-0,5}{50}=0,05$;
+- $p_4=\frac{4-0,5}{50}=0,07$;
+- $p_5=\frac{5-0,5}{50}=0,09$;
+- $p_6=\frac{6-0,5}{50}=0,11$;
+- $p_7=\frac{7-0,5}{50}=0,13$;
+- $p_8=\frac{8-0,5}{50}=0,15$;
+- $p_9=\frac{9-0,5}{50}=0,17$;
+- $p_{10}=\frac{10-0,5}{50}=0,19$;
+- $p_{11}=\frac{11-0,5}{50}=0,21$;
+- $p_{12}=\frac{12-0,5}{50}=0,23$;
+- $p_{13}=\frac{13-0,5}{50}=0,25$;
+- $\qquad\vdots$
+- $p_{25}=\frac{25-0,5}{50}=0,49$;
+- $p_{26}=\frac{26-0,5}{50}=0,51$;
+- $\qquad\vdots$
+- $p_{37}=\frac{37-0,5}{50}=0,73$;
+- $p_{38}=\frac{38-0,5}{50}=0,75$;
+- $p_{39}=\frac{39-0,5}{50}=0,77$;
+- $\qquad\vdots$
+- $p_{49}=\frac{49-0,5}{50}=0,97$;
+- $p_{50}=\frac{50-0,5}{50}=0,99$.
+
+
+a) $q(0,1)=?$
+$$
+p_5<0,1<p_6 \Rightarrow 0,09<0,1<0,11.
+$$
+$$
+f_i=\frac{(p-p_i)}{(p_{i+1})-(p_i)}=\frac{0,1-0,09}{0,11-0,09}=0,5.
+$$
+
+$$
+q(p)=(1-f_i)q(p_i)+f_{i}q(p_{i+1}).
+$$
+
+$$
+q(0,1)=(1 – 0,5)q(p_5)+0,5q(p_6)=0,5(22,8) + 0,5(23,0)=$ 22,9~\textrm{kg}.
+$$
+
+b) $q(0,2)=?$
+
+$$
+p_{10}<0,2<p_{11} \Rightarrow 0,19<0,2<0,21.
+$$
+
+$$
+f_i=\frac{(p-p_i)}{(p_{i+1})-(p_i)}=\frac{0,2-0,19}{0,21-0,19}=0,5.
+$$
+
+$$
+q(p)=(1-f_i)q(p_i)+f_{i}q(p_{i+1}).
+$$
+
+$$
+q(0,2)=(1 – 0,5)q(p_{10})+0,5q(p_{11})=0,5(24,3) + 0,5(24,5)= 24,4~\textrm{kg}.
+$$
+
+c) $q(0,5)=?$
+
+$$
+p_{25}<0,5<p_{26} \Rightarrow 0,49<0,5<0,51.
+$$
+
+$$
+f_i=\frac{(p-p_i)}{(p_{i+1})-(p_i)}=\frac{0,5-0,49}{0,51-0,14}=0,5.
+$$
+
+$$
+q(p)=(1-f_i)q(p_i)+f_{i}q(p_{i+1}).
+$$
+
+$$
+q(0,5)=(1 – 0,5)q(p_{25})+0,5q(p_{26})=0,5(26,3) + 0,5(26,5)= 26,5~\textrm{kg}.
+$$
+
+d) $q(0,75)=?$
+
+$$
+q(0,75)=q(p_{38})=x_{38}=28,5~\textrm{kg}.
+$$
+
+:::
+
+
+## Esquema dos Cinco Números
+
+O esquema dos cinco números são utilizados para se ter uma idéia da simetria da distribuição dos dados. A idéia é obter os cinco valores:
+
+- $x_1 \Rightarrow$ menor valor;
+- $q_1 \Rightarrow q(0,25)$;
+- $q_2 \Rightarrow q(0,50)$;
+- $q_3 \Rightarrow q(0,75)$;
+- $x_n \Rightarrow$ maior valor.
+
+
+Para uma distribuição simétrica, ou aproximadamente simétrica, deve-se ter:
+
+- $q_2-x_1 \cong x_n - q_2$;
+- $q_2 - q_1 \cong q_3 - q_2$;
+- $q_1 - x_1 \cong x_n - q_3$;
+- distâncias entre a mediana e $q_1$, $q_3$ menores do que distâncias entre os extremos e $q_1$ e $q_3$.
+
+:::{#exm-}
+
+No exm-cont tem-se que:
+
+- $x_1=21,0$ kg;
+- $q_1=q(0,25)=24,9$ kg;
+- $q_2=q(0,50)=26,5$ kg;
+- $q_3=q(0,75)=28,5$ kg;          
+- $x_n=33,0$ kg.
+
+
+Pelos resultados conclui-se que a distribuição é aproximadamente simétrica.
+
+:::
+
+## Exercícios propostos {-}
+
+
+:::{#exr-}
+
+Um Engenheiro Agrônomo interessado em estudar a produtividade de um canavial, demarcou nele em vários pontos escolhidos ao acaso, 10 pequenas áreas de 100 $\textrm{m}^2$ cada, cuja produção foi pesada.
+Os resultados obtidos, em kg, foram os seguintes:
+$$
+650,0;	850,0;	710,0;	920,0;	780,0;	820,0;	900,0;	780,0;	740,0;	950,0.
+$$
+
+Calcule a média, a mediana e a moda, da produção de cana-de-açúcar por área de 100 $\textrm{m}^2$.
+
+
+:::
+
+
+:::{#exr-}
+
+Em relação ao estudo do problema anterior o Engenheiro Agrônomo achou que a variabilidade dos dados era muito grande, e que apenas 10 áreas de 100 $\textrm{m}^2$ não representaram bem a produtividade do canavial. Assim ele avaliou no lugar de 10 uma amostra de 50 áreas de 100 $\textrm{m}^2$, seguindo a mesma metodologia explicada no problema anterior. Os resultados obtidos, em kg, são apresentados na @tbl-prodcana.
+
+\captionof{table}{Produção de cana-de-açúcar, em kg, por áreas de 100 $\textrm{m}^2$, Fazenda XX, 2007.}\label{tab:prodcana}
+
+| **Produção** $\mathbf{(kg)}$ | $\mathbf{\tilde{X}_i}$ | $\mathbf{F_i}$ |
+|:---:|:---:|:---:|
+|$\left[624,0  \right. ;\left. 668,0  \right)$ | 646,0 | 1|
+$\left[668,0  \right. ;\left. 712,0  \right)$ | 690,0 | 5|
+$\left[712,0  \right. ;\left. 756,0  \right)$ | 734,0 | 15|
+$\left[756,0 \right. ;\left. 800,0 \right)$ | 778,0 | 13|
+$\left[800,0  \right. ;\left. 844,0  \right)$ | 822,0 | 7|
+$\left[844,0  \right. ;\left. 888,0  \right)$ | 866,0 | 5|
+$\left[888,0  \right. ;\left. 932,0  \right)$ | 910,0 | 3|
+$\left[932,0  \right. ;\left. 976,0  \right)$ | 954,0 | 1|
+|Total |	 | 50|
+
+: Produção de cana-de-açúcar, em kg, por áreas de 100 $\textrm{m}^2$, Fazenda XX, 2007^[Fonte: Dados fictícios.]. {#tbl-prodcana .striped .hover}
+
+
+
+a) Calcule a média, a mediana e a moda da produção de cana-de-açúcar por área de 100 $\textrm{m}^2$;
+b) Após registrada a produção de cada uma das 50 áreas de 100 $\textrm{m}^2$, o Engenheiro Agrônomo descobriu um erro sistemático na pesagem da cana-de-açúcar. Para obter a pesagem certa ele determinou que em cada um dos 50 dados obtidos deveria ser acrescido 6,0 kg, e depois o resultado deveria ser multiplicado por 0,9. Qual o valor correto da média, da mediana e da moda?
+
+:::
+
+:::{#exr-}
+
+Os pesos, em kg, de 6 novilhos nelore foram os seguintes:
+$$
+184,0;	193,0;	198,0;	204,0;	196,0;	207,0.
+$$
+
+a) Calcule a média dos pesos;
+b) Qual foi o desvio do $2º$ animal em relação à média. Explique o que ele significa;  
+c) Mostre que a soma dos desvios em relação à média é nula;
+d) Transforme os dados para arrobas. Calcule a média em arrobas partindo daquela obtida em (a);
+e) Adicione 20,0 kg em cada dado e encontre a média. Confronte o resultado com o obtido em (a). Qual a propriedade envolvida;
+f) Calcule a soma de quadrados dos desvios em relação à média e a 196,0. Discuta os resultados e tire conclusões.
+
+:::
+
+:::{#exr-}
+
+Um agricultor da região Sul de Goiás plantou três lavouras de milho, utilizando sementes de três diferentes empresas produtoras de sementes. Por amostragem ele avaliou a produtividade, em t/ha, de cada uma delas, no ano de 2006, obtendo os seguintes resultados:
+
+|**Empresa** | **Área plantada** $\mathbf{(ha)}$ | **Produtividade** $\mathbf{(t/ha)}$ |
+|:---:|:---:|:---:|
+|1 | 200,0 | 5,6|
+|12 | 600,0 | 5,9|
+|3 | 1.000,0 | 6,5|
+
+: {.striped .hover}
+
+O agricultor solicitou a um Engenheiro Agrônomo que trabalha na região, para calcular a produtividade média de milho de sua propriedade. Após análise dos dados, o Engenheiro respondeu ao agricultor que sua produtividade média de milho foi de 6,0 t/ha. Você concorda ou não com a afirmativa do Engenheiro Agrônomo?
+
+:::
+
+:::{#exr-}
+
+Os ganhos de peso, em kg, de 60 novilhos da raça guzerá, mantidos numa pastagem em determinado período foram os seguintes:
+
+| | | | | | | | |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|36,0 |	45,0 |	60,0 |	39,0 |	57,0 |	32,0 |	39,0 |	40,0 |	63,0 |	37,0|
+|42,0 |	42,0 |	44,0 |	30,0 |	47,0 |	39,0 |	15,0 |	39,0 |	25,0 |	39,0|
+|57,0 |	48,0 |	44,0 |	37,0 |	44,0 |	38,0 |	21,0 |	56,0 |	52,0 |	50,0|
+|31,0 |	34,0 |	36,0 |	38,0 |	43,0 |	24,0 |	38,0 |	41,0 |	46,0 |	42,0|
+|28,0 |	31,0 |	32,0 |	49,0 |	39,0 |	19,0 |	49,0 |	39,0 |	42,0 |	43,0|
+|20,0 |	58,0 |	34,0 |	56,0 |	35,0 |	50,0 |	27,0 |	36,0 |	40,0 |	37,0|
+
+: {.striped .hover}
+ 
+
+
+a) Calcule a média, a mediana e a moda do ganho de peso, em kg;
+b) Calcule os seguintes quantis:
+   - $q(0,10)$;
+   - $q(0,20)$;
+   - $q(0,25)$;
+   - $q(0,50)$;
+   - $q(0,75)$;
+   - $q(0,80)$.
+   - Determine o esquema dos cinco números e discuta sobre a simetria da distribuição dos dados.
+
+:::
