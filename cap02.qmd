@@ -273,23 +273,23 @@ K=\sqrt{n}=\sqrt{50}=7,0711 \Rightarrow K=7~\textrm{classes}.
 $$
 b) Amplitude de classe $(c)$:
 \begin{align*}
-c &= \frac{A}{K-1}|
-  &=\frac{\textrm{Maior dado} - \textrm{Menor dado}}{K-1}|
-  &= \frac{33,0-21,0}{7-1}|
-  &=\frac{12}{6}|
+c &= \frac{A}{K-1}\\
+  &=\frac{\textrm{Maior dado} - \textrm{Menor dado}}{K-1}\\
+  &= \frac{33,0-21,0}{7-1}\\
+  &=\frac{12}{6}\\
   &=2,0~\textrm{kg}.
 \end{align*}
 
 c) Limite inferior da primeira classe ($LI_{1ª}$):
 \begin{align*}
-LI_{1ª} &= \textrm{Menor dado}-\frac{c}{2}|
-        &= 21,0-\frac{2,0}{2}|
+LI_{1ª} &= \textrm{Menor dado}-\frac{c}{2}\\
+        &= 21,0-\frac{2,0}{2}\\
         &=20,0~\textrm{kg}.
 \end{align*}
 
 d) Limite superior da primeira classe ($LS_{1ª}$):
 \begin{align*}
-LS_{1ª} &= LI_{1ª}+c|
+LS_{1ª} &= LI_{1ª}+c\\
         &= 20,0+2,0 = 22,0~\textrm{kg}.
 \end{align*}
 
