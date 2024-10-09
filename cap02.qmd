@@ -251,4 +251,133 @@ Um Zootecnista observou os pesos ao nascer, em kg, de uma amostra de 50 bezerros
 
 : Pesos ao nascer, em kg, de 50 bezerros da raça nelore (dados brutos). {#tbl-pesnascer .striped .hover}
 
+Os dados foram colocados em ordem crescente e estão apresentados na @tbl-pesnascer02.
+
+|     |      |       |       |       |       |       |       |       |      |
+|:---:|:----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:----:|
+|21,0 |	23,0 |	24,5 |	25,3 |	26,0 |	26,5 |	27,2 |	28,1 |	29,2 |	30,5|
+|21,6 |	23,7 |	24,5 |	25,6 |	26,1 |	26,8 |	27,2 |	28,1 |	29,3 |	31,0|
+|22,1 |	24,1 |	24,9 |	25,8 |	26,2 |	26,8 |	27,2 |	28,5 |	29,5 |	31,3|
+|22,2 |	24,2 |	25,0 |	25,9 |	26,2 |	26,9 |	27,2 |	28,6 |	29,6 |	31,8|
+|22,8 |	24,3 |	25,2 |	26,0 |	26,5 |	26,9 |	27,8 |	28,7 |	29,8 |	33,0|
+
+
+: Pesos ao nascer, em kg, de 50 bezerros da raça nelore (dados elaborados). {#tbl-pesnascer02 .striped .hover}
+
+Para a construção da Tabela de Distribuição de Frequências devem ser seguidos os passos descritos anteriormente, obtendo-se os seguintes resultados:
+
+
+a) Número de classes $(K)$:
+$$
+K=\sqrt{n}=\sqrt{50}=7,0711 \Rightarrow K=7~\textrm{classes}.
+$$
+b) Amplitude de classe $(c)$:
+\begin{align*}
+c &= \frac{A}{K-1}|
+  &=\frac{\textrm{Maior dado} - \textrm{Menor dado}}{K-1}|
+  &= \frac{33,0-21,0}{7-1}|
+  &=\frac{12}{6}|
+  &=2,0~\textrm{kg}.
+\end{align*}
+
+c) Limite inferior da primeira classe ($LI_{1ª}$):
+\begin{align*}
+LI_{1ª} &= \textrm{Menor dado}-\frac{c}{2}|
+        &= 21,0-\frac{2,0}{2}|
+        &=20,0~\textrm{kg}.
+\end{align*}
+
+d) Limite superior da primeira classe ($LS_{1ª}$):
+\begin{align*}
+LS_{1ª} &= LI_{1ª}+c|
+        &= 20,0+2,0 = 22,0~\textrm{kg}.
+\end{align*}
+
+e) Demais limites:
+
+Os demais limites dos intervalos de classe são obtidos somando-se o valor de $c$ até completar as $K$ classes.
+
+<center>
+1ª classe: $20,0$ a $22,0$ kg; </br>
+2ª classe: $22,0$ a $24,0$ kg; </br>
+3ª classe: $24,0$ a $26,0$ kg; </br>
+4ª classe: $26,0$ a $28,0$ kg; </br>
+5ª classe: $28,0$ a $30,0$ kg; </br>
+6ª classe: $30,0$ a $32,0$ kg; </br>
+7ª classe: $32,0$ a $34,0$ kg.
+</center>
+
+f) Tabela de distribuição de frequências:
+
+Obtidos os intervalos de classes são contados o número de dados que estão contidos em cada intervalo, ou seja, a frequência absoluta $(F_i)$. São determinados também as frequências relativa $(Fr_i)$ e percentual $(Fp_i)$ de cada classe, e o ponto médio de classe $(\tilde{X}_i)$.
+
+E assim, constrói-se a tabela de distribuição de frequências, conforme a Tabela @tbl-pesaonascer.
+
+| **Peso** $\mathbf{(kg)}$ | $\mathbf{\tilde{X}_i}$ | $\mathbf{F_i}$ | $\mathbf{Fr_i}$ | $\mathbf{Fp_i(\%)}$ |
+|:---:|:---:|:---:|:---:|:---:|
+|$\left[20,0 \right. ; \left. 22,0\right)$ | 21,0 | 2 | 0,04 | 4,0 |
+$\left[22,0 \right. ; \left. 24,0\right)$ | 23,0 | 5 | 0,10 |	10,0 |
+|$\left[24,0 \right. ; \left. 26,0\right)$ | 25,0 | 12 | 0,24 | 24,0 |
+$\left[ 26,0 \right. ; \left. 28,0\right)$ | 27,0 | 16 | 0,32 | 32,0 |
+|$\left[28,0 \right. ; \left. 30,0\right)$ | 29,0 | 10 | 0,20 | 20,0 |
+$\left[30,0 \right. ; \left. 32,0\right)$ | 31,0 | 4 | 0,08 |	8,0 |
+|$\left[32,0 \right. ; \left. 34,0\right)$ | 33,0 | 1 | 0,02 |	2,0 |
+Total |	 | 50 | 1,00 | 100,0|
+
+
+: Pesos ao nascer, em kg, de 50 bezerros da raça nelore, Fazenda XX, 2007.^[Fonte: Dados fictícios.] {#tbl-pesaonascer .striped .hover}
+
+Obtida a tabela de distribuição de frequências pode-se descrever o modelo de variação dos dados, através de uma análise superficial da distribuição dos dados. Observa-se, por exemplo, através da tabela acima que:
+
+- 76,0\% dos bezerros da raça nelore têm pesos ao nascer entre 24,0 e 30,0 kg (24,0 + 32,0 + 20,0);
+- 14,0\% estão abaixo de 24,0 kg (4,0 + 10,0);
+- 10,0\% estão acima de 30,0 kg (8,0 + 2,0).
+
+As frequências acumuladas para baixo e para cima estão apresentadas nas Tabelas [-@tbl-freqabaixo] e [-@tbl-freqacima], respectivamente.
+
+
+| **Peso** $\mathbf{(kg)}$ | $\mathbf{Fc\downarrow}$ |
+|:---:|:---:|
+|Menores que 20,0 |	0|
+Menores que 22,0 |	2|
+|Menores que 24,0 |	7|
+Menores que 26,0 |	19|
+|Menores que 28,0 |	35|
+Menores que 30,0 |	45|
+|Menores que 32,0 |	49|
+Menores que 34,0 |	50|
+
+: Frequências acumuladas para baixo dos pesos ao nascer, em kg, de 50 bezerros da raça nelore, Fazenda XX, 2007. {#tbl-freqabaixo .striped .hover}
+
+
+Por exemplo, menores que $26,04$ kg: $2 + 5 + 12 = 19$.
+
+| \textbf{Peso} $\mathbf{(kg)}$ | $\mathbf{Fc\uparrow}$ |
+|:---:|:---:|
+| 20,0 ou mais |	50|
+22,0 ou mais |	48|
+|24,0 ou mais |	43|
+26,0 ou mais |	31|
+|28,0 ou mais |	15|
+30,0 ou mais |	5|
+|32,0 ou mais |	1|
+34,0 ou mais |	0|
+
+
+: Frequências acumuladas para cima dos pesos ao nascer, em kg, de 50 bezerros da raça nelore, Fazenda XX, 2007. {#tbl-freqacima .striped .hover}
+
+Por exemplo, $28,0$ kg ou mais: $10 + 4 + 1 = 15$.
+
 :::
+
+## Representação Gráfica
+
+Num trabalho de descrição e apresentação de dados, os  gráficos podem ser considerados como uma continuação das tabelas. A sua função é a de transmitir uma ideia visual do comportamento de um conjunto de dados. Para tal são utilizados diversos formatos gráficos de acordo com o problema a ser descrito, ou até mesmo de acordo com a preferência do apresentador. Os gráficos têm a vantagem de facilitar a compreensão do fenômeno em estudo que se queira descrever, permitindo a interpretação rápida das suas principais características.
+
+### Variáveis Qualitativas
+
+No caso de variáveis qualitativas, nominal ou ordinal, existem vários tipos de gráficos para descrevê-las, mas apresentaremos apenas dois tipos: gráficos em de setores (pizza).
+
+
+
+
