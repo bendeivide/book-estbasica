@@ -244,3 +244,89 @@ c) Quantitativa discreta;
 d) Quantitativa contínua.
 
 :::
+
+:::{#exr-}
+
+Considere as seguintes situações:
+
+i) Uma cooperativa agrícola deseja realizar uma pesquisa com o objetivo de caracterizar as propriedades de seus cooperados. Como forma de obter essas informações foram distribuídos questionários para todos os seus associados, por meio do qual procurou-se avaliar: o nível de tecnificação adotado (baixo, médio ou alto), a atividade predominante (café, milho, leite, etc.), o número de empregados em cada propriedade;
+ii) Um pesquisador necessita obter algumas informações a respeito de uma determinada cultura no Sul de Minas Gerais. Para tanto visita 50 propriedades e faz uma avaliação referentes: ao tamanho da área plantada com a cultura (ha), a produção obtida (kg),  as principais pragas e doenças.
+
+Pergunta-se:
+
+a) Qual é a população em estudo;
+b) Em qual dos casos utilizou-se de uma amostra para realizar o estudo;
+c) Quais foram as variáveis estudadas em cada caso;
+d) Classifique as variáveis quanto a sua natureza.
+
+
+:::
+
+
+:::{#exr-}
+
+Sabendo-se que:
+
+- $\sum_{i=1}^{4}x_i=16$;
+- $\sum_{i=1}^{4}x_i^2=84$;
+- $\sum_{i=1}^{4}x_i^3=496$;
+- $\sum_{i=1}^{4}y_i=20$;
+- $\sum_{i=1}^{4}x_{i}y_{i}=100$.
+
+
+Determine o valor numérico das seguintes expressões:
+
+a) $\sum_{i=1}^{4}\left(x_{i}^{3}-25 \right)$;
+b) $\sum_{i=1}^{4}\left(3x_{i}-15 \right)^3$;
+c) $\sum_{i=1}^{4}\left(6x_{i}+8 \right)^2$;
+d) $\sum_{i=1}^{4}\left(12x_{i}-26 \right)\left(5y_{i}+10 \right)$.
+
+:::
+
+
+:::{#exr-}
+
+Em um estudo com a cultura da batata obteve-se os seguintes resultados:
+
+|$\mathbf{X}$ | $\mathbf{Y}$ |
+|:---:|:---:|:---:|
+|0,5 | 10,0 |
+|1,0 | 14,0 |
+|1,5 | 15,0 |
+|2,0 | 18,0 |
+|2,5 | 20,0 |
+|3,0 | 22,0 |
+|3,5 | 22,0 |
+
+: { .striped .hover}
+
+Em que:
+
+- X é o nível de irrigação, em mm/dia;
+- Y é a produtividade, em t/ha.
+
+Calcule:
+
+a) $\sum_{i=1}^{7}x_i$;
+b) $\sum_{i=1}^{7}y_i$;
+c) $\sum_{i=1}^{7}x_{i}^{2}$;
+d) $\sum_{i=1}^{7}y_{i}^{2}$;
+e) $\left(\sum_{i=1}^{7}x_i \right)^2$;
+f) $\left(\sum_{i=1}^{7}y_i\right)^2$;
+g) $\sum_{i=1}^{7}x_{1}y_{i}$;
+h) $\sum_{i=1}^{7}x_i\sum_{i=1}^{7}y_i$;
+i) $\sum_{i=1}^{7}x_i+\sum_{i=1}^{7}y_i$;
+j) $\sum_{i=1}^{7}\left(x_{i}+y_{i} \right)$.
+
+
+:::
+
+:::{#exr-}
+
+Prove algebricamente as seguintes igualdades:
+
+a) $\sum_{i=1}^{n}\left(x_{i}- \bar{\text{x}} \right)=0$, onde: $\bar{\text{x}}=\frac{\sum_{i=1}^{n}x_i}{n}$;
+
+b) $\frac{\sum_{i=1}^{n}\left(x_i- \bar{\text{x}} \right)^2}{n-1}=\frac{\sum_{i=1}^{n}x_i^2-\frac{\left(\sum_{i=1}^{n}x_i\right)^2}{n}}{n-1}$.
+
+:::

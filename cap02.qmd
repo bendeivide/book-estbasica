@@ -35,7 +35,7 @@ Considere o exemplo de tabela a seguir, que representa a produção de grãos, e
 :::
 
 
-## Tabela de distribuição de frequências
+### Tabela de distribuição de frequências
 
 Um das maneiras de se organizar e resumir um conjunto de dados é através de uma tabela de distribuição de frequências, sendo que estas permitem identificar características de interesse dos dados sob análise. Essas  tabelas podem ser de dois tipos:
 
@@ -54,7 +54,7 @@ v) **Frequência acumulada para cima** $(Fc\uparrow)$}: Mostra quantos dados sã
 
 Para se organizar um conjunto de dados em uma tabela de distribuição de frequências, primeiro deve-se conhecer qual é o tipo de informação que se está trabalhando, isto é, que tipo de variável correspondem os dados coletados, se qualitativos ou quantitativos.
 
-## Variáveis qualitativas
+#### Variáveis qualitativas
 
 No caso de variáveis qualitativas, nominal ou ordinal, utiliza-se de uma tabela de distribuição de frequências simples para se organizar e resumir tais variáveis, sendo apresentado o @exm-quali a seguir.
 
@@ -104,13 +104,13 @@ A seguir conta-se o número de produtores rurais com nível de tecnificação ba
 |Alto  | 9 | 0,18 | 18,0 |
 |Total | 50 | 1,00 | 100,0|
 
-:Nível de tecnificação adotado pelos produtores rurais da região do Alto Rio Grande, sul de Minas Gerais, 2007.^[Dados fictícios.] {#tbl-nivtec03 .striped .hover}
+:Nível de tecnificação adotado pelos produtores rurais da região do Alto Rio Grande, sul de Minas Gerais, 2007.^[Fonte: Dados fictícios.] {#tbl-nivtec03 .striped .hover}
 
 Observando os resultados da @tbl-nivtec03, tem-se que 56,0% dos produtores rurais adotam em suas propriedades um nível médio de tecnologia, porém apenas 18,0% empregam altas tecnologias, e 26,0% utilizam-se de baixas tecnologias de produção. Esses resultados pode orientar melhor os trabalhos dos Extensionistas que trabalham na região.
 
 :::
 
-## Variáveis quantitativas
+#### Variáveis quantitativas
 
 i) __Discretas__: Se os dados de uma amostra ou população estiverem representados por variáveis quantitativas discretas, eles estarão naturalmente classificados, isto é, separados em grupos distintas. Para se ter uma ideia do modo como os dados se distribuem, basta escrever em uma coluna os valores da variável discreta estudada em ordem crescente e, assinalar em outra coluna paralela, o número de vezes em que cada um desses valores foi observado, isto é, a frequência absoluta de cada valor. Neste caso utiliza-se de uma tabela de distribuição de frequências simples para se organizar e resumir tais variáveis, sendo apresentado no @exm-dis.
 
@@ -378,6 +378,216 @@ Num trabalho de descrição e apresentação de dados, os  gráficos podem ser c
 
 No caso de variáveis qualitativas, nominal ou ordinal, existem vários tipos de gráficos para descrevê-las, mas apresentaremos apenas dois tipos: gráficos em de setores (pizza).
 
+:::{exm-}
+
+Considerando o @exm-quali, os gráficos de barras e de setores para os dados estão representados nas Figuras [-@fig-grafbar]  e [-@fig-grafset], respectivamente.
+
+![Gráfico de barras para o nível de tecnificação adotado pelos produtores rurais, da região do Alto Rio Grande, sul de Minas Gerais, 2007.](images/exem2.5-barras.png){#fig-grafbar}
+
+![Gráfico de setores para o nível de tecnificação adotado pelos produtores rurais, da região do Alto Rio Grande, sul de Minas Gerais, 2007.](images/exem2.5-setor.png){#fig-grafset}
+
+:::
+
+### Variáveis Quantitativas
+
+Para variáveis quantitativas, discretas ou contínuas, existem vários tipos de gráficos, mas abordaremos aqui os mais simples e utilizados.
+
+#### Discretas
+
+No caso de variáveis quantitativas discretas pode-se utilizar o gráfico de barras para descrevê-las.
+
+:::{#exm-}
+
+Considerando o @exm-dis, o gráfico de barras para os dados está representado pela Figura  [-@fig-grafbar2].
+
+![Gráfico de barras do número de pencas de banana maçã com empedramento, CEAGESP, São Paulo, SP, 2007.](images/exem2.6-barras.png){#fig-grafbar2}
+
+:::
+
+#### Contínuas
+
+ No caso de variáveis contínuas a tabela de distribuição de frequências pode ser representada graficamente através de:
+
+i) Histograma: Representa um gráfico formado por retângulos, cujas bases são proporcionais às amplitudes de classe, e as alturas proporcionais às frequências das classes. As frequências podem ser: absoluta $(F_i)$, relativa $(Fr_i)$ ou percentual $(Fp_i)$.
+
+Características do histograma:
+    
+a) A área de um histograma é proporcional à soma das frequências;
+b) Ao empregar as frequências relativas, obtém-se um gráfico de área unitária;
+c) Para comparar duas distribuições de frequências, deve-se fazê-lo pelo histograma utilizando-se as frequências relativas ou percentuais.
+
+ii) Polígono de Frequências:
+
+É um gráfico em linha. Para a construção do polígono de frequências, os pontos médios das classes nos topos do retângulos do histograma são unidos por linhas. O polígono começa e termina nos pontos médios das classes anterior à primeira e posterior à ultima, respectivamente.
+
+iii) Ogivas:
+
+É o polígono de frequências utilizando as frequências acumuladas para baixo ou para cima.
+
+:::{#exm-cont1}
+
+Para o @exm-cont, tem-se o seguinte histograma e polígono de frequências para os dados, apresentados na Figura [-@fig-histpol].
+
+![Histograma e polígono de frequências da distribuição dos pesos ao nascer, em kg, de $50$ bezerros da raça nelore, Fazenda XX, 2007.](images/exem2.7-poligono.png){#fig-histpol}
+
+A Figura [-@fig-ogivas] apresenta o gráfico (ogivas) das frequências acumuladas para cima e para baixo.
+
+ 
+![Representação gráfica das distribuições acumuladas (ogivas) dos pesos ao nascer, em kg, de $50$ bezerros da raça nelore, Fazenda XX, 2007.](images/exem2.7-ogivas.png){#fig-ogivas}
+
+:::
+
+## Classificação da Distribuição dos Dados
+
+No caso de variáveis quantitativas contínuas, a forma do polígono de frequências permite classificar a distribuição dos dados quanto a simetria em:
+
+i) Simétrica;
+ii) Assimétrica à direita ou assimetria positiva;
+iii) Assimétrica à esquerda ou assimetria negativa.
+
+Para tanto deve-se comparar a forma do Polígono de Frequências com as seguintes curvas, chamadas Curvas de Frequências, conforme Figura [-@fig-assimetria01].
+
+![Classificação da simetria da distribuição dos dados.](images/assimetria02.png){#fig-assimetria01}
+
+:::{#exm-}
+
+No @exm-cont1, segundo a forma do polígono de frequência, a distribuição é simétrica.
+
+:::
+
+
+## Gráfico de Ramo e Folhas
+
+Foi visto que a forma do polígono de frequências dá uma ideia da forma da distribuição da variável sob estudo. Um procedimento alternativo para resumir um conjunto de dados, com o objetivo de se obter uma ideia da forma de sua distribuição, é o gráfico de Ramo e Folhas. Uma vantagem deste diagrama é que não se perde, ou perde-se pouca informação sobre os dados em si.
+
+Na construção do gráfico de Ramo e Folhas a ideia básica é dividir cada observação em duas partes: a primeira, chamada de ramo, é colocada à esquerda de uma linha vertical, e a segunda, a folha, é colocada à direita. No gráfico de Ramo e Folhas observa-se que um ramo com muitas folhas significa maior incidência daquele ramo.
+
+:::{#exm-}
+
+Considerando o @exm-cont, tem-se o seguinte gráfico de Ramo e Folhas, conforme Figura [-@fig-ramosfolhas].
+
+![Pesos ao nascer, em kg, de 50 bezerros da raça nelore, Fazenda XX, 2007.](images/graffolhas.png){#fig-ramosfolhas}
+
+Por exemplo, para os pesos 21,0 e 21,6: o 21 é o ramo e o 0 e 6 são as folhas.
+
+Algumas informações que se obtêm deste ramo-e-folhas são:
+ 
+a) Os valores estão concentrados entre 24,1 e 29,8;
+b) Um valor mais ou menos típico para este conjunto de dados poderia ser, por exemplo, 26,0;
+c) A distribuição dos dados é simétrica. 
+
+:::
+
+
+## Hipótese Tabular Básica
+
+Nos cálculos estatísticos para dados de variáveis quantitativas contínuas, dispostas em uma tabela de distribuição de frequências com intervalos de classes, todos os dados contidos em uma determinada classe serão considerados iguais ao ponto médio da classe $\tilde{X}_i$. Uma vez agrupada as observações nas classes, perde-se a informação individual de cada dado. Dessa forma, como será visto mais adiante, que não é possível o cálculo de medidas descritivas, como por exemplo, a média ou quaisquer outros tipos de medidas que dependam dos dados individualmente. Assim, a teoria da Hipótese Tabular Básica  afirma que, usar o ponto médio para representar as observações de cada classe, representa o menor erro possível do que substituí-los por qualquer outro valor específico. 
+
+## Exercícios
+
+::: {#exr-}
+
+As distribuições das durações de alimentos em dois processos de conservação (A e B), em dias, estão representadas pelos histogramas, Figura [-@fig-consalimentos].
+
+![Histograma do tempo de duração de alimentos, em dias, em dois processos de conservação de alimentos.](images/exer2.1.png){#fig-consalimentos}
+
+a) Classifique a distribuição dos dados dos dois processos de conservação de alimentos quanto à simetria.
+b) No processo A qual a porcentagem de duração menor que 58 dias?
+c) No processo B qual a proporção de duração de no mínimo 55 dias?
+d) No processo A quantos duraram pelo menos 54 dias porém menos de 60 dias?
+
+:::
+
+
+:::{#exr-}
+
+Em um estudo referente as atividades predominantes em 20 propriedades de um município, observou-se as seguintes atividades:
+
+| | | | 
+|:---:|:---:|:---:|:---:|
+|Café |		Feijão |		Café |		Soja |		Soja |
+|Café |		Milho |		Feijão |		Milho |		Soja |
+|Milho |		Milho |		Soja |		Soja |		Leite |
+|Leite |		Leite |		Milho |		Café |		Leite |
+
+: { .striped .hover}
+
+a) Classifique a variável;
+b) Construa uma tabela de distribuição de frequências com as frequências: absoluta, relativa e percentual;
+c) Faça a representação gráfica por meio dos gráficos de colunas e de setores;
+d) Qual a porcentagem de propriedades que cultivam predominantemente café em suas propriedades.
+
+:::
 
 
 
+:::{#exr-}
+
+Os dados a seguir referem-se a produção diária de leite, em litros, de 20 vacas da raça holandesa, de um rebanho pertencente ao Núcleo de Criadores de Gado Holandês do Sul de Minas Gerais.
+
+| | | | | |
+|:---:|:---:|:---:|:---:|:---:|
+|20,6 |	16,2 |	26,6 |	22,2 |	14,4 |
+|18,4 |	20,6 |	23,4 |	22,0 |	15,8 |
+|25,2 |	21,8 |	20,8 |	19,2 |	18,4 |
+|14,2 |	27,0 |	21,4 |	20,6 |	16,2 |
+
+: { .striped .hover}
+
+a) Classifique a variável;
+b) Construa uma tabela de distribuição de frequências com as frequências: absoluta, relativa e percentual;
+c) Construa o histograma e o polígono de frequências;
+d) Obtenha as distribuições de frequência acumuladas para cima e para baixo;
+e) Classifique a distribuição quanto à simetria;
+f) Construa o gráfico de Ramo e Folhas.
+
+:::
+
+:::{#exr-}
+
+Considere os dados da seguinte tabela de distribuição de frequências, apresentados na @tbl-arearural.
+
+|**Área** $\mathbf{(ha)}$ | $\mathbf{F_i}$ |
+|:---:|:---:|
+|Abaixo de 60,0 | 386|
+|$\left[60,0 \right. ; \left. 150,0 \right)$ | 237 |
+|$\left[150,0 \right. ; \left. 250,0 \right)$ | 62 |
+|$\left[250,0 \right. ; \left. 400,0 \right)$ | 43 |
+|$\left[400,0 \right. ; \left. 600,0 \right)$ | 18 |
+|$\left[600,0 \right. ; \left. 900,0 \right)$ | 7 |
+|900,0 ou mais | 2|
+|Total | 755|
+
+: Área, em ha, de 755 propriedades rurais de um município do Estado de Minas Gerais, 2007.^[Fonte: Dados fictícios.] {#tbl-arearural .striped .hover}
+
+a) Quantas propriedades têm área abaixo de 120 ha;
+b) Qual a porcentagem de propriedades com área acima de 300 ha.
+
+:::
+
+:::{#exr-}
+
+Para estudar a produtividade de um canavial, demarcaram-se nele em vários pontos escolhidos ao acaso, 50 pequenas áreas de 100 $\textrm{m}^2$ cada, cuja produção foi pesada. Os resultados obtidos, em kg, estão apresentados na seguinte tabela de distribuição de frequências:
+
+
+|**Produção** $\mathbf{(kg)}$ | $\mathbf{\tilde{X}_i}$ | $\mathbf{F_i}$ | $\mathbf{Fr_i}$ | $\mathbf{Fp_i(\%)}$ |
+|:---:|:---:|:---:|:---:|:---:|
+|$\left[624,0 \right. ; \left. \rule{10mm}{.2pt}\right)$ | $\rule{10mm}{.2pt}$ | $\rule{10mm}{.2pt}$ | 0,02 | $\rule{10mm}{.2pt}$|
+|$\left[\rule{10mm}{.2pt} \right. ; \left. \rule{10mm}{.2pt}\right)$ | $\rule{10mm}{.2pt}$ | $\rule{10mm}{.2pt}$ | $\rule{10mm}{.2pt}$  | 10,0|
+|$\left[\rule{10mm}{.2pt} \right. ; \left. \rule{10mm}{.2pt}\right)$ | $\rule{10mm}{.2pt}$ | $\rule{10mm}{.2pt}$ | $\rule{10mm}{.2pt}$  | $\rule{10mm}{.2pt}$|
+|$\left[\rule{10mm}{.2pt} \right. ; \left. \rule{10mm}{.2pt}\right)$ | $\rule{10mm}{.2pt}$ | 13 | $\rule{10mm}{.2pt}$  | $\rule{10mm}{.2pt}$|
+|$\left[\rule{10mm}{.2pt} \right. ; \left. \rule{10mm}{.2pt}\right)$ | $\rule{10mm}{.2pt}$ | 7 | $\rule{10mm}{.2pt}$  | $\rule{10mm}{.2pt}$|
+|$\left[\rule{10mm}{.2pt} \right. ; \left.\rule{10mm}{.2pt}\right)$ | $\rule{10mm}{.2pt}$ | $\rule{10mm}{.2pt}$ | 0,10  | $\rule{10mm}{.2pt}$|
+|$\left[\rule{10mm}{.2pt} \right. ; \left.\rule{10mm}{.2pt}\right)$ | $\rule{10mm}{.2pt}$ | 3 | $\rule{10mm}{.2pt}$  | $\rule{10mm}{.2pt}$|
+|$\left[\rule{10mm}{.2pt} \right. ; \left. \rule{10mm}{.2pt}\right)$ | $\rule{10mm}{.2pt}$ | $\rule{10mm}{.2pt}$ | $\rule{10mm}{.2pt}$  | 2,0|
+|Total | | $\rule{10mm}{.2pt}$ | $\rule{10mm}{.2pt}$ | $\rule{10mm}{.2pt}$|
+
+: Produção de cana-de-açúcar, em kg, por áreas de 100 $\textrm{m}^2$ de um canavial, Fazenda XX, 2007.^[Fonte: Dados fictícios.] {#tbl-prodcanaacucar .striped .hover}
+
+a) Complete a tabela de distribuição de frequências considerando que a maior observação foi 954,0 kg;
+b) Construa o histograma e o polígono de frequências e classifique a distribuição dos dados quanto à simetria;
+c) Qual a porcentagem de áreas de 100 $\textrm{m}^2$ avaliadas produziram menos de 844,0 kg de cana-de-açúcar;
+d) Qual a proporção de áreas de 100 $\textrm{m}^2$ avaliadas produziram no mínimo 800,0 kg de cana-de-açúcar;
+e) Quantas áreas de 100 $\textrm{m}^2$ avaliadas produziram pelo menos 712,0 kg, porém menos de 888,0 kg de cana-de-açúcar.
+
+:::
