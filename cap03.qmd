@@ -1,14 +1,14 @@
 # Medidas de Posição
 
-## Introdução
+## Introdução {id="introd" title="Clique aqui!"}
 
 No capítulo anterior vimos como organizar um conjunto de dados através de tabelas e gráficos, mas podemos ainda tirar mais informações importantes de um conjunto de dados através das medidas de posição. As medidas de posição, ou \index{Medidas de tendência central|see{Medidas de posição}}medidas de tendência central, são medidas representativas do valor central ao redor do qual se agrupam os dados, ou seja, procuram sintetizar um conjunto de dados em um único e informativo valor. 
 
 A média, a mediana e a moda são as três medidas de posição mais utilizadas para descrever um conjunto de dados, sejam eles populacionais ou amostrais.
 
-## Média
+## Média {id="media" title="Clique aqui!"}
 
-### Dados Não Agrupados
+### Dados Não Agrupados {id="dadosnagrup" title="Clique aqui!"}
 
 A média de uma população ou amostra é dada pela soma de todos os dados da população ou amostra, dividida pelo número de dados que a compõem.
 
@@ -38,7 +38,7 @@ Considere os dados do @exm-cont. Neste caso trata-se de uma amostra. Assim, util
 
 :::
 
-### Dados Agrupados
+### Dados Agrupados {id="dadosagrup" title="Clique aqui!"}
 
 Se os dados estiverem agrupados em uma tabela de distribuição de frequências com intervalos de classes, a média é dada pela expressão (@eq-medag).
 $$
@@ -81,7 +81,7 @@ $$
 :::
 
 
-### Propriedades
+### Propriedades {id="prop" title="Clique aqui!"}
 
 A média apresenta as seguintes propriedades:
 
@@ -181,7 +181,7 @@ $$
 O que corresponde a média anterior multiplicada por 2.
 :::
 
-## Mediana
+## Mediana {id="mediana" title="Clique aqui!"}
 
 A mediana é o valor central de um conjunto dados, isto é, divide os dados ordenados ascendente ou descendentemente em partes iguais, ou seja, 50,0\% dos dados estão acima e 50,0\% estão abaixo deste valor. A mediana tem a mesma unidade dos dados.
 
@@ -307,7 +307,7 @@ i) $\sum_{i=1}^{n}|x_i-md|$ é um valor mínimo se comparado com qualquer outra 
 ii) Somando-se ou subtraindo-se um mesmo valor constante à cada dado, a mediana fica acrescida ou subtraída deste valor;
 iii) Multiplicando-se  ou  dividindo-se  cada  dado  por  uma mesmo valor constante, diferente de 0, a mediana fica multiplicada ou dividida por este valor.
 
-## Moda
+## Moda {id="moda" title="Clique aqui!"}
 
 A moda de um conjunto de dados é o valor mais frequente, sendo denotada por $mo$. Um conjunto de dados pode ter mais de uma moda, ou também, pode não ter moda. A moda tem a mesma unidade dos dados. 
 
@@ -427,7 +427,7 @@ ii) Desvantagens:
     - Mediana: não é matematicamente tratável;
     - Moda: não é matematicamente tratável.
 
-## Medidas de Posição e Natureza da Distribuição
+## Medidas de Posição e Natureza da Distribuição {id="medpos_natdist" title="Clique aqui!"}
 
 A exemplo do polígono de frequências, a determinação das medidas de posição também permite discutir sobre a simetria da distribuição dos dados. E assim, conforme a @fig-assimetriacmedidas2, pode-se observar a relação das medidas de posição com a natureza da distribuição. 
 
@@ -447,7 +447,7 @@ Logo, a distribuição é simétrica.
 :::
 
 
-## Quantis
+## Quantis {id="quantis" title="Clique aqui!"}
 
 De um modo geral, pode-se definir uma medida, chamada quantil de ordem $p$ ou $p-quantil$, representada por $q(p)$, sendo $p$ uma proporção $(0,0 < p < 1,0)$, de tal forma que 100$p$\% dos dados são menores do que $q(p)$.
 
@@ -587,7 +587,7 @@ $$
 :::
 
 
-## Esquema dos Cinco Números
+## Esquema dos Cinco Números {id="esq5num" title="Clique aqui!"}
 
 O esquema dos cinco números são utilizados para se ter uma idéia da simetria da distribuição dos dados. A idéia é obter os cinco valores:
 
@@ -620,7 +620,7 @@ Pelos resultados conclui-se que a distribuição é aproximadamente simétrica.
 
 :::
 
-## Exercícios propostos {-}
+## Exercícios propostos {- id="exprop" title="Clique aqui!"}
 
 
 :::{#exr-}

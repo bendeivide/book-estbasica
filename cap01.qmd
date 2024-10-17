@@ -1,6 +1,6 @@
 # Definições Gerais e Técnicas de Somatório
 
-## Introdução
+## Introdução {id="introd" title="Clique aqui!"}
 
 Em todo processo produtivo do setor agropecuário constantemente se busca a melhoria da qualidade de seus produtos e serviços. Uma porção significativa deste esforço de melhoria da qualidade será comandada por profissionais das ciências agrárias, pois esses profissionais projetam e desenvolvem novos sistemas e processos de produção, sendo também aqueles que melhoram os sistemas de produção existentes.
 
@@ -8,7 +8,7 @@ Nas diferentes áreas das ciências agrárias frequentemente trabalha-se com um 
 
 Para o entendimento da Estatística se faz necessário que uma série de termos, definições e apresentação de alguns teoremas sejam apresentados e compreendidos. Assim, ao longo de todo o livro será realizado uma abordagem de todas essas informações, sem se estender ao rigor matemático, para que de forma prática a base necessária para o conhecimento da Estatística seja acessível a todos os níveis de aprendizagem dentro das ciências agrárias.
 
-## Definições Gerais
+## Definições Gerais {id="defgerais" title="Clique aqui!"}
 
 A seguir são apresentados alguns termos que serão empregados no decorrer deste livro.
 
@@ -170,7 +170,7 @@ A Estatística pode ser dividida basicamente em duas partes:
 - **Inferência Estatística**: É um conjunto de técnicas responsáveis pela análise e interpretação dos dados, obtidos a partir de uma amostra, que possibilita a extrapolação dos resultados para toda a população de interesse.
 
 
-## Técnicas de Somatório
+## Técnicas de Somatório {id="tecsom" title="Clique aqui!"}
 
 Em estatística frequentemente trabalha-se com variáveis quantitativas, e nos próximos capítulos aparecerão diversas expressões que envolverão cálculos de somas, somas de termos ao quadrado, produtos de duas variáveis, e para isso é necessário uma simplificação da notação. Assim, é usual representar somas por um operador chamado somatório, que é representado pela letra grega sigma maiúscula ($\Sigma$).
 
@@ -232,7 +232,7 @@ v) $(x_{1}-1)+(x_{2}^{2}-2^2)^2+(x_{3}^{3}-3^3)^3+\cdots+(x_{n}^{n}-n^n)^n=\sum_
 :::
 
 
-## Exercícios
+## Exercícios propostos {- id="exprop" title="Clique aqui!"}
 
 ::: {#exr-}
 

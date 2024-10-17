@@ -1,12 +1,12 @@
-# Coleta, Organização e Apresentação de Dados
+# Coleta, Organização e Apresentação de Dados 
 
-## Introdução
+## Introdução {id="introd" title="Clique aqui!"}
 
 O material básico com que o pesquisador trabalha são os dados provenientes de variáveis, sendo que a coleta destes é o passo inicial na avaliação estatística de uma pesquisa. Os dados da forma como foram coletados representam os dados brutos, e sempre se apresentam desordenados. Os dados colocados em ordem crescente ou decrescente representam os dados elaborados.
 
 O passo seguinte é sintetizar os valores que uma ou mais variáveis podem assumir, para que se tenha uma visão global da variação dessa ou dessas variáveis. Inicialmente esses valores são apresentados em tabelas e gráficos, que irão nos fornecer rápidas e seguras informações a respeito das variáveis em estudo.
 
-## Representação Tabular
+## Representação Tabular {id="reptab" title="Clique aqui!"}
 
 Uma tabela é um quadro que resume um conjunto de dados.  Segundo @crespo2009, uma tabela pode ser dividida em duas partes: principais e secundárias. As partes principais são:
 
@@ -370,7 +370,7 @@ Por exemplo, $28,0$ kg ou mais: $10 + 4 + 1 = 15$.
 
 :::
 
-## Representação Gráfica
+## Representação Gráfica {id="repgraf" title="Clique aqui!"}
 
 Num trabalho de descrição e apresentação de dados, os  gráficos podem ser considerados como uma continuação das tabelas. A sua função é a de transmitir uma ideia visual do comportamento de um conjunto de dados. Para tal são utilizados diversos formatos gráficos de acordo com o problema a ser descrito, ou até mesmo de acordo com a preferência do apresentador. Os gráficos têm a vantagem de facilitar a compreensão do fenômeno em estudo que se queira descrever, permitindo a interpretação rápida das suas principais características.
 
@@ -437,7 +437,7 @@ A Figura [-@fig-ogivas] apresenta o gráfico (ogivas) das frequências acumulada
 
 :::
 
-## Classificação da Distribuição dos Dados
+## Classificação da Distribuição dos Dados {id="clasdistdados" title="Clique aqui!"}
 
 No caso de variáveis quantitativas contínuas, a forma do polígono de frequências permite classificar a distribuição dos dados quanto a simetria em:
 
@@ -456,7 +456,7 @@ No @exm-cont1, segundo a forma do polígono de frequência, a distribuição é 
 :::
 
 
-## Gráfico de Ramo e Folhas
+## Gráfico de Ramo e Folhas {id="gramosfolhas" title="Clique aqui!"}
 
 Foi visto que a forma do polígono de frequências dá uma ideia da forma da distribuição da variável sob estudo. Um procedimento alternativo para resumir um conjunto de dados, com o objetivo de se obter uma ideia da forma de sua distribuição, é o gráfico de Ramo e Folhas. Uma vantagem deste diagrama é que não se perde, ou perde-se pouca informação sobre os dados em si.
 
@@ -479,11 +479,11 @@ c) A distribuição dos dados é simétrica.
 :::
 
 
-## Hipótese Tabular Básica
+## Hipótese Tabular Básica {id="hiptabas" title="Clique aqui!"}
 
 Nos cálculos estatísticos para dados de variáveis quantitativas contínuas, dispostas em uma tabela de distribuição de frequências com intervalos de classes, todos os dados contidos em uma determinada classe serão considerados iguais ao ponto médio da classe $\tilde{X}_i$. Uma vez agrupada as observações nas classes, perde-se a informação individual de cada dado. Dessa forma, como será visto mais adiante, que não é possível o cálculo de medidas descritivas, como por exemplo, a média ou quaisquer outros tipos de medidas que dependam dos dados individualmente. Assim, a teoria da Hipótese Tabular Básica  afirma que, usar o ponto médio para representar as observações de cada classe, representa o menor erro possível do que substituí-los por qualquer outro valor específico. 
 
-## Exercícios
+## Exercícios propostos {- id="exprop" title="Clique aqui!"}
 
 ::: {#exr-}
 

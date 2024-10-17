@@ -1,1 +1,5 @@
 # Medidas de Dispersão
+
+## Introdução {id="introd" title="Clique aqui!"}
+
+O resumo de um conjunto de dados através de uma medida de posição, como por exemplo, a média, não revela toda a informação sobre a dispersão desse conjunto de dados. Por exemplo, considere o Exemplo \ref{varalt}.
