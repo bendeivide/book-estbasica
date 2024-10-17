@@ -721,6 +721,6 @@ b) Calcule os seguintes quantis:
    - $q(0,50)$;
    - $q(0,75)$;
    - $q(0,80)$.
-   - Determine o esquema dos cinco números e discuta sobre a simetria da distribuição dos dados.
+c) Determine o esquema dos cinco números e discuta sobre a simetria da distribuição dos dados.
 
 :::
