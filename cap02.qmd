@@ -1,4 +1,4 @@
-# Coleta, Organização e Apresentação de Dados 
+# Coleta, Organização e Apresentação de Dados {#sec-chap02}
 
 ## Introdução {id="introd" title="Clique aqui!"}
 

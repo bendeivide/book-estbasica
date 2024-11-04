@@ -259,6 +259,22 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introd" id="toc-introd" class="nav-link active" data-scroll-target="#introd"><span class="header-section-number">4.1</span> Introdução</a></li>
+  <li><a href="#amptotal" id="toc-amptotal" class="nav-link" data-scroll-target="#amptotal"><span class="header-section-number">4.2</span> Amplitude Total</a></li>
+  <li><a href="#vardp" id="toc-vardp" class="nav-link" data-scroll-target="#vardp"><span class="header-section-number">4.3</span> Variância e Desvio Padrão</a>
+  <ul class="collapse">
+  <li><a href="#dados-não-agrupados" id="toc-dados-não-agrupados" class="nav-link" data-scroll-target="#dados-não-agrupados"><span class="header-section-number">4.3.1</span> Dados Não Agrupados</a></li>
+  <li><a href="#dados-agrupados" id="toc-dados-agrupados" class="nav-link" data-scroll-target="#dados-agrupados"><span class="header-section-number">4.3.2</span> Dados Agrupados</a></li>
+  <li><a href="#propriedades" id="toc-propriedades" class="nav-link" data-scroll-target="#propriedades"><span class="header-section-number">4.3.3</span> Propriedades</a></li>
+  </ul></li>
+  <li><a href="#cv" id="toc-cv" class="nav-link" data-scroll-target="#cv"><span class="header-section-number">4.4</span> Coeficiente de Variação</a></li>
+  <li><a href="#epmedia" id="toc-epmedia" class="nav-link" data-scroll-target="#epmedia"><span class="header-section-number">4.5</span> Erro Padrão da Média</a></li>
+  <li><a href="#asscurt" id="toc-asscurt" class="nav-link" data-scroll-target="#asscurt"><span class="header-section-number">4.6</span> Medidas de Assimetria e de Curtose</a>
+  <ul class="collapse">
+  <li><a href="#coeficiente-de-assimetria" id="toc-coeficiente-de-assimetria" class="nav-link" data-scroll-target="#coeficiente-de-assimetria"><span class="header-section-number">4.6.1</span> Coeficiente de Assimetria</a></li>
+  <li><a href="#coeficiente-de-curtose" id="toc-coeficiente-de-curtose" class="nav-link" data-scroll-target="#coeficiente-de-curtose"><span class="header-section-number">4.6.2</span> Coeficiente de Curtose</a></li>
+  </ul></li>
+  <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot"><span class="header-section-number">4.7</span> Gráfico Box-Plots</a></li>
+  <li><a href="#exprop" id="toc-exprop" class="nav-link" data-scroll-target="#exprop">Exercícios propostos</a></li>
   </ul>
 </nav>
     </div>
@@ -286,7 +302,884 @@ window.Quarto = {
 
 <section id="introd" class="level2" title="Clique aqui!" data-number="4.1">
 <h2 title="Clique aqui!" data-number="4.1" class="anchored" data-anchor-id="introd"><span class="header-section-number">4.1</span> Introdução</h2>
-<p>O resumo de um conjunto de dados através de uma medida de posição, como por exemplo, a média, não revela toda a informação sobre a dispersão desse conjunto de dados. Por exemplo, considere o Exemplo <span class="math inline">\(\ref{varalt}\)</span>.</p>
+<p>O resumo de um conjunto de dados através de uma medida de posição, como por exemplo, a média, não revela toda a informação sobre a dispersão desse conjunto de dados. Por exemplo, considere o <a href="#exm-varalt" class="quarto-xref">Exemplo&nbsp;<span>4.1</span></a>.</p>
+<div id="exm-varalt" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 4.1</strong></span> Sejam três amostras referentes às alturas, em cm, de três variedades de milho, dadas por:</p>
+<ul>
+<li>Variedade A: 185,0; 185,0; 185,0;</li>
+<li>Variedade B: 182,0; 184,0; 189,0;</li>
+<li>Variedade C: 176,0; 180,0; 199,0.</li>
+</ul>
+<p>Utilizando-se da expressão (<a href="cap03.html#eq-mediana" class="quarto-xref"><span>3.6</span></a>) tem-se que a média para as três variedades são dadas por:</p>
+<ul>
+<li>Variedade A:</li>
+</ul>
+<p><span class="math display">\[
+\bar{\text{x}}=\frac{185,0+185,0+185,0}{3}=185,0~\textrm{cm}.
+\]</span></p>
+<ul>
+<li>Variedade B:</li>
+</ul>
+<p><span class="math display">\[
+\bar{\text{x}}=\frac{182,0+184,0+189,0}{3}=185,0~\textrm{cm}.
+\]</span></p>
+<ul>
+<li>Variedade C: <span class="math display">\[
+\bar{\text{x}}=\frac{176,0+180,0+199,0}{3}=185,0~\textrm{cm}.
+\]</span></li>
+</ul>
+<p>Baseando-se apenas na média as três variedades são consideradas como de mesma altura.</p>
+</div>
+<p>As medidas de posição são de tendência central e não informam sobre a variabilidade dos dados. Assim, faz-se necessário a utilização de uma medida que sumarizem a variabilidade de um conjunto de dados, e que permita, por exemplo, comparar diferentes conjuntos de dados baseando-se em algum critério.</p>
+<p>As medidas de dispersão, também conhecida como medidas de variabilidade, são medidas que indicam o grau de afastamento de um conjunto de dados ao redor de um valor central, e são necessárias para junto com a média, representar bem um conjunto de dados.</p>
+</section>
+<section id="amptotal" class="level2" title="Clique aqui!" data-number="4.2">
+<h2 title="Clique aqui!" data-number="4.2" class="anchored" data-anchor-id="amptotal"><span class="header-section-number">4.2</span> Amplitude Total</h2>
+<p>Uma das formas mais simples de se medir a dispersão (variabilidade) de um conjunto de dados, é através da amplitude total. Define-se amplitude total como sendo a diferença entre o maior e o menor valor observado de um conjunto de dados dada pela expressão (<a href="#eq-amp" class="quarto-xref"><span>4.1</span></a>). <span id="eq-amp"><span class="math display">\[
+A=\textrm{Maior dado} - \textrm{Menor dado}.
+\tag{4.1}\]</span></span></p>
+<p>Para dados agrupados em uma tabela de distribuição de frequências com intervalos de classes, a amplitude total é a diferença entre os pontos médios da última <span class="math inline">\((\tilde{X}_K)\)</span> e da primeira classe <span class="math inline">\((\tilde{X}_1)\)</span>, dada pela expressão (<a href="#eq-amptab" class="quarto-xref"><span>4.2</span></a>). <span id="eq-amptab"><span class="math display">\[
+A=\tilde{X}_{K}-\tilde{X}_{1}.
+\tag{4.2}\]</span></span></p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 4.2</strong></span> Para o <a href="#exm-varalt" class="quarto-xref">Exemplo&nbsp;<span>4.1</span></a> e utilizando-se da expressão (<a href="#eq-amp" class="quarto-xref"><span>4.1</span></a>) tem-se:</p>
+<ul>
+<li>Variedade A:</li>
+</ul>
+<p><span class="math display">\[
+A=185,0-185,0=0,0~cm.
+\]</span></p>
+<ul>
+<li>Variedade B:</li>
+</ul>
+<p><span class="math display">\[
+A=189,0-182,0=7,0~\textrm{cm}.
+\]</span></p>
+<ul>
+<li>Variedade C:</li>
+</ul>
+<p><span class="math display">\[
+A=199,0-176,0=23,0~\textrm{cm}.
+\]</span></p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 4.3</strong></span> Considerando o <a href="cap02.html#exm-cont" class="quarto-xref">Exemplo&nbsp;<span>2.4</span></a> e utilizando-se da expressão (<a href="#eq-amp" class="quarto-xref"><span>4.1</span></a>) tem-se:</p>
+<p><span class="math display">\[
+A=33,0-21,0=12,0~\textrm{kg}.
+\]</span></p>
+</div>
+<p>Apesar de ser uma medida fácil de ser calculada, a amplitude total não é muito usada para expressar a variabilidade de um conjunto de dados, pois baseia-se em apenas em dois dados, não considerando a totalidade dos dados do conjunto. Assim, faz-se necessário a apresentação de outras medidas que possam expressar a variabilidade de um conjunto de dados, que reflitam as diferenças de todos os dados do conjunto.</p>
+</section>
+<section id="vardp" class="level2" title="Clique aqui!" data-number="4.3">
+<h2 title="Clique aqui!" data-number="4.3" class="anchored" data-anchor-id="vardp"><span class="header-section-number">4.3</span> Variância e Desvio Padrão</h2>
+<p>Outra medida de dispersão amplamente usada para medir a variabilidade de um conjunto de dados é a variância. A variância mede a dispersão de um conjunto de dados em relação à sua média, e indica, o quanto em média, os dados se desviam em relação à média.</p>
+<p>A variância permite, também, comparar a variabilidade entre conjuntos de dados que possuam a mesma média e a mesma unidade. Quanto menor for a variância, menos variável é o conjunto de dados.</p>
+<section id="dados-não-agrupados" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="dados-não-agrupados"><span class="header-section-number">4.3.1</span> Dados Não Agrupados</h3>
+<p>No caso de uma população, a variância é definida pela razão entre a soma de quadrados dos desvios de cada dado em relação à sua média, e o número total de dados, dada pela expressão (<a href="#eq-varpop" class="quarto-xref"><span>4.3</span></a>). <span id="eq-varpop"><span class="math display">\[
+\begin{align}
+     \sigma^2=\frac{\sum_{i=1}^{N}\left(x_i-\mu\right)^2}{N}.
+\end{align}
+\tag{4.3}\]</span></span> E no caso de uma amostra, a variância é dada pela expressão (<a href="#eq-varam" class="quarto-xref"><span>4.4</span></a>). <span id="eq-varam"><span class="math display">\[
+\begin{align}
+    s^2=\frac{\sum_{i=1}^{n}\left(x_i- \bar{\text{x}} \right)^2}{n-1}.
+\end{align}
+\tag{4.4}\]</span></span></p>
+<p>Desenvolvendo a soma de quadrados de (<a href="#eq-varam" class="quarto-xref"><span>4.4</span></a>), pode-se reescrever <span class="math inline">\(s^2\)</span> através da expressão (<a href="#eq-varamo" class="quarto-xref"><span>4.5</span></a>). <span id="eq-varamo"><span class="math display">\[
+\begin{align}
+    s^2=\frac{\sum_{i=1}^{n}x_i^2-\frac{\left(\sum_{i=1}^{n}x_i\right)^2}{n}}{n-1}.
+\end{align}
+\tag{4.5}\]</span></span></p>
+<p>A variância é expressa na unidade dos dados ao quadrado .</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 4.4</strong></span> Considerando o <a href="#exm-varalt" class="quarto-xref">Exemplo&nbsp;<span>4.1</span></a> e utilizando-se da expressão (<a href="#eq-varam" class="quarto-xref"><span>4.4</span></a>), tem-se:</p>
+<ul>
+<li>Variedade A: <span class="math display">\[\begin{align*}
+s^2 &amp; = \frac{\left(185,0-185,0\right)^2+\left(185,0-185,0\right)^2+\left(185,0-185,0\right)^2}{3-1}\\
+&amp; = \frac{\left(0,0\right)^2+\left(0,0\right)^2+\left(0,0\right)^2}{2}\\
+&amp; = 0,0~\textrm{cm}^2.
+\end{align*}\]</span></li>
+</ul>
+<p>Que também pode ser calculada por (<a href="#eq-varamo" class="quarto-xref"><span>4.5</span></a>): <span class="math display">\[\begin{align*}
+  s^2 &amp; =\frac{185,0^2+185,0^2+185,0^2-\frac{\left(185,0+185,0+185,0\right)^2}{3}}{3-1}\\
+  &amp; = \frac{102.675,0-102.675,0}{2}\\
+  &amp; = 0,0~\textrm{cm}^2.
+\end{align*}\]</span></p>
+<ul>
+<li><p>Variedade B: <span class="math display">\[\begin{align*}
+s^2 &amp; = \frac{\left(182,0-185,0\right)^2+\left(184,0-185,0\right)^2+\left(189,0-185,0\right)^2}{3-1}\\
+&amp; = \frac{\left(-3,0\right)^2+\left(-1,0\right)^2+\left(4,0\right)^2}{2}\\
+&amp; = 13,0~\textrm{cm}^2.
+\end{align*}\]</span> Que também pode ser calculada por (<a href="#eq-varamo" class="quarto-xref"><span>4.5</span></a>): <span class="math display">\[\begin{align*}
+s^2 &amp; = \frac{182,0^2+184,0^2+189,0^2-\frac{\left(182,0+184,0+189,0\right)^2}{3}}{3-1}\\
+&amp; = \frac{102.701,0-102.675,0}{2}\\
+&amp; = 13,0~\textrm{cm}^2.
+\end{align*}\]</span></p></li>
+<li><p>Variedade C: <span class="math display">\[\begin{align*}
+s^2 &amp; = \frac{\left(176,0-185,0\right)^2+\left(180,0-185,0\right)^2+\left(199,0-185,0\right)^2}{3-1}\\
+&amp; = \frac{\left(-9,0\right)^2+\left(-5,0\right)^2+\left(14,0\right)^2}{2}\\
+&amp; = 151,0~\textrm{cm}^2.
+\end{align*}\]</span> Que também pode ser calculada por (<a href="#eq-varamo" class="quarto-xref"><span>4.5</span></a>): <span class="math display">\[\begin{align*}
+s^2 &amp; = \frac{176,0^2+180,0^2+199,0^2-\frac{\left(176,0+180,0+199,0\right)^2}{3}}{3-1}\\
+&amp; = \frac{102.977,0-102.675,0}{2}\\
+&amp; = 151,0~\textrm{cm}^2.
+\end{align*}\]</span></p></li>
+</ul>
+<p>Observa-se que a variedade C tem variância maior que as variedades A e B, indicando que seus dados dispersam mais em torno da média.</p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 4.5</strong></span> Considerando os dados do <a href="cap02.html#exm-cont" class="quarto-xref">Exemplo&nbsp;<span>2.4</span></a> e utilizando-se da expressão (<a href="#eq-varamo" class="quarto-xref"><span>4.5</span></a>), tem-se: <span class="math display">\[\begin{align*}
+  s^2 &amp; = \frac{21,0^2+21,6^2+\cdots+31,8^2+33,0^2-\frac{\left(21,0+21,6+\cdots+31,8+33,0\right)^2}{50}}{50-1}\\
+  &amp; = \frac{35.745,1-\frac{\left(1.330,2\right)^2}{50}}{49}\\
+  &amp; = 7,2747~\textrm{kg}^2.
+\end{align*}\]</span></p>
+</div>
+<p>Sendo a variância uma medida expressa na unidade dos dados ao quadrado, isto pode trazer problemas do ponto de vista de interpretação. Logo, faz-se necessário o uso de uma outra medida que retorne os dados para sua unidade original. Assim, tem-se o desvio padrão que é a raiz quadrada positiva da variância.</p>
+<p>No caso de uma população, o desvio padrão é dado por (<a href="#eq-dppop" class="quarto-xref"><span>4.6</span></a>). <span id="eq-dppop"><span class="math display">\[
+\begin{align}
+    \sigma=\sqrt{\sigma^2}.
+\end{align}
+\tag{4.6}\]</span></span></p>
+<p>E no caso de uma amostra, o desvio padrão é dado por (<a href="#eq-dpam" class="quarto-xref"><span>4.7</span></a>). <span id="eq-dpam"><span class="math display">\[
+\begin{align}
+   s=\sqrt{s^2}.
+\end{align}
+\tag{4.7}\]</span></span></p>
+<p>O desvio padrão, indica, em média, qual será o erro (desvio) cometido ao tentar substituir cada dado pela média.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 4.6</strong></span> No <a href="#exm-varalt" class="quarto-xref">Exemplo&nbsp;<span>4.1</span></a> e utilizando-se de (<a href="#eq-dpam" class="quarto-xref"><span>4.7</span></a>) , tem-se:</p>
+<ul>
+<li><p>Variedade A: <span class="math display">\[
+s=\sqrt{0,0}=0,0~\textrm{cm}.
+\]</span></p></li>
+<li><p>Variedade B:</p></li>
+</ul>
+<p><span class="math display">\[
+s=\sqrt{13,0}=3,6~\textrm{cm}.
+\]</span></p>
+<ul>
+<li>Variedade C:</li>
+</ul>
+<p><span class="math display">\[
+s=\sqrt{151,0}=12,3~\textrm{cm}.
+\]</span></p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 4.7</strong></span> &nbsp;</p>
+Considerando os dados do <a href="cap02.html#exm-cont" class="quarto-xref">Exemplo&nbsp;<span>2.4</span></a> e utilizando-se da expressão (<a href="#eq-dpam" class="quarto-xref"><span>4.7</span></a>), tem-se:
+</div>
+</section>
+<section id="dados-agrupados" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="dados-agrupados"><span class="header-section-number">4.3.2</span> Dados Agrupados</h3>
+<p>Se os dados estiverem agrupados em uma Tabela de Distribuição de Frequências com intervalos de classes, a variância é dada pela expressão (<a href="#eq-vartab" class="quarto-xref"><span>4.8</span></a>). <span id="eq-vartab"><span class="math display">\[
+\begin{align}
+    s^2=\frac{\sum_{i=1}^{k}F_{i}\tilde{X}_{i}^{2}-\frac{\left(\sum_{i=1}^{K}F_{i}\tilde{X}_{i}\right)^2}{\sum_{i=1}^{k}F_i}}{\left(\sum_{i=1}^{K}F_i\right)-1},
+\end{align}
+\tag{4.8}\]</span></span> em que: <span class="math inline">\(\tilde{X}_i\)</span> é o ponto médio da classe <span class="math inline">\(i\)</span>, e <span class="math inline">\(F_i\)</span> é a frequência absoluta da classe <span class="math inline">\(i\)</span>.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 4.8</strong></span> Considerando os dados do <a href="cap02.html#exm-cont" class="quarto-xref">Exemplo&nbsp;<span>2.4</span></a>. Alternativamente pode-se acrescentar mais duas colunas na tabela de distribuição de frequências referentes a: <span class="math inline">\(F_{i}\tilde{X}_i\)</span> e <span class="math inline">\(F_{i}\tilde{X}_{i}^{2}\)</span>, apresentada na <a href="#tbl-pesaonascer021" class="quarto-xref">Tabela&nbsp;<span>4.1</span></a>.</p>
+<div id="tbl-pesaonascer021" class="striped hover quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-pesaonascer021-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;4.1: Pesos ao nascer, em kg, de 50 bezerros da raça nelore, Fazenda XX, 2007.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
+</figcaption>
+<div aria-describedby="tbl-pesaonascer021-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Peso</strong> <span class="math inline">\(\mathbf{(kg)}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbf{\tilde{X}_i}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbf{F_i}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbf{Fr_i}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbf{Fp_i(\%)}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbf{F_{i}\tilde{X}_i}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbf{F_{i}\tilde{X}_{i}^{2}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\left[20,0  \right. ;\left. 22,0  \right)\)</span></td>
+<td style="text-align: center;">21,0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0,04</td>
+<td style="text-align: center;">4,0</td>
+<td style="text-align: center;">42,0</td>
+<td style="text-align: center;">882,0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\left[22,0  \right. ;\left. 24,0  \right)\)</span></td>
+<td style="text-align: center;">23,0</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0,10</td>
+<td style="text-align: center;">10,0</td>
+<td style="text-align: center;">115,0</td>
+<td style="text-align: center;">2.645,0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\left[24,0  \right. ;\left. 26,0  \right)\)</span></td>
+<td style="text-align: center;">25,0</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">0,24</td>
+<td style="text-align: center;">24,0</td>
+<td style="text-align: center;">300,0</td>
+<td style="text-align: center;">7.500,0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\left[26,0 \right. ;\left. 28,0 \right)\)</span></td>
+<td style="text-align: center;">27,0</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0,32</td>
+<td style="text-align: center;">32,0</td>
+<td style="text-align: center;">432,0</td>
+<td style="text-align: center;">11.664,0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\left[28,0  \right. ;\left. 30,0  \right)\)</span></td>
+<td style="text-align: center;">29,0</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">0,20</td>
+<td style="text-align: center;">20,0</td>
+<td style="text-align: center;">290,0</td>
+<td style="text-align: center;">8.410,0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\left[30,0  \right. ;\left. 32,0  \right)\)</span></td>
+<td style="text-align: center;">31,0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0,08</td>
+<td style="text-align: center;">8,0</td>
+<td style="text-align: center;">124,0</td>
+<td style="text-align: center;">3.844,0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\left[32,0  \right. ;\left. 34,0  \right)\)</span></td>
+<td style="text-align: center;">33,0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0,02</td>
+<td style="text-align: center;">2,0</td>
+<td style="text-align: center;">33,0</td>
+<td style="text-align: center;">1.089,0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Total</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">1,00</td>
+<td style="text-align: center;">100,0</td>
+<td style="text-align: center;">1.336,0</td>
+<td style="text-align: center;">36.034,0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Utilizando-se da expressão (<a href="#eq-vartab" class="quarto-xref"><span>4.8</span></a>), tem-se que a variância é dada por: <span class="math display">\[\begin{align*}
+    s^2 &amp;= \frac{36.034,0-\frac{\left(1.336,2\right)^2}{50}}{50-1}\\
+    &amp;= 6,86~\textrm{kg}^2.
+\end{align*}\]</span></p>
+<p>Consequentemente, o desvio padrão calculado através de (<a href="#eq-dpam" class="quarto-xref"><span>4.7</span></a>) é dado por:</p>
+<p><span class="math display">\[
+s=\sqrt{6,86}=2,62~\textrm{kg}.
+\]</span></p>
+<p>A diferença entre os dois valores (2,6972 kg e 2,62 kg) se deve ao erro de agrupamento.</p>
+</div>
+</section>
+<section id="propriedades" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="propriedades"><span class="header-section-number">4.3.3</span> Propriedades</h3>
+<p>A variância e o desvio padrão apresentam as seguintes propriedades.</p>
+<ol type="i">
+<li>Somando-se ou subtraindo-se um mesmo valor constante <span class="math inline">\(k\)</span> a cada dado, a variância e o desvio padrão não se alteram.</li>
+</ol>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 4.9</strong></span> Considere o <a href="cap03.html#exm-prop" class="quarto-xref">Exemplo&nbsp;<span>3.3</span></a>, em que a variância foi calculada através de (<a href="#eq-varamo" class="quarto-xref"><span>4.5</span></a>), e o desvio padrão por (<a href="#eq-dpam" class="quarto-xref"><span>4.7</span></a>), e são dados por: <span class="math inline">\(s^2=13,0~\textrm{cm}^2\)</span> e <span class="math inline">\(s=3,6~\textrm{cm}\)</span>.</p>
+<p>Somando <span class="math inline">\(k = 4\)</span> a cada dado, tem-se: <span class="math display">\[
+186,0; 188,0; 193,0.
+\]</span></p>
+<p>Calculando a nova variância através de (<a href="#eq-varamo" class="quarto-xref"><span>4.5</span></a>), tem-se: <span class="math display">\[\begin{align*}
+  s^2 &amp;= \frac{186,0^2+188,0^2+193,0^2-\frac{\left(186,0+188,0+193,0\right)^2}{3}}{3-1}\\
+  &amp;=\frac{107.189,0-107.163,0}{2}\\
+  &amp;= 13,0~\textrm{cm}^2
+\end{align*}\]</span></p>
+<p>Calculando o novo desvio padrão por (<a href="#eq-dpam" class="quarto-xref"><span>4.7</span></a>), tem-se: <span class="math display">\[
+s=\sqrt{13,0}=3,6~\textrm{cm}.
+\]</span></p>
+<p>Como se observa, a variância e o desvio padrão não se alteraram.</p>
+</div>
+<ol start="2" type="i">
+<li>Multiplicando-se ou dividindo-se cada dado por uma mesmo valor constante <span class="math inline">\(k\)</span>, diferente de zero, a variância fica multiplicada ou dividida por este valor ao quadrado <span class="math inline">\((k^2)\)</span>, e o desvio padrão fica multiplicado ou dividido por este valor <span class="math inline">\((k)\)</span>.</li>
+</ol>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 4.10</strong></span> Considere o <a href="cap03.html#exm-prop" class="quarto-xref">Exemplo&nbsp;<span>3.3</span></a>, em que a variância foi calculado através de (<a href="#eq-varamo" class="quarto-xref"><span>4.5</span></a>), e o desvio padrão por (<a href="#eq-dpam" class="quarto-xref"><span>4.7</span></a>), e são dados por: <span class="math inline">\(s^2=13,0~\textrm{cm}^2\)</span> e <span class="math inline">\(s=3,6~\textrm{cm}\)</span>.</p>
+<p>Multiplicando todos os dados por <span class="math inline">\(k = 2\)</span>, tem-se: <span class="math display">\[
+364,0; 368,0; 378,0.
+\]</span></p>
+<p>Calculando a nova variância através de (<a href="#eq-varamo" class="quarto-xref"><span>4.5</span></a>), tem-se: <span class="math display">\[\begin{align*}
+  s^2 &amp;= \frac{364,0^2+368,0^2+378,0^2-\frac{\left(364,0+368,0+378,0\right)^2}{3}}{3-1}\\
+  &amp;= \frac{410.804,0-410.700,0}{2}\\
+  &amp;= 52,0~\textrm{cm}^2
+\end{align*}\]</span></p>
+<p>Calculando o novo desvio padrão por (<a href="#eq-dpam" class="quarto-xref"><span>4.7</span></a>), tem-se:</p>
+<p><span class="math display">\[
+s=\sqrt{52,0}=7,2~\textrm{cm}.
+\]</span></p>
+<p>Logo, tem-se que:</p>
+<p><span class="math display">\[
+s^2=(2)^2 \times 13,0=52,0~\textrm{cm}^2$ e $s=(2) \times 3,6=7,2~\textrm{cm}.
+\]</span></p>
+</div>
+</section>
+</section>
+<section id="cv" class="level2" title="Clique aqui!" data-number="4.4">
+<h2 title="Clique aqui!" data-number="4.4" class="anchored" data-anchor-id="cv"><span class="header-section-number">4.4</span> Coeficiente de Variação</h2>
+<p>O coeficiente de variação é uma medida de dispersão relativa, que expressa o desvio padrão em termos da média de forma percentual.</p>
+<p>No caso de uma população, o coeficiente de variação é dado por (<a href="#eq-cvpop" class="quarto-xref"><span>4.9</span></a>). <span id="eq-cvpop"><span class="math display">\[
+\begin{align}
+    CV=\frac{\sigma}{\mu} \times 100,
+\end{align}
+\tag{4.9}\]</span></span> sendo: <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span>, a média e o desvio padrão populacional, respectivamente.</p>
+<p>Considerando uma amostra, o coeficiente de variação é dado por (<a href="#eq-cvam" class="quarto-xref"><span>4.10</span></a>). <span id="eq-cvam"><span class="math display">\[
+\begin{align}
+    cv=\frac{s}{\bar{\text{x}}} \times 100,
+\end{align}
+\tag{4.10}\]</span></span> sendo: <span class="math inline">\(\bar{x}\)</span> e <span class="math inline">\(s\)</span>, a média e o desvio padrão amostral, respectivamente.</p>
+<p>O coeficiente de variação é usado para comparar a variabilidade de dois ou mais conjuntos de dados, que possuam diferentes unidades e/ou diferentes médias.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 4.11</strong></span> Para o <a href="cap02.html#exm-cont" class="quarto-xref">Exemplo&nbsp;<span>2.4</span></a> e utilizando-se a expressão (<a href="#eq-cvam" class="quarto-xref"><span>4.10</span></a>), tem-se:</p>
+<p><span class="math display">\[
+cv=\frac{2,6972}{26,6} \times 100=10,14\%.
+\]</span></p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 4.12</strong></span> Sejam as alturas, em cm, de plantas de duas variedades de soja (A e B), em que a média e o desvio padrão são: <span class="math display">\[\begin{align*}
+    \textrm{Variedade A}~\begin{cases}
+         \bar{\text{x}}= 48,5~\textrm{cm};\\
+        s=4,9~\textrm{cm}.
+    \end{cases}
+\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+    \textrm{Variedade B}~\begin{cases}
+         \bar{\text{x}}=63,2~\textrm{cm};\\
+        s=5,3~\textrm{cm}.
+    \end{cases}
+\end{align*}\]</span></p>
+<p>Qual das duas variedades de soja tem uma maior variabilidade com relação à altura, A ou B?</p>
+<p>Embora as unidades sejam as mesmas, tem-se que neste caso as médias das duas variedades com relação a altura são diferentes, e assim, compara-se pelo coeficiente de variação.</p>
+<p>Assim, calculando o coeficiente de variação para as variedades A e B através de (<a href="#eq-cvam" class="quarto-xref"><span>4.10</span></a>), tem-se:</p>
+<ul>
+<li>Variedade A:</li>
+</ul>
+<p><span class="math display">\[
+cv=\frac{4,9}{48,5} \times 100=10,10\%.
+\]</span> - Variedade B: <span class="math display">\[
+cv=\frac{5,3}{63,2} \times 100=8,39\%.
+\]</span> Logo, a variedade A tem altura mais variável do que a variedade B, pois seu coeficiente de variação foi maior.</p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 4.13</strong></span> Considere uma amostra de 10 plantas de certa variedade de soja, onde se mediu a altura e a produção, dados por:</p>
+<p><span class="math display">\[\begin{align*}
+    \textrm{Altura}~\begin{cases}
+         \bar{\text{x}} = 59,2~\textrm{cm};\\
+        s=6,1~\textrm{cm}.
+    \end{cases}
+\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+    \textrm{Produção}~\begin{cases}
+         \bar{\text{x}}=10,1~\textrm{g/vagem};\\
+        s=1,4~\textrm{g/vagem}.
+    \end{cases}
+\end{align*}\]</span></p>
+<p>Quem possui uma maior maior variabilidade, a altura ou a produção?</p>
+<p>Neste caso tem-se que as unidades das variáveis são diferentes, e assim compara-se pelo coeficiente de variação.</p>
+<p>Assim, calculando o coeficiente de variação para as variáveis através de (<a href="#eq-cvam" class="quarto-xref"><span>4.10</span></a>), tem-se:</p>
+<ul>
+<li>Altura:</li>
+</ul>
+<p><span class="math display">\[
+cv=\frac{6,1}{59,2} \times 100=10,30\%.
+\]</span></p>
+<ul>
+<li>Produção:</li>
+</ul>
+<p><span class="math display">\[
+cv=\frac{1,4}{10,1}\times 100=13,86\%.
+\]</span> Logo, a produção desta variedade de soja é mais variável do que a altura, pois seu coeficiente de variação foi maior.</p>
+</div>
+</section>
+<section id="epmedia" class="level2" title="Clique aqui!" data-number="4.5">
+<h2 title="Clique aqui!" data-number="4.5" class="anchored" data-anchor-id="epmedia"><span class="header-section-number">4.5</span> Erro Padrão da Média</h2>
+<p>O erro padrão da média é uma medida de dispersão que dá uma ideia da precisão com que a média populacional <span class="math inline">\(\mu\)</span> foi estimada, sendo obtida pela expressão (<a href="#eq-ep" class="quarto-xref"><span>4.11</span></a>). <span id="eq-ep"><span class="math display">\[
+\begin{align}
+    s(\bar{\text{x}})=\frac{s}{\sqrt{n}},
+\end{align}
+\tag{4.11}\]</span></span> em que: <span class="math inline">\(s\)</span> é o desvio padrão amostral, e <span class="math inline">\(n\)</span> o tamanho amostral.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 4.14</strong></span> Seja uma lavoura de milho, onde se avaliou uma amostra de 30 plantas, referentes a altura, em cm, encontrando os seguintes resultados:</p>
+<p><span class="math display">\[\begin{align*}
+    \textrm{Altura}~\begin{cases}
+         \bar{\text{x}}=208,0~\textrm{cm};\\
+        s=12,0~\textrm{cm}.
+    \end{cases}
+\end{align*}\]</span></p>
+<p>O erro padrão da média calculado através de (<a href="#eq-ep" class="quarto-xref"><span>4.11</span></a>), é dado por:</p>
+<p><span class="math display">\[
+s(\bar{\text{x}})=\frac{12,0}{\sqrt{30}}=2,2~\textrm{cm}.
+\]</span></p>
+<p>Este resultado quer dizer que a média populacional <span class="math inline">\(\mu\)</span> foi estimada com um erro de 2,2 cm.</p>
+</div>
+<p>Tem-se de modo geral que, quanto menor for o erro padrão mais precisa será a estimativa da média populacional <span class="math inline">\(\mu\)</span>.</p>
+<p>O erro padrão é diretamente proporcional ao desvio padrão da amostra, ou seja:</p>
+<p><span class="math display">\[
+\uparrow s \Rightarrow \uparrow s(\bar{\text{x}});
+\]</span></p>
+<p><span class="math display">\[\downarrow s \Rightarrow \downarrow s(\bar{\text{x}}).
+\]</span></p>
+<p>O erro padrão é inversamente proporcional ao tamanho da amostra, isto é:</p>
+<p><span class="math display">\[
+\uparrow n \Rightarrow \downarrow s(\bar{\text{x}});
+\]</span></p>
+<p><span class="math display">\[
+\downarrow n \Rightarrow \uparrow s(\bar{\text{x}}).
+\]</span></p>
+</section>
+<section id="asscurt" class="level2" title="Clique aqui!" data-number="4.6">
+<h2 title="Clique aqui!" data-number="4.6" class="anchored" data-anchor-id="asscurt"><span class="header-section-number">4.6</span> Medidas de Assimetria e de Curtose</h2>
+<p>Foi visto no <a href="cap02.html" class="quarto-xref"><span>Capítulo 2</span></a> que, a forma do polígono de frequências permite classificar a distribuição de frequências quanto a simetria. Viu-se também que as medidas de posição e dispersão, fornecem importantes informações sobre o comportamento de um conjunto de dados. É possível, ainda, fornecer algumas informações adicionais, de maneira a completar o diagnóstico de um conjunto de dados.</p>
+<section id="coeficiente-de-assimetria" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="coeficiente-de-assimetria"><span class="header-section-number">4.6.1</span> Coeficiente de Assimetria</h3>
+<p>As medidas de dispersão conseguem captar o desvio em torno de um valor central, mas não conseguem transmitir a ideia do formato deste desvio. Assim, surge o conceito de simetria, que é o comportamento de uma curva a ambos os lados de um eixo de simetria.</p>
+<p>O coeficiente de assimetria mede o grau de desvio de uma curva no sentido horizontal, ou seja, quantifica o distanciamento de um conjunto de dados em relação à simetria, e é dado pela expressão (<a href="#eq-coeass" class="quarto-xref"><span>4.12</span></a>). <span id="eq-coeass"><span class="math display">\[
+\begin{align}
+    a_3=\frac{\sum_{i=1}^{n}\left(x_i- \bar{\text{x}} \right)^3}{ns^3}.
+\end{align}
+\tag{4.12}\]</span></span> O valor de <span class="math inline">\(a_3\)</span> pode ser:</p>
+<ul>
+<li>Positivo: sendo a assimetria à direita (assimetria positiva), <a href="#fig-assimetriacmedidas" class="quarto-xref">Figura&nbsp;<span>4.1</span></a>;</li>
+<li>Negativo: sendo a assimetria à esquerda (assimetria negativa), <a href="#fig-assimetriacmedidas" class="quarto-xref">Figura&nbsp;<span>4.1</span></a>;</li>
+<li>Zero: apresentando uma simetria perfeita (distribuição simétrica), <a href="#fig-assimetriacmedidas" class="quarto-xref">Figura&nbsp;<span>4.1</span></a>.</li>
+</ul>
+<div id="fig-assimetriacmedidas" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-assimetriacmedidas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/assimetria02.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-assimetriacmedidas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4.1: Classificação da distribuição quanto a simetria.
+</figcaption>
+</figure>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 4.15</strong></span> Considere o <a href="cap02.html#exm-cont" class="quarto-xref">Exemplo&nbsp;<span>2.4</span></a>. Neste exemplo a média e o desvio padrão são: <span class="math inline">\(26,6\)</span> kg e <span class="math inline">\(2,6972\)</span> kg, respectivamente.</p>
+<p>O coeficiente de assimetria calculado através de <a href="#eq-coeass" class="quarto-xref">(&nbsp;<span>4.12</span></a>), é dado por: <span class="math display">\[\begin{align*}
+    a_3 &amp;= \frac{(21,0-21,6)^3+(21,6-21,6)^3+\dots+(33,0-21,6)^3}{50(2,6972)^3}\\
+        &amp;= \frac{126,5540}{981,0914}=0,1290.
+\end{align*}\]</span></p>
+<p>Este valor indica uma leve assimetria à direita.</p>
+</div>
+</section>
+<section id="coeficiente-de-curtose" class="level3" data-number="4.6.2">
+<h3 data-number="4.6.2" class="anchored" data-anchor-id="coeficiente-de-curtose"><span class="header-section-number">4.6.2</span> Coeficiente de Curtose</h3>
+<p>O conceito de curtose busca identificar se a curva que representa uma distribuição de frequências, apresenta uma forma achatada ou alongada.</p>
+<p>O coeficiente de curtose mede o grau de achatamento de uma curva, tendo a curva normal como referência, e é dado pela expressão (<a href="#eq-coecurt" class="quarto-xref"><span>4.13</span></a>). <span id="eq-coecurt"><span class="math display">\[
+\begin{align}
+    a_4=\frac{\sum_{i=1}^{n}\left(x_i- \bar{\text{x}} \right)^4}{ns^4}.
+\end{align}
+\tag{4.13}\]</span></span> O valor de <span class="math inline">\(a_4\)</span> pode ser:</p>
+<ul>
+<li>Maior que 3: onde a curva apresenta um pico elevado, chamada de leptocúrtica, <a href="#fig-curtose" class="quarto-xref">Figura&nbsp;<span>4.2</span></a>.</li>
+<li>Menor que 3: sendo a curva achatada, denominada de platicúrtica, <a href="#fig-curtose" class="quarto-xref">Figura&nbsp;<span>4.2</span></a>.</li>
+<li>Igual a 3: apresentado uma curva intermediária, chamada de mesocúrtica, <a href="#fig-curtose" class="quarto-xref">Figura&nbsp;<span>4.2</span></a>.</li>
+</ul>
+<div id="fig-curtose" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-curtose-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/kutosis.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-curtose-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4.2: Classificação da distribuição quanto a curtose.
+</figcaption>
+</figure>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 4.16</strong></span> Considere o <a href="cap02.html#exm-cont" class="quarto-xref">Exemplo&nbsp;<span>2.4</span></a>. A média e o desvio padrão são: 26,6~kg e 2,6972~kg, respectivamente.</p>
+<p>Calculando o coeficiente de curtose através de (<a href="#eq-coecurt" class="quarto-xref"><span>4.13</span></a>), tem-se:</p>
+<p><span class="math display">\[
+a_4=\frac{(21,0-21,6)^4+(21,6-21,6)^4+\dots+(31,8-21,6)^4+(33,0-21,6)^4}{50(2,6972)^4}
+\]</span></p>
+<p><span class="math display">\[
+a_4=\frac{6.922,9210}{2.646,1997}=2,6162.
+\]</span></p>
+<p>Indicando uma curva com um formato aproximadamente mesocúrtica.</p>
+</div>
+</section>
+</section>
+<section id="boxplot" class="level2" title="Clique aqui!" data-number="4.7">
+<h2 title="Clique aqui!" data-number="4.7" class="anchored" data-anchor-id="boxplot"><span class="header-section-number">4.7</span> Gráfico Box-Plots</h2>
+<p>As informações representadas pelo esquema dos cinco números, vistos no <a href="cap03.html" class="quarto-xref"><span>Capítulo 3</span></a>, podem ser representadas graficamente num diagrama, chamado de Box-Plot. O Box-Plot é um gráfico que tem por objetivo apresentar várias informações sobre o comportamento de um conjunto de dados, tais como: posição, dispersão, simetria e dados discrepantes.</p>
+<p>Neste tipo de gráfico considera-se um retângulo em que a mediana (2º Quartil), é representada pela parte central do retângulo, e os quartis inferior (1º Quartil) e superior (3º Quartil), pelas linhas à esquerda e à direita, que delimitam o retângulo, respectivamente, conforme a <a href="#fig-boxplot" class="quarto-xref">Figura&nbsp;<span>4.3</span></a>. A posição da mediana, central ou mais próxima a um dos quartis, indica a presença ou não de assimetria nos dados.</p>
+<div id="fig-boxplot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/boxplot.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4.3: Gráfico boxplot.
+</figcaption>
+</figure>
+</div>
+<p>A dispersão dos dados é dada por (<a href="#eq-dq" class="quarto-xref"><span>4.14</span></a>). <span id="eq-dq"><span class="math display">\[
+\begin{align}
+    d_q=q(0,75)–q(0,25).
+\end{align}
+\tag{4.14}\]</span></span></p>
+<p>A partir do lado direito do retângulo, segue uma linha horizontal para a direita, que não exceda o limite superior, dado por (<a href="#eq-ls" class="quarto-xref"><span>4.15</span></a>). <span id="eq-ls"><span class="math display">\[
+\begin{align}
+    LS=q(0,75)+(1,5)d_q.
+\end{align}
+\tag{4.15}\]</span></span> E a partir do lado esquerdo do retângulo, segue uma linha horizontal para a esquerda, que não exceda o limite inferior, dado por (<a href="#eq-li" class="quarto-xref"><span>4.16</span></a>). <span id="eq-li"><span class="math display">\[
+\begin{align}
+    LI=q(0,25)–(1,5)d_q.
+\end{align}
+\tag{4.16}\]</span></span> Os valores que estiverem compreendidos entre esses dois limites, são chamados de valores adjacentes. As observações que estiverem fora desses limites (esquerda ou direita), serão chamadas de dados discrepantes, e representadas por um círculo (<strong>o</strong>).</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 4.17</strong></span> Considerando o <a href="cap02.html#exm-cont" class="quarto-xref">Exemplo&nbsp;<span>2.4</span></a>, tem-se o seguinte gráfico Box-Plot apresentado na <a href="#fig-boxplot02" class="quarto-xref">Figura&nbsp;<span>4.4</span></a>.</p>
+<div id="fig-boxplot02" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-boxplot02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/exem4.17.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4.4: Gráfico de Box-Plot dos pesos ao nascer, em kg, de <span class="math inline">\(50\)</span> bezerros da raça nelore.
+</figcaption>
+</figure>
+</div>
+<p>Observa-se pelo gráfico Box-Plot acima que, a distribuição é aproximadamente simétrica, e que a distribuição não apresenta valores discrepantes.</p>
+</div>
+<p>Uma outra característica é que este gráfico pode ser apresentado tanto na vertical quanto na horizontal.</p>
+</section>
+<section id="exprop" class="level2 unnumbered" title="Clique aqui!">
+<h2 class="unnumbered anchored" title="Clique aqui!" data-anchor-id="exprop">Exercícios propostos</h2>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 4.1</strong></span> Para comparar quatro variedades de alfafa (A, B, C, D), um Zootecnista conduziu um experimento em blocos casualizados com seis repetições. Os rendimentos de massa verde, em kg/parcela, foram os seguintes:</p>
+<table class="table-striped table-hover caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>TRATAMENTOS/BLOCOS</strong></th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+<th style="text-align: center;">5</th>
+<th style="text-align: center;">6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">56,8</td>
+<td style="text-align: center;">57,2</td>
+<td style="text-align: center;">57,5</td>
+<td style="text-align: center;">55,4</td>
+<td style="text-align: center;">56,0</td>
+<td style="text-align: center;">57,9</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">53,5</td>
+<td style="text-align: center;">54,3</td>
+<td style="text-align: center;">53,8</td>
+<td style="text-align: center;">54,7</td>
+<td style="text-align: center;">53,3</td>
+<td style="text-align: center;">52,6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">54,0</td>
+<td style="text-align: center;">53,5</td>
+<td style="text-align: center;">52,8</td>
+<td style="text-align: center;">54,2</td>
+<td style="text-align: center;">53,6</td>
+<td style="text-align: center;">54,1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">54,5</td>
+<td style="text-align: center;">54,5</td>
+<td style="text-align: center;">54,5</td>
+<td style="text-align: center;">54,5</td>
+<td style="text-align: center;">54,5</td>
+<td style="text-align: center;">54,5</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>Calcule a amplitude total para o tratamento A;</li>
+<li>Calcule a variância para o tratamento D;</li>
+<li>Qual tratamento é mais variável, o B ou o C? Justifique;</li>
+<li>Calcule o desvio padrão para o tratamento A e interprete;</li>
+<li>Multiplique os dados do tratamento A por 1.000,0 e calcule o desvio padrão;</li>
+<li>Confronte os resultados de (d) com (e) e comente a diferença.</li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 4.2</strong></span> Num concurso de produtividade de milho foram sorteadas seis parcelas de 40 <span class="math inline">\(\textrm{m}^2\)</span>, em lavouras de dois produtores rurais de uma determinada região produtora de milho. Na colheita foram pesados os rendimentos das parcelas, em kg, fornecendo os seguintes resultados:</p>
+<table class="table-striped table-hover caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Produtor A</strong></th>
+<th style="text-align: center;"><strong>Produtor B</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">24,0</td>
+<td style="text-align: center;">17,0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">23,0</td>
+<td style="text-align: center;">23,0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">26,0</td>
+<td style="text-align: center;">18,9</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">21,0</td>
+<td style="text-align: center;">22,0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">27,0</td>
+<td style="text-align: center;">19,0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">23,0</td>
+<td style="text-align: center;">21,0</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>Qual foi o rendimento médio, em kg/parcela, e o erro padrão da média de cada produtor;</li>
+<li>Qual produtor teve o rendimento médio estimado com maior precisão? Justifique;</li>
+<li>Qual é a produtividade média do produtor A em t/ha;</li>
+<li>Calcule a produtividade média, em t/ha, e o erro padrão da média para o produtor B;</li>
+<li>Se a lavoura do produtor B tem 400 ha, qual será a sua produção total;</li>
+<li>Quantas parcelas você recomendaria usar num próximo concurso, para estimar a produtividade média do produtor A com um erro padrão 30% menor.</li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 4.3</strong></span> Tem-se abaixo informações climáticas mensais de uma determinada região produtora de arroz:</p>
+<table class="table-striped table-hover caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Medida</strong></th>
+<th style="text-align: center;"><strong>Média</strong></th>
+<th style="text-align: center;"><strong>Desvio padrão</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Temperatura <span class="math inline">\((^{\circ}\)</span>C)</td>
+<td style="text-align: center;">22,0</td>
+<td style="text-align: center;">2,0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Precipitação <span class="math inline">\((\textrm{mm})\)</span></td>
+<td style="text-align: center;">100,0</td>
+<td style="text-align: center;">15,5</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>Qual das medidas (temperatura ou precipitação) possui maior variabilidade. Justifique;</li>
+<li>Uma vez registrados os dados descobriu-se que o instrumento utilizado para medir a precipitação estava aumentando sistematicamente 4 unidades (4~mm) em cada medição. Após corrigido o erro, qual atributo meteorológico é mais variável. Justifique.</li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 4.4</strong></span> Para estudar a produtividade de um canavial um Engenheiro Agrônomo demarcou nele em vários pontos escolhidos ao acaso, 10 pequenas áreas de 100 <span class="math inline">\(\textrm{m}^2\)</span> cada, cuja produção foi pesada. Os resultados obtidos, em kg, foram os seguintes:</p>
+<p><span class="math display">\[
+650,0;  850,0;  710,0;  920,0;  780,0;  820,0;  900,0;  780,0;  740,0;  950,0
+\]</span></p>
+<ol type="a">
+<li>Calcule a variância, o desvio padrão, o coeficiente de variação e o erro padrão da média da produção de cana-de-açúcar por área de 100 <span class="math inline">\(\textrm{m}^2\)</span>;</li>
+<li>Você acha que a variabilidade dos dados em relação à sua média é grande ou pequena. Justifique.</li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 4.5</strong></span> Em relação ao estudo do problema anterior, o Engenheiro Agrônomo achou que a variabilidade dos dados era muito grande, e que apenas 10 áreas de 100 <span class="math inline">\(\textrm{m}^2\)</span> não podiam representar bem a produtividade do canavial. Assim ele avaliou no lugar de 10, uma amostra de 50 áreas de 100 <span class="math inline">\(\textrm{m}^2\)</span>, seguindo a mesma metodologia explicada no problema anterior. Os resultados obtidos, em kg, são apresentados na seguinte tabela de distribuição de frequências.</p>
+<div id="tbl-cana_acucar" class="striped hover quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cana_acucar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;4.2: Produção de cana-de-açúcar, em kg, por áreas de 100 <span class="math inline">\(\textrm{m}^2\)</span>, Fazenda XX, 2007.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>
+</figcaption>
+<div aria-describedby="tbl-cana_acucar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Produção</strong> <span class="math inline">\(\mathbf{(kg)}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbf{\tilde{X}_i}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbf{F_i}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\left[624,0  \right. ;\left. 668,0  \right)\)</span></td>
+<td style="text-align: center;">646,0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\left[668,0  \right. ;\left. 712,0  \right)\)</span></td>
+<td style="text-align: center;">690,0</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\left[712,0  \right. ;\left. 756,0  \right)\)</span></td>
+<td style="text-align: center;">734,0</td>
+<td style="text-align: center;">15</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\left[756,0 \right. ;\left. 800,0 \right)\)</span></td>
+<td style="text-align: center;">778,0</td>
+<td style="text-align: center;">13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\left[800,0  \right. ;\left. 844,0  \right)\)</span></td>
+<td style="text-align: center;">822,0</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\left[844,0  \right. ;\left. 888,0  \right)\)</span></td>
+<td style="text-align: center;">866,0</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\left[888,0  \right. ;\left. 932,0  \right)\)</span></td>
+<td style="text-align: center;">910,0</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\left[932,0  \right. ;\left. 976,0  \right)\)</span></td>
+<td style="text-align: center;">954,0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Total</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">50</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<ol type="a">
+<li>Calcule a variância, o desvio padrão e o coeficiente de variação, da produção de cana-de-açúcar por área de 100 <span class="math inline">\(\textrm{m}^2\)</span>;</li>
+<li>Após registrada a produção de cada uma das 50 áreas de 100 <span class="math inline">\(\textrm{m}^2\)</span>, o Engenheiro Agrônomo descobriu um erro sistemático na pesagem da cana-de-açúcar. Para obter a pesagem certa ele determinou que, em cada um dos 50 dados obtidos deveria ser acrescido 6,0 kg e depois o resultado deveria ser multiplicado por 0,9. Qual o valor correto da variância, do desvio padrão e do coeficiente de variação. O pesquisador conseguiu diminuir a variabilidade? Justifique.</li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 4.6</strong></span> Os ganhos de peso, em kg, de 60 novilhos da raça guzerá, mantidos numa pastagem em determinado período foram os seguintes:</p>
+<table class="table-striped table-hover caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">36,0</td>
+<td style="text-align: center;">45,0</td>
+<td style="text-align: center;">60,0</td>
+<td style="text-align: center;">39,0</td>
+<td style="text-align: center;">57,0</td>
+<td style="text-align: center;">32,0</td>
+<td style="text-align: center;">39,0</td>
+<td style="text-align: center;">40,0</td>
+<td style="text-align: center;">63,0</td>
+<td style="text-align: center;">37,0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">42,0</td>
+<td style="text-align: center;">42,0</td>
+<td style="text-align: center;">44,0</td>
+<td style="text-align: center;">30,0</td>
+<td style="text-align: center;">47,0</td>
+<td style="text-align: center;">39,0</td>
+<td style="text-align: center;">15,0</td>
+<td style="text-align: center;">39,0</td>
+<td style="text-align: center;">25,0</td>
+<td style="text-align: center;">39,0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">57,0</td>
+<td style="text-align: center;">48,0</td>
+<td style="text-align: center;">44,0</td>
+<td style="text-align: center;">37,0</td>
+<td style="text-align: center;">44,0</td>
+<td style="text-align: center;">38,0</td>
+<td style="text-align: center;">21,0</td>
+<td style="text-align: center;">56,0</td>
+<td style="text-align: center;">52,0</td>
+<td style="text-align: center;">50,0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">31,0</td>
+<td style="text-align: center;">34,0</td>
+<td style="text-align: center;">36,0</td>
+<td style="text-align: center;">38,0</td>
+<td style="text-align: center;">43,0</td>
+<td style="text-align: center;">24,0</td>
+<td style="text-align: center;">38,0</td>
+<td style="text-align: center;">41,0</td>
+<td style="text-align: center;">46,0</td>
+<td style="text-align: center;">42,0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">28,0</td>
+<td style="text-align: center;">31,0</td>
+<td style="text-align: center;">32,0</td>
+<td style="text-align: center;">49,0</td>
+<td style="text-align: center;">39,0</td>
+<td style="text-align: center;">19,0</td>
+<td style="text-align: center;">49,0</td>
+<td style="text-align: center;">39,0</td>
+<td style="text-align: center;">42,0</td>
+<td style="text-align: center;">43,0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">20,0</td>
+<td style="text-align: center;">58,0</td>
+<td style="text-align: center;">34,0</td>
+<td style="text-align: center;">56,0</td>
+<td style="text-align: center;">35,0</td>
+<td style="text-align: center;">50,0</td>
+<td style="text-align: center;">27,0</td>
+<td style="text-align: center;">36,0</td>
+<td style="text-align: center;">40,0</td>
+<td style="text-align: center;">37,0</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>Calcule os coeficientes de assimetria e de curtose e discuta os resultados;</li>
+<li>Construa o gráfico Box-Plot e interprete.</li>
+</ol>
+</div>
 
 
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
@@ -348,6 +1241,13 @@ SOUZA, G. S. <strong>Introdução aos <span>M</span>odelos de <span>R</span>egre
 STEEL, R. G. D.; TORRIE, J. H. <strong>Principles and procedures of statistics: A biometrical approach</strong>. 2. ed. New York: McGraw-Hill Book Company, 1980. p. 512
 </div>
 </div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Fonte: Dados fictícios.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Fonte: Dados fictícios.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->

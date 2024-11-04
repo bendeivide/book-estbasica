@@ -267,14 +267,14 @@ window.Quarto = {
   </ul></li>
   <li><a href="#mediana" id="toc-mediana" class="nav-link" data-scroll-target="#mediana"><span class="header-section-number">3.3</span> Mediana</a>
   <ul class="collapse">
-  <li><a href="#dados-não-agrupados" id="toc-dados-não-agrupados" class="nav-link" data-scroll-target="#dados-não-agrupados"><span class="header-section-number">3.3.1</span> Dados Não Agrupados</a></li>
-  <li><a href="#dados-agrupados" id="toc-dados-agrupados" class="nav-link" data-scroll-target="#dados-agrupados"><span class="header-section-number">3.3.2</span> Dados Agrupados</a></li>
-  <li><a href="#propriedades" id="toc-propriedades" class="nav-link" data-scroll-target="#propriedades"><span class="header-section-number">3.3.3</span> Propriedades</a></li>
+  <li><a href="#dadosnagrup" id="toc-dadosnagrup" class="nav-link" data-scroll-target="#dadosnagrup"><span class="header-section-number">3.3.1</span> Dados Não Agrupados</a></li>
+  <li><a href="#dadosagrup" id="toc-dadosagrup" class="nav-link" data-scroll-target="#dadosagrup"><span class="header-section-number">3.3.2</span> Dados Agrupados</a></li>
+  <li><a href="#prop" id="toc-prop" class="nav-link" data-scroll-target="#prop"><span class="header-section-number">3.3.3</span> Propriedades</a></li>
   </ul></li>
   <li><a href="#moda" id="toc-moda" class="nav-link" data-scroll-target="#moda"><span class="header-section-number">3.4</span> Moda</a>
   <ul class="collapse">
-  <li><a href="#dados-não-agrupados-1" id="toc-dados-não-agrupados-1" class="nav-link" data-scroll-target="#dados-não-agrupados-1"><span class="header-section-number">3.4.1</span> Dados Não Agrupados</a></li>
-  <li><a href="#propriedades-1" id="toc-propriedades-1" class="nav-link" data-scroll-target="#propriedades-1"><span class="header-section-number">3.4.2</span> Propriedades</a></li>
+  <li><a href="#dados-não-agrupados" id="toc-dados-não-agrupados" class="nav-link" data-scroll-target="#dados-não-agrupados"><span class="header-section-number">3.4.1</span> Dados Não Agrupados</a></li>
+  <li><a href="#propriedades" id="toc-propriedades" class="nav-link" data-scroll-target="#propriedades"><span class="header-section-number">3.4.2</span> Propriedades</a></li>
   </ul></li>
   <li><a href="#medpos_natdist" id="toc-medpos_natdist" class="nav-link" data-scroll-target="#medpos_natdist"><span class="header-section-number">3.5</span> Medidas de Posição e Natureza da Distribuição</a></li>
   <li><a href="#quantis" id="toc-quantis" class="nav-link" data-scroll-target="#quantis"><span class="header-section-number">3.6</span> Quantis</a></li>
@@ -288,7 +288,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Medidas de Posição</span></h1>
+<h1 class="title"><span id="sec-chap03" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Medidas de Posição</span></span></h1>
 </div>
 
 
@@ -518,8 +518,8 @@ x_{i}\times k \Rightarrow \bar{\text{x}} \times k.
 <section id="mediana" class="level2" title="Clique aqui!" data-number="3.3">
 <h2 title="Clique aqui!" data-number="3.3" class="anchored" data-anchor-id="mediana"><span class="header-section-number">3.3</span> Mediana</h2>
 <p>A mediana é o valor central de um conjunto dados, isto é, divide os dados ordenados ascendente ou descendentemente em partes iguais, ou seja, 50,0% dos dados estão acima e 50,0% estão abaixo deste valor. A mediana tem a mesma unidade dos dados.</p>
-<section id="dados-não-agrupados" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="dados-não-agrupados"><span class="header-section-number">3.3.1</span> Dados Não Agrupados</h3>
+<section id="dadosnagrup" class="level3" title="Clique aqui!" data-number="3.3.1">
+<h3 title="Clique aqui!" data-number="3.3.1" class="anchored" data-anchor-id="dadosnagrup"><span class="header-section-number">3.3.1</span> Dados Não Agrupados</h3>
 <p>Neste caso os dados precisam primeiro serem ordenados de forma crescente ou decrescente.</p>
 <p>A mediana no caso de uma amostra, sendo denotada por <span class="math inline">\(md\)</span>, é expressa da seguinte forma:</p>
 <ul>
@@ -561,8 +561,8 @@ md=\frac{26,5+26,5}{2}=26,5~\textrm{kg}.
 \]</span></p>
 </div>
 </section>
-<section id="dados-agrupados" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="dados-agrupados"><span class="header-section-number">3.3.2</span> Dados Agrupados</h3>
+<section id="dadosagrup" class="level3" title="Clique aqui!" data-number="3.3.2">
+<h3 title="Clique aqui!" data-number="3.3.2" class="anchored" data-anchor-id="dadosagrup"><span class="header-section-number">3.3.2</span> Dados Agrupados</h3>
 <p>Se os dados estiverem agrupados em uma Tabela de Distribuição de Frequências com intervalos de classes, a mediana é dada pela expressão (<a href="#eq-mediana" class="quarto-xref"><span>3.6</span></a>),</p>
 <p><span id="eq-mediana"><span class="math display">\[
 md=LI_{md}+\left[\frac{\frac{n}{2}-F_{A}}{F_{md}}\right]c_{md},
@@ -592,8 +592,8 @@ md=26,0+\left[\frac{\frac{50}{2}-19}{16}\right]2,0=26,75~\textrm{kg}.
 \]</span> Tem-se que a diferença entre os dois valores (26,5 kg e 26,75 kg) se deve ao erro de agrupamento.</p>
 </div>
 </section>
-<section id="propriedades" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="propriedades"><span class="header-section-number">3.3.3</span> Propriedades</h3>
+<section id="prop" class="level3" title="Clique aqui!" data-number="3.3.3">
+<h3 title="Clique aqui!" data-number="3.3.3" class="anchored" data-anchor-id="prop"><span class="header-section-number">3.3.3</span> Propriedades</h3>
 <p>A mediana apresenta as seguintes propriedades:</p>
 <ol type="i">
 <li><span class="math inline">\(\sum_{i=1}^{n}|x_i-md|\)</span> é um valor mínimo se comparado com qualquer outra expressão da forma: <span class="math inline">\(\sum_{i=1}^{n}|x_i-k|\)</span> (sendo <span class="math inline">\(k\)</span> um valor qualquer);</li>
@@ -605,8 +605,8 @@ md=26,0+\left[\frac{\frac{50}{2}-19}{16}\right]2,0=26,75~\textrm{kg}.
 <section id="moda" class="level2" title="Clique aqui!" data-number="3.4">
 <h2 title="Clique aqui!" data-number="3.4" class="anchored" data-anchor-id="moda"><span class="header-section-number">3.4</span> Moda</h2>
 <p>A moda de um conjunto de dados é o valor mais frequente, sendo denotada por <span class="math inline">\(mo\)</span>. Um conjunto de dados pode ter mais de uma moda, ou também, pode não ter moda. A moda tem a mesma unidade dos dados.</p>
-<section id="dados-não-agrupados-1" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="dados-não-agrupados-1"><span class="header-section-number">3.4.1</span> Dados Não Agrupados</h3>
+<section id="dados-não-agrupados" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="dados-não-agrupados"><span class="header-section-number">3.4.1</span> Dados Não Agrupados</h3>
 <p>Deve-se primeiro ordenar os dados de forma crescente ou decrescente, e em seguida contar o valor que ocorre mais vezes no conjunto de dados, ou seja, o valor mais frequente.</p>
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Exemplo 3.11</strong></span> Considere uma amostra referente às alturas, em cm, de sete plantas de uma variedade de milho, dada por: <span class="math display">\[
@@ -666,8 +666,8 @@ mo=26,0+\left(\frac{4}{4+6}\right) 2,0=26,8~\textrm{kg}.
 <p>A diferença entre os dois valores (<span class="math inline">\(27,2\)</span> kg e <span class="math inline">\(26,8\)</span> kg) se deve ao erro de agrupamento.</p>
 </div>
 </section>
-<section id="propriedades-1" class="level3" data-number="3.4.2">
-<h3 data-number="3.4.2" class="anchored" data-anchor-id="propriedades-1"><span class="header-section-number">3.4.2</span> Propriedades</h3>
+<section id="propriedades" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="propriedades"><span class="header-section-number">3.4.2</span> Propriedades</h3>
 <p>A moda apresenta as seguintes propriedades:</p>
 <ol type="i">
 <li>Somando-se ou subtraindo-se uma mesmo valor constante a cada dado, a moda fica acrescida ou subtraída deste valor;</li>

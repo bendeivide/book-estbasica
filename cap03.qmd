@@ -1,4 +1,4 @@
-# Medidas de Posição
+# Medidas de Posição {#sec-chap03}
 
 ## Introdução {id="introd" title="Clique aqui!"}
 
@@ -185,7 +185,7 @@ O que corresponde a média anterior multiplicada por 2.
 
 A mediana é o valor central de um conjunto dados, isto é, divide os dados ordenados ascendente ou descendentemente em partes iguais, ou seja, 50,0\% dos dados estão acima e 50,0\% estão abaixo deste valor. A mediana tem a mesma unidade dos dados.
 
-### Dados Não Agrupados
+### Dados Não Agrupados {id="dadosnagrup" title="Clique aqui!"}
 
 Neste caso os dados precisam primeiro serem ordenados de forma crescente ou decrescente. 
 
@@ -257,7 +257,7 @@ $$
 
 :::
 
-### Dados Agrupados
+### Dados Agrupados {id="dadosagrup" title="Clique aqui!"}
 
 Se os dados estiverem agrupados em uma Tabela de Distribuição de Frequências com intervalos de classes, a mediana é dada pela expressão (@eq-mediana),
 
@@ -299,7 +299,7 @@ Tem-se que a diferença entre os dois valores (26,5 kg e 26,75 kg) se deve ao er
 
 :::
 
-### Propriedades
+### Propriedades {id="prop" title="Clique aqui!"}
 
 A mediana apresenta as seguintes propriedades:
 
