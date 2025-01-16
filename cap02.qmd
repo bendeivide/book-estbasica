@@ -510,7 +510,7 @@ Em um estudo referente as atividades predominantes em 20 propriedades de um muni
 |Milho |		Milho |		Soja |		Soja |		Leite |
 |Leite |		Leite |		Milho |		Café |		Leite |
 
-: { .striped .hover}
+: { .striped .hover}                 
 
 a) Classifique a variável;
 b) Construa uma tabela de distribuição de frequências com as frequências: absoluta, relativa e percentual;

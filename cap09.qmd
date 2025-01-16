@@ -1,13 +1,13 @@
-# Teoria da Estimação
+# Teoria da Estimação {#sec-chap09}
 
-## Introdução
+## Introdução {id="introd" title="Clique aqui!"}
 
 Toda população é descrita por um certo modelo probabilístico $f(x | \theta)$, com parâmetro(s) $\theta$ desconhecido(s), e o interesse é obter algum tipo de informação acerca desse(s) parâmetro(s). O que se dispõe é de uma amostra, ou seja, de partes de elementos da população. A partir de uma amostra aleatória é possível obter aproximações numéricas para o(s) parâmetro(s) $\theta$ do modelo, e esse processo é chamado estimação. Assim, um dos objetivos da Estatística é obter informações sobre os parâmetros populacionais através das estimativas amostrais.
 
-## Conceitos Básicos
+## Conceitos Básicos {id="concbas" title="Clique aqui!"}
 Para formalizar as ideias que serão apresentadas alguns conceitos são úteis.
 
-### Parâmetro
+### Parâmetro {id="parametro" title="Clique aqui!"}
 
 Um parâmetro é um valor desconhecido associado a uma característica da população, e em geral representado por letras gregas.
 
@@ -16,7 +16,7 @@ A média $\mu$ e a variância $\sigma^2$ de uma população são parâmetros.
 :::
 
 
-### Estimador
+### Estimador {id="estimador" title="Clique aqui!"}
 
 O estimador é a função ou expressão algébrica que estima o valor de um parâmetro populacional, baseando-se nas observações de uma amostra aleatória.
 
@@ -27,7 +27,7 @@ O estimador é a função ou expressão algébrica que estima o valor de um par�
 
 :::
 
-### Estimativa
+### Estimativa {id="estimativa" title="Clique aqui!"}
 
 Uma estimativa é uma aproximação numérica para um parâmetro associado a um modelo probabilístico, ou seja, é o valor obtido pelo estimador numa determinada amostra aleatória.
 
@@ -41,7 +41,7 @@ $$
 :::
 
 
-## Tipos de Estimativas
+## Tipos de Estimativas {id="tiposest" title="Clique aqui!"}
 
 Basicamente existem dois processos de estimação. O primeiro deles é a chamada \index{Estimação pontual}estimação pontual, pela qual um valor numérico é obtido através de um estimador, como sendo uma aproximação numérica para o parâmetro populacional.
 
@@ -70,7 +70,7 @@ $$
 
 Assim, a associação entre estimativas pontuais acerca de um parâmetro populacional, e o conhecimento de probabilidades de que o parâmetro esteja contido em certos intervalos, possibilitará, em geral, promover uma inferência informativa a respeito do parâmetro desconhecido.
 
-## Métodos de Estimação Pontual
+## Métodos de Estimação Pontual {id="metestpontual" title="Clique aqui!"}
 
 Os métodos de obtenção de estimativas pontuais, os quais não serão discutidos em detalhes aqui, são:
 
@@ -78,7 +78,7 @@ Os métodos de obtenção de estimativas pontuais, os quais não serão discutid
 - Método dos Quadrados Mínimos; 
 - Método da Máxima Verossimilhança.
 
-## Propriedades dos Estimadores Pontuais
+## Propriedades dos Estimadores Pontuais {id="propestpontual" title="Clique aqui!"}
 
 Em função da existência de vários métodos para estimação de parâmetros, é importante analisar algumas propriedades dos estimadores, que possa auxiliar na escolha de um estimador para um parâmetro em particular. Essas propriedades são:
 
@@ -142,7 +142,7 @@ Logo $V(\bar{\text{x}}) < V(md)$.
 
 No caso de uma estimativa por intervalo, o comprimento do intervalo de confiança dá uma idéia da eficiência da estimativa.
 
-## Estimação por intervalo
+## Estimação por intervalo {id="estintervalar" title="Clique aqui!"}
 
 Os estimadores pontuais fornecem como estimativa um único valor numérico para o parâmetro $\theta$ de interesse, associado ao modelo probabilístico $f(x | \theta)$. A inferência pode e deve ser complementada, sempre que possível, com pressuposições acerca de probabilidades de $\theta$ estarem próximos ou não de suas estimativas pontuais. Por serem variáveis aleatórias, os estimadores possuem uma distribuição de probabilidade, e levando este fato em consideração, pode-se apresentar uma estimativa mais informativa para o parâmetro de interesse, que inclua uma medida de precisão do valor obtido. Este método de estimação, denominado estimação por intervalo, incorpora à estimativa pontual do parâmetro, informações a respeito de sua variabilidade, permitindo a construção de intervalos com probabilidades conhecidas de que o valor paramétrico esteja contido nesse intervalo. 
 
@@ -157,7 +157,7 @@ O intervalo aleatório: $[T_1(x); T_2(x)]$ é chamado de intervalo de confiança
 
 Logo, a construção de intervalos de confiança consiste na obtenção de $T_1(x)$ e $T_2(x)$.
 
-## Construção de Intervalos de Confiança
+## Construção de Intervalos de Confiança {id="consic" title="Clique aqui!"}
 
 Basicamente os intervalos de confiança podem ser construídos utilizando a distribuição de quantidades pivotais. 
 
@@ -181,7 +181,7 @@ A média estimada a partir de uma amostra aleatória, é apenas uma estimativa p
 
 Para a construção do intervalo de confiança para a média, tem-se as seguintes situações, descritas a seguir.
 
-### Grandes Amostras ou Variância Populacional Conhecida
+#### Grandes Amostras ou Variância Populacional Conhecida
 
 O intervalo de confiança associado a um determinado nível de confiança, para a média populacional $\mu$, quando se tem grandes amostras $(n\geq 30)$, ou variância populacional $\sigma^2$ conhecida, pode ser deduzido da seguinte forma.
 
@@ -656,7 +656,412 @@ A análise em amostras dependentes é apropriada quando a variável é medida an
 
 :::{#tbl-amostrasdep tbl-cap="Amostras dependentes."}
 ![](/images/amostrasdep.png)
+:::
+
+Em que  $d_i$ é o desvio.
+
+O desvio médio é dado por ([-@eq-desvio]).
+
+$$
+\bar{d}=\frac{\sum_{i=1}^{n}d_{i}}{n}=\bar{y}-\bar{x}.
+$$ {#eq-desvio}
+
+O intervalo de confiança de $(1 - \alpha)100,0\%$ para $\mu_d$, é dado por ([-@eq-icdesvio]).
+$$
+\begin{align}
+    P\left[{\bar{d}}-t_{\left(v;\frac{\alpha}{2}\right)}\frac{s_d}{\sqrt{n}} < \mu_d < {\bar{d}}+t_{\left(v;\frac{\alpha}{2}\right)}\frac{s_d}{\sqrt{n}}  \right]=1 - \alpha,
+\end{align}
+$$ {#eq-icdesvio}
+em que:
+
+- $t_{\left(\nu; \frac{\alpha}{2}\right)}$ é o valor tabelado de $t$ com $\nu=n-1$ graus de liberdade que deixa uma probabilidade acima dele de $\frac{\alpha}{2}$;
+- $\mu_{d}=\mu_{x}-\mu_{y}$;
+- $s_{d}=\sqrt{\frac{\sum_{i=1}^{n}d_{i}^{2}-\frac{\left(\sum_{i=1}^{n}d_i\right)^2}{n}}{n-1}}$.
+
+:::{#exm-}
+
+Um lote de 32 novilhos da raça nelore de 2,5 anos, foram submetidos a um confinamento por 84 dias com cana-de-açúcar e concentrado. Os pesos, em kg, antes e depois do confinamento estão apresentados na Tabela [-@tbl-pesnovconf]. 
+
+|Animal | Antes (X) | Depois (Y) | d=Ganho de peso (Y - X) |
+|:---:|:---:|:---:|:---:|
+| 1 |	332,0 |	422,0 |	90,0|
+|2 |	333,0|	423,0|	90,0|
+| 3 |	338,0|	424,0|	86,0|
+|4 |	337,0|	422,0|	85,0|
+| 5 |	332,0|	424,0|	92,0|
+| 6 |	340,0|	427,0|	87,0|
+| 7 |	340,0|	422,0|	82,0|
+| 8 |	335,0|	423,0|	88,0|
+| 9 |	340,0|	431,0|	91,0|
+| 10 |	335,0|	422,0|	87,0|
+| 11 |	339,0|	429,0|	90,0|
+| 12 |	336,0|	428,0|	92,0|
+| 13 |	340,0|	424,0|	84,0|
+| 14 |	336,0|	431,0|	95,0|
+| 15 |	337,0|	429,0|	92,0|
+| 16 |	331,0|	428,0|	97,0|
+| 17 |	331,0|	428,0|	97,0|
+| 18 |	337,0|	424,0|	87,0|
+| 19 |	330,0|	422,0|	92,0|
+| 20 |	339,0|	430,0|	91,0|
+| 21 |	336,0|	423,0|	87,0|
+| 22 |	337,0|	427,0|	90,0|
+| 23 |	336,0|	426,0|	90,0|
+| 24 |	332,0|	430,0|	98,0|
+| 25 |	332,0|	431,0|	99,0|
+| 26 |	337,0|	430,0|	93,0|
+| 27 |	332,0|	422,0|	90,0|
+| 28 |	333,0|	423,0|	90,0|
+| 29 |	336,0|	429,0|	93,0|
+| 30 |	340,0|	427,0|	87,0|
+| 31 |	340,0|	432,0|	92,0|
+| 32 |	339,0|	424,0|	85,0|
+
+: Peso de novilhos, em kg, antes e depois do confinamento. {#tbl-pesnovconf .striped .hover}
+
+
+Construir um intervalo de confiança de 95,0\% de confiamça para a média de ganho de peso $(\mu_d)$ dos novilhos.
+
+Assim, tem-se que:
+
+- $(1 - \alpha)=0,95 \Rightarrow \alpha=0,05 \Rightarrow \frac{\alpha}{2}=0,025$.
+- $v=n-1=32-1=31$ graus de liberdade.
+
+<center>
+	$t_{\left(v;\frac{\alpha}{2}\right)}=t_{(31; 0,025)}=?$
+</center>
+
+Consultando a @tab-tdist01, o valor de $t$ que deixa uma probabilidade acima dele de 2,5\% com 31 graus de liberdade é igual a 2,0395.
+
+Logo,
+<center>
+	$t_{(31; 0,025)}=2,0395$.
+</center>
+
+Para o cálculo de $s_d$ tem-se:
+<center>
+	$s_{d}=\sqrt{\frac{\sum_{i=1}^{n}d_i^{2}-\frac{\left(\sum_{i=1}^{n}d_i\right)^2}{n}}{n-1}}=\sqrt{\frac{261.343,0-\frac{(2.889,0)^2}{32}}{32-1}}=4,10$ kg.
+</center>
+
+Através da expressão ([-@eq-icdesvio]), tem-se que:
+<center>
+	$90,2813-2,0395\frac{4,10}{\sqrt{32}}< \mu_d < 90,2813+2,0395\frac{4,10}{\sqrt{32}}$
+</center>
+<center>
+	$90,2813-1,4782 < \mu_d < 90,2813+1,4782$.
+</center>
+
+Logo,
+<center>
+	$\Rightarrow IC_{0,95}(\mu_d)$: [88,8031 kg; 91,7595 kg].
+</center>
+
+Esse resultado mostra que é de 95,0\% a confiança, da verdadeira média do ganho de pesos dos novilhos estar entre 88,8031 e 91,7595 kg. Pode-se concluir que, o confinamento foi eficiente para o ganho de pesos dos novilhos, pois o intervalo de confiança não abrange o zero.
+
+:::
+
+### Intervalo de Confiança para a Variância e Desvio Padrão
+
+A variância amostral $s^2$ é um estimador pontual da variância populacional $\sigma^2$. Pode-se construir um intervalo de confiança de $(1 – \alpha )100,0\%$ para $\sigma^2$, utilizando-se a distribuição da variável aleatória $\chi^2$. 
+
+Foi visto no @sec-chap08 que a variável:
+<center>
+    $\chi^2=\frac{(n-1)s^2}{\sigma^2}$,
+</center>
+segue uma distribuição $\chi^2$ com $\nu = n – 1$ graus de liberdade. 
+
+Na distribuição de $\chi^2$ pode-se esquematizar uma probablidade de $(1 – \alpha)$, conforme a @fig-chigraf.
+
+![Área correspondente a  $P\left(\chi^2_{(\nu; 1- \alpha / 2)} < \chi^2 < \chi^2_{(\nu; \alpha / 2)}\right) = 1 - \alpha$.](images/quiquadrado.png){width="40%" #fig-chigraf}
+
+Logo, um intervalo de confiança para $\sigma^2$, com nível de confiança de $(1 - \alpha)100,0\%$, é dado por ([-@eq-icvar]).
+$$
+\begin{align}
+    P\left[\frac{(n-1)s^2}{\chi^{2}_{\left(v;\frac{\alpha}{2} \right) }} < \sigma^2 < \frac{(n-1)s^2}{\chi^{2}_{\left(v;1-\frac{\alpha}{2} \right) }} \right]=1 - \alpha,
+\end{align}
+$$ {#eq-icvar}
+em que: $\chi^{2}_{\left(v;\frac{\alpha}{2} \right)}$ e $\chi^{2}_{\left(v;1-\frac{\alpha}{2} \right)}$ são obtidos na tabela de $\chi^2$  (Tabelas [-@tab-chi01] e [-@tab-chi02]) para $v = n – 1$ graus de liberdade.
+
+:::{#exm-icvar}
+
+Seja uma amostra de 20 árvores, de uma espécie de Eucalipto pertencente a um povoamento florestal, em que a variável DAP (diâmetro à altura do peito) apresentou uma média de 18,0 cm e uma variância de 6,25 cm$^2$. Construir um intervalo de confiança de 95,0\% para a variância populacional $\sigma^2$. Assim, tem-se que:
+
+- $s^2=6,25$ cm$^2$;
+- $(1 - \alpha)=0,95 \Rightarrow \alpha=0,05 \Rightarrow \frac{\alpha}{2}=0,025 \Rightarrow 1-\frac{\alpha}{2}=0,975$;
+- $n=20 \Rightarrow v=n-1=20-1=19$ graus de liberdade;
+- $\chi^{2}_{\left(v;\frac{\alpha}{2} \right)}=\chi_{(19;0,025)}^{2}=?$
+- $\chi^{2}_{\left(v;1-\frac{\alpha}{2} \right) }=\chi_{(19;0,975)}^{2}=?$
+
+Consultando as Tabelas [-@tab-chi01] e [-@tab-chi02], tem-se que o valor de $\chi^2$ que deixa uma probabilidade acima dele de 2,5\%, com 19 graus de liberdade é igual a 32,8523. Com 19 graus de liberdade o valor de $\chi^2$ que deixa uma probabilidade acima dele de 97,5\% é igual a 8,9065.
+
+Logo,
+<center>
+    $\chi_{(19;0,025)}^{2}=32,8523$ e $\chi_{(19;0,975)}^{2}=8,9065$.
+</center>
+
+Através da expressão ([-@eq-icvar]), tem-se que:
+<center>
+    $\frac{(201)6,25}{32,8523}< \sigma^2 < \frac{(201)6,25}{8,9065}$
+</center>
+
+Logo,
+<center>
+    $\Rightarrow IC_{0,95}(\sigma^2)$:[3,62 cm$^2$; 14,47 cm$^2$].
+</center>
+
+Esse resultado mostra que é de 95,0\% a confiança, do verdadeiro valor da variância do DAP das árvores do povoamento estar entre 3,62 e 14,47 cm$^2$.
+
+:::
+
+O intervalo de confiança de $(1 – \alpha)100,0\%$ para o desvio padrão populacional $\sigma$, é dado pela raiz quadrada positiva do intervalo de confiança da variância, dado pela expressão ([-@eq-icdp]).
+$$
+\begin{align}\label{eq:icdp}
+    P\left[\sqrt{\frac{(n-1)s^2}{\chi^{2}_{\left(v;\frac{\alpha}{2} \right)}}} < \sigma < \sqrt{\frac{(n-1)s^2}{\chi^{2}_{\left(v;1-\frac{\alpha}{2} \right)}}} \right]=1 - \alpha.
+\end{align}
+$$ {#eq-icdp}
+
+:::{#exm-}
+
+Considerando o @exm-icvar, e utilizando a expressão ([-@eq-icdp]), tem-se que o intervalo de confiança 95,0\% para o desvio padrão populacional $\sigma$, é dado por:
+
+<center>
+$\sqrt{\frac{(201)6,25}{32,8523}}< \sigma < \sqrt{\frac{(201)6,25}{8,9065}}$
+</center>
+
+<center>
+$\Rightarrow IC_{0,95}(\sigma)$: [1,90 cm; 3,80 cm].
+</center>
+
+Esse resultado mostra que é de 95,0\% a confiança, do verdadeiro valor do desvio padrão do DAP das árvores do povoamento estar entre 1,90 e 3,80 cm.
+
+:::
+
+### Intervalo de Confiança para Proporções    
+
+A proporção amostral $\hat{p}$ é uma estimativa pontual da proporção populacional $p$. Pode-se construir um intervalo de confiança de $(1 – \alpha)100,0\%$ para $p$ utilizando-se a distribuição Z, dado por ([-@eq-icprop]).
+$$
+\begin{align}
+    P\left[\hat{p}-Z_{\frac{\alpha}{2}}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}} < p < \hat{p}+Z_{\frac{\alpha}{2}}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \right]=1 - \alpha.
+\end{align}
+$$ {#eq-icprop}
+
+O erro máximo da estimativa é dado por:
+<center>
+$e=Z_{\frac{\alpha}{2}}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}.$
+</center>
+
+O tamanho da amostra dimensionado estatisticamente para estimar proporções, é dado por ([-@eq-tamprop]).
+$$
+\begin{align}
+    n=\left(\frac{Z_{\frac{\alpha}{2}}}{e}\right)^{2}\hat{p}(1-\hat{p}).
+\end{align}
+$$ {#eq-tamprop}
+
+:::{#exm-}
+
+Foi extraída uma amostra aleatória de 240 laranjeiras de um grande pomar, onde constatou-se que 53 delas estavam atacadas pelo cancro cítrico. Construir um intervalo de confiança de 95,0\% para a proporção de plantas doente.
+
+Assim, tem-se que:
+
+- $n=240$;
+- $x=53$;
+- $\hat{p}=\frac{x}{n}=\frac{53}{240}=0,221=22,10\% \Rightarrow$ Estimativa por ponto de $p$;
+- $(1 - \alpha)=0,95 \Rightarrow \alpha=0,05 \Rightarrow \frac{\alpha}{2}=0,025 \Rightarrow Z_{0,025}=1,96$.
+
+
+Através da expressão ([-@eq-icprop]), tem-se que:
+<center>
+    $0,221-1,96\sqrt{\frac{0,221(1-0,221)}{240}} < p < 0,221+1,96\sqrt{\frac{0,221(1-0,221)}{240}}$
+</center>
+
+Logo,
+<center>
+    $\Rightarrow IC_{0,95}(p):[0,169; 0,273]$.
+</center>
+
+Esse resultado mostra que é de 95,0\% a confiança, da verdadeira proporção de plantas atacadas pelo Cancro Cítrico estar entre 0,169 e 0,273. 
+
+Pode-se estar interessado também em saber quantas plantas deverão ser investigadas num próximo estudo, para estimar a proporção de plantas doentes com um erro de 4,0\% e uma confiança de 95,0\%.
+
+Através da expressão ([-@eq-tamprop}]), tem-se que:
+<center>
+$n=\left(\frac{1,96}{0,04}\right)^{2}0,221(1-0,221)=414$.
+</center>
+
+Portanto, serão necessárias 414 plantas para serem amostradas num próximo estudo, para estimar a proporção de plantas doentes com um erro de 4,0\% e uma confiança de 95,0\%.
+
+:::
+
+### Intervalo de Confiança para a Diferença entre duas Proporções
+
+Frequentemente tem-se o interesse em estimar a diferença entre as proporções de duas populações estudadas. 
+
+O intervalo de confiança de $(1$ $–$ $\alpha)100,0\%$ para a diferença entre duas proporções, pode ser construído utilizando-se a distribuição Z, dado por ([-@eq-icdifprop]).
+$$
+\begin{align}
+    P&\left[(\hat{p_1}-\hat{p_2})-Z_{\frac{\alpha}{2}}\sqrt{\frac{\hat{p_1}(1-\hat{p_1})}{n_1}+\frac{\hat{p_2}(1-\hat{p_2})}{n_2}} < p_{1} - p_{2} < \right. \nonumber\\
+    & \quad \left. (\hat{p_1}-\hat{p_2})+Z_{\frac{\alpha}{2}}\sqrt{\frac{\hat{p_1}(1-\hat{p_1})}{n_1}+\frac{\hat{p_2}(1-\hat{p_2})}{n_2}}\right]=1 - \alpha.
+\end{align}
+$$ {#eq-icdifprop}
+
+:::{#exm-}
+
+Foram extraídas duas amostras aleatórias de laranjeiras de um gran\-de pomar, que apresentavam incidências do cancro cítrico. A amostra 1, composta de 200 laranjeiras, foi proveniente de uma parcela que não recebeu o tratamento fitossanitário, chamada de controle. A amostra 2, composta de 150 laranjeiras, foi proveniente de uma parcela em que as plantas foram submetidas a um tratamento fitossanitário para o controle do cancro cítrico. Na amostra 1, constatou-se que 52 laranjeiras estavam atacadas pelo cancro cítrico. Constatou-se pela análise da amostra 2 que, 18 laranjeiras estavam atacadas pelo cancro cítrico. 
+
+Construir um intervalo de confiança de 95,0\% para a diferença entre as proporções das duas amostras. Com base nos resultados pode-se afirmar que as proporções são diferentes? 
+
+Para a construção do intervalo de confiança, tem-se que:
+\begin{align*}
+    \textrm{Amostra~ 1}\begin{cases}
+        n_1=200; \\
+        x_{1}=52; \\
+        \hat{p_1}=\frac{52}{200}=0,26=26,0\%.
+    \end{cases}
+\end{align*}
+
+\begin{align*}
+    \textrm{Amostra}~ 2\begin{cases}
+        n_1=150; \\
+        x_{1}=18; \\
+        \hat{p_1}=\frac{18}{150}=0,12=12,0\%.
+    \end{cases}
+\end{align*}
+
+Tem-se então que: 
+<center>
+    $\hat{p_1}-\hat{p_2}=0,26-0,12=0,14=14,0\%$,
+</center>
+é a estimativa por ponto de $p_{1}-p_{2}$.
+
+Assim, tem-se que:
+<center>
+    $(1 - \alpha)=0,95 \Rightarrow \alpha=0,05 \Rightarrow \frac{\alpha}{2}=0,025 \Rightarrow Z_{0,025}=1,96$.
+</center>
+
+O intervalo de confiança para $p_{1}-p_{2}$ construído através de ([-@eq-icdifprop]), é dado por:
+<center>
+    $0,14-\sqrt{\frac{0,26(1-0,26)}{200}+\frac{0,12(1-0,12)}{150}} < (p_{1}-p_{2}) < 0,14+\sqrt{\frac{0,26(1-0,26)}{200}+\frac{0,12(1-0,12)}{150}}$
+</center>
+<center>
+    $0,14-0,08 < (p_{1}-p_{2}) < 0,14+0,08$
+</center>
+
+Logo,
+<center>
+    $\Rightarrow IC_{0,95}(p_{1}-p_{2}):[0,06; 0,22]$.
+</center>
+
+Esse resultado mostra que é de 95,0\% a confiança, da verdadeira diferença entre as proporções das duas amostras estar entre 0,06 e 0,22. Com base nos resultados pode-se afirmar que as proporções são diferentes, pois o intervalo de confiança não abrange o zero.
+
+:::
+
+## Exercícios propostos {- id="exprop" title="Clique aqui!"}
+
+:::{#exr-}
+Numa lavoura de milho foi tomada uma amostra de 40 plantas, anotando-se as alturas, em cm. Os resultados forneceram:
+
+<center>
+    $\sum_{i=1}^{40}x_{i}=8.972,0$ e $\sum_{i=1}^{40}x_{i}^{2}=2.022.914,0$.
+</center>
+
+a) Encontre as estimativas por ponto de $\mu$ e $\sigma$;
+b) Construa um intervalo de confiança de 95,0\% para a média $\mu$ e interprete;
+c) Construa um intervalo de confiança de 99,0\% para a média $\mu$ e interprete;
+d) Confronte os resultados de (b) e de (c) e discuta as diferenças;
+e) Quantos plantas você recomenda usar num próximo estudo, para estimar a média $\mu$ com 95,0\% de confiança e um erro:
+   - 10,0\% menor que em (b);
+   - de 3,0 cm.
+:::
+
+:::{#exr-}
+Foi tomado ao acaso um lote de 15 bovinos no rebanho de um criador, fornecendo média de 240,0 kg e desvio padrão de 15,0 kg.
+
+a) Construa um intervalo de confiança de 95,0\% para o peso médio do rebanho;
+b) Construa um intervalo de confiança de 90,0\% para o desvio padrão do peso do rebanho;
+c) Quantos animais você recomenda usar num próximo estudo, para estimar a média com um erro 10,0\% menor que em (a), e 95,0\% de confiança.
+
+:::
+
+:::{#exr-}
+Estão sendo estudados 2 processos para conservar alimentos quanto ao tempo de duração (X), em dias. No processo A: X $\sim N(\mu_{A}; 100,0)$; e no processo B: X $\sim N(\mu_{B}; 125,0)$. Foram Sorteadas duas amostras independentes, a de A com 16 latas apresentou um tempo médio de duração igual a 50,0 dias, e a de B com 25 latas apresentou um tempo médio de duração igual a 60,0 dias.
+
+a) Construa um intervalo de confiança de 95,0\% para $\mu_A$ e $\mu_B$. Interprete os resultados;
+b) Construa um intervalo de confiança de 95,0\% para $\mu_A-\mu_B$. Interprete os resultados. Com base nos resultados você acha que existe diferença significativa entre as médias de conservação dos dois processos? Justifique.
+
+:::
+
+:::{#exr-}
+Num estudo com duas espécies de eucalipto, sortearam-se duas parcelas em plantações com idade de 6 anos, anotando-se os seus rendimentos de madeira, em m$^3$. Os resultados foram os seguintes:
+
+|Espécie | n | Média | Desvio padrão |
+|:---:|:---:|:---:|:---:|
+| *E. grandis* | 28 |	0,43 |	0,06 |
+|*E. saligna* |  24 |	0,39 |	0,07 |
+
+: { .striped .hover} 
+
+
+a) Construa os intervalos de confiança de 95,0\% para as médias $\mu_g$ e $\mu_s$. Com base nestes resultados você afirmaria que *E. grandis* é superior a *E. saligna*, para a produtividade de madeira aos seis anos? Justifique;
+b) Construa o intervalo de 95,0\% de confiança para a diferença entre as médias das duas espécies $\mu_g-\mu_s$. Admita que: $\sigma_{g}^{2}=\sigma_{s}^{2}$. Com base nesse intervalo conclua sobre a diferença de rendimentos das duas espécies;
+c) Refaça o item (b) considerando que: $\sigma_{g}^{2}\neq\sigma_{s}^{2}$.
 
 
 :::
+
+
+:::{#exr-}
+Num estudo com animais das raças Guzerá e Nelore, os animais foram submetidos a um confinamento tratando-se todos os animais com uma mesma ração. Após o período experimental anotou-se o ganho de peso dos animais, em kg. Os resultados foram os seguintes:
+
+| Raça | n | Média | Desvio padrão |
+|:---:|:---:|:---:|:---:|
+|Guzerá | 28 |	81,0 |	5,6 |
+|Nelore | 25 |	79,0 |	7,1 |
+
+: { .striped .hover} 
+
+a) Construa um intervalo de confiança de 95,0\% para as médias das duas raças;
+b) Construa um intervalo de confiança de 95,0\% para os desvios padrão das duas raças;
+c) Construa um intervalo de confiança de 95,0\% para a diferença entre o ganho médio de peso das duas raças. Assuma que as variâncias populacionais são iguais;
+d) Construa um intervalo de confiança de 95,0\% para a diferença entre o ganho médio de peso das duas raças. Assuma que as variâncias populacionais são diferentes;
+e) Pelos resultados você arriscaria afirmar que o peso médio da raça Guzerá é superior ao da raça Nelore? Justifique.
+
+:::
+
+:::{#exr-}
+Uma empresa florestal fornece escoramentos de eucalipto para a construção civil. Para tomar uma decisão sobre o momento de cortar um determinado talhão no reflorestamento, o Engenheiro Florestal responsável realiza uma amostragem aleatória no talhão, obtendo-se os seguintes resultados, em cm.
+
+ | | | | | | | | | | |
+ |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|14,6 |	15,8 |	11,2 |	12,5 |	12,6 |	13,4 |	17,6 |	16,7 |	18,5 |	15,1 |
+|15,2 |	14,1 |	13,2 |	14,1 |	15,0 |	15,6 |	16,7 |	16,1 |	17,0 |	11,8 |
+|19,0 |	10,6 |	13,3 |	14,2 |	16,8 |	15,3 |	15,3 |	14,2 |	16,3 |	17,5 |
+
+: { .striped .hover} 
+
+Com base nesta amostra construa um intervalo de confiança de 95,0\% para o diâmetro médio desse talhão. Interprete.
+
+:::
+
+
+:::{#exr-}
+Retirou-se uma amostra de 40 tubérculos de batata, e observou-se uma média de produção de 201,0 g e uma variância de 152,7635 g$^2$. Construa um intervalo de confiança de 95,0\% para a variância e para o desvio padrão populacional.
+:::
+
+
+:::{#exr-}
+Foi feito um levantamento na região sul de Minas por meio de uma amostra aleatória, anotando-se  as propriedades rurais onde o pecuarista faz a vacinação para controlar a  raiva bovina. Os dados obtidos mostraram que em 213 propriedades visitadas, 129 vacinaram o rebanho para prevenção da raiva nos dois últimos anos.
+
+a) Estime a proporção por ponto dos produtores da região que vacinam seus rebanhos contra a raiva;
+b) Construa um intervalo de confiança de 95,0\% para a proporção $p$;
+c) Qual é o erro da estimativa para estimar $p$ com 99,0\% de confiança;
+d) Quantas propriedades deverão ser visitadas para estimar $p$ com um erro de 3,0\% e uma confiança de 95,0\%.
+
+:::
+
+:::{#exr-}
+
+Foram semeadas sementes de uma espécie de orquídeas em dois substratos (A e B) diferentes. No substrato A foram semeadas 80 sementes, e verificou-se que 65 sementes germinaram. No substrato B foram semeadas 75 sementes, e verificou-se que 56 sementes germinaram. Construir um intervalo de confiança de 95,0\% para a diferença entre as proporções dos dois substratos. Com base nos resultados pode-se afirmar que os substratos são diferentes?
+
+::: 
+
 
