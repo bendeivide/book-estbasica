@@ -1,4 +1,4 @@
-# Medidas de Dispersão
+# Medidas de Dispersão {#sec-chap04}
 
 ## Introdução {id="introd" title="Clique aqui!"}
 

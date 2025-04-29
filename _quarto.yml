@@ -50,7 +50,8 @@ crossref:
 #       key: vid
 #       latex-env: video
   
-
+header-includes:
+   - \usepackage{tikz}
 
 
 

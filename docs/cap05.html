@@ -89,12 +89,42 @@ div.csl-indent {
     "search-label": "Procurar"
   }
 }</script>
+</head><body class="nav-sidebar floating">\usepackage{tikz}
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="custom.scss">
-</head>
 
-<body class="nav-sidebar floating">
+
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -224,15 +254,50 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#introd" id="toc-introd" class="nav-link active" data-scroll-target="#introd"><span class="header-section-number">5.1</span> Introdução</a></li>
+  <li><a href="#concbasicos" id="toc-concbasicos" class="nav-link" data-scroll-target="#concbasicos"><span class="header-section-number">5.2</span> Conceitos Básicos</a>
+  <ul class="collapse">
+  <li><a href="#expdet" id="toc-expdet" class="nav-link" data-scroll-target="#expdet"><span class="header-section-number">5.2.1</span> Experimento Determinístico</a></li>
+  <li><a href="#expaleat" id="toc-expaleat" class="nav-link" data-scroll-target="#expaleat"><span class="header-section-number">5.2.2</span> Experimento Aleatório</a></li>
+  <li><a href="#espamostral" id="toc-espamostral" class="nav-link" data-scroll-target="#espamostral"><span class="header-section-number">5.2.3</span> Espaço Amostral</a></li>
+  <li><a href="#evento" id="toc-evento" class="nav-link" data-scroll-target="#evento"><span class="header-section-number">5.2.4</span> Evento</a></li>
+  </ul></li>
+  <li><a href="#operações-com-conjuntos-eventos" id="toc-operações-com-conjuntos-eventos" class="nav-link" data-scroll-target="#operações-com-conjuntos-eventos"><span class="header-section-number">5.3</span> Operações com Conjuntos (Eventos)</a></li>
+  <li><a href="#métodos-de-contagem" id="toc-métodos-de-contagem" class="nav-link" data-scroll-target="#métodos-de-contagem"><span class="header-section-number">5.4</span> Métodos de Contagem</a></li>
+  <li><a href="#definição-de-probabilidade" id="toc-definição-de-probabilidade" class="nav-link" data-scroll-target="#definição-de-probabilidade"><span class="header-section-number">5.5</span> Definição de Probabilidade</a>
+  <ul class="collapse">
+  <li><a href="#definição-axiomática" id="toc-definição-axiomática" class="nav-link" data-scroll-target="#definição-axiomática"><span class="header-section-number">5.5.1</span> Definição Axiomática</a></li>
+  <li><a href="#definição-clássica" id="toc-definição-clássica" class="nav-link" data-scroll-target="#definição-clássica"><span class="header-section-number">5.5.2</span> Definição Clássica</a></li>
+  <li><a href="#definição-frequentista" id="toc-definição-frequentista" class="nav-link" data-scroll-target="#definição-frequentista"><span class="header-section-number">5.5.3</span> Definição Frequentista</a></li>
+  </ul></li>
+  <li><a href="#propriedades-das-probabilidades" id="toc-propriedades-das-probabilidades" class="nav-link" data-scroll-target="#propriedades-das-probabilidades"><span class="header-section-number">5.6</span> Propriedades das Probabilidades</a></li>
+  <li><a href="#probabilidade-condicional" id="toc-probabilidade-condicional" class="nav-link" data-scroll-target="#probabilidade-condicional"><span class="header-section-number">5.7</span> Probabilidade Condicional</a></li>
+  <li><a href="#teorema-de-bayes" id="toc-teorema-de-bayes" class="nav-link" data-scroll-target="#teorema-de-bayes"><span class="header-section-number">5.8</span> Teorema de Bayes</a></li>
+  <li><a href="#eventos-independentes" id="toc-eventos-independentes" class="nav-link" data-scroll-target="#eventos-independentes"><span class="header-section-number">5.9</span> Eventos Independentes</a></li>
+  <li><a href="#variável-aleatória" id="toc-variável-aleatória" class="nav-link" data-scroll-target="#variável-aleatória"><span class="header-section-number">5.10</span> Variável Aleatória</a></li>
+  <li><a href="#função-de-probabilidade-discreta" id="toc-função-de-probabilidade-discreta" class="nav-link" data-scroll-target="#função-de-probabilidade-discreta"><span class="header-section-number">5.11</span> Função de Probabilidade Discreta</a></li>
+  <li><a href="#função-densidade-de-probabilidade" id="toc-função-densidade-de-probabilidade" class="nav-link" data-scroll-target="#função-densidade-de-probabilidade"><span class="header-section-number">5.12</span> Função Densidade de Probabilidade</a>
+  <ul class="collapse">
+  <li><a href="#propriedades-da-função-densidade-de-probabilidade" id="toc-propriedades-da-função-densidade-de-probabilidade" class="nav-link" data-scroll-target="#propriedades-da-função-densidade-de-probabilidade"><span class="header-section-number">5.12.1</span> Propriedades da Função Densidade de Probabilidade</a></li>
+  </ul></li>
+  <li><a href="#função-de-distribuição-acumulada" id="toc-função-de-distribuição-acumulada" class="nav-link" data-scroll-target="#função-de-distribuição-acumulada"><span class="header-section-number">5.13</span> Função de Distribuição Acumulada</a>
+  <ul class="collapse">
+  <li><a href="#variável-aleatória-discreta" id="toc-variável-aleatória-discreta" class="nav-link" data-scroll-target="#variável-aleatória-discreta"><span class="header-section-number">5.13.1</span> Variável Aleatória Discreta</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidades</span></h1>
+<h1 class="title"><span id="sec-chap05" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probabilidades</span></span></h1>
 </div>
 
 
@@ -249,6 +314,719 @@ div.csl-indent {
 </header>
 
 
+<section id="introd" class="level2" title="Clique aqui!" data-number="5.1">
+<h2 title="Clique aqui!" data-number="5.1" class="anchored" data-anchor-id="introd"><span class="header-section-number">5.1</span> Introdução</h2>
+<p>Foi visto nos capítulos anteriores que a estatística descritiva nos auxilia a descrever uma amostra. Mas além de descrever a amostra, pode-se também estar interessado em saber se a informação contida na amostra, pode ser utilizada para inferir sobre as características da população da qual a amostra foi retirada. Porém, antes de estudar a inferência estatística, precisa-se conhecer alguns resultados importantes, pois a inferência estatística tem como base a teoria das probabilidades.</p>
+<p>Neste capítulo são apresentados alguns fundamentos e teoremas, que serão utilizados como base teórica para o desenvolvimento de técnicas. a serem vistos em capítulos futuros.</p>
+</section>
+<section id="concbasicos" class="level2" title="Clique aqui!" data-number="5.2">
+<h2 title="Clique aqui!" data-number="5.2" class="anchored" data-anchor-id="concbasicos"><span class="header-section-number">5.2</span> Conceitos Básicos</h2>
+<p>Inicialmente são apresentados alguns conceitos que serão úteis no decorrer deste capítulo.</p>
+<section id="expdet" class="level3" title="Clique aqui!" data-number="5.2.1">
+<h3 title="Clique aqui!" data-number="5.2.1" class="anchored" data-anchor-id="expdet"><span class="header-section-number">5.2.1</span> Experimento Determinístico</h3>
+<p>Um experimento determinístico é qualquer fenômeno ou ação que pode ser repetido, cujos resultados são sempre os mesmos, qualquer que seja o número de repetições.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.1</strong></span> Se a água for aquecida, ao atingir os 100°C de temperatura ela entrará em ebulição, independentemente do número de repetições.</p>
+</div>
+</section>
+<section id="expaleat" class="level3" title="Clique aqui!" data-number="5.2.2">
+<h3 title="Clique aqui!" data-number="5.2.2" class="anchored" data-anchor-id="expaleat"><span class="header-section-number">5.2.2</span> Experimento Aleatório</h3>
+<p>Um experimento aleatório é qualquer fenômeno ou ação que pode ser repetido, cujos resultados são casuais ou aleatórios.</p>
+<div id="exm-exp1" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.2</strong></span> Seja um experimento que consiste em semear uma semente de feijão, e observar a sua germinação.</p>
+</div>
+<div id="exm-exp2" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.3</strong></span> Considere um experimento em que se observa a vida útil de uma peça de um trator agrícola.</p>
+</div>
+<div id="exm-exp3" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.4</strong></span> Imagine um experimento onde se observa o nascimento de três bezerros considerando a ordem, e determinar o sexo deles.</p>
+</div>
+</section>
+<section id="espamostral" class="level3" title="Clique aqui!" data-number="5.2.3">
+<h3 title="Clique aqui!" data-number="5.2.3" class="anchored" data-anchor-id="espamostral"><span class="header-section-number">5.2.3</span> Espaço Amostral</h3>
+<p>O espaço amostral é o conjunto de todos os resultados possíveis de um experimento aleatório, cujos seus elementos são denominados eventos simples ou pontos amostrais. O espaço amostral é representado pela letra grega <span class="math inline">\(\Omega\)</span>.</p>
+<div id="exm-am1" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.5</strong></span> Para o experimento do <a href="#exm-exp1" class="quarto-xref">Exemplo&nbsp;<span>5.2</span></a>, tem-se o espaço amostral associado ao experimento.</p>
+<p><span class="math display">\[
+\Omega=\left\{\textrm{germina},~ \textrm{não germina} \right\}.
+\]</span></p>
+</div>
+<div id="exm-am2" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.6</strong></span> Para o experimento do <a href="#exm-exp2" class="quarto-xref">Exemplo&nbsp;<span>5.3</span></a>, tem-se o espaço amostral associado ao experimento.</p>
+<p><span class="math display">\[
+\Omega=\left\{t  \in  \mathbb{R}  |  t  \ge  0 \right\}, t = \textrm{tempo}.
+\]</span></p>
+</div>
+<div id="exm-am3" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.7</strong></span> Para o experimento do <a href="#exm-exp3" class="quarto-xref">Exemplo&nbsp;<span>5.4</span></a>, tem-se o espaço amostral associado ao experimento. <span class="math display">\[\begin{align*}
+    \Omega &amp; = \left\{(M,M,M),~(M,M,F),~(M,F,M),~(F,M,M),~(M,F,F),~(F,M,F), \right. \\
+           &amp; \quad \left. (F,F,M),~(F,F,F) \right\}.
+\end{align*}\]</span> Sendo <span class="math inline">\(F\)</span>: fêmea e <span class="math inline">\(M\)</span>: macho.</p>
+</div>
+</section>
+<section id="evento" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="evento"><span class="header-section-number">5.2.4</span> Evento</h3>
+<p>Evento é um subconjunto do espaço amostral que representa um resultado definido. No estudo de probabilidades os eventos são representados por letras maiúsculas, tais como: A, B, C, etc.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.8</strong></span> &nbsp;</p>
+Para o experimento do <a href="#exm-exp3" class="quarto-xref">Exemplo&nbsp;<span>5.4</span></a>, tem-se o seguinte evento de interesse:
+<center>
+<span class="math inline">\(A\)</span>: Nascer exatamente duas fêmeas.
+</center>
+Logo, tem-se que o evento A é formado pelo subconjunto de <span class="math inline">\(\Omega\)</span> dado por:
+<center>
+<span class="math inline">\(A = \left\{(M,F,F), (F,M,F), (F,F,M)\right\}\)</span>.
+</center>
+<p>Então o evento A ocorre se ocorrer um dos três eventos simples: <span class="math inline">\((M,F,F)\)</span> ou <span class="math inline">\((F,M,\)</span> <span class="math inline">\(F)\)</span> ou <span class="math inline">\((F,F,M)\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="operações-com-conjuntos-eventos" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="operações-com-conjuntos-eventos"><span class="header-section-number">5.3</span> Operações com Conjuntos (Eventos)</h2>
+<p>Sendo o espaço amostral um conjunto, e eventos um subconjunto do espaço amostral, muitos dos cálculos de probabilidades, que veremos nas próximas seções, envolvem operações com conjuntos. Assim, é interessante rever algumas operações com conjuntos dadas a seguir.</p>
+<ul>
+<li>União ( <span class="math inline">\(\cup\)</span> ): A união de dois eventos A e B <span class="math inline">\((A \cup B)\)</span>, é o evento que ocorre se pelo menos um deles ocorre.
+<center>
+<span class="math inline">\(A \cup B = \left\{x|x \in A  \textrm{ ou }  x \in B \textrm{ ou ambos } \right\}\)</span>.
+</center></li>
+<li>Interseção ( <span class="math inline">\(\cap\)</span> ): A interseção de dois eventos A e B <span class="math inline">\((A \cap B)\)</span> é definida como um conjunto com os elementos pertencentes simultaneamente aos eventos A e B.
+<center>
+<span class="math inline">\(A \cap B = \left\{x|x \in A  \textrm{ e }  x \in B  \right\}\)</span>.
+</center></li>
+</ul>
+<p>Se dois eventos A e B têm interseção nula <span class="math inline">\((A \cap B = 0)\)</span>, diz-se que são mutuamente exclusivos ou disjuntos.</p>
+<ul>
+<li>Evento Complementar (<span class="math inline">\(A^c\)</span>): O evento complementar de A (<span class="math inline">\(A^c\)</span>), é o evento que ocorre quando A não ocorre.
+<center>
+<span class="math inline">\(A^{c} = \left\{x|x \notin A \right\}\)</span>.
+</center></li>
+</ul>
+<p>Considerando A, B e C eventos, e com base nas operações definidas anteriormente, as seguintes relações são válidas:</p>
+<ol type="a">
+<li><span class="math inline">\((A^c)^{c} = A\)</span>;</li>
+<li><span class="math inline">\(A \cup A^{c} = \Omega\)</span>;</li>
+<li><span class="math inline">\(\varnothing^{c} = \Omega\)</span>, sendo: <span class="math inline">\(\varnothing\)</span> o conjunto vazio ou nulo;</li>
+<li><span class="math inline">\(A \cap A^{c} = \varnothing\)</span>;</li>
+<li><span class="math inline">\(\Omega^{c} = \varnothing\)</span>;</li>
+<li><span class="math inline">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span>;</li>
+<li><span class="math inline">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span>;</li>
+<li><span class="math inline">\(A \cap \varnothing = \varnothing\)</span>;</li>
+<li><span class="math inline">\(A \cup \varnothing = A\)</span>;</li>
+<li><span class="math inline">\((A \cap B)^{c} = A^{c} \cup B^{c}\)</span>;</li>
+<li><span class="math inline">\((A \cup B)^{c} = A^{c} \cap B^{c}\)</span>;</li>
+<li><span class="math inline">\(A \cap B = B \cap A\)</span>;</li>
+<li><span class="math inline">\(A \cup B = B \cup A\)</span>.</li>
+</ol>
+</section>
+<section id="métodos-de-contagem" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="métodos-de-contagem"><span class="header-section-number">5.4</span> Métodos de Contagem</h2>
+<p>As ideias de contagem se relacionam com probabilidades, conforme será visto na próxima seção.</p>
+<ol type="i">
+<li>Arranjo: Considere escolher <span class="math inline">\(k\)</span> dentre <span class="math inline">\(n\)</span> objetos. Se a ordem de escolha é importante, tem-se um arranjo de <span class="math inline">\(n\)</span> objetos tomados <span class="math inline">\(k\)</span> a <span class="math inline">\(k\)</span>. O número de diferentes agrupamentos que podem ser formados é dado por:
+<center>
+<span class="math inline">\(\text{A}_{n}^{k}=\frac{n!}{(n-k)!}\)</span>.
+</center></li>
+<li>Combinação: Considere escolher <span class="math inline">\(k\)</span> dentre <span class="math inline">\(n\)</span> objetos. Se a ordem de escolha não importa, o agrupamento formado é a combinação de <span class="math inline">\(n\)</span> objetos tomados <span class="math inline">\(k\)</span> a <span class="math inline">\(k\)</span>. O número de diferentes agrupamentos que podem ser formados é dado por: <span class="math display">\[
+C^{k}_{n} = \frac{n!}{(n-k)!k!}.
+\]</span></li>
+<li>Permutação: Um arranjo de <span class="math inline">\(n\)</span> objetos tomados <span class="math inline">\(n\)</span> a <span class="math inline">\(n\)</span> é uma permutação de <span class="math inline">\(n\)</span> objetos. O número de diferentes permutações é dado por: <span class="math display">\[
+P_{n}=n!.
+\]</span></li>
+</ol>
+</section>
+<section id="definição-de-probabilidade" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="definição-de-probabilidade"><span class="header-section-number">5.5</span> Definição de Probabilidade</h2>
+<section id="definição-axiomática" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="definição-axiomática"><span class="header-section-number">5.5.1</span> Definição Axiomática</h3>
+<p>Uma função <span class="math inline">\(P(~.~)\)</span>, com valores em [0,0; 1,0], é denominada probabilidade se satisfaz as seguintes condições:</p>
+<ol type="i">
+<li><p>A probabilidade de ocorrer um evento A é um valor não negativo. <span class="math display">\[
+P(A) \ge 0, \forall A \subset \Omega.
+\]</span></p></li>
+<li><p>A probabilidade de ocorrer o espaço amostral <span class="math inline">\(\Omega\)</span> é igual a 1. <span class="math display">\[
+P(\Omega) = 1.
+\]</span></p></li>
+<li><p>Se <span class="math inline">\(B=\sum_{i=1}^{n}A_i\)</span>, sendo <span class="math inline">\(A_i, i = 1, 2, \ldots, n\)</span>, eventos mutuamente exclusivos, tem-se que:</p>
+<center>
+<p><span class="math inline">\(P(B)=\sum_{i=1}^{n}P(A_i)\)</span>.</p>
+</center></li>
+</ol>
+<p>Essas condições são conhecidas como Axiomas de Kolmogorov.</p>
+</section>
+<section id="definição-clássica" class="level3" data-number="5.5.2">
+<h3 data-number="5.5.2" class="anchored" data-anchor-id="definição-clássica"><span class="header-section-number">5.5.2</span> Definição Clássica</h3>
+<p>Considere um espaço amostral <span class="math inline">\(\Omega\)</span> associado a um experimento aleatório com <span class="math inline">\(n\)</span> eventos simples, dado por: <span class="math display">\[
+\Omega=\left\{e_1,~e_2,~e_3,~\ldots,~e_n\right\}.
+\]</span></p>
+<p>Supondo que os eventos simples de <span class="math inline">\(\Omega\)</span> são igualmente prováveis de ocorrer (mesma chance), ou seja: <span class="math display">\[
+P(e_1)=P(e_2)=P(e_3)= \ldots=P(e_n)=\frac{1}{n}.
+\]</span></p>
+<p>Considere agora um evento A de <span class="math inline">\(\Omega\)</span> composto de <span class="math inline">\(m\)</span> eventos simples. A probabilidade de ocorrer o evento A, representado por <span class="math inline">\(P(A)\)</span>, é definida por (<a href="#eq-probclas" class="quarto-xref"><span>5.1</span></a>). <span id="eq-probclas"><span class="math display">\[
+\begin{align}
+    P(A)=\frac{m}{n}.
+\end{align}
+\tag{5.1}\]</span></span></p>
+<p>Ou seja, a probabilidade de ocorrer o evento <span class="math inline">\(A\)</span>, é a razão entre o número de eventos simples do evento <span class="math inline">\(A\)</span> (<span class="math inline">\(m\)</span>), e o número de eventos simples de <span class="math inline">\(\Omega\)</span> (<span class="math inline">\(n\)</span>). Utilizando essa definição muitos problemas são resolvidos através de técnicas de análise combinatória.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.9</strong></span> &nbsp;</p>
+Considerando o <a href="#exm-exp3" class="quarto-xref">Exemplo&nbsp;<span>5.4</span></a> em que <span class="math inline">\(n\)</span> = 8 eventos simples, e seja um evento A dado por:
+<center>
+<span class="math inline">\(A\)</span>: Nascer exatamente duas fêmeas.
+</center>
+Tem-se que o evento <span class="math inline">\(A\)</span> é formado pelo subconjunto de <span class="math inline">\(\Omega\)</span> dado por:
+<center>
+<span class="math inline">\(A = \left\{(M,F,F), (F,M,F), (F,F,M)\right\} \Rightarrow m = 3\)</span> eventos simples.
+</center>
+<p>Assim, através de <a href="#eq-probclas" class="quarto-xref"><span>5.1</span></a>, a probabilidade de ocorrer o evento <span class="math inline">\(A\)</span> é dada por: <span class="math display">\[
+P(A)=\frac{3}{8}=0,375=37,5\%.
+\]</span></p>
+Considere um evento <span class="math inline">\(B\)</span> dado por:
+<center>
+<span class="math inline">\(B\)</span>: Nascer pelo menos uma fêmea.
+</center>
+<p>Tem-se que o evento <span class="math inline">\(B\)</span> é formado pelo subconjunto de <span class="math inline">\(\Omega\)</span> dado por: <span class="math display">\[
+\begin{align*}
+    \textrm{B} &amp; = \left\{(M,M,F),~(M,F,M),~(F,M,M),~(M,F,F),~(F,M,F), \right. \\
+           &amp; \quad \left. (F,F,M),~(F,F,F) \right\} \Rightarrow m=7~\textrm{eventos simples}.
+\end{align*}
+\]</span> Utilizando (<a href="#eq-probclas" class="quarto-xref"><span>5.1</span></a>), tem-se que a probabilidade de ocorrer o evento <span class="math inline">\(B\)</span> é dada por: <span class="math display">\[
+P(B)=\frac{7}{8}=0,875=87,5\%.
+\]</span></p>
+</div>
+</section>
+<section id="definição-frequentista" class="level3" data-number="5.5.3">
+<h3 data-number="5.5.3" class="anchored" data-anchor-id="definição-frequentista"><span class="header-section-number">5.5.3</span> Definição Frequentista</h3>
+<p>Observa-se que em determinadas circunstâncias, pode-se atribuir a mesma chance a todos os eventos simples, associados ao experimento aleatório. Quando o número de eventos simples não for finito, essa possibilidade fica afastada. Outra maneira de determinar a probabilidade de um evento, consiste em repetir-se o experimento aleatório <span class="math inline">\(n\)</span> vezes, e anotar quantas vezes um evento A associado a esse experimento ocorreu.</p>
+<p>Seja <span class="math inline">\(n(A)\)</span> o número de vezes em que um evento A ocorreu nas <span class="math inline">\(n\)</span> tentativas (repetições) do experimento, então a razão dada por (<a href="#eq-probfreq" class="quarto-xref"><span>5.2</span></a>). <span id="eq-probfreq"><span class="math display">\[
+\begin{align}
+    P(A)=\frac{n(A)}{n},
+\end{align}
+\tag{5.2}\]</span></span> é denominada frequência relativa de A nas <span class="math inline">\(n\)</span> repetições do experimento.</p>
+<p>Repetindo-se o experimento um grande número de vezes, nas mesmas condições, e de modo que as repetições sucessivas não dependam dos resultados anteriores, observa-se que a frequência relativa de ocorrências do evento A tende a uma constante <span class="math inline">\(p\)</span>, ou seja: <span class="math display">\[\begin{align*}
+    \lim_{n \to \infty} \frac{n(A)}{n} = p.
+\end{align*}\]</span></p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.10</strong></span> Considere um experimento, em que se semeou em uma área, 200 sementes de uma certa variedade de feijão, e após certo tempo, observou-se que 190 sementes germinaram.</p>
+Seja o evento A:
+<center>
+<span class="math inline">\(A\)</span>: Número de sementes que germinam.
+</center>
+<p>Através de <a href="#eq-probfreq" class="quarto-xref"><span>5.2</span></a>, tem-se que a probabilidade de ocorrer o evento A é dada por: <span class="math display">\[
+P(A)=\frac{190}{200}=0,95=95,0\%.
+\]</span></p>
+</div>
+</section>
+</section>
+<section id="propriedades-das-probabilidades" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="propriedades-das-probabilidades"><span class="header-section-number">5.6</span> Propriedades das Probabilidades</h2>
+<p>Em consequência da definição de probabilidade, tem-se as seguintes propriedades:</p>
+<ol type="i">
+<li>A probabilidade de um evento <span class="math inline">\(\varnothing\)</span> é nula. <span class="math display">\[
+P(\varnothing)=0,0.
+\]</span></li>
+<li>A probabilidade de ocorrer um evento A é um número entre 0,0 e 1,0. <span class="math display">\[
+0,0 \leqslant P(A) \leqslant 1,0.
+\]</span></li>
+<li>A probabilidade do evento complementar de A, definida por <span class="math inline">\(A^c\)</span>, é dada por: <span class="math display">\[
+P(A^{c})=1,0-P(A)
+\]</span></li>
+<li>Se <span class="math inline">\(A \subset B \Rightarrow P(A) \leq P(B)\)</span>.</li>
+<li>Para dois eventos A e B quaisquer, não mutuamente exclusivos, tem-se que: <span class="math display">\[
+P(A \cup B) = P(A) + P(B) - P(A \cap B).
+\]</span></li>
+</ol>
+</section>
+<section id="probabilidade-condicional" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="probabilidade-condicional"><span class="header-section-number">5.7</span> Probabilidade Condicional</h2>
+<p>Frequentemente se tem o interesse no cálculo da probabilidade de que, um evento A ocorra dado que outro evento <span class="math inline">\(B\)</span> também ocorra. Este tipo de probabilidade é chamado de probabilidade condicional, representada por <span class="math inline">\(P(A | B)\)</span>, que corresponde à probabilidade de ocorrência do evento A dado que ocorreu o evento <span class="math inline">\(B\)</span>, e é dada por (<a href="#eq-probcond" class="quarto-xref"><span>5.3</span></a>). <span id="eq-probcond"><span class="math display">\[
+\begin{align}
+    P(A | B)=\frac{P(A \cap B)}{P(B)}, P(B) &gt; 0.
+\end{align}
+\tag{5.3}\]</span></span></p>
+<p>Tem-se que a probabilidade de B dado A é expressa por (<a href="#eq-probcondb" class="quarto-xref"><span>5.4</span></a>). <span id="eq-probcondb"><span class="math display">\[
+\begin{align}
+    P(B | A)=\frac{P(A \cap B)}{P(A)}, P(A) &gt; 0.
+\end{align}
+\tag{5.4}\]</span></span></p>
+<p>Além de servirem como modelagem para situações práticas, probabilidades condicionais podem auxiliar no cálculo de probabilidades em geral.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.11</strong></span> Considere uma máquina de encher sacos com farelo de trigo, e os seguintes eventos: <span class="math display">\[\begin{align*}
+    \textrm{A}: &amp; \textrm{ A máquina ultrapassa o limite máximo de enchimeno;}\\
+    \textrm{B}: &amp; \textrm{ Os sacos apresentam algum defeito.}
+\end{align*}\]</span></p>
+<p>Sejam as seguintes probabilidades:</p>
+<ul>
+<li><span class="math inline">\(P(A)=0,05\)</span>;</li>
+<li><span class="math inline">\(P(B)=0,10\)</span>.</li>
+</ul>
+<p>Considere que a probabilidade de que um saco ultrapasse o limite máximo de enchimento, e que apresente algum defeito, seja 1,0%, ou seja, <span class="math inline">\(P(A \cap B)=0,01\)</span>.</p>
+<p>A probabilidade da máquina ultrapassar o limite máximo de enchimento, dado que o saco vem com algum defeito é dada por: <span class="math display">\[
+P(A | B)=\frac{P(A \cap B)}{P(B)}=\frac{0,01}{0,10}=0,1=10,0\%.
+\]</span></p>
+</div>
+<p>Definida probabilidade condicional, pode-se deduzir a regra do produto de probabilidades.</p>
+<p>Sejam A e B dois eventos associados ao espaço amostral <span class="math inline">\(\Omega\)</span>. Tem-se que: <span id="eq-probab"><span class="math display">\[
+\begin{align}
+    P(A \cap B)=P(A | B)P(B)=P(B | A)P(A).
+\end{align}
+\tag{5.5}\]</span></span></p>
+<p>A partir de (<a href="#eq-probab" class="quarto-xref"><span>5.5</span></a>), pode-se obter a probabilidade de ocorrer o evento B da seguinte forma: <span id="eq-probb"><span class="math display">\[
+\begin{align}
+    P(B)=P(A \cap B)+P(A^c \cap B)=P(B | A)P(A)+P(B | A^c)P(A^c)
+\end{align}
+\tag{5.6}\]</span></span></p>
+<p>A expressão (<a href="#eq-probb" class="quarto-xref"><span>5.6</span></a>) é conhecida como regra da probabilidade total.</p>
+</section>
+<section id="teorema-de-bayes" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="teorema-de-bayes"><span class="header-section-number">5.8</span> Teorema de Bayes</h2>
+<p>Seja um espaço amostral <span class="math inline">\(\Omega\)</span>, o qual é subdividido nos eventos <span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, <span class="math inline">\(\ldots\)</span>, <span class="math inline">\(A_k\)</span>, mutuamente exclusivos, com probabilidades conhecidas. Considere um evento <span class="math inline">\(B\)</span> contido nesse espaço, conforme figura abaixo. Suponha que as probabilidades <span class="math inline">\(P(B | A_i), i = 1, 2, \ldots, k\)</span>, sejam conhecidas.</p>
+<p>A probabilidade de ocorrência do evento <span class="math inline">\(A_i\)</span> dado a ocorrência do evento <span class="math inline">\(B\)</span>, é dada por (<a href="#eq-teobayes" class="quarto-xref"><span>5.7</span></a>). <span id="eq-teobayes"><span class="math display">\[
+\begin{align}
+    P(A_i | B)=\frac{P(B | A_i)P(A_i)}{\sum_{i=1}^{k}P(B | A_i) P(A_i)}, i=1, 2, \ldots, k.
+\end{align}
+\tag{5.7}\]</span></span></p>
+<p>Essa relação é conhecida como “Teorema de Bayes”, usada no cálculo de probabilidades condicionais.</p>
+<div id="fig-teobayes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-teobayes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/teobayes.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-teobayes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5.1: Representação do teorema de Bayes pelo diagrama de Venn.
+</figcaption>
+</figure>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.12</strong></span> Suponha que uma agroindústria recebe: 20,0% de todo o leite que utiliza proveniente de uma Fazenda <span class="math inline">\(F_1\)</span>, 30,0% de uma outra Fazenda <span class="math inline">\(F_2\)</span>, e 50,0% da Fazenda <span class="math inline">\(F_3\)</span>. O Órgão responsável pela fiscalização sanitária da região, inspecionou as três fazendas de surpresa. Os fiscais observaram que: 20,0% do leite produzido pela Fazenda <span class="math inline">\(F_1\)</span> estava adulterado pela adição de água, e nas Fazendas <span class="math inline">\(F_2\)</span> e <span class="math inline">\(F_3\)</span> a proporção era de 5,0% e 2,0%, respectivamente. Na agroindústria os latões de leite são armazenados em um refrigerador, sem identificação de procedência. Um latão é escolhido ao acaso, e é feita a análise do leite, para decidir sobre sua adulteração ou não. Qual é a probabilidade da amostra adulterada (<span class="math inline">\(A\)</span>), ter sido proveniente do leite produzido pela Fazenda <span class="math inline">\(F_1\)</span>.</p>
+<p>Assim, tem-se as seguintes probabilidades:</p>
+<ul>
+<li><span class="math inline">\(P(F_{1}) = 0,20\)</span>;</li>
+<li><span class="math inline">\(P(F_{2}) = 0,30\)</span>;</li>
+<li><span class="math inline">\(P(F_{3}) = 0,50\)</span>;</li>
+<li><span class="math inline">\(P(A | F_{1}) = 0,20\)</span>;</li>
+<li><span class="math inline">\(P(A | F_{2}) = 0,05\)</span>;</li>
+<li><span class="math inline">\(P(A | F_{3}) = 0,02\)</span>.</li>
+</ul>
+<p>A probabilidade desejada é dada por: <span class="math display">\[\begin{align*}
+  P(F_1 | A) &amp;= \frac{P(A | F_1)P(F_1)}{P(A | F_1)P(F_1)+P(A | F_2) P(F_2)+P(A | F_3)P(F_3)}\\
+             &amp;= \frac{0,20(0,20)}{0,20(0,20)+0,05(0,30)+0,02(0,50)}\\
+             &amp;=0,615=61,5\%
+\end{align*}\]</span></p>
+<p>Logo, a probabilidade de que a amostra de leite tenha sido proveniente da Fazenda <span class="math inline">\(F_1\)</span> é de 61,5%.</p>
+</div>
+</section>
+<section id="eventos-independentes" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="eventos-independentes"><span class="header-section-number">5.9</span> Eventos Independentes</h2>
+<p>Dois eventos A e B são independentes se, a probabildade de ocorrência de um deles não afeta a probabilidade de ocorrência do outro. Assim, dois eventos A e B são independentes se, qualquer uma das seguintes afirmações abaixo for verdadeira:</p>
+<ol type="i">
+<li><span class="math inline">\(P(A | B) = P(A)\)</span>;</li>
+<li><span class="math inline">\(P(B | A) = P(B)\)</span>;</li>
+<li><span class="math inline">\(P(A \cap B) = P(A)P(B)\)</span>.</li>
+</ol>
+<p>Se dois eventos A e B são independentes, então tem-se que: <span class="math display">\[
+P(A \cup B) = P(A) + P(B) - P(A) P(B).
+\]</span></p>
+</section>
+<section id="variável-aleatória" class="level2" data-number="5.10">
+<h2 data-number="5.10" class="anchored" data-anchor-id="variável-aleatória"><span class="header-section-number">5.10</span> Variável Aleatória</h2>
+<p>Considere, por exemplo, um experimento que consiste em semear em um canteiro, três sementes de uma variedade de feijão, e observar a sua germinação.</p>
+<p>Assim, o espaço amostral é dado por: <span class="math display">\[\begin{align*}
+    \Omega &amp; = \left\{(G,G,G),~(G,G,N),~(G,N,G),~(G,N,N),~(N,G,G),~(N,G,N), \right. \\
+           &amp; \quad \left. (N,N,G),~(N,N,N) \right\} \Rightarrow n=8 ~ \textrm{eventos simples},
+\end{align*}\]</span> sendo <span class="math inline">\(G\)</span>: Germina e <span class="math inline">\(N\)</span>: Não germina.</p>
+Se o experimento fosse semear oito sementes, o espaço amostral teria:
+<center>
+<span class="math inline">\(2^8=256\)</span> eventos simples,
+</center>
+<p>o que seria bastante trabalhoso de ser construído.</p>
+<p>Logo, para tornar o fenômeno matematicamente simples, costuma-se associar por meio de uma função, números a cada um dos eventos simples do espaço amostral, criando assim um novo conjunto.</p>
+Para o exemplo anterior, poderia-se, por exemplo, através de uma variável (<span class="math inline">\(X\)</span>) previamente definida, especificar o número de sementes que germinam. Assim, tem-se:
+<center>
+<span class="math inline">\(X\)</span>: Número de sementes que germinam.
+</center>
+<p>A <a href="#tbl-vaX" class="quarto-xref">Tabela&nbsp;<span>5.1</span></a> apresenta os eventos simples de <span class="math inline">\(\mathbf{\Omega}\)</span>, e os valores que a variável X pode assumir.</p>
+<div id="tbl-vaX" class="striped hover quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-vaX-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;5.1: Eventos simples de <span class="math inline">\(\Omega\)</span> e valores de <span class="math inline">\(X\)</span>.
+</figcaption>
+<div aria-describedby="tbl-vaX-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Eventos simples de</strong> <span class="math inline">\(\mathbf{\Omega}\)</span></th>
+<th style="text-align: center;"><strong>Valores de</strong> <span class="math inline">\(\mathbf{X}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\((G,G,G)\)</span></td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\((G,G,N)\)</span></td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\((G,N,G)\)</span></td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\((G,N,N)\)</span></td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\((N,G,G)\)</span></td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\((N,G,N)\)</span></td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\((N,N,G)\)</span></td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\((N,N,N)\)</span></td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Logo, tem-se que o conjunto dos possíveis valores que a variável <span class="math inline">\(X\)</span> pode assumir é: <span class="math inline">\(\left\{0, 1, 2, 3\right\}\)</span>.</p>
+<p>Assim, mediante uma variável previamente definida, associa-se um número a cada evento simples do espaço amostral, e em lugar de calcular a probabilidade de ocorrência do evento, calcula-se a probabilidade de ocorrência desse número.</p>
+<p>Logo, uma variável aleatória é uma função que associa a cada evento simples do espaço amostral um número real. Como cada evento aleatório está relacionado com uma probabilidade de ocorrência, então, cada um dos possíveis valores da variável aleatória estará também relacionado com uma probabilidade de ocorrência.</p>
+<p>A variável aleatória é representada por letras maiúsculas, por exemplo, <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>, etc, e os valores que a variável podem assumir por letras minúsculas, por exemplo, <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span>, etc.</p>
+<p>As variáveis aleatórias podem ser classificadas em:</p>
+<ol type="i">
+<li>Discretas: Quando assumem somente um número finito ou enumerável de resultados.</li>
+</ol>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.13</strong></span> &nbsp;</p>
+<ul>
+<li>Número de ervas daninhas num canteiro;</li>
+<li>Número de frutos de uma árvore frutífera;</li>
+<li>Número de plantas sadias numa amostra de cinco plantas;</li>
+<li>Número de bezerras num rebanho de gado holandês;</li>
+<li>etc.</li>
+</ul>
+</div>
+<ol start="2" type="i">
+<li>Contínuas: Quando assumem qualquer valor dentro de um intervalo especificado ou contínuo.</li>
+</ol>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.14</strong></span> &nbsp;</p>
+<ul>
+<li>Consumo de ração dos suínos de uma granja;</li>
+<li>Altura das plantas de milho de uma lavoura;</li>
+<li>Produção das plantas de feijão numa parcela;</li>
+<li>Peso de frangos de uma granja;</li>
+<li>Produção de leite de um rebanho leiteiro;</li>
+<li>etc.</li>
+</ul>
+</div>
+</section>
+<section id="função-de-probabilidade-discreta" class="level2" data-number="5.11">
+<h2 data-number="5.11" class="anchored" data-anchor-id="função-de-probabilidade-discreta"><span class="header-section-number">5.11</span> Função de Probabilidade Discreta</h2>
+<p>É uma função, representada por <span class="math inline">\(P(X = x)\)</span>, que associa cada valor x que a variável aleatória discreta X pode assumir, a sua respectiva probabilidade, a qual deve satisfazer as seguintes condições:</p>
+<ol type="i">
+<li><span class="math inline">\(0 \leq P(X = x) \leq 1\)</span>;</li>
+<li><span class="math inline">\(\sum_{i=1}^{n}P(X = x_i) = 1\)</span>.</li>
+</ol>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.15</strong></span> Seja uma variedade de café, em que 85,0% das plantas são resistentes à broca do cafeeiro. Logo, uma planta desta variedade pode ser: <span class="math display">\[\begin{align*}
+    \begin{cases}
+        \textrm{Resistente } (R) &amp; \Rightarrow P(R) = 85,0\% = 0,85;\\
+        \textrm{Não-Resistente } (N) &amp; \Rightarrow P(N) = 15,0\% = 0,15.
+    \end{cases}
+\end{align*}\]</span></p>
+<p>Duas plantas são selecionadas desta variedade de café, cujo espaço amostral é dado por: <span class="math display">\[
+\Omega=\left\{(R,R), (R,N), (N,R), (N,N)\right\}.
+\]</span></p>
+Definindo a variável aleatória X como:
+<center>
+<span class="math inline">\(X\)</span>: Número de plantas resistentes à broca do cafeeiro.
+</center>
+<p>Os possíveis valores para X são: <span class="math inline">\(\{0, 1, 2\}\)</span>.</p>
+<p>Considerando a independência entre os eventos, tem-se que as probabilidades dos eventos simples do espaço amostral <span class="math inline">\(\Omega\)</span> são dadas por:</p>
+<table class="table-striped table-hover caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Valores de</strong> <span class="math inline">\(\mathbf{X}\)</span></th>
+<th style="text-align: center;"><strong>Eventos simples de</strong> <span class="math inline">\(\mathbf{\Omega}\)</span></th>
+<th style="text-align: center;"><strong>Probabilidades</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><span class="math inline">\((N,N)\)</span></td>
+<td style="text-align: center;">0,15(0,15) = 0,0225</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">\((R,N)\)</span>, <span class="math inline">\((N, R)\)</span></td>
+<td style="text-align: center;">0,85(0,15) + 0,15(0,85) = 0,255</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math inline">\((R,R)\)</span></td>
+<td style="text-align: center;">0,85(0,85) = 0,7225</td>
+</tr>
+</tbody>
+</table>
+<p>Dessa forma, pode-se construir uma tabela, chamada de distribuição de probabilidades da variável aleatória X, apresentada na <a href="#tbl-distxdiscreta" class="quarto-xref">Tabela&nbsp;<span>5.2</span></a>.`</p>
+<div id="tbl-distxdiscreta" class="striped hover quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-distxdiscreta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;5.2: Distribuição de probabilidade da variável aleatória X.
+</figcaption>
+<div aria-describedby="tbl-distxdiscreta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(\mathbf{x}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathbf{P(X = x)}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0,0225</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0,2550</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0,7225</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Que também pode ser apresentada da seguinte forma:</p>
+<table class="table-striped table-hover caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(\mathbf{x}\)</span></th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathbf{P(X = x)}\)</span></td>
+<td style="text-align: center;">0,0225</td>
+<td style="text-align: center;">0,2550</td>
+<td style="text-align: center;">0,7225</td>
+</tr>
+</tbody>
+</table>
+<p>A partir da tabela acima, pode-se verificar as duas condições necessárias para que <span class="math inline">\(P(X = x)\)</span> seja uma função de probabilidade discreta legítima, da seguinte forma:</p>
+<ol type="i">
+<li><p><span class="math inline">\(0,0 \leq P(X = x) \leq 1,0\)</span>: <span class="math display">\[\begin{align*}
+  P(X = x) = \begin{cases}
+         0,0 &amp; x &lt; 0;\\
+         1,0 &amp; 0 \leq x \leq 2;\\
+         0,0 &amp; x &gt; 2.
+  \end{cases}
+\end{align*}\]</span></p></li>
+<li><p><span class="math inline">\(\sum_{i=1}^{n}P(X = x_i) = 0,0225 + 0,2550 + 0,7225 = 1,0\)</span>.</p></li>
+</ol>
+<p>Satisfeitas as duas condições, tem-se que <span class="math inline">\(P(X = x)\)</span>, é uma função de probabilidade discreta legítima.</p>
+<p>Note que a <a href="#tbl-distxdiscreta" class="quarto-xref">Tabela&nbsp;<span>5.2</span></a> se parece com as tabelas de distribuições de frequências vistas no Capítulo <a href="cap02.html" class="quarto-xref"><span>2</span></a>. Foi visto que as distribuições de frequências inclui também a frequência relativa de cada classe. No caso de variáveis aleatórias, as probabilidades representam a frequência relativa de ocorrência de cada resultado <span class="math inline">\(x\)</span>, em um grande número de experimentos repetidos sob as mesmas condições, ou equivalentemente, elas podem ser interpretadas como sendo as frequências relativas, associadas com amostras infinitamente grandes.</p>
+<p>As probabilidades nos permitem observar, quais valores da variável aleatória são mais prováveis de ocorrer dentro de uma experiência.</p>
+<p>A distribuição de probabilidades da variável aleatória X (número de plantas resistentes à broca do cafeeiro), pode ser usada para se fazer algumas afirmações a respeito dos possíveis resultados da variável aleatória. Por exemplo, a probabilidade de uma planta escolhida aleatoriamente ser resistente é de 0,2550 ou 25,50%. Pode-se também ter o interesse em saber qual a probabilidade de uma ou duas plantas desta variedade de café, serem resistentes à broca do cafeeiro. Assim, como são dois eventos mutuamente exclusivos, tem-se que a probabilidade de ocorrência de uma ou duas plantas resistentes, é igual a soma de suas probabilidades individuais, ou seja: <span class="math display">\[\begin{align*}
+  \sum_{x = 1}^{2}P(X = x) &amp; = P(X = 1) + P(X = 2)\\
+  &amp; = 0,2550 + 0,7225\\
+  &amp; = 0,9775 = 97,75\%
+\end{align*}\]</span></p>
+<p>A distribuição de probabilidades da variável aleatória X pode ser representada graficamente através da <a href="#fig-respragas" class="quarto-xref">Figura&nbsp;<span>5.2</span></a>.</p>
+<div id="fig-respragas" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-respragas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/exem5.15.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-respragas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5.2: Distribuição de probabilidades para a variável aleatória discreta X (número de plantas resistentes
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="função-densidade-de-probabilidade" class="level2" data-number="5.12">
+<h2 data-number="5.12" class="anchored" data-anchor-id="função-densidade-de-probabilidade"><span class="header-section-number">5.12</span> Função Densidade de Probabilidade</h2>
+<p>Se a variável aleatória é contínua, calcula-se a probabilidade por meio da integração da área abaixo da função densidade de probabilidade <span class="math inline">\((f.d.p.)\)</span>.</p>
+<p>Uma função <span class="math inline">\(f(x)\)</span> é uma função densidade de probabilidade, se satisfaz as seguintes condições:</p>
+<ol type="i">
+<li><span class="math inline">\(f(x) \geq 0,0, \forall x \in \mathbb{R}\)</span>;</li>
+<li><span class="math inline">\(\int_{-\infty}^{\infty} f(x) \, dx=1,0\)</span>.</li>
+</ol>
+<section id="propriedades-da-função-densidade-de-probabilidade" class="level3" data-number="5.12.1">
+<h3 data-number="5.12.1" class="anchored" data-anchor-id="propriedades-da-função-densidade-de-probabilidade"><span class="header-section-number">5.12.1</span> Propriedades da Função Densidade de Probabilidade</h3>
+<p>A função densidade de probabilidade apresenta as seguintes propriedades:</p>
+<ol type="i">
+<li><span class="math inline">\(P(a \leq X \leq b)=P(a &lt; X \leq b)=P(a \leq X &lt; b)=P(a &lt; X &lt; b)=\int_{a}^{b} f(x) \, dx\)</span>, para quaisquer <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span>, sendo <span class="math inline">\(a &lt; b\)</span>;</li>
+<li><span class="math inline">\(P(X = k)=0\)</span>, sendo <span class="math inline">\(k\)</span> uma constante, ou seja, a probabilidade da variável aleatória assumir um valor específico é nula, pois <span class="math inline">\(\int_{k}^{k} f(x) \, dx=0\)</span>.</li>
+</ol>
+<div id="exm-fdp" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.16</strong></span> O tempo de duração de embreagens em tratores agrícolas de certa marca, sujeitos a uso contínuo, pode ser considerado como uma variável aleatória contínua, medido em horas, cuja função densidade de probabilidade é dada por: <span class="math display">\[\begin{align*}
+    f(x)=\begin{cases}
+        \frac{x}{40.000} &amp; \textrm{para } 100 \leq x \leq 300;\\
+        0,0 &amp; \textrm {caso contrário.}
+    \end{cases}
+\end{align*}\]</span></p>
+<p>Tem-se que <span class="math inline">\(f(x)\)</span> pode ser representado graficamente através da <a href="#fig-fdpduracao" class="quarto-xref">Figura&nbsp;<span>5.3</span></a>.</p>
+<div id="fig-fdpduracao" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fdpduracao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/exem5.16.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fdpduracao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5.3: Gráfico de <span class="math inline">\(f(x)\)</span>.
+</figcaption>
+</figure>
+</div>
+Neste caso a variável aleatória X é definida por:
+<center>
+<span class="math inline">\(X\)</span>: Tempo de duração, em horas, de embreagens em tratores agrícolas.
+</center>
+<p>Para verificar se <span class="math inline">\(f(x)\)</span> é uma função densidade de probabilidade legítima, tem-se que satisfazer as duas condições necessárias vistas acima.</p>
+<p>Logo, tem-se:</p>
+<ol type="i">
+<li><span class="math inline">\(f(x) \geq 0,0, \forall x \in \mathbb{R}\)</span>: <span class="math display">\[\begin{align*}
+  \left\{
+  \begin{array}{ll}
+   \textrm{Para } x &lt; 100 &amp;  \Rightarrow f(x)=0,0;\\
+    \textrm{Para } 100 \leq x \leq 300 &amp; \Rightarrow f(x) &gt; 0,0;\\
+    \textrm{Para } x &gt; 300 &amp; \Rightarrow f(x)=0,0.
+  \end{array}\right.
+\end{align*}\]</span></li>
+<li><span class="math inline">\(\int_{-\infty}^{\infty} f(x) \, dx=1,0\)</span>: <span class="math display">\[\begin{align*}
+  \int_{100}^{300} \frac{x}{40.000}dx &amp; =\frac{1}{40.000}\int_{100}^{300} xdx\\
+  &amp; = \left. \left(\frac{1}{40.000}\times \frac{x^2}{2} \right)\right|_{100}^{300} \\
+  &amp; =\frac{90.000-10.000}{80.000}=1,0.
+\end{align*}\]</span></li>
+</ol>
+<p>Satisfeitas as duas condições, tem-se que <span class="math inline">\(f(x)\)</span> é uma função densidade de probabilidade.</p>
+<p>Assim, pode-se calcular, por exemplo, a probabilidade do tempo de duração estar entre 200 e 300 horas, dada por: <span class="math display">\[\begin{align*}
+  P(200 &lt; X &lt; 300) &amp;= \int_{200}^{300} \frac{x}{40.000}dx\\
+                   &amp;= \frac{1}{40.000}\int_{200}^{300} xdx\\
+                   &amp;= \left( \frac{1}{40.000}\times \frac{x^2}{2} \right)\Big|_{200}^{300}\\
+                   &amp; =\frac{90.000-40.000}{80.000}\\
+                   &amp;= \frac{50.000}{80.000}\\
+                   &amp;= 0,625 = 62,5\%.
+\end{align*}\]</span></p>
+</div>
+</section>
+</section>
+<section id="função-de-distribuição-acumulada" class="level2" data-number="5.13">
+<h2 data-number="5.13" class="anchored" data-anchor-id="função-de-distribuição-acumulada"><span class="header-section-number">5.13</span> Função de Distribuição Acumulada</h2>
+<p>A função de distribuição acumulada de uma variável aleatória, discreta ou contínua, é definida como sendo a probabilidade de que a variável esteja abaixo de um determinado valor, ou seja: <span id="eq-fda"><span class="math display">\[
+\begin{align}
+   F(x)=P(X\leq x), \quad \forall x \in \mathbb{R}.
+\end{align}
+\tag{5.8}\]</span></span></p>
+<section id="variável-aleatória-discreta" class="level3" data-number="5.13.1">
+<h3 data-number="5.13.1" class="anchored" data-anchor-id="variável-aleatória-discreta"><span class="header-section-number">5.13.1</span> Variável Aleatória Discreta</h3>
+<p>Para uma variável aleatória discreta, a função de distribuição de probabilidade acumulada é dada por: <span id="eq-fda2"><span class="math display">\[
+\begin{align}
+    F(x)=\sum_{x_i \leq x}P(X = x_i), \quad x \in \mathbb{R}.
+\end{align}
+\tag{5.9}\]</span></span></p>
+<div id="exm-FPD" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.17</strong></span> Considerando a variável aleatória discreta X, que representa o número de lesões nas folhas de plantas de café provocadas por uma praga, cujos possíveis valores são: <span class="math inline">\(\{0, 1, 2, 3, 4, 5\}\)</span>.</p>
+<p>A distribuição de probabilidade de <span class="math inline">\(X\)</span> é dada por:</p>
+<table class="table-striped table-hover caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(\mathbf{x}\)</span></th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+<th style="text-align: center;">5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathbf{P(X = x)}\)</span></td>
+<td style="text-align: center;">0,32</td>
+<td style="text-align: center;">0,28</td>
+<td style="text-align: center;">0,20</td>
+<td style="text-align: center;">0,12</td>
+<td style="text-align: center;">0,06</td>
+<td style="text-align: center;">0,02</td>
+</tr>
+</tbody>
+</table>
+<p>Por exemplo, a probabilidade de 3 lesões ou menos, é dada por: <span class="math display">\[\begin{align*}
+    F(3) &amp; = P(X = 0) + P(X = 1) + P(X = 2) + P(X = 3)\\
+         &amp; = 0,32 + 0,28 + 0,20 + 0,12\\
+         &amp; = 0,92 = 92\%.  
+\end{align*}\]</span></p>
+<p>De uma maneira geral, tem-se a seguinte função de distribuição de probabilidade acumulada para a variável aleatória X, definida acima: <span class="math display">\[\begin{align*}
+    F(x)=\begin{cases}
+        0,0 &amp; \textrm{se }x &lt; 0;\\
+        0,32 &amp; \textrm{para }0 \leq x &lt; 1;\\
+        0,60 &amp; \textrm{para }1 \leq x &lt; 2;\\
+        0,80 &amp; \textrm{para }2 \leq x &lt; 3;\\
+        0,92 &amp; \textrm{para }3 \leq x &lt; 4;\\
+        0,98 &amp; \textrm{para }4 \leq x &lt; 5;\\
+        1,0 &amp; \textrm{se }x \geq 5.
+    \end{cases}
+\end{align*}\]</span></p>
+</div>
+<p>A função <span class="math inline">\(F(x)\)</span> pode ser disposta graficamente. Sendo a variável aleatória discreta, a representação é por meio de um gráfico de escadas.</p>
+<div id="exm-fdadiscreta" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.18</strong></span> Para o <a href="#exm-FPD" class="quarto-xref">Exemplo&nbsp;<span>5.17</span></a> tem-se:</p>
+<div id="fig-fdacafeeiro" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fdacafeeiro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/exem5.18.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fdacafeeiro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5.4: Função de distribuição acumulada para o número de lesões nas folhas do cafeeiro.
+</figcaption>
+</figure>
+</div>
+<section id="variável-aleatória-contínua" class="level3" data-number="5.13.2">
+<h3 data-number="5.13.2" class="anchored" data-anchor-id="variável-aleatória-contínua"><span class="header-section-number">5.13.2</span> Variável Aleatória Contínua</h3>
+<p>Se a variável aleatória for contínua, a função de distribuição de probabilidade acumulada é dada por: <span class="math display">\[
+F(x)=\int_{-\infty}^{x} f(t)dt.
+\]</span> :::{#exm-FPC}</p>
+<p>Considerando o <a href="#exm-fdp" class="quarto-xref">Exemplo&nbsp;<span>5.16</span></a>, tem-se que sua função de distribuição de probabilidade acumulada é obtida por: <span class="math display">\[\begin{align*}
+    F(x) &amp; =\int_{100}^{x} \frac{t}{40.000}dt\\
+    &amp; = \frac{1}{40.000}\int_{100}^{x} t dt\\
+    &amp; = \left. \left(\frac{1}{40.000}\times \frac{t^2}{2}\right) \right|_{100}^{x} \\
+    &amp; =\frac{x^2-10.000}{80.000}.
+\end{align*}\]</span></p>
+<p>Assim, por exemplo, a probabilidade de que a embreagem dure 200 horas ou menos é dada por: <span class="math display">\[\begin{align*}
+    F(200) &amp;= \frac{200^2-10.000}{80.000}\\
+    &amp;= \frac{40.000-10.000}{80.000}\\
+    &amp;= \frac{30.000}{80.000}\\
+    &amp;= 0,375=37,5\%.
+\end{align*}\]</span></p>
+</section>
+</div>
+<p>A função <span class="math inline">\(F(x)\)</span> pode ser disposta graficamente. Para variáveis aleatórias contínuas tem-se uma função <span class="math inline">\(F(x)\)</span> contínua.</p>
 
 
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
@@ -310,6 +1088,8 @@ SOUZA, G. S. <strong>Introdução aos <span>M</span>odelos de <span>R</span>egre
 STEEL, R. G. D.; TORRIE, J. H. <strong>Principles and procedures of statistics: A biometrical approach</strong>. 2. ed. New York: McGraw-Hill Book Company, 1980. p. 512
 </div>
 </div>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
