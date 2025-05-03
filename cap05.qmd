@@ -719,7 +719,8 @@ Se a variável aleatória for contínua, a função de distribuição de probabi
 $$
 F(x)=\int_{-\infty}^{x} f(t)dt.
 $$
-:::{#exm-FPC}
+
+::: {#exm-FPC}
 
 Considerando o @exm-fdp, tem-se que sua função de distribuição de probabilidade acumulada é obtida por:
 \begin{align*}
@@ -736,6 +737,328 @@ Assim, por exemplo, a probabilidade de que a embreagem dure 200 horas ou menos �
     &= \frac{30.000}{80.000}\\
     &= 0,375=37,5\%.
 \end{align*}
+
 :::
 
 A função $F(x)$ pode ser disposta graficamente. Para variáveis aleatórias contínuas tem-se uma função $F(x)$ contínua. 
+
+:::{#exm-fdacont}
+
+Para o @exm-FPC, tem-se:
+
+![Função de distribuição acumulada para o tempo de duração de embreagens em tratores agrícolas.](images/exem5.20.png){#fig-fdatempo}
+
+:::
+
+
+### Relações da Função de Distribuição Acumulada
+
+De uma maneira geral tem-se as seguintes relações envolvendo $F(x)$:
+
+i) $0 \leq F(x) \leq 1$;
+ii) Se $x_1 < x_2 \Rightarrow F(x_1) \leq F(x_2)$;
+iii) $\displaystyle\lim_{n \to -\infty} F(x) = 0,0$;
+iv) $\displaystyle\lim_{n \to \infty} F(x) = 1,0$.
+
+## Medidas de Posição e Dispersão para Variáveis Aleatórias
+
+Às vezes uma variável aleatória, discreta ou contínua, pode assumir um grande número de valores. Tal como vimos para a distribuição de frequências, podemos resumir uma distribuição de probabilidades, através de uma medida de posição e uma medida de dispersão.
+
+### Esperança Matemática
+
+O valor médio assumido pela variável aleatória, é conhecido como média da distribuição, também chamado de esperança matemática.
+
+A esperança matemática é um valor esperado, não sendo necessariamente um resultado da experiência.
+
+#### Variável Aleatória Discreta
+
+A esperança matemática de uma variável aleatória discreta, é dada pela expressão (@eq-expd).
+$$
+\begin{align}
+    E(X)=\mu=\sum_{i=1}^{\infty} x_iP(X = x_i).
+\end{align}
+$$ {#eq-expd}
+
+::: {#exm-}
+
+Para o @exm-FPD, e utilizando-se da expressão (@eq-expd), tem-se:
+
+\begin{align*}
+E(X)=\mu & = 0(0,32) + 1(0,28) + 2(0,20) + \\
+         & \quad + 3(0,12) + 4(0,06) + 5(0,02)\\
+         & = \mu=1,38~\textrm{lesões}.
+\end{align*}
+
+:::
+
+#### Variável Aleatória Contínua
+
+A esperança matemática de uma variável aleatória contínua, é dada pela expressão (@eq-expc).
+$$
+\begin{align}
+     E(X)=\mu=\int_{-\infty}^{\infty} x f(x) \, dx.
+\end{align}
+$$ {#eq-expc}
+
+:::{#exm-}
+
+Para o @exm-fdp, e utilizando-se da expressão (@eq-expc), tem-se:
+
+\begin{align*}
+    E(X) = \mu &=\int_{100}^{300} x \frac{x}{40.000}dx\\
+    &= \frac{1}{40.000}\int_{100}^{300} x^2dx\\
+    &= \left. \frac{1}{40.000}\frac{x^3}{3} \right|_{100}^{300}\\ &=\frac{27.000.000-1.000.000}{120.000}\\
+    &= \frac{26.000.000}{120.000}\\
+    &=  216,67~\textrm{horas}.
+\end{align*}
+
+:::
+
+#### Propriedades
+
+Se $k$ é um valor constante e $X$ uma variável aleatória, a esperança matemática apresenta as seguintes propriedades:
+
+i) $E(k) = k$;
+ii) $E(X\pm k) =E(X)\pm k$;
+iii) $E(kX) = kE(X)$;
+iv) $E(X_1 + X_2 + \cdots + X_n) = E(X_1) + E(X_2) + \cdots + E(X_n)$, sendo $X_1, X_2, \cdots, X_n$ variáveis aleatórias independentes.
+
+### Variância
+
+A dispersão dos valores relativos a média é a variância da distribuição, denotado por $V(X)$ ou $\sigma^2$, sendo que discreta ou contínua, é definida pela expressão (@eq-varal).
+$$
+\begin{align}
+    V(X)=\sigma^2=E[X-E(X)]^2=E(X^2) - [E(X)]^2.
+\end{align}
+$$ {#eq-varal}
+
+#### Variável Aleatória Discreta
+
+No caso de variáveis aleatórias discretas, a $E(X^2)$ e dada pela expressão (@eq-vd).
+$$
+\begin{align}
+        E(X^2)=\sum_{i=1}^{\infty} x_i^2 P(X = x_i).
+\end{align}
+$$ {#eq-vd}
+
+::: {#exm-}
+
+Para o @exm-FPD, e utilizando-se da expressão (@eq-vd) para o cálculo de $E(X^2)$, tem-se:
+\begin{align*}
+  E(X^2) & =0^2 \times (0,32) + 1^2 \times (0,28) +  2^2 \times (0,20) +\\
+  & \quad +  3^2 \times (0,12) + 4^2\times (0,06) + 5^2\times (0,02)\\
+  & = 3,62~(\textrm{lesões})^2
+\end{align*}
+
+Logo, utilizando-se da expressão (@eq-varal), tem-se que a variância é dada por:
+
+$$
+V(X)=\sigma^2=3,62 - (1,38)^2=1,7156~(\textrm{lesões})^2.
+$$
+O desvio padrão é dado por:
+$$
+\sigma=\sqrt{1,7156}=1,3098~\textrm{lesões}.
+$$
+
+#### Variável Aleatória Contínua
+
+No caso de variáveis aleatórias contínuas, a $E(X^2)$ é dada pela expressão (@eq-vc).
+$$
+\begin{align}
+    E(X^2)=\int_{-\infty}^{\infty} x^2 f(x) \, dx.
+\end{align}
+$$ {#eq-vc}
+
+::: {#exm-}
+
+Para o @exm-fdp, e utilizando-se da expressão (@eq-vc) para o cálculo de $E(X^2)$, tem-se:
+\begin{align*}
+    E(X^2) & =\int_{100}^{300} x^2 \times \frac{x}{40.000}dx\\
+    & =\frac{1}{40.000}\int_{100}^{300} x^3 \, dx\\
+    & = \left. \left(\frac{1}{40.000}\frac{x^4}{4} \right)\right|_{100}^{300} =\frac{8.100.000.000-100.000.000}{160.000}\\
+    & = \frac{8.000.000.000}{160.000}\\
+    & = 50.000~(\textrm{horas})^2.
+\end{align*}
+
+Logo, utilizando-se da expressão (@eq-varal), tem-se que a variância é dada por:
+
+$$ 
+V(X)=\sigma^2=50.000 - (216,67)^2=3.054,11~(\textrm{horas})^2.
+$$
+
+O desvio padrão é dado por:
+
+$$
+\sigma=\sqrt{3.054,11}=55,2640~\textrm{horas}.
+$$
+
+
+:::
+
+#### Propriedades
+
+Considerando X e Y duas variáveis aleatórias independentes e k uma constante, a variância apresenta as seguintes propriedades:
+
+i) $V(k) = 0$;
+ii) $V(X \pm k) = V(X)$;
+iii) $V(kX) = k^2V(X)$;
+iv) $V(X \pm Y) = V(X) + V(Y)$.
+
+:::
+
+## Exercícios propostos {- id="exprop" title="Clique aqui!"}
+
+::: {#exr-}
+
+Determine o espaço amostral para cada um dos experimentos abaixo:
+
+a) Semear três sementes de uma variedade de milho e contar o número de sementes que germinam;
+b) Em uma granja ovos são produzidos. Contar o número de ovos danificados em um período de vinte e quatro horas;
+c) Moirões de Eucalipto para cercas de uma propriedade rural são construídos. Determinar o tempo de vida dos moirões até apodrecer.
+
+:::
+
+::: {#exr-}
+
+Para os experimentos do exercício anterior determine os seguintes eventos:
+
+a) A: Exatamente duas sementes germinam; B: Pelo menos duas sementes germinam; C: No máximo uma semente germina.
+b) A: Todos os ovos são perfeitos.
+c) A: Os moirões dure no máximo cinco anos.
+
+:::
+
+::: {#exr-}
+
+A probabilidade de uma variedade A de café ser altamente produtiva daqui a cinco anos é de 0,90, e de uma outra variedade B é de 0,85. Determinar a probabilidade de que daqui a cinco anos:
+
+a) Ambas as variedades sejam produtivas;
+b) Somente a variedade A seja produtiva;
+c) Somente a variedade B seja produtiva;
+d) Nenhuma seja produtiva;
+e) Pelo menos uma seja produtiva.
+
+:::
+
+::: {#exr-}
+
+Dois arados de disco A e B são colocados em teste por 1.000 horas. A probabilidade de que uma falha aconteça no arado A é de: $\frac{1}{30}$, no arado B é de: $\frac{1}{80}$, e em ambos de: $\frac{1}{1.000}$. Qual a probabilidade de que:
+
+a) Pelo menos um dos arados tenha apresentado falha;
+b) Nenhum dos arados tenha apresentado falha;
+c) Apenas o arado A tenha apresentado falha;
+d) $P(A | B)$;
+e) $P(B | A)$.
+
+:::
+
+
+::: {#exr-}
+
+Um Engenheiro Agrônomo conduziu uma pesquisa, com o objetivo de verificar se o grau de ataque de uma certa espécie de inseto em plantas de feijão, está relacionada com a deficiência de um certo nutriente que ocorre nas plantas. Assim considere o evento B que representa o conjunto das plantas que apresentam os sintomas de deficiência, e os eventos $A_1$, $A_2$, $A_3$, referentes aos graus de desfolhamento causado pelo inseto, dados por:
+
+- $A_1$: Alto;
+- $A_2$: Moderado;
+- $A_3$: Baixo.
+
+Sejam também as seguintes probabilidades:
+
+- $P(A_{1})=0,20$;
+- $P(A_{2})=0,30$;
+- $P(A_{3})=0,50$;
+- $P(B | A_{1})=0,05$;
+- $P(B | A_{2})=0,02$;
+- $P(B | A_{3})=0,01$.
+
+Dado que ocorre a deficiência do nutriente em uma planta, qual a probabilidade de que ela apresente um alto grau de desfolhamento.
+
+:::
+
+::: {#exr-}
+
+Classifique as seguintes variáveis aleatórias como discretas ou contínuas:
+
+a) X: Produção de leite de vacas holandesas;
+b) Y: Número de ovos danificados em um lote de uma granja;
+c) Z: Número de frutos atacados por uma praga num pé de laranja;
+d) M: Peso de leitões da raça Duroc aos 21 dias de idade;
+e) N: Número de ovos depositados por um inseto nas folhas de pés de café;
+f) O: Produção de milho numa área de 15 hectares.
+
+:::
+
+::: {#exr-}
+
+Seja uma variedade de feijão em que o poder de germinação é de 90,0\%. Três sementes desta variedade são semeadas por cova. Seja a variável aleatória X: número de sementes que germinam. Determine:
+
+a) O espaço amostral;
+b) A distribuição de probabilidades da variável aleatória X;
+c) A média e a variância da variável aleatória X;
+d) A função de distribuição de probabilidade acumulada da variável aleatória X.
+
+:::
+
+::: {#exr-}
+
+Dada a seguinte distribuição de probabilidades da variável aleatória discreta X: número de ovos danificados em um lote.
+
+| | | | | | | | |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| $\mathbf{x}$ | 0 | 1 | 2 | 3 | 4 | 5 |
+| $\mathbf{P(X = x)}$ | 0 | $p^2$ | $p^2$ | $p$ | $p$ | $p^2$ |
+
+: { .striped .hover}
+
+
+a) Ache o valor de $p$;
+b) Calcule: $P(X \geq 4), P(X < 3) e P(X = 3)$;
+c) Calcule a média e a variância de X;
+d) Construa a função de distribuição de probabilidade acumulada.
+
+:::
+
+::: {#exr-}
+
+A probabilidade de um bovino ser resistente a um certo tipo de vírus da febre aftosa é de $\frac{2}{3}$. Num lote de quatro bovinos considerando Y como sendo a variável aleatória que representa o número de animais susceptíveis ao vírus, pede-se:
+
+a) O espaço amostral;
+b) A distribuição de probabilidades de Y;
+c) As seguintes probabilidades: $P(Y \leq 2)$, $P(1 < Y \leq 3)$ e $P(Y > 1)$;
+d) A média e a variância de Y;
+e) A função de distribuição de probabilidade acumulada de Y.
+
+:::
+
+::: {#exr-}
+
+Seja $f(x)$ a função densidade de probabilidade da variável aleatória contínua X: Tempo de vida produtiva de uma cultura perene, em anos, definida por:
+\begin{align*}
+    f(x)=\begin{cases}
+       \frac{2}{27}(x+1) & \textrm{para }2 < x < 5;\\
+        0,0 & \textrm{caso contrário.}
+    \end{cases}
+\end{align*}
+
+a) Mostre que $f(x)$ é uma função densidade de probabilidade legítima;
+b) Calcule: $P(X < 4); P(3 \leq X \leq 4)$;
+c) Calcule a média e a variância de X;
+d) Construa a função de distribuição de probabilidade acumulada de X.
+
+:::
+
+::: {#exr-}
+
+Suponha que o peso de frangos de corte de uma certa raça, em kg, pode ser descrito pela seguinte função densidade de probabilidade:
+\begin{align*}
+    f(x)=\begin{cases}
+       \frac{1}{6}x+\frac{1}{12} & \textrm{para }0 < x < 3;\\
+        0,0 & \textrm{caso contrário.}
+    \end{cases}
+\end{align*}
+
+a) Calcule as seguintes probabilidades: $P(X > 1,5); P(1,6 < X < 2,2); P(X < 2,3)$;
+b) Qual a probabilidade de um frango pesar exatamente 1,8 kg;
+c) Construa a função de distribuição de probabilidade acumulada;
+d) Calcule a média e a variância.
+
+:::

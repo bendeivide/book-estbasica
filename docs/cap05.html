@@ -89,7 +89,6 @@ div.csl-indent {
     "search-label": "Procurar"
   }
 }</script>
-</head><body class="nav-sidebar floating">\usepackage{tikz}
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -122,9 +121,9 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="custom.scss">
+</head>
 
-
-
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -944,7 +943,7 @@ Neste caso a variável aleatória X é definida por:
 \end{align}
 \tag{5.8}\]</span></span></p>
 <section id="variável-aleatória-discreta" class="level3" data-number="5.13.1">
-<h3 data-number="5.13.1" class="anchored" data-anchor-id="variável-aleatória-discreta"><span class="header-section-number">5.13.1</span> Variável Aleatória Discreta</h3>
+<h3 data-number="5.13.1" class="anchored"><span class="header-section-number">5.13.1</span> Variável Aleatória Discreta</h3>
 <p>Para uma variável aleatória discreta, a função de distribuição de probabilidade acumulada é dada por: <span id="eq-fda2"><span class="math display">\[
 \begin{align}
     F(x)=\sum_{x_i \leq x}P(X = x_i), \quad x \in \mathbb{R}.
@@ -996,7 +995,7 @@ Neste caso a variável aleatória X é definida por:
 </div>
 <p>A função <span class="math inline">\(F(x)\)</span> pode ser disposta graficamente. Sendo a variável aleatória discreta, a representação é por meio de um gráfico de escadas.</p>
 <div id="exm-fdadiscreta" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 5.18</strong></span> Para o <a href="#exm-FPD" class="quarto-xref">Exemplo&nbsp;<span>5.17</span></a> tem-se:</p>
+<p><span class="theorem-title"><strong>Exemplo 5.24</strong></span> Para o <a href="#exm-FPD" class="quarto-xref">Exemplo&nbsp;<span>5.17</span></a> tem-se:</p>
 <div id="fig-fdacafeeiro" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fdacafeeiro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1011,8 +1010,9 @@ Figura&nbsp;5.4: Função de distribuição acumulada para o número de lesões 
 <h3 data-number="5.13.2" class="anchored" data-anchor-id="variável-aleatória-contínua"><span class="header-section-number">5.13.2</span> Variável Aleatória Contínua</h3>
 <p>Se a variável aleatória for contínua, a função de distribuição de probabilidade acumulada é dada por: <span class="math display">\[
 F(x)=\int_{-\infty}^{x} f(t)dt.
-\]</span> :::{#exm-FPC}</p>
-<p>Considerando o <a href="#exm-fdp" class="quarto-xref">Exemplo&nbsp;<span>5.16</span></a>, tem-se que sua função de distribuição de probabilidade acumulada é obtida por: <span class="math display">\[\begin{align*}
+\]</span></p>
+<div id="exm-FPC" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.18</strong></span> Considerando o <a href="#exm-fdp" class="quarto-xref">Exemplo&nbsp;<span>5.16</span></a>, tem-se que sua função de distribuição de probabilidade acumulada é obtida por: <span class="math display">\[\begin{align*}
     F(x) &amp; =\int_{100}^{x} \frac{t}{40.000}dt\\
     &amp; = \frac{1}{40.000}\int_{100}^{x} t dt\\
     &amp; = \left. \left(\frac{1}{40.000}\times \frac{t^2}{2}\right) \right|_{100}^{x} \\
@@ -1024,11 +1024,300 @@ F(x)=\int_{-\infty}^{x} f(t)dt.
     &amp;= \frac{30.000}{80.000}\\
     &amp;= 0,375=37,5\%.
 \end{align*}\]</span></p>
-</section>
 </div>
 <p>A função <span class="math inline">\(F(x)\)</span> pode ser disposta graficamente. Para variáveis aleatórias contínuas tem-se uma função <span class="math inline">\(F(x)\)</span> contínua.</p>
+<div id="exm-fdacont" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.19</strong></span> Para o <a href="#exm-FPC" class="quarto-xref">Exemplo&nbsp;<span>5.18</span></a>, tem-se:</p>
+<div id="fig-fdatempo" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fdatempo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/exem5.20.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fdatempo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5.5: Função de distribuição acumulada para o tempo de duração de embreagens em tratores agrícolas.
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="relações-da-função-de-distribuição-acumulada" class="level3" data-number="5.13.3">
+<h3 data-number="5.13.3" class="anchored" data-anchor-id="relações-da-função-de-distribuição-acumulada"><span class="header-section-number">5.13.3</span> Relações da Função de Distribuição Acumulada</h3>
+<p>De uma maneira geral tem-se as seguintes relações envolvendo <span class="math inline">\(F(x)\)</span>:</p>
+<ol type="i">
+<li><span class="math inline">\(0 \leq F(x) \leq 1\)</span>;</li>
+<li>Se <span class="math inline">\(x_1 &lt; x_2 \Rightarrow F(x_1) \leq F(x_2)\)</span>;</li>
+<li><span class="math inline">\(\displaystyle\lim_{n \to -\infty} F(x) = 0,0\)</span>;</li>
+<li><span class="math inline">\(\displaystyle\lim_{n \to \infty} F(x) = 1,0\)</span>.</li>
+</ol>
+</section>
+<section id="medidas-de-posição-e-dispersão-para-variáveis-aleatórias" class="level2" data-number="5.14">
+<h2 data-number="5.14" class="anchored" data-anchor-id="medidas-de-posição-e-dispersão-para-variáveis-aleatórias"><span class="header-section-number">5.14</span> Medidas de Posição e Dispersão para Variáveis Aleatórias</h2>
+<p>Às vezes uma variável aleatória, discreta ou contínua, pode assumir um grande número de valores. Tal como vimos para a distribuição de frequências, podemos resumir uma distribuição de probabilidades, através de uma medida de posição e uma medida de dispersão.</p>
+<section id="esperança-matemática" class="level3" data-number="5.14.1">
+<h3 data-number="5.14.1" class="anchored" data-anchor-id="esperança-matemática"><span class="header-section-number">5.14.1</span> Esperança Matemática</h3>
+<p>O valor médio assumido pela variável aleatória, é conhecido como média da distribuição, também chamado de esperança matemática.</p>
+<p>A esperança matemática é um valor esperado, não sendo necessariamente um resultado da experiência.</p>
+<section id="variável-aleatória-discreta-1" class="level4" data-number="5.14.1.1">
+<h4 data-number="5.14.1.1" class="anchored" data-anchor-id="variável-aleatória-discreta-1"><span class="header-section-number">5.14.1.1</span> Variável Aleatória Discreta</h4>
+<p>A esperança matemática de uma variável aleatória discreta, é dada pela expressão (<a href="#eq-expd" class="quarto-xref"><span>5.10</span></a>). <span id="eq-expd"><span class="math display">\[
+\begin{align}
+    E(X)=\mu=\sum_{i=1}^{\infty} x_iP(X = x_i).
+\end{align}
+\tag{5.10}\]</span></span></p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.20</strong></span> Para o <a href="#exm-FPD" class="quarto-xref">Exemplo&nbsp;<span>5.17</span></a>, e utilizando-se da expressão (<a href="#eq-expd" class="quarto-xref"><span>5.10</span></a>), tem-se:</p>
+<p><span class="math display">\[\begin{align*}
+E(X)=\mu &amp; = 0(0,32) + 1(0,28) + 2(0,20) + \\
+         &amp; \quad + 3(0,12) + 4(0,06) + 5(0,02)\\
+         &amp; = \mu=1,38~\textrm{lesões}.
+\end{align*}\]</span></p>
+</div>
+</section>
+<section id="variável-aleatória-contínua-1" class="level4" data-number="5.14.1.2">
+<h4 data-number="5.14.1.2" class="anchored" data-anchor-id="variável-aleatória-contínua-1"><span class="header-section-number">5.14.1.2</span> Variável Aleatória Contínua</h4>
+<p>A esperança matemática de uma variável aleatória contínua, é dada pela expressão (<a href="#eq-expc" class="quarto-xref"><span>5.11</span></a>). <span id="eq-expc"><span class="math display">\[
+\begin{align}
+     E(X)=\mu=\int_{-\infty}^{\infty} x f(x) \, dx.
+\end{align}
+\tag{5.11}\]</span></span></p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.21</strong></span> Para o <a href="#exm-fdp" class="quarto-xref">Exemplo&nbsp;<span>5.16</span></a>, e utilizando-se da expressão (<a href="#eq-expc" class="quarto-xref"><span>5.11</span></a>), tem-se:</p>
+<p><span class="math display">\[\begin{align*}
+    E(X) = \mu &amp;=\int_{100}^{300} x \frac{x}{40.000}dx\\
+    &amp;= \frac{1}{40.000}\int_{100}^{300} x^2dx\\
+    &amp;= \left. \frac{1}{40.000}\frac{x^3}{3} \right|_{100}^{300}\\ &amp;=\frac{27.000.000-1.000.000}{120.000}\\
+    &amp;= \frac{26.000.000}{120.000}\\
+    &amp;=  216,67~\textrm{horas}.
+\end{align*}\]</span></p>
+</div>
+</section>
+<section id="propriedades" class="level4" data-number="5.14.1.3">
+<h4 data-number="5.14.1.3" class="anchored" data-anchor-id="propriedades"><span class="header-section-number">5.14.1.3</span> Propriedades</h4>
+<p>Se <span class="math inline">\(k\)</span> é um valor constante e <span class="math inline">\(X\)</span> uma variável aleatória, a esperança matemática apresenta as seguintes propriedades:</p>
+<ol type="i">
+<li><span class="math inline">\(E(k) = k\)</span>;</li>
+<li><span class="math inline">\(E(X\pm k) =E(X)\pm k\)</span>;</li>
+<li><span class="math inline">\(E(kX) = kE(X)\)</span>;</li>
+<li><span class="math inline">\(E(X_1 + X_2 + \cdots + X_n) = E(X_1) + E(X_2) + \cdots + E(X_n)\)</span>, sendo <span class="math inline">\(X_1, X_2, \cdots, X_n\)</span> variáveis aleatórias independentes.</li>
+</ol>
+</section>
+</section>
+<section id="variância" class="level3" data-number="5.14.2">
+<h3 data-number="5.14.2" class="anchored" data-anchor-id="variância"><span class="header-section-number">5.14.2</span> Variância</h3>
+<p>A dispersão dos valores relativos a média é a variância da distribuição, denotado por <span class="math inline">\(V(X)\)</span> ou <span class="math inline">\(\sigma^2\)</span>, sendo que discreta ou contínua, é definida pela expressão (<a href="#eq-varal" class="quarto-xref"><span>5.12</span></a>). <span id="eq-varal"><span class="math display">\[
+\begin{align}
+    V(X)=\sigma^2=E[X-E(X)]^2=E(X^2) - [E(X)]^2.
+\end{align}
+\tag{5.12}\]</span></span></p>
+<section id="variável-aleatória-discreta-2" class="level4" data-number="5.14.2.1">
+<h4 data-number="5.14.2.1" class="anchored" data-anchor-id="variável-aleatória-discreta-2"><span class="header-section-number">5.14.2.1</span> Variável Aleatória Discreta</h4>
+<p>No caso de variáveis aleatórias discretas, a <span class="math inline">\(E(X^2)\)</span> e dada pela expressão (<a href="#eq-vd" class="quarto-xref"><span>5.13</span></a>). <span id="eq-vd"><span class="math display">\[
+\begin{align}
+        E(X^2)=\sum_{i=1}^{\infty} x_i^2 P(X = x_i).
+\end{align}
+\tag{5.13}\]</span></span></p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.23</strong></span> Para o <a href="#exm-FPD" class="quarto-xref">Exemplo&nbsp;<span>5.17</span></a>, e utilizando-se da expressão (<a href="#eq-vd" class="quarto-xref"><span>5.13</span></a>) para o cálculo de <span class="math inline">\(E(X^2)\)</span>, tem-se: <span class="math display">\[\begin{align*}
+  E(X^2) &amp; =0^2 \times (0,32) + 1^2 \times (0,28) +  2^2 \times (0,20) +\\
+  &amp; \quad +  3^2 \times (0,12) + 4^2\times (0,06) + 5^2\times (0,02)\\
+  &amp; = 3,62~(\textrm{lesões})^2
+\end{align*}\]</span></p>
+<p>Logo, utilizando-se da expressão (<a href="#eq-varal" class="quarto-xref"><span>5.12</span></a>), tem-se que a variância é dada por:</p>
+<p><span class="math display">\[
+V(X)=\sigma^2=3,62 - (1,38)^2=1,7156~(\textrm{lesões})^2.
+\]</span> O desvio padrão é dado por: <span class="math display">\[
+\sigma=\sqrt{1,7156}=1,3098~\textrm{lesões}.
+\]</span></p>
+<section id="variável-aleatória-contínua-2" class="level4" data-number="5.14.2.2">
+<h4 data-number="5.14.2.2" class="anchored" data-anchor-id="variável-aleatória-contínua-2"><span class="header-section-number">5.14.2.2</span> Variável Aleatória Contínua</h4>
+<p>No caso de variáveis aleatórias contínuas, a <span class="math inline">\(E(X^2)\)</span> é dada pela expressão (<a href="#eq-vc" class="quarto-xref"><span>5.14</span></a>). <span id="eq-vc"><span class="math display">\[
+\begin{align}
+    E(X^2)=\int_{-\infty}^{\infty} x^2 f(x) \, dx.
+\end{align}
+\tag{5.14}\]</span></span></p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5.22</strong></span> Para o <a href="#exm-fdp" class="quarto-xref">Exemplo&nbsp;<span>5.16</span></a>, e utilizando-se da expressão (<a href="#eq-vc" class="quarto-xref"><span>5.14</span></a>) para o cálculo de <span class="math inline">\(E(X^2)\)</span>, tem-se: <span class="math display">\[\begin{align*}
+    E(X^2) &amp; =\int_{100}^{300} x^2 \times \frac{x}{40.000}dx\\
+    &amp; =\frac{1}{40.000}\int_{100}^{300} x^3 \, dx\\
+    &amp; = \left. \left(\frac{1}{40.000}\frac{x^4}{4} \right)\right|_{100}^{300} =\frac{8.100.000.000-100.000.000}{160.000}\\
+    &amp; = \frac{8.000.000.000}{160.000}\\
+    &amp; = 50.000~(\textrm{horas})^2.
+\end{align*}\]</span></p>
+<p>Logo, utilizando-se da expressão (<a href="#eq-varal" class="quarto-xref"><span>5.12</span></a>), tem-se que a variância é dada por:</p>
+<p><span class="math display">\[
+V(X)=\sigma^2=50.000 - (216,67)^2=3.054,11~(\textrm{horas})^2.
+\]</span></p>
+<p>O desvio padrão é dado por:</p>
+<p><span class="math display">\[
+\sigma=\sqrt{3.054,11}=55,2640~\textrm{horas}.
+\]</span></p>
+</div>
+</section>
+<section id="propriedades-1" class="level4" data-number="5.14.2.3">
+<h4 data-number="5.14.2.3" class="anchored" data-anchor-id="propriedades-1"><span class="header-section-number">5.14.2.3</span> Propriedades</h4>
+<p>Considerando X e Y duas variáveis aleatórias independentes e k uma constante, a variância apresenta as seguintes propriedades:</p>
+<ol type="i">
+<li><span class="math inline">\(V(k) = 0\)</span>;</li>
+<li><span class="math inline">\(V(X \pm k) = V(X)\)</span>;</li>
+<li><span class="math inline">\(V(kX) = k^2V(X)\)</span>;</li>
+<li><span class="math inline">\(V(X \pm Y) = V(X) + V(Y)\)</span>.</li>
+</ol>
+</section>
+</div>
+</section>
+</section>
+</section>
+<section id="exprop" class="level2 unnumbered" title="Clique aqui!">
+<h2 class="unnumbered anchored" title="Clique aqui!" data-anchor-id="exprop">Exercícios propostos</h2>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 5.1</strong></span> Determine o espaço amostral para cada um dos experimentos abaixo:</p>
+<ol type="a">
+<li>Semear três sementes de uma variedade de milho e contar o número de sementes que germinam;</li>
+<li>Em uma granja ovos são produzidos. Contar o número de ovos danificados em um período de vinte e quatro horas;</li>
+<li>Moirões de Eucalipto para cercas de uma propriedade rural são construídos. Determinar o tempo de vida dos moirões até apodrecer.</li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 5.2</strong></span> Para os experimentos do exercício anterior determine os seguintes eventos:</p>
+<ol type="a">
+<li>A: Exatamente duas sementes germinam; B: Pelo menos duas sementes germinam; C: No máximo uma semente germina.</li>
+<li>A: Todos os ovos são perfeitos.</li>
+<li>A: Os moirões dure no máximo cinco anos.</li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 5.3</strong></span> A probabilidade de uma variedade A de café ser altamente produtiva daqui a cinco anos é de 0,90, e de uma outra variedade B é de 0,85. Determinar a probabilidade de que daqui a cinco anos:</p>
+<ol type="a">
+<li>Ambas as variedades sejam produtivas;</li>
+<li>Somente a variedade A seja produtiva;</li>
+<li>Somente a variedade B seja produtiva;</li>
+<li>Nenhuma seja produtiva;</li>
+<li>Pelo menos uma seja produtiva.</li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 5.4</strong></span> Dois arados de disco A e B são colocados em teste por 1.000 horas. A probabilidade de que uma falha aconteça no arado A é de: <span class="math inline">\(\frac{1}{30}\)</span>, no arado B é de: <span class="math inline">\(\frac{1}{80}\)</span>, e em ambos de: <span class="math inline">\(\frac{1}{1.000}\)</span>. Qual a probabilidade de que:</p>
+<ol type="a">
+<li>Pelo menos um dos arados tenha apresentado falha;</li>
+<li>Nenhum dos arados tenha apresentado falha;</li>
+<li>Apenas o arado A tenha apresentado falha;</li>
+<li><span class="math inline">\(P(A | B)\)</span>;</li>
+<li><span class="math inline">\(P(B | A)\)</span>.</li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 5.5</strong></span> Um Engenheiro Agrônomo conduziu uma pesquisa, com o objetivo de verificar se o grau de ataque de uma certa espécie de inseto em plantas de feijão, está relacionada com a deficiência de um certo nutriente que ocorre nas plantas. Assim considere o evento B que representa o conjunto das plantas que apresentam os sintomas de deficiência, e os eventos <span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_3\)</span>, referentes aos graus de desfolhamento causado pelo inseto, dados por:</p>
+<ul>
+<li><span class="math inline">\(A_1\)</span>: Alto;</li>
+<li><span class="math inline">\(A_2\)</span>: Moderado;</li>
+<li><span class="math inline">\(A_3\)</span>: Baixo.</li>
+</ul>
+<p>Sejam também as seguintes probabilidades:</p>
+<ul>
+<li><span class="math inline">\(P(A_{1})=0,20\)</span>;</li>
+<li><span class="math inline">\(P(A_{2})=0,30\)</span>;</li>
+<li><span class="math inline">\(P(A_{3})=0,50\)</span>;</li>
+<li><span class="math inline">\(P(B | A_{1})=0,05\)</span>;</li>
+<li><span class="math inline">\(P(B | A_{2})=0,02\)</span>;</li>
+<li><span class="math inline">\(P(B | A_{3})=0,01\)</span>.</li>
+</ul>
+<p>Dado que ocorre a deficiência do nutriente em uma planta, qual a probabilidade de que ela apresente um alto grau de desfolhamento.</p>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 5.6</strong></span> Classifique as seguintes variáveis aleatórias como discretas ou contínuas:</p>
+<ol type="a">
+<li>X: Produção de leite de vacas holandesas;</li>
+<li>Y: Número de ovos danificados em um lote de uma granja;</li>
+<li>Z: Número de frutos atacados por uma praga num pé de laranja;</li>
+<li>M: Peso de leitões da raça Duroc aos 21 dias de idade;</li>
+<li>N: Número de ovos depositados por um inseto nas folhas de pés de café;</li>
+<li>O: Produção de milho numa área de 15 hectares.</li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 5.7</strong></span> Seja uma variedade de feijão em que o poder de germinação é de 90,0%. Três sementes desta variedade são semeadas por cova. Seja a variável aleatória X: número de sementes que germinam. Determine:</p>
+<ol type="a">
+<li>O espaço amostral;</li>
+<li>A distribuição de probabilidades da variável aleatória X;</li>
+<li>A média e a variância da variável aleatória X;</li>
+<li>A função de distribuição de probabilidade acumulada da variável aleatória X.</li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 5.8</strong></span> Dada a seguinte distribuição de probabilidades da variável aleatória discreta X: número de ovos danificados em um lote.</p>
+<table class="table-striped table-hover caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathbf{x}\)</span></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathbf{P(X = x)}\)</span></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><span class="math inline">\(p^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(p^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(p\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(p\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(p^2\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>Ache o valor de <span class="math inline">\(p\)</span>;</li>
+<li>Calcule: <span class="math inline">\(P(X \geq 4), P(X &lt; 3) e P(X = 3)\)</span>;</li>
+<li>Calcule a média e a variância de X;</li>
+<li>Construa a função de distribuição de probabilidade acumulada.</li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 5.9</strong></span> A probabilidade de um bovino ser resistente a um certo tipo de vírus da febre aftosa é de <span class="math inline">\(\frac{2}{3}\)</span>. Num lote de quatro bovinos considerando Y como sendo a variável aleatória que representa o número de animais susceptíveis ao vírus, pede-se:</p>
+<ol type="a">
+<li>O espaço amostral;</li>
+<li>A distribuição de probabilidades de Y;</li>
+<li>As seguintes probabilidades: <span class="math inline">\(P(Y \leq 2)\)</span>, <span class="math inline">\(P(1 &lt; Y \leq 3)\)</span> e <span class="math inline">\(P(Y &gt; 1)\)</span>;</li>
+<li>A média e a variância de Y;</li>
+<li>A função de distribuição de probabilidade acumulada de Y.</li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 5.10</strong></span> Seja <span class="math inline">\(f(x)\)</span> a função densidade de probabilidade da variável aleatória contínua X: Tempo de vida produtiva de uma cultura perene, em anos, definida por: <span class="math display">\[\begin{align*}
+    f(x)=\begin{cases}
+       \frac{2}{27}(x+1) &amp; \textrm{para }2 &lt; x &lt; 5;\\
+        0,0 &amp; \textrm{caso contrário.}
+    \end{cases}
+\end{align*}\]</span></p>
+<ol type="a">
+<li>Mostre que <span class="math inline">\(f(x)\)</span> é uma função densidade de probabilidade legítima;</li>
+<li>Calcule: <span class="math inline">\(P(X &lt; 4); P(3 \leq X \leq 4)\)</span>;</li>
+<li>Calcule a média e a variância de X;</li>
+<li>Construa a função de distribuição de probabilidade acumulada de X.</li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 5.11</strong></span> Suponha que o peso de frangos de corte de uma certa raça, em kg, pode ser descrito pela seguinte função densidade de probabilidade: <span class="math display">\[\begin{align*}
+    f(x)=\begin{cases}
+       \frac{1}{6}x+\frac{1}{12} &amp; \textrm{para }0 &lt; x &lt; 3;\\
+        0,0 &amp; \textrm{caso contrário.}
+    \end{cases}
+\end{align*}\]</span></p>
+<ol type="a">
+<li>Calcule as seguintes probabilidades: <span class="math inline">\(P(X &gt; 1,5); P(1,6 &lt; X &lt; 2,2); P(X &lt; 2,3)\)</span>;</li>
+<li>Qual a probabilidade de um frango pesar exatamente 1,8 kg;</li>
+<li>Construa a função de distribuição de probabilidade acumulada;</li>
+<li>Calcule a média e a variância.</li>
+</ol>
+</div>
 
 
+</section>
+</div>
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-banzato2006" class="csl-entry" role="listitem">
 BANZATTO, D. A.; NASCIMENTO KRONKA, S. DO. <strong>Experimentação Agrícola</strong>. Jaboticabal: Funep, 2006. p. 237

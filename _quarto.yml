@@ -50,10 +50,6 @@ crossref:
 #       key: vid
 #       latex-env: video
   
-header-includes:
-   - \usepackage{tikz}
-
-
 
 nocite: |
   @st1980, @banzato2006, @barbin2003, @bolfarine2010, @bolfarinebussab2005,
