@@ -365,26 +365,26 @@ Neste caso a variável aleatória representa o sucesso:
 P(X = x)=\text{C}_{10}^x0,7^x0,3^{10-x}, x=0, 1, 2, 3, \cdots, 10.
 \]</span> Logo, pode-se calcular as probabilidades pedidas, como segue: a) <span class="math inline">\(P(X = 0) = ?\)</span></p>
 <p><span class="math display">\[\begin{align*}
-    P(X = 0) |= \text{C}_{10}^{0}0,7^{0}0,3^{10-0}\\
-    |= \frac{10!}{0!(10-0)!} (1)(0,3)^{10}\\
-    |= 1(1)(0,3)^{10}\\
-    |= 0,0000059 = 0,00059\%.
+    P(X = 0) = \text{C}_{10}^{0}0,7^{0}0,3^{10-0}\\
+    = \frac{10!}{0!(10-0)!} (1)(0,3)^{10}\\
+    = 1(1)(0,3)^{10}\\
+    = 0,0000059 = 0,00059\%.
 \end{align*}\]</span></p>
 <ol start="2" type="a">
 <li><span class="math inline">\(P(X = 1) = ?\)</span></li>
 </ol>
 <p><span class="math display">\[\begin{align*}
-  P(X = 1) |= \text{C}_{10}^{1}0,7^{1}0,3^{10-1}\\
-  |= \frac{10!}{1!(10-1)!} (0,7)(0,3)^{9}\\
-  |= 10(0,7)(0,3)^{9}= 0,00014 = 0,014\%.
+  P(X = 1) = \text{C}_{10}^{1}0,7^{1}0,3^{10-1}\\
+  = \frac{10!}{1!(10-1)!} (0,7)(0,3)^{9}\\
+  = 10(0,7)(0,3)^{9}= 0,00014 = 0,014\%.
 \end{align*}\]</span></p>
 <ol start="3" type="a">
 <li><span class="math inline">\(P(X = 2)\)</span> = ?</li>
 </ol>
 <p><span class="math display">\[\begin{align*}
-  P(X = 2) |= \text{C}_{10}^{2}0,7^{2}0,3^{10-2}\\
-  |= \frac{10!}{2!(10-2)!} (0,7)^2(0,3)^{8}\\
-  |= =45(0,7)^2(0,3)^{8}= 0,0015 = 0,15\%.
+  P(X = 2) = \text{C}_{10}^{2}0,7^{2}0,3^{10-2}\\
+  = \frac{10!}{2!(10-2)!} (0,7)^2(0,3)^{8}\\
+  = 45(0,7)^2(0,3)^{8}= 0,0015 = 0,15\%.
 \end{align*}\]</span></p>
 <ol start="4" type="a">
 <li><span class="math inline">\(P(X &gt; 2)\)</span> = ?</li>
@@ -395,10 +395,10 @@ P(X &gt; 2) = P(X = 3) + P(X = 4) + \cdots + P(X = 10).
 <p><span class="math display">\[
 P(X = 0) + P(X = 1) + P(X = 2) + \cdots + P(X = 10) = 1,0.
 \]</span> Logo, <span class="math display">\[\begin{align*}
-  P(X &gt; 2) |= 1 – [P(X = 0) + P(X = 1) + P(X = 2)]\\
-  |=  1 – [0,0000059 + 0,00014 + 0,0015]\\
-  |= 1 – 0,0017\\
-  |= 0,9983 = 99,83\%.
+  P(X &gt; 2) = 1 – [P(X = 0) + P(X = 1) + P(X = 2)]\\
+  =  1 – [0,0000059 + 0,00014 + 0,0015]\\
+  = 1 – 0,0017\\
+  = 0,9983 = 99,83\%.
 \end{align*}\]</span></p>
 <ol start="5" type="a">
 <li>Utilizando-se das expressões (<a href="#eq-medbin" class="quarto-xref"><span>6.2</span></a>) e (<a href="#eq-varbin" class="quarto-xref"><span>6.3</span></a>), respectivamente, a média e a variância são dadas por:
@@ -430,9 +430,9 @@ Tem-se que a variável aleatória representa o sucesso:
 <p>Utilizando-se da expressão (<a href="#eq-bino" class="quarto-xref"><span>6.1</span></a>), tem-se que a função de probabilidade da variável aleatória <span class="math inline">\(X\)</span>, é dada por: <span class="math display">\[
 P(X = x)=\text{C}_2^x0,5^x0,5^{2-x}, \quad x=0, 1, 2.
 \]</span> Logo, a probabilidade pedida é dada por: <span class="math display">\[\begin{align*}
-  P(X = 2) |= \text{C}_{2}^{2}0,5^{2}0,5^{2-2}\\
-  |= \frac{2!}{2!(2-2)!}(0,5)^{2}(0,5)^0\\
-  |= 1(0,5)^2(1)= 0,25 = 25,0\%.
+  P(X = 2) = \text{C}_{2}^{2}0,5^{2}0,5^{2-2}\\
+  = \frac{2!}{2!(2-2)!}(0,5)^{2}(0,5)^0\\
+  = 1(0,5)^2(1)= 0,25 = 25,0\%.
 \end{align*}\]</span></p>
 </div>
 </section>
@@ -500,8 +500,8 @@ P(X \leq 4) =P(X = 0) + P(X = 1) + P(X = 2) + P(X = 3) + P(X = 4);
 <li><span class="math inline">\(P(X = 4)=\frac{e^{-4,0}4,0^4}{4!}=0,1954 = 19,54\%\)</span>.</li>
 </ul>
 <p>Logo, <span class="math display">\[\begin{align*}
-  P(X \leq 4) |= 0,0183 + 0,0733 + 0,1465 + 0,1954 + 0,1954\\
-  |= 0,6289 = 62,89\%.
+  P(X \leq 4) = 0,0183 + 0,0733 + 0,1465 + 0,1954 + 0,1954\\
+  = 0,6289 = 62,89\%.
 \end{align*}\]</span></p>
 <ol start="3" type="a">
 <li><span class="math inline">\(P(X \geq 2)= ?\)</span></li>
@@ -511,10 +511,10 @@ P(X \geq 2) = P(X = 2) + P(X = 3) + \cdots + P(X = 2.000).
 \]</span> Tem-se que: <span class="math display">\[
 P(X = 0) + P(X = 1) + P(X = 2) + \cdots + P(X = 2.000) = 1,0.
 \]</span> Logo, <span class="math display">\[\begin{align*}
-  P(X \geq 2) |= 1 – [P(X = 0) + P(X = 1)]\\
-  |= 1 – [0,0183 + 0,0733]\\
-  |= 1 – 0,0916\\
-  |= 0,9084 = 90,84\%.
+  P(X \geq 2) = 1 – [P(X = 0) + P(X = 1)]\\
+  = 1 – [0,0183 + 0,0733]\\
+  = 1 – 0,0916\\
+  = 0,9084 = 90,84\%.
 \end{align*}\]</span></p>
 </div>
 </section>
@@ -687,10 +687,10 @@ P(-0,5 &lt; Z &lt; 0,0)=P(0,0 &lt; Z &lt; 0,5)=0,1915,
 \]</span> e <span class="math display">\[
 P(-1,0 &lt; Z &lt; 0,0)=P(0,0 &lt; Z &lt; 1,0)=0,3413.
 \]</span> Logo, tem-se que: <span class="math display">\[\begin{align*}
-  P(190,0 &lt; X &lt; 195,0) |= P(-1,0 &lt; Z &lt; -0,5)\\
-  |= P(-1,0 &lt; Z &lt; 0,0)-P(-0,5 &lt; Z &lt; 0,0)\\
-  |= 0,3413-0,1915\\
-  |= 0,1498=14,98\%.
+  P(190,0 &lt; X &lt; 195,0) = P(-1,0 &lt; Z &lt; -0,5)\\
+  = P(-1,0 &lt; Z &lt; 0,0)-P(-0,5 &lt; Z &lt; 0,0)\\
+  = 0,3413-0,1915\\
+  = 0,1498=14,98\%.
 \end{align*}\]</span></p>
 <p>A representação gráfica desse cálculo de probabilidade pode ser verificada na Figura <a href="#fig-exem6.4" class="quarto-xref">Figura&nbsp;<span>6.7</span></a>.</p>
 <div id="fig-exem6.4" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
@@ -707,8 +707,8 @@ Figura&nbsp;6.7: Área correspondente a probabilidade da variedade de milho ter 
 <li><span class="math inline">\(P(X &gt; 190,0) = ?\)</span></li>
 </ol>
 <p><span class="math display">\[\begin{align*}
-  P(X &gt; 190,0) |= P(Z &gt; -1,0) = P(-1,0 &lt; Z &lt; 0,0) + 0,5\\
-  |= 0,3413 + 0,5 = 0,8413 = 84,13\%.
+  P(X &gt; 190,0) = P(Z &gt; -1,0) = P(-1,0 &lt; Z &lt; 0,0) + 0,5\\
+  = 0,3413 + 0,5 = 0,8413 = 84,13\%.
 \end{align*}\]</span></p>
 <p>Sendo que a representação gráfica pode ser observada na <a href="#fig-exem6.4b" class="quarto-xref">Figura&nbsp;<span>6.8</span></a>.</p>
 <div id="fig-exem6.4b" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
@@ -725,8 +725,8 @@ Figura&nbsp;6.8: Área correspondente a probabilidade da variedade de milho ter 
 <li><span class="math inline">\(P(X &lt; 190,0) = ?\)</span></li>
 </ol>
 <p><span class="math display">\[\begin{align*}
-    P(X &lt; 190,0) = P(Z &lt; -1,0) |= 0,5 - P(-1,0 &lt; Z &lt; 0,0)\\
-    |= 0,5 - 0,3413 = 0,1587 = 15,87\%
+    P(X &lt; 190,0) = P(Z &lt; -1,0) = 0,5 - P(-1,0 &lt; Z &lt; 0,0)\\
+    = 0,5 - 0,3413 = 0,1587 = 15,87\%
 \end{align*}\]</span></p>
 <p>Onde a representação gráfica pode ser observada na <a href="#fig-exem6.4c" class="quarto-xref">Figura&nbsp;<span>6.9</span></a>.</p>
 <div id="fig-exem6.4c" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
@@ -771,8 +771,8 @@ Z=\frac{1.500,0-1.529,7}{231,9}=-0,13.
 P(-0,13 &lt; Z &lt; 0,0)=P(0,0 &lt; Z &lt; 0,13)=0,0517.
 \]</span></p>
 <p>Logo, tem-se que: <span class="math display">\[\begin{align*}
-  P(X \leq 1.500,0) = P(Z&lt;-0,13) |=0,5-P(-0,13 &lt; Z &lt; 0,0)\\
-  |=0,5-0,0517=0,4483=44,83\%.
+  P(X \leq 1.500,0) = P(Z&lt;-0,13) =0,5-P(-0,13 &lt; Z &lt; 0,0)\\
+  =0,5-0,0517=0,4483=44,83\%.
 \end{align*}\]</span></p>
 <p>Sendo que a sua representação gráfica pode ser observada pela <a href="#fig-exem6.5a" class="quarto-xref">Figura&nbsp;<span>6.10</span></a>.</p>
 <div id="fig-exem6.5a" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
@@ -798,7 +798,7 @@ Z=\frac{1.800,0-1.529,7}{231,9}=1,17.
 <p>Assim, tem-se que: <span class="math display">\[
 P(0,0 &lt; Z &lt; 1,17)=0,3790.
 \]</span> Logo, <span class="math display">\[\begin{align*}
-  P(X&gt;1.800,0)=P(Z&gt;1,17) |= 0,5-P(0,0 &lt; Z &lt; 1,17)\\
+  P(X&gt;1.800,0)=P(Z&gt;1,17) = 0,5-P(0,0 &lt; Z &lt; 1,17)\\
   | =0,5-0,3790=0,1210=12,10\%.
 \end{align*}\]</span></p>
 <p>A representação gráfica desta probabilidade pode ser observada pela <a href="#fig-exem6.5b" class="quarto-xref">Figura&nbsp;<span>6.11</span></a>.</p>
@@ -829,9 +829,9 @@ P(-0,56 &lt; Z &lt; 0,0)=P(0,0 &lt; Z &lt; 0,56)=0,2123.
 \]</span> e, <span class="math display">\[
 P(0,0 &lt; Z &lt; 0,30)=0,1179.
 \]</span> Logo, <span class="math display">\[\begin{align*}
-  P(1.400,0 &lt; x &lt; 1.600,0) |= P(-0,56 &lt; Z &lt; 0,30)\\
-  |= P(-0,56 &lt; Z &lt; 0,0) + P(0,0 &lt; Z &lt; 0,30)\\
-  |= 0,2123 + 0,1179=0,3302 = 33,02\%,
+  P(1.400,0 &lt; x &lt; 1.600,0) = P(-0,56 &lt; Z &lt; 0,30)\\
+  = P(-0,56 &lt; Z &lt; 0,0) + P(0,0 &lt; Z &lt; 0,30)\\
+  = 0,2123 + 0,1179=0,3302 = 33,02\%,
 \end{align*}\]</span></p>
 <p>Sendo que sua representação gráfica pode ser verificada na <a href="#fig-exem6.5c" class="quarto-xref">Figura&nbsp;<span>6.12</span></a>.</p>
 <div id="fig-exem6.5c" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
@@ -888,13 +888,13 @@ Considere a variável aleatória X que representa o sucesso:
 P(X = x)=\text{C}_{40}^{x}0,25^{x}0,75^{40-x}, x=0, 1, 2, \cdots, 40.
 \]</span></p>
 <p>A probabilidade pedida é dada por: <span class="math display">\[\begin{align*}
-  P(X = 14) |= \text{C}_{40}^{14}0,25^{14}0,75^{40-14}\\
-  |= \frac{40!}{14!(40-14)!}(0,25)^{14}(0,75)^{26}\\
-  |= 0,0488 = 4,88\%.
+  P(X = 14) = \text{C}_{40}^{14}0,25^{14}0,75^{40-14}\\
+  = \frac{40!}{14!(40-14)!}(0,25)^{14}(0,75)^{26}\\
+  = 0,0488 = 4,88\%.
 \end{align*}\]</span></p>
 <p>Suponha agora que se deseja calcular a probabilidade de ser ter mais de 14 plantas sadias. Tem-se então que: <span class="math display">\[\begin{align*}
-  P(X &gt; 14) |= P(X = 15) + P(X = 16) + \cdots + P(X = 40)\\
-  |= 1 – P(X \leq 14).
+  P(X &gt; 14) = P(X = 15) + P(X = 16) + \cdots + P(X = 40)\\
+  = 1 – P(X \leq 14).
 \end{align*}\]</span></p>
 <p>Como se vê esta probabilidade é bastante trabalhosa de ser calculada.</p>
 </div>
@@ -924,9 +924,9 @@ P(0,0 &lt; Z &lt; 1,28)=0,3997,
 P(0,0 &lt; Z &lt; 1,64)=0,4495.
 \]</span></p>
 <p>Assim, tem-se que: <span class="math display">\[\begin{align*}
-  P(13,5 &lt; X &lt; 14,5) |= P(1,28 &lt; Z &lt; 1,64)\\
-  |= P(0,0 &lt; Z &lt; 1,64) - P(0,0 &lt; Z &lt; 1,28)\\
-  |= 0,4495 - 0,3997 = 0,0498 = 4,98\%.
+  P(13,5 &lt; X &lt; 14,5) = P(1,28 &lt; Z &lt; 1,64)\\
+  = P(0,0 &lt; Z &lt; 1,64) - P(0,0 &lt; Z &lt; 1,28)\\
+  = 0,4495 - 0,3997 = 0,0498 = 4,98\%.
 \end{align*}\]</span></p>
 <p>Cuja representação gráfica pode ser verificada na <a href="#fig-exem6.6" class="quarto-xref">Figura&nbsp;<span>6.14</span></a>.</p>
 <div id="fig-exem6.6" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
@@ -945,7 +945,7 @@ Erro de aproximação = |Probabilidade exata – Probabilidade aproximada|.
 </center>
 Para o exemplo, tem-se:
 <center>
-Erro de aproximação = |0,0488 – 0,0498|= 0,001 = 0,1%.
+Erro de aproximação = |0,0488 – 0,0498= 0,001 = 0,1%.
 </center>
 <p>Mostrando assim a qualidade da aproximação.</p>
 <p>A probabilidade de se ter mais de 14 plantas sadias pode, então, ser calculada por: <span class="math display">\[\begin{align*}
@@ -1765,7 +1765,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
