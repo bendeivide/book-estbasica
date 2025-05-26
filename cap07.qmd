@@ -1,1 +1,334 @@
-# Amostragem
+# Amostragem {#sec-chap07}
+
+## Introdução {id="introd" title="Clique aqui!"}
+
+Em muitos casos na execução de uma pesquisa, é impossível avaliar todos os elementos de uma população, seja por problemas de custo e/ou tempo. Quando esse é o caso, é preferível conhecer a população a partir do estudo de uma parte dela, chamada amostra. Mediante a informação contida numa amostra, é possível fazer inferências sobre as características da população.
+
+A finalidade de uma amostra é descrever indiretamente a população, assim, é necessário que as amostras sejam representativas da população, ou seja, guardem características mais próximas possíveis da população.
+
+Amostragem é o processo de obtenção de amostras de uma população, e consiste em uma das etapas de um planejamento de uma pesquisa.
+
+## Vantagens da Amostragem {id="vant_amostragem" title="Clique aqui!"}
+
+A amostragem apresenta as seguintes vantagens em relação ao censo.
+
+i) Custo reduzido: 
+    
+As despesas são menores, pois trabalha-se apenas com uma parte da população;
+
+ii) Maior rapidez: 
+    
+Os dados são coletados e apurados em menor tempo;
+
+iii) Maior amplitude: 
+    
+Permite a obtenção de informações em situações onde o censo seria impraticável;
+
+iv) Maior exatidão: 
+    
+O uso de pessoal especializado e com uma melhor supervisão dos trabalhos, pode levar a uma maior exatidão dos resultados.
+
+
+## Planejamento de uma Amostragem {id="plan_amostragem" title="Clique aqui!"}
+
+
+Num processo de planejamento amostral cinco etapas devem ser seguidas, a saber:
+
+i) Definir a população de interesse:
+
+É o conjunto de elementos ou objetos que possuem a informação procurada pelo pesquisador, e sobre os quais devem ser feitas inferências.
+
+ii) Determinar o arcabouço amostral:
+
+É uma representação dos elementos da população de interesse. Consiste em uma lista ou um conjunto de instruções para identificar a população de interesse.
+
+iii) Escolher a técnica de amostragem:
+
+A escolha de uma técnica de amostragem envolve várias decisões de natureza ampla. O pesquisador precisa decidir se utiliza amostragem com ou sem reposição, e se trabalha com amostragem probabilística ou não-probabilística.
+
+Na amostragem com reposição um elemento é escolhido do arcabouço amostral, obtendo-se os dados de interesse. A seguir, coloca-se esse elemento de volta no conjunto. Como consequência, torna-se possível incluir determinado elemento mais de uma vez na amostra.
+
+Na amostragem sem reposição uma vez selecionado para inclusão na amostra, um elemento é removido do arcabouço amostral, e assim não pode mais ser incluído em outra seleção
+
+Uma das decisões mais importantes sobre a escolha de uma técnica de amostragem, está em trabalhar-se com amostragem probabilística ou não-probabilística, que será vista com maiores detalhes mais adiante neste capítulo.
+
+iv) Determinar o tamanho da amostra:
+
+O tamanho da amostra diz respeito ao número de elementos a serem incluídos no estudo.
+
+v) Executar o processo de amostragem:
+
+A execução do processo de amostragem exige uma especificação detalhada de como as decisões sobre o planejamento da amostragem com respeito: à população, ao arcabouço amostral, à unidade amostral, à técnica de amostragem e ao tamanho amostral vão ser implementadas.
+
+
+## Classificação das Técnicas Amostrais {id="clas_met_amostragem" title="Clique aqui!"}
+
+As técnicas de amostragem podem ser classificadas como: probabilísticas e não-probabilísticas.
+
+### Amostragem Probabilística {id="met_amostragem_probabilistica" title="Clique aqui!"}
+
+Se todos os elementos da população tiverem probabilidade conhecida e não nula de pertencer à amostra, o processo de amostragem é denominado probabilístico. Neste caso o processo de seleção de amostras é aleatório.
+
+Como os elementos da amostra são selecionados aleatoriamente, é possível determinar a precisão das estimativas amostrais das características de interesse. É possível construir intervalos de confiança que contenham o verdadeiro valor populacional, com determinado grau de certeza. Isso permite ao pesquisador fazer inferências ou projeções sobre a população de interesse da qual se extraiu a amostra.
+
+Os métodos de amostragens probabilística são:
+
+- Amostragem Simples ao Acaso (ASA);
+- Amostragem Sistemática (AS);
+- Amostragem Estratificada (AE);
+- Amostragem por Conglomerado (AC).
+
+### Amostragem Não-Probabilística {id="met_amostragem_nao_probabilistica" title="Clique aqui!"}
+
+Neste processo de amostragem a escolha dos elementos da população é não aleatória, isto é, nem todos os elementos podem pertencer à amostra. A amostragem não-probabilística confia no julgamento pessoal do pesquisador, e não na chance de selecionar os elementos amostrais. O pesquisador pode, arbitrária ou conscientemente, decidir quais os elementos a serem incluídos na amostra. Essas técnicas de amostragem não serão vistas em detalhes aqui.
+
+## Métodos de Amostragem Probabilística {id="map" title="Clique aqui!"}
+
+### Amostragem Simples ao Acaso (ASA) {id="map_asa" title="Clique aqui!"}
+
+O objetivo desse método de amostragem é obter uma amostra representativa quando os elementos da população são homogêneos. Neste método de amostragem todos os elementos da população têm a mesma probabilidade de serem coletados. Isto implica que cada elemento é escolhido independentemente de qualquer outro elemento. A amostra é extraída de um arcabouço amostral por um processo aleatório. Enumeram-se todos os elementos da população e sorteiam-se n elementos através de um dispositivo aleatório qualquer, por exemplo:
+
+- Papéis numerados: 
+    
+Neste caso enumeram-se cada elemento da população em pedaços de papel, que são colocados numa urna, misturados e extraídos, para identificar os elementos da amostra.
+
+- Tabela de números aleatórios: 
+    
+São tabelas especialmente construídas com a finalidade de se fazer sorteios.
+
+- Pacotes estatísticos: 
+    
+São softwares específicos na área estatística.
+
+- Função RANDOM da calculadora: 
+    
+Em geral as calculadoras possuem uma função "RANDOM", que gera um número aleatório entre 0 e 1. Gerado o número aletóro em seguida multiplica-se esse número aleatório pelo tamanho da população N, e pega o número inteiro mais próximo.
+
+:::{#exm-}
+
+Uma comunidade rural de um certo município é composta por 450 propriedades rurais. Deseja-se sortear uma amostra de 10 propriedades rurais, para uma pesquisa de características sócio-econômicas dos agricultores.
+
+Primeiro enumeram-se as propriedades rurais de 1 a 450, e posteriormente se procede o sorteio. Por exemplo, usando a tabela de números aleatórios (@tab-numaleatorio), partindo-se da linha 11 e coluna 6, e selecionando números com três algarismos.
+
+Assim, as propriedades sorteadas são as de números:
+<center>
+    177 – 110 – 122 – 391 – 27 – 129 – 319 – 153 – 404 – 220.
+</center>
+:::
+
+
+### Amostragem Sistemática (AS) {id="map_as" title="Clique aqui!"}
+
+O objetivo desse método de amostragem é aumentar a representatividade da amostra dando maior cobertura à população. É usada quando os elementos da população são homogêneos.
+
+Na amostragem sistemática primeiro enumeram-se os elementos da população $(1, 2, \cdots, N)$, e a seguir calcula-se o passo de amostragem ($k$) dado por (@eq-passo).
+$$
+\begin{align}
+    k=\frac{N}{n},
+\end{align}
+$$ {#eq-passo}
+em que $N$ é o tamanho da população e $n$ o tamanho da amostra. 
+
+Em seguida, o primeiro elemento da amostra é sorteado, entre 1 e $k$, por exemplo, o elemento $i$. Os demais elementos são retirados em uma progressão aritmética, saltando $k$ elementos até completar o total da amostra $n$, ou seja, $i + k, i + 2k, i + 3k$, etc.
+
+:::{#exm-}
+
+Considere um povoamento florestal composto por 10.000 árvores, das quais serão amostradas 50 árvores. Utilizando-se da expressão (@eq-passo) o passo de amostragem é dado por:
+$$
+k=\frac{10.000}{50}=200.
+$$
+Em seguida sorteia-se a primeira árvore entre 1 e 200, por exemplo, a árvore número 30. As demais são obtidas por:
+$$
+30 + 200 = 230;
+$$
+$$
+    30 + 2(200) = 430;
+$$
+$$
+    30 + 3(200) = 630;
+$$
+e assim por diante até completar as 50 árvores.
+
+Logo, a amostra será composta pelas árvores de números:
+$$
+30,~230,~ 430,~ 630,~ \cdots, 9830
+$$
+:::
+
+A amostragem sistemática é menos dispendiosa e mais fácil do que a amostragem simples ao acaso, porque a seleção aleatória é feita uma única vez.
+
+
+### Amostragem Estratificada (AE) {id="map_ae" title="Clique aqui!"}
+
+Este método é recomendado quando a população é heterogênea. 
+
+Nesse caso a população é dividida em sub-populações ou estratos, de forma que dentro dos estratos haja a máxima homogeneidade possível. No dimensionamento da amostra leva-se em conta o número de elementos e a variância de cada estrato. Amostras simples ao acaso ou sistemática são retiradas dentro de cada estrato, e o conjunto delas constitui a amostra estratificada.
+
+As variáveis usadas para dividir a população em estratos chamam-se variáveis de estratificação. Os critérios para a seleção dessas variáveis consistem em homogeneidade, heterogeneidade, relacionamento e custo. Os elementos dentro de um estrato devem ser tão homogêneos quanto possível, mas os elementos em estratos diferentes devem ser os mais heterogêneos possíveis.
+
+Embora o número de estratos a usar seja uma questão de julgamento, alguns autores sugerem o uso de no máximo seis. Nesse método de amostragem pode-se ter a amostragem proporcionada ou desproporcionada.
+
+Na amostragem estratificada proporcional, o tamanho da amostra extraída de cada estrato é proporcional ao tamanho relativo do estrato na população total.
+
+O tamanho da amostra de cada estrato é obtido pela expressão (@eq-estra).
+$$
+\begin{align}
+    n_i=\frac{N_i}{N}\times n,
+\end{align}
+$${#eq-estra}
+em que:
+
+- $n_i$ é o número de elementos da amostra do estrato $i$;
+- $N_i$ é o número de elementos da população do estrato $i$;
+- $N$ é o número total de elementos da população;
+- $n$ é o número total de elementos da amostra.
+
+Na amostragem estratificada desproporcionada, o tamanho da amostra de cada estrato é proporcional ao tamanho relativo do estrato, e ao desvio padrão da distribuição da característica de interesse, entre todos os elementos naquele estrato.
+
+O tamanho da amostra de cada estrato é obtido pela expressão (@eq-estrade).
+$$
+\begin{align}
+     n_i=\frac{N_i\sigma_i}{\sum_{i=1}^{k} N_i\sigma_i}\times n,
+\end{align}
+$${#eq-estrade}
+em que $\sigma_i$ é o desvio padrão para o estrato $i$.
+
+:::{#exm-}
+
+Um Engenheiro Agrônomo realizou um levantamento por amostragem numa região produtora de feijão, do estado de Minas Gerais, com o objetivo de conhecer a qualidade da semente usada pelos agricultores. Esta região consta de 9 municípios e 978 propriedades rurais.
+
+A estratificação foi feita em relação a área plantada, em ha, e os resultados estão apresentados na @tbl-distpropfeijao.
+
+| Estrato | Área (ha) | Nº de propriedades $(N_i)$ | $\sigma_i$ |
+|:---:|:---:|:---:|:---:|
+| 1 |	$[1; 3)$ |	296 |	0,51 |
+| 2 |	$[3; 6)$ |	309 |	0,80 |
+| 3 |	$[6; 10)$ |	156 |	1,25 |
+| 4 |	$[10; 20)$ |	140 |	2,97 |
+| 5 |	$[20; 40)$ | 52 |	4,78 |
+| 6 |	$[40; 80)$ | 25 |	11,16 |
+| |	Total |	978 |	|
+
+: Distribuição das propriedades rurais que cultivam feijão, numa região do estado de Minas Gerais, 2007.^[Fonte: Dados fictícios.] {#tbl-distpropfeijao .striped .hover}
+
+
+
+Supondo que se deseja extrair uma amostra com 66 propriedades rurais que cultivam feijão.
+
+Logo, tem-se uma amostra estratificada assim distribuída:
+
+| Estrato | Amostra Proporcional | Amostra Desproporcionada |
+|:---:|:---:|:---:|
+| 1 |	20 |	7 |
+| 2 |	21 | 10 |
+| 3 | 10 | 8  |
+| 4 |	9  | 18 |
+| 5 | 4  | 11 |
+| 6 | 2  | 12 |
+|Total | 66 |	66 |
+
+: {.striped .hover}
+
+Por exemplo para o estrato 1, tem-se:
+
+- Amostra proporcional:
+$$
+n_1=\frac{N_1}{N}\times n=\frac{296}{978}\times 66=20.
+$$
+
+- Amostra desproporcionada:
+
+$$
+n_1=\frac{N_1\sigma_1}{\sum_{i=1}^{6} N_i\sigma_i}\times n=\frac{296(0,51)}{296(0,51)+\cdots+25(11,16)}\times 66=7.
+$$
+
+Em seguida amostras simples ao acaso ou sistemática são retiradas dentro de cada estrato.
+:::
+
+### Amostragem por Conglomerado (AC) {id="map_ac" title="Clique aqui!"}
+
+Este método é recomendado quando a população é heterogênea. Na amostragem por conglomerado, primeiro divide-se a população em subpopulações, constituindo os conglomerados. A seguir, seleciona-se uma amostra aleatória de conglomerados, com base em uma técnica de amostragem probabilística, tal como a amostragem simples ao acaso. Para cada conglomerado selecionado, incluem-se todos os elementos na amostra, ou se extrai probabilisticamente uma amostra de elementos. Se todos os elementos de cada conglomerado selecionado são incluídos na amostra, o processo é denominado amostragem por conglomerado de um estágio. Se extrai probabilisticamente uma amostra de elementos de cada conglomerado selecionado, o processo é denominado de amostragem por conglomerado em dois estágios.
+
+A distinção entre amostragem por conglomerado e amostragem estratificada, é que na amostragem por conglomerado escolhe-se apenas uma amostra de subpopulações (conglomerados), enquanto que na amostragem estratificada todas as subpopulações (estratos) são selecionadas para amostragem posterior.
+
+Quanto à homogeneidade e heterogeneidade, os critérios para formar conglomerados são opostos aos do caso para estratos. Os elementos dentro de um conglomerado devem ser tão heterogêneos quanto possível, mas os conglomerados em si mesmos devem ser tão homogêneos quanto possível. A ideia é que cada conglomerado deve ser uma representação em pequena escala da população.
+
+
+:::{#exm-}
+
+Suponha que se deseja conduzir uma pesquisa sobre características sócio-econômicas dos agricultores da região Sul de Minas Gerais. Para diminuir custos de transporte ao percorrer toda a região, o pesquisador pode concentrar suas entrevistas sobre um número limitado de municípios ou sub-regiões, escolhidos ao acaso. Todos os agricultores nas sub-regiões escolhidas podem ser considerados como uma amostra da população de agricultores do Sul de Minas Gerais. 
+
+Assim, tem-se:
+
+- População: N agricultores da região Sul de Minas Gerais;
+- Conglomerados: M municípios da região Sul de Minas Gerais;
+- Amostra de Conglomerados: m municípios da região Sul de Minas Gerais;
+- Amostra de Elementos: n agricultores dos m municípios.
+
+:::
+
+## Determinação do Tamanho da Amostra {id="tamanho_amostral" title="Clique aqui!"}
+
+
+O tamanho da amostra determinado estatisticamente, é o tamanho final da amostra. A abordagem estatística considerada para determinar o tamanho da amostra se baseia na inferência estatística. Nessa abordagem o nível de precisão e o erro é especificado antecipadamente. Essa abordagem se baseia na construção de intervalos de confiança em torno de médias ou proporções. Este assunto será visto com detalhes no @sec-chap09.
+
+
+## Exercícios propostos {- id="exprop" title="Clique aqui!"}
+
+:::{#exr-}
+Em que situações você recomendaria o processo de amostragem simples ao acaso e amostragem estratificada.
+:::
+
+:::{#exr-}
+Qual é a diferença entre a amostragem probabilística e não-probabilística.
+:::
+
+:::{#exr-}
+Apresente críticas aos seguintes métodos amostrais:
+a) Para se estudar a proporção de vacas com brucelose na região Sul de Minas Gerais inspecionou-se 10 fazendas nas cidades de Caxambu e Guaxupé;
+b) Para se obter a opinião dos brasileiros sobre o plano de reforma agrária decidiu-se entrevistar os associados de uma sociedade ruralista;
+c) Para diagnosticar a situação econômica da agropecuária paulista foram entrevistados os produtores de cana-de-açúcar da cidade de Piracicaba, SP.
+:::
+
+:::{#exr-}
+Em que circunstâncias práticas você empregaria o processo de amostragem simples ao acaso, em detrimento dos demais processos de amostragem probabilísticos. Qual é a principal diferença desse método em relação à amostragem estratificada.
+:::
+
+:::{#exr-}
+Uma empresa do setor cafeeiro da região do sul de Minas Gerais dispõe de 3.200 funcionários exercendo atividades de campo (trabalho na lavoura), de armazenamento (trabalho em secadores, armazéns e beneficiadoras), de industrialização (torrefação, moagem e embalagens), de administração (trabalho em escritório), e de gerência e exportação (direção e vendas). Deseja-se sortear uma amostra de 50 funcionários nesta empresa, com o objetivo de conhecer alguns aspectos sócio-econômicos e culturais destes funcionários. A população se distribui nas seguintes categorias:
+
+| Atividade | Nº de Empregados  |
+|:---:|:---:|
+| Campo |	1.600 |
+| Armazém |	720 |
+| Indústria |	480 |
+| Administração | 240 |
+| Gerência e Exportação |	160 |
+| Total |	3.200 |
+
+: {.striped .hover}
+
+a) É razoável levantar as informações desejadas através de uma amostragem simples ao acaso;
+b) Faça uma amostragem estratificada proporcional determinando o tamanho da amostra em cada estrato;
+c) Mediante o uso da tabela de números aleatórios, selecione os funcionários que farão parte da amostra determinada segundo o processo de amostragem estabelecido no item (b). Explique com detalhes o sorteio, identificando os indivíduos sorteados;
+d) Repita o item (c), porém em lugar de retirar uma amostra simples ao acaso em cada estrato, retire as amostras utilizando um processo de amostragem sistemática.
+
+:::
+
+:::{#exr-}
+Proponha um método de amostragem adequado para cada situação descrita abaixo, inclusive explicando como ele seria executado.
+
+a) Uma amostra de 40 leitões de uma granja, para serem usados num experimento que visa comparar quatro rações de engorda;
+b) Uma amostra composta por 85 propriedades rurais de um município, para aplicação de um questionário sobre atividades rurais;
+c) Uma amostra de 40 frutos de banana maçã numa plantação com 8.000 bananeiras;
+d) Para estimar o volume de madeira de um povoamento florestal de eucalipto com 7.500 árvores, deseja-se retirar uma amostra com 30 árvores;
+e) Uma amostra de 10 folhas de uma laranjeira para avaliar o teor de cálcio.
+:::
+
+:::{#exr-}
+O conhecimento do solo para exploração agrícola é muito importante, e está associado à descrição de suas propriedades físicas, químicas e biológicas. Essa descrição é obtida através de informações levantadas por amostragem no solo. Como você faria uma amostragem numa área de aproximadamente 6 ha, cuja área será implantada uma cultura perene.
+:::
+
+:::{#exr-}
+Suponhamos que se deseja conhecer a qualidade do leite produzido pelos produtores de leite da região do Vale do Paraíba, SP. Planeje uma amostragem por conglomerados.
+:::

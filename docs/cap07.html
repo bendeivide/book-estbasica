@@ -90,6 +90,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="custom.scss">
 </head>
@@ -224,15 +253,37 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#introd" id="toc-introd" class="nav-link active" data-scroll-target="#introd"><span class="header-section-number">7.1</span> Introdução</a></li>
+  <li><a href="#vant_amostragem" id="toc-vant_amostragem" class="nav-link" data-scroll-target="#vant_amostragem"><span class="header-section-number">7.2</span> Vantagens da Amostragem</a></li>
+  <li><a href="#plan_amostragem" id="toc-plan_amostragem" class="nav-link" data-scroll-target="#plan_amostragem"><span class="header-section-number">7.3</span> Planejamento de uma Amostragem</a></li>
+  <li><a href="#clas_met_amostragem" id="toc-clas_met_amostragem" class="nav-link" data-scroll-target="#clas_met_amostragem"><span class="header-section-number">7.4</span> Classificação das Técnicas Amostrais</a>
+  <ul class="collapse">
+  <li><a href="#met_amostragem_probabilistica" id="toc-met_amostragem_probabilistica" class="nav-link" data-scroll-target="#met_amostragem_probabilistica"><span class="header-section-number">7.4.1</span> Amostragem Probabilística</a></li>
+  <li><a href="#met_amostragem_nao_probabilistica" id="toc-met_amostragem_nao_probabilistica" class="nav-link" data-scroll-target="#met_amostragem_nao_probabilistica"><span class="header-section-number">7.4.2</span> Amostragem Não-Probabilística</a></li>
+  </ul></li>
+  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map"><span class="header-section-number">7.5</span> Métodos de Amostragem Probabilística</a>
+  <ul class="collapse">
+  <li><a href="#map_asa" id="toc-map_asa" class="nav-link" data-scroll-target="#map_asa"><span class="header-section-number">7.5.1</span> Amostragem Simples ao Acaso (ASA)</a></li>
+  <li><a href="#map_as" id="toc-map_as" class="nav-link" data-scroll-target="#map_as"><span class="header-section-number">7.5.2</span> Amostragem Sistemática (AS)</a></li>
+  <li><a href="#map_ae" id="toc-map_ae" class="nav-link" data-scroll-target="#map_ae"><span class="header-section-number">7.5.3</span> Amostragem Estratificada (AE)</a></li>
+  <li><a href="#map_ac" id="toc-map_ac" class="nav-link" data-scroll-target="#map_ac"><span class="header-section-number">7.5.4</span> Amostragem por Conglomerado (AC)</a></li>
+  </ul></li>
+  <li><a href="#tamanho_amostral" id="toc-tamanho_amostral" class="nav-link" data-scroll-target="#tamanho_amostral"><span class="header-section-number">7.6</span> Determinação do Tamanho da Amostra</a></li>
+  <li><a href="#exprop" id="toc-exprop" class="nav-link" data-scroll-target="#exprop">Exercícios propostos</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Amostragem</span></h1>
+<h1 class="title"><span id="sec-chap07" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Amostragem</span></span></h1>
 </div>
 
 
@@ -249,6 +300,379 @@ div.csl-indent {
 </header>
 
 
+<section id="introd" class="level2" title="Clique aqui!" data-number="7.1">
+<h2 title="Clique aqui!" data-number="7.1" class="anchored" data-anchor-id="introd"><span class="header-section-number">7.1</span> Introdução</h2>
+<p>Em muitos casos na execução de uma pesquisa, é impossível avaliar todos os elementos de uma população, seja por problemas de custo e/ou tempo. Quando esse é o caso, é preferível conhecer a população a partir do estudo de uma parte dela, chamada amostra. Mediante a informação contida numa amostra, é possível fazer inferências sobre as características da população.</p>
+<p>A finalidade de uma amostra é descrever indiretamente a população, assim, é necessário que as amostras sejam representativas da população, ou seja, guardem características mais próximas possíveis da população.</p>
+<p>Amostragem é o processo de obtenção de amostras de uma população, e consiste em uma das etapas de um planejamento de uma pesquisa.</p>
+</section>
+<section id="vant_amostragem" class="level2" title="Clique aqui!" data-number="7.2">
+<h2 title="Clique aqui!" data-number="7.2" class="anchored" data-anchor-id="vant_amostragem"><span class="header-section-number">7.2</span> Vantagens da Amostragem</h2>
+<p>A amostragem apresenta as seguintes vantagens em relação ao censo.</p>
+<ol type="i">
+<li>Custo reduzido:</li>
+</ol>
+<p>As despesas são menores, pois trabalha-se apenas com uma parte da população;</p>
+<ol start="2" type="i">
+<li>Maior rapidez:</li>
+</ol>
+<p>Os dados são coletados e apurados em menor tempo;</p>
+<ol start="3" type="i">
+<li>Maior amplitude:</li>
+</ol>
+<p>Permite a obtenção de informações em situações onde o censo seria impraticável;</p>
+<ol start="4" type="i">
+<li>Maior exatidão:</li>
+</ol>
+<p>O uso de pessoal especializado e com uma melhor supervisão dos trabalhos, pode levar a uma maior exatidão dos resultados.</p>
+</section>
+<section id="plan_amostragem" class="level2" title="Clique aqui!" data-number="7.3">
+<h2 title="Clique aqui!" data-number="7.3" class="anchored" data-anchor-id="plan_amostragem"><span class="header-section-number">7.3</span> Planejamento de uma Amostragem</h2>
+<p>Num processo de planejamento amostral cinco etapas devem ser seguidas, a saber:</p>
+<ol type="i">
+<li>Definir a população de interesse:</li>
+</ol>
+<p>É o conjunto de elementos ou objetos que possuem a informação procurada pelo pesquisador, e sobre os quais devem ser feitas inferências.</p>
+<ol start="2" type="i">
+<li>Determinar o arcabouço amostral:</li>
+</ol>
+<p>É uma representação dos elementos da população de interesse. Consiste em uma lista ou um conjunto de instruções para identificar a população de interesse.</p>
+<ol start="3" type="i">
+<li>Escolher a técnica de amostragem:</li>
+</ol>
+<p>A escolha de uma técnica de amostragem envolve várias decisões de natureza ampla. O pesquisador precisa decidir se utiliza amostragem com ou sem reposição, e se trabalha com amostragem probabilística ou não-probabilística.</p>
+<p>Na amostragem com reposição um elemento é escolhido do arcabouço amostral, obtendo-se os dados de interesse. A seguir, coloca-se esse elemento de volta no conjunto. Como consequência, torna-se possível incluir determinado elemento mais de uma vez na amostra.</p>
+<p>Na amostragem sem reposição uma vez selecionado para inclusão na amostra, um elemento é removido do arcabouço amostral, e assim não pode mais ser incluído em outra seleção</p>
+<p>Uma das decisões mais importantes sobre a escolha de uma técnica de amostragem, está em trabalhar-se com amostragem probabilística ou não-probabilística, que será vista com maiores detalhes mais adiante neste capítulo.</p>
+<ol start="4" type="i">
+<li>Determinar o tamanho da amostra:</li>
+</ol>
+<p>O tamanho da amostra diz respeito ao número de elementos a serem incluídos no estudo.</p>
+<ol start="22" type="a">
+<li>Executar o processo de amostragem:</li>
+</ol>
+<p>A execução do processo de amostragem exige uma especificação detalhada de como as decisões sobre o planejamento da amostragem com respeito: à população, ao arcabouço amostral, à unidade amostral, à técnica de amostragem e ao tamanho amostral vão ser implementadas.</p>
+</section>
+<section id="clas_met_amostragem" class="level2" title="Clique aqui!" data-number="7.4">
+<h2 title="Clique aqui!" data-number="7.4" class="anchored" data-anchor-id="clas_met_amostragem"><span class="header-section-number">7.4</span> Classificação das Técnicas Amostrais</h2>
+<p>As técnicas de amostragem podem ser classificadas como: probabilísticas e não-probabilísticas.</p>
+<section id="met_amostragem_probabilistica" class="level3" title="Clique aqui!" data-number="7.4.1">
+<h3 title="Clique aqui!" data-number="7.4.1" class="anchored" data-anchor-id="met_amostragem_probabilistica"><span class="header-section-number">7.4.1</span> Amostragem Probabilística</h3>
+<p>Se todos os elementos da população tiverem probabilidade conhecida e não nula de pertencer à amostra, o processo de amostragem é denominado probabilístico. Neste caso o processo de seleção de amostras é aleatório.</p>
+<p>Como os elementos da amostra são selecionados aleatoriamente, é possível determinar a precisão das estimativas amostrais das características de interesse. É possível construir intervalos de confiança que contenham o verdadeiro valor populacional, com determinado grau de certeza. Isso permite ao pesquisador fazer inferências ou projeções sobre a população de interesse da qual se extraiu a amostra.</p>
+<p>Os métodos de amostragens probabilística são:</p>
+<ul>
+<li>Amostragem Simples ao Acaso (ASA);</li>
+<li>Amostragem Sistemática (AS);</li>
+<li>Amostragem Estratificada (AE);</li>
+<li>Amostragem por Conglomerado (AC).</li>
+</ul>
+</section>
+<section id="met_amostragem_nao_probabilistica" class="level3" title="Clique aqui!" data-number="7.4.2">
+<h3 title="Clique aqui!" data-number="7.4.2" class="anchored" data-anchor-id="met_amostragem_nao_probabilistica"><span class="header-section-number">7.4.2</span> Amostragem Não-Probabilística</h3>
+<p>Neste processo de amostragem a escolha dos elementos da população é não aleatória, isto é, nem todos os elementos podem pertencer à amostra. A amostragem não-probabilística confia no julgamento pessoal do pesquisador, e não na chance de selecionar os elementos amostrais. O pesquisador pode, arbitrária ou conscientemente, decidir quais os elementos a serem incluídos na amostra. Essas técnicas de amostragem não serão vistas em detalhes aqui.</p>
+</section>
+</section>
+<section id="map" class="level2" title="Clique aqui!" data-number="7.5">
+<h2 title="Clique aqui!" data-number="7.5" class="anchored" data-anchor-id="map"><span class="header-section-number">7.5</span> Métodos de Amostragem Probabilística</h2>
+<section id="map_asa" class="level3" title="Clique aqui!" data-number="7.5.1">
+<h3 title="Clique aqui!" data-number="7.5.1" class="anchored" data-anchor-id="map_asa"><span class="header-section-number">7.5.1</span> Amostragem Simples ao Acaso (ASA)</h3>
+<p>O objetivo desse método de amostragem é obter uma amostra representativa quando os elementos da população são homogêneos. Neste método de amostragem todos os elementos da população têm a mesma probabilidade de serem coletados. Isto implica que cada elemento é escolhido independentemente de qualquer outro elemento. A amostra é extraída de um arcabouço amostral por um processo aleatório. Enumeram-se todos os elementos da população e sorteiam-se n elementos através de um dispositivo aleatório qualquer, por exemplo:</p>
+<ul>
+<li>Papéis numerados:</li>
+</ul>
+<p>Neste caso enumeram-se cada elemento da população em pedaços de papel, que são colocados numa urna, misturados e extraídos, para identificar os elementos da amostra.</p>
+<ul>
+<li>Tabela de números aleatórios:</li>
+</ul>
+<p>São tabelas especialmente construídas com a finalidade de se fazer sorteios.</p>
+<ul>
+<li>Pacotes estatísticos:</li>
+</ul>
+<p>São softwares específicos na área estatística.</p>
+<ul>
+<li>Função RANDOM da calculadora:</li>
+</ul>
+<p>Em geral as calculadoras possuem uma função “RANDOM”, que gera um número aleatório entre 0 e 1. Gerado o número aletóro em seguida multiplica-se esse número aleatório pelo tamanho da população N, e pega o número inteiro mais próximo.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 7.1</strong></span> Uma comunidade rural de um certo município é composta por 450 propriedades rurais. Deseja-se sortear uma amostra de 10 propriedades rurais, para uma pesquisa de características sócio-econômicas dos agricultores.</p>
+<p>Primeiro enumeram-se as propriedades rurais de 1 a 450, e posteriormente se procede o sorteio. Por exemplo, usando a tabela de números aleatórios (<a href="tabelas.html#tab-numaleatorio" class="quarto-xref">Tabela A&nbsp;<span>6</span></a>), partindo-se da linha 11 e coluna 6, e selecionando números com três algarismos.</p>
+Assim, as propriedades sorteadas são as de números:
+<center>
+177 – 110 – 122 – 391 – 27 – 129 – 319 – 153 – 404 – 220.
+</center>
+</div>
+</section>
+<section id="map_as" class="level3" title="Clique aqui!" data-number="7.5.2">
+<h3 title="Clique aqui!" data-number="7.5.2" class="anchored" data-anchor-id="map_as"><span class="header-section-number">7.5.2</span> Amostragem Sistemática (AS)</h3>
+<p>O objetivo desse método de amostragem é aumentar a representatividade da amostra dando maior cobertura à população. É usada quando os elementos da população são homogêneos.</p>
+<p>Na amostragem sistemática primeiro enumeram-se os elementos da população <span class="math inline">\((1, 2, \cdots, N)\)</span>, e a seguir calcula-se o passo de amostragem (<span class="math inline">\(k\)</span>) dado por (<a href="#eq-passo" class="quarto-xref"><span>7.1</span></a>). <span id="eq-passo"><span class="math display">\[
+\begin{align}
+    k=\frac{N}{n},
+\end{align}
+\tag{7.1}\]</span></span> em que <span class="math inline">\(N\)</span> é o tamanho da população e <span class="math inline">\(n\)</span> o tamanho da amostra.</p>
+<p>Em seguida, o primeiro elemento da amostra é sorteado, entre 1 e <span class="math inline">\(k\)</span>, por exemplo, o elemento <span class="math inline">\(i\)</span>. Os demais elementos são retirados em uma progressão aritmética, saltando <span class="math inline">\(k\)</span> elementos até completar o total da amostra <span class="math inline">\(n\)</span>, ou seja, <span class="math inline">\(i + k, i + 2k, i + 3k\)</span>, etc.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 7.2</strong></span> Considere um povoamento florestal composto por 10.000 árvores, das quais serão amostradas 50 árvores. Utilizando-se da expressão (<a href="#eq-passo" class="quarto-xref"><span>7.1</span></a>) o passo de amostragem é dado por: <span class="math display">\[
+k=\frac{10.000}{50}=200.
+\]</span> Em seguida sorteia-se a primeira árvore entre 1 e 200, por exemplo, a árvore número 30. As demais são obtidas por: <span class="math display">\[
+30 + 200 = 230;
+\]</span> <span class="math display">\[
+    30 + 2(200) = 430;
+\]</span> <span class="math display">\[
+    30 + 3(200) = 630;
+\]</span> e assim por diante até completar as 50 árvores.</p>
+<p>Logo, a amostra será composta pelas árvores de números: <span class="math display">\[
+30,~230,~ 430,~ 630,~ \cdots, 9830
+\]</span></p>
+</div>
+<p>A amostragem sistemática é menos dispendiosa e mais fácil do que a amostragem simples ao acaso, porque a seleção aleatória é feita uma única vez.</p>
+</section>
+<section id="map_ae" class="level3" title="Clique aqui!" data-number="7.5.3">
+<h3 title="Clique aqui!" data-number="7.5.3" class="anchored" data-anchor-id="map_ae"><span class="header-section-number">7.5.3</span> Amostragem Estratificada (AE)</h3>
+<p>Este método é recomendado quando a população é heterogênea.</p>
+<p>Nesse caso a população é dividida em sub-populações ou estratos, de forma que dentro dos estratos haja a máxima homogeneidade possível. No dimensionamento da amostra leva-se em conta o número de elementos e a variância de cada estrato. Amostras simples ao acaso ou sistemática são retiradas dentro de cada estrato, e o conjunto delas constitui a amostra estratificada.</p>
+<p>As variáveis usadas para dividir a população em estratos chamam-se variáveis de estratificação. Os critérios para a seleção dessas variáveis consistem em homogeneidade, heterogeneidade, relacionamento e custo. Os elementos dentro de um estrato devem ser tão homogêneos quanto possível, mas os elementos em estratos diferentes devem ser os mais heterogêneos possíveis.</p>
+<p>Embora o número de estratos a usar seja uma questão de julgamento, alguns autores sugerem o uso de no máximo seis. Nesse método de amostragem pode-se ter a amostragem proporcionada ou desproporcionada.</p>
+<p>Na amostragem estratificada proporcional, o tamanho da amostra extraída de cada estrato é proporcional ao tamanho relativo do estrato na população total.</p>
+<p>O tamanho da amostra de cada estrato é obtido pela expressão (<a href="#eq-estra" class="quarto-xref"><span>7.2</span></a>). <span id="eq-estra"><span class="math display">\[
+\begin{align}
+    n_i=\frac{N_i}{N}\times n,
+\end{align}
+\tag{7.2}\]</span></span> em que:</p>
+<ul>
+<li><span class="math inline">\(n_i\)</span> é o número de elementos da amostra do estrato <span class="math inline">\(i\)</span>;</li>
+<li><span class="math inline">\(N_i\)</span> é o número de elementos da população do estrato <span class="math inline">\(i\)</span>;</li>
+<li><span class="math inline">\(N\)</span> é o número total de elementos da população;</li>
+<li><span class="math inline">\(n\)</span> é o número total de elementos da amostra.</li>
+</ul>
+<p>Na amostragem estratificada desproporcionada, o tamanho da amostra de cada estrato é proporcional ao tamanho relativo do estrato, e ao desvio padrão da distribuição da característica de interesse, entre todos os elementos naquele estrato.</p>
+<p>O tamanho da amostra de cada estrato é obtido pela expressão (<a href="#eq-estrade" class="quarto-xref"><span>7.3</span></a>). <span id="eq-estrade"><span class="math display">\[
+\begin{align}
+     n_i=\frac{N_i\sigma_i}{\sum_{i=1}^{k} N_i\sigma_i}\times n,
+\end{align}
+\tag{7.3}\]</span></span> em que <span class="math inline">\(\sigma_i\)</span> é o desvio padrão para o estrato <span class="math inline">\(i\)</span>.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 7.3</strong></span> Um Engenheiro Agrônomo realizou um levantamento por amostragem numa região produtora de feijão, do estado de Minas Gerais, com o objetivo de conhecer a qualidade da semente usada pelos agricultores. Esta região consta de 9 municípios e 978 propriedades rurais.</p>
+<p>A estratificação foi feita em relação a área plantada, em ha, e os resultados estão apresentados na <a href="#tbl-distpropfeijao" class="quarto-xref">Tabela&nbsp;<span>7.1</span></a>.</p>
+<div id="tbl-distpropfeijao" class="striped hover quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-distpropfeijao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabela&nbsp;7.1: Distribuição das propriedades rurais que cultivam feijão, numa região do estado de Minas Gerais, 2007.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
+</figcaption>
+<div aria-describedby="tbl-distpropfeijao-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Estrato</th>
+<th style="text-align: center;">Área (ha)</th>
+<th style="text-align: center;">Nº de propriedades <span class="math inline">\((N_i)\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\sigma_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">\([1; 3)\)</span></td>
+<td style="text-align: center;">296</td>
+<td style="text-align: center;">0,51</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math inline">\([3; 6)\)</span></td>
+<td style="text-align: center;">309</td>
+<td style="text-align: center;">0,80</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math inline">\([6; 10)\)</span></td>
+<td style="text-align: center;">156</td>
+<td style="text-align: center;">1,25</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><span class="math inline">\([10; 20)\)</span></td>
+<td style="text-align: center;">140</td>
+<td style="text-align: center;">2,97</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><span class="math inline">\([20; 40)\)</span></td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">4,78</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"><span class="math inline">\([40; 80)\)</span></td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">11,16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Total</td>
+<td style="text-align: center;">978</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Supondo que se deseja extrair uma amostra com 66 propriedades rurais que cultivam feijão.</p>
+<p>Logo, tem-se uma amostra estratificada assim distribuída:</p>
+<table class="table-striped table-hover caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Estrato</th>
+<th style="text-align: center;">Amostra Proporcional</th>
+<th style="text-align: center;">Amostra Desproporcionada</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">18</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Total</td>
+<td style="text-align: center;">66</td>
+<td style="text-align: center;">66</td>
+</tr>
+</tbody>
+</table>
+<p>Por exemplo para o estrato 1, tem-se:</p>
+<ul>
+<li><p>Amostra proporcional: <span class="math display">\[
+n_1=\frac{N_1}{N}\times n=\frac{296}{978}\times 66=20.
+\]</span></p></li>
+<li><p>Amostra desproporcionada:</p></li>
+</ul>
+<p><span class="math display">\[
+n_1=\frac{N_1\sigma_1}{\sum_{i=1}^{6} N_i\sigma_i}\times n=\frac{296(0,51)}{296(0,51)+\cdots+25(11,16)}\times 66=7.
+\]</span></p>
+<p>Em seguida amostras simples ao acaso ou sistemática são retiradas dentro de cada estrato.</p>
+</div>
+</section>
+<section id="map_ac" class="level3" title="Clique aqui!" data-number="7.5.4">
+<h3 title="Clique aqui!" data-number="7.5.4" class="anchored" data-anchor-id="map_ac"><span class="header-section-number">7.5.4</span> Amostragem por Conglomerado (AC)</h3>
+<p>Este método é recomendado quando a população é heterogênea. Na amostragem por conglomerado, primeiro divide-se a população em subpopulações, constituindo os conglomerados. A seguir, seleciona-se uma amostra aleatória de conglomerados, com base em uma técnica de amostragem probabilística, tal como a amostragem simples ao acaso. Para cada conglomerado selecionado, incluem-se todos os elementos na amostra, ou se extrai probabilisticamente uma amostra de elementos. Se todos os elementos de cada conglomerado selecionado são incluídos na amostra, o processo é denominado amostragem por conglomerado de um estágio. Se extrai probabilisticamente uma amostra de elementos de cada conglomerado selecionado, o processo é denominado de amostragem por conglomerado em dois estágios.</p>
+<p>A distinção entre amostragem por conglomerado e amostragem estratificada, é que na amostragem por conglomerado escolhe-se apenas uma amostra de subpopulações (conglomerados), enquanto que na amostragem estratificada todas as subpopulações (estratos) são selecionadas para amostragem posterior.</p>
+<p>Quanto à homogeneidade e heterogeneidade, os critérios para formar conglomerados são opostos aos do caso para estratos. Os elementos dentro de um conglomerado devem ser tão heterogêneos quanto possível, mas os conglomerados em si mesmos devem ser tão homogêneos quanto possível. A ideia é que cada conglomerado deve ser uma representação em pequena escala da população.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 7.4</strong></span> Suponha que se deseja conduzir uma pesquisa sobre características sócio-econômicas dos agricultores da região Sul de Minas Gerais. Para diminuir custos de transporte ao percorrer toda a região, o pesquisador pode concentrar suas entrevistas sobre um número limitado de municípios ou sub-regiões, escolhidos ao acaso. Todos os agricultores nas sub-regiões escolhidas podem ser considerados como uma amostra da população de agricultores do Sul de Minas Gerais.</p>
+<p>Assim, tem-se:</p>
+<ul>
+<li>População: N agricultores da região Sul de Minas Gerais;</li>
+<li>Conglomerados: M municípios da região Sul de Minas Gerais;</li>
+<li>Amostra de Conglomerados: m municípios da região Sul de Minas Gerais;</li>
+<li>Amostra de Elementos: n agricultores dos m municípios.</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="tamanho_amostral" class="level2" title="Clique aqui!" data-number="7.6">
+<h2 title="Clique aqui!" data-number="7.6" class="anchored" data-anchor-id="tamanho_amostral"><span class="header-section-number">7.6</span> Determinação do Tamanho da Amostra</h2>
+<p>O tamanho da amostra determinado estatisticamente, é o tamanho final da amostra. A abordagem estatística considerada para determinar o tamanho da amostra se baseia na inferência estatística. Nessa abordagem o nível de precisão e o erro é especificado antecipadamente. Essa abordagem se baseia na construção de intervalos de confiança em torno de médias ou proporções. Este assunto será visto com detalhes no <a href="cap09.html" class="quarto-xref"><span>Capítulo 9</span></a>.</p>
+</section>
+<section id="exprop" class="level2 unnumbered" title="Clique aqui!">
+<h2 class="unnumbered anchored" title="Clique aqui!" data-anchor-id="exprop">Exercícios propostos</h2>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 7.1</strong></span> Em que situações você recomendaria o processo de amostragem simples ao acaso e amostragem estratificada.</p>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 7.2</strong></span> Qual é a diferença entre a amostragem probabilística e não-probabilística.</p>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 7.3</strong></span> Apresente críticas aos seguintes métodos amostrais: a) Para se estudar a proporção de vacas com brucelose na região Sul de Minas Gerais inspecionou-se 10 fazendas nas cidades de Caxambu e Guaxupé; b) Para se obter a opinião dos brasileiros sobre o plano de reforma agrária decidiu-se entrevistar os associados de uma sociedade ruralista; c) Para diagnosticar a situação econômica da agropecuária paulista foram entrevistados os produtores de cana-de-açúcar da cidade de Piracicaba, SP.</p>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 7.4</strong></span> Em que circunstâncias práticas você empregaria o processo de amostragem simples ao acaso, em detrimento dos demais processos de amostragem probabilísticos. Qual é a principal diferença desse método em relação à amostragem estratificada.</p>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 7.5</strong></span> Uma empresa do setor cafeeiro da região do sul de Minas Gerais dispõe de 3.200 funcionários exercendo atividades de campo (trabalho na lavoura), de armazenamento (trabalho em secadores, armazéns e beneficiadoras), de industrialização (torrefação, moagem e embalagens), de administração (trabalho em escritório), e de gerência e exportação (direção e vendas). Deseja-se sortear uma amostra de 50 funcionários nesta empresa, com o objetivo de conhecer alguns aspectos sócio-econômicos e culturais destes funcionários. A população se distribui nas seguintes categorias:</p>
+<table class="table-striped table-hover caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Atividade</th>
+<th style="text-align: center;">Nº de Empregados</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Campo</td>
+<td style="text-align: center;">1.600</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Armazém</td>
+<td style="text-align: center;">720</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Indústria</td>
+<td style="text-align: center;">480</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Administração</td>
+<td style="text-align: center;">240</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Gerência e Exportação</td>
+<td style="text-align: center;">160</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Total</td>
+<td style="text-align: center;">3.200</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>É razoável levantar as informações desejadas através de uma amostragem simples ao acaso;</li>
+<li>Faça uma amostragem estratificada proporcional determinando o tamanho da amostra em cada estrato;</li>
+<li>Mediante o uso da tabela de números aleatórios, selecione os funcionários que farão parte da amostra determinada segundo o processo de amostragem estabelecido no item (b). Explique com detalhes o sorteio, identificando os indivíduos sorteados;</li>
+<li>Repita o item (c), porém em lugar de retirar uma amostra simples ao acaso em cada estrato, retire as amostras utilizando um processo de amostragem sistemática.</li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 7.6</strong></span> Proponha um método de amostragem adequado para cada situação descrita abaixo, inclusive explicando como ele seria executado.</p>
+<ol type="a">
+<li>Uma amostra de 40 leitões de uma granja, para serem usados num experimento que visa comparar quatro rações de engorda;</li>
+<li>Uma amostra composta por 85 propriedades rurais de um município, para aplicação de um questionário sobre atividades rurais;</li>
+<li>Uma amostra de 40 frutos de banana maçã numa plantação com 8.000 bananeiras;</li>
+<li>Para estimar o volume de madeira de um povoamento florestal de eucalipto com 7.500 árvores, deseja-se retirar uma amostra com 30 árvores;</li>
+<li>Uma amostra de 10 folhas de uma laranjeira para avaliar o teor de cálcio.</li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 7.7</strong></span> O conhecimento do solo para exploração agrícola é muito importante, e está associado à descrição de suas propriedades físicas, químicas e biológicas. Essa descrição é obtida através de informações levantadas por amostragem no solo. Como você faria uma amostragem numa área de aproximadamente 6 ha, cuja área será implantada uma cultura perene.</p>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 7.8</strong></span> Suponhamos que se deseja conhecer a qualidade do leite produzido pelos produtores de leite da região do Vale do Paraíba, SP. Planeje uma amostragem por conglomerados.</p>
+</div>
 
 
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
@@ -310,6 +734,13 @@ SOUZA, G. S. <strong>Introdução aos <span>M</span>odelos de <span>R</span>egre
 STEEL, R. G. D.; TORRIE, J. H. <strong>Principles and procedures of statistics: A biometrical approach</strong>. 2. ed. New York: McGraw-Hill Book Company, 1980. p. 512
 </div>
 </div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Fonte: Dados fictícios.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
