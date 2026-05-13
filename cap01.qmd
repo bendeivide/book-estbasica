@@ -330,3 +330,123 @@ a) $\sum_{i=1}^{n}\left(x_{i}- \bar{\text{x}} \right)=0$, onde: $\bar{\text{x}}=
 b) $\frac{\sum_{i=1}^{n}\left(x_i- \bar{\text{x}} \right)^2}{n-1}=\frac{\sum_{i=1}^{n}x_i^2-\frac{\left(\sum_{i=1}^{n}x_i\right)^2}{n}}{n-1}$.
 
 :::
+
+# Exercícios propostos
+
+:::{#exr-}
+
+Os pesos dos animais de um rebanho bovino tem distribuição normal com média 245,0 kg e variância 576,0 kg$^2$.
+
+a) Qual a probabilidade de um animal pesar menos de 240,0 kg;
+
+b) Qual a probabilidade de um lote de 18 animais ter média menor que 240,0 kg;
+
+c) Uma balança tem capacidade máxima para pesar 2.100,0 kg. Qual a probabilidade de ultrapassar a capacidade da balança uma amostra de:
+
+- 8 bovinos;
+- 9 bovinos;
+- 10 bovinos.
+
+d) Que orientação você passaria baseando nos resultados do item (c) para o funcionamento racional da balança;
+
+e) Se o rebanho tem 210 bovinos, qual a probabilidade de um lote de 16 animais ter média menor que 240,0 kg.
+
+:::
+
+:::{#exr-}
+
+Uma máquina de empacotar café o faz segundo uma distribuição normal, com média $\mu$ e variância 100,0 g$^2$.
+
+a) Em quanto deve ser regulado o peso médio $\mu$ para que apenas 10,0\% dos pacotes tenham menos do que 500,0 g;
+
+b) Com a máquina assim regulada, qual é a probabilidade de que o peso total de 4 pacotes escolhidos ao acaso seja inferior a 2,0 kg.
+
+:::
+
+:::{#exr-}
+
+A produção de tubérculos de batata segue uma distribuição normal de média 200,0 g e variância 6.400,0 g$^2$.
+
+a) Qual a probabilidade de uma amostra de 40 tubérculos tomados ao acaso possuir uma média entre 200,0 e 210,0 g;
+
+b) Qual a probabilidade desta mesma amostra possuir um média entre 185,0 e 220,0 g.
+
+:::
+
+:::{#exr-}
+
+Um Engenheiro Agrícola quer dimensionar galpões de frangos para uma granja, de tal maneira que cada galpão seja a carga de frangos de um caminhão. O máximo que um caminhão pode transportar é 5.000,0 kg de peso de frangos, descontado o peso das gaiolas. O Engenheiro sabe que os frangos têm peso final segundo uma distribuição normal de média 2,10 kg e variância 0,0225 kg$^2$. Se os galpões forem dimensionados para conterem 2.375 pintinhos, o total de peso de frangos excederá a capacidade de carga do caminhão?
+
+:::
+
+:::{#exr-}
+
+Um Engenheiro Florestal conduziu um estudo em um povoamento florestal, e verificou que o DAP (diâmetro à altura do peito) médio das árvores é de 18,0 cm e o desvio padrão de 2,5 cm. A probabilidade de que o DAP médio em uma amostra com 11 árvores seja maior que um certo valor é de 10,0\%. Qual é este valor?
+
+:::
+
+:::{#exr-}
+
+Sabe-se que o rendimento, em ton/ha, de dois sistemas de plantio de arroz, sequeiro e irrigado por inundação, obedecem a distribuição normal, com médias 2,5 e 3,0 ton/ha, e variâncias 4,0 e 10,0 (ton/ha)$^2$, respectivamente. Foram cultivadas 10 parcelas com arroz de sequeiro e 9 parcelas com arroz irrigado por inundação. Qual é a probabilidade de que a diferença do rendimento médio nestas parcelas seja menor do que 0,5 ton/ha.
+
+:::
+
+:::{#exr-}
+
+Sabe-se que 20,0\% das plantas de uma lavoura de milho estão contaminadas por uma certa doença.
+
+a) Qual a probabilidade de uma amostra de 100 plantas apresentar proporção de contaminação?
+
+- acima de 15,0\%;
+- acima de 30,0\%;
+- abaixo de 14,0\%.
+
+b) Qual a probabilidade de uma amostra de 50 plantas apresentar proporção de contaminação?
+
+- acima de 15,0\%;
+- acima de 30,0\%;
+- abaixo de 14,0\%.
+
+:::
+
+:::{#exr-}
+
+Use a Tabela de $\chi^2$ para obter as seguintes probabilidades com representação gráfica.
+
+a) $\chi_{0,01}^2$ com $\nu=2$;
+
+b) $\chi_{0,05}^2$ com $n=5$;
+
+c) $\chi_{0,975}^2$ com $n=16$;
+
+d) $\chi_{0,50}^2$ com $\nu=10$.
+
+:::
+
+:::{#exr-}
+
+Use a Tabela de $t$ para obter as seguintes probabilidades com representação gráfica.
+
+a) $t_{0,10}$ com $n=5$;
+
+b) $t_{0,025}$ com $\nu=8$;
+
+c) $t_{0,95}$ com $n=12$;
+
+d) $t_{0,50}$ com $\nu=20$.
+
+:::
+
+:::{#exr-}
+
+Use a Tabela de F para obter as seguintes probabilidades com representação gráfica.
+
+a) $F_{0,01}$ com $n_{1}=5$ e $n_{2}=21$;
+
+b) $F_{0,05}$ com $\nu_{1}=12$ e $\nu_{2}=4$;
+
+c) $F_{0,05}$ com $n_{1}=7$ e $n_{2}=11$;
+
+d) $F_{0,01}$ com $\nu_{1}=6$ e $\nu_{2}=10$.
+
+:::

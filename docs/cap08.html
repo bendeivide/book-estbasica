@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Distribuições de Amostragem – Estatística Básica aplicada às Ciências Agrárias</title>
+<title>8&nbsp; Distribuição de Amostragem – Estatística Básica aplicada às Ciências Agrárias</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -90,6 +90,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="custom.scss">
 </head>
@@ -103,7 +132,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap08.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Distribuições de Amostragem</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cap08.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Distribuição de Amostragem</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -186,7 +215,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cap08.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Distribuições de Amostragem</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Distribuição de Amostragem</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -224,15 +253,39 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><span class="header-section-number">8.1</span> Introdução</a></li>
+  <li><a href="#distribuição-amostral-da-média" id="toc-distribuição-amostral-da-média" class="nav-link" data-scroll-target="#distribuição-amostral-da-média"><span class="header-section-number">8.2</span> Distribuição Amostral da Média</a>
+  <ul class="collapse">
+  <li><a href="#sec-distmedia01" id="toc-sec-distmedia01" class="nav-link" data-scroll-target="#sec-distmedia01"><span class="header-section-number">8.2.1</span> Amostragem em Populações com Distribuição Normal</a></li>
+  <li><a href="#sec-distmedia02" id="toc-sec-distmedia02" class="nav-link" data-scroll-target="#sec-distmedia02"><span class="header-section-number">8.2.2</span> Amostragem em Populações com Qualquer Distribuição de Probabilidades</a></li>
+  </ul></li>
+  <li><a href="#distribuição-amostral-da-diferença-entre-duas-médias" id="toc-distribuição-amostral-da-diferença-entre-duas-médias" class="nav-link" data-scroll-target="#distribuição-amostral-da-diferença-entre-duas-médias"><span class="header-section-number">8.3</span> Distribuição Amostral da Diferença entre Duas Médias</a></li>
+  <li><a href="#distribuição-amostral-das-proporções" id="toc-distribuição-amostral-das-proporções" class="nav-link" data-scroll-target="#distribuição-amostral-das-proporções"><span class="header-section-number">8.4</span> Distribuição Amostral das Proporções</a></li>
+  <li><a href="#distribuição-amostral-para-a-diferença-entre-duas-proporções" id="toc-distribuição-amostral-para-a-diferença-entre-duas-proporções" class="nav-link" data-scroll-target="#distribuição-amostral-para-a-diferença-entre-duas-proporções"><span class="header-section-number">8.5</span> Distribuição Amostral para a Diferença entre Duas Proporções</a></li>
+  <li><a href="#outras-distribuições-amostrais" id="toc-outras-distribuições-amostrais" class="nav-link" data-scroll-target="#outras-distribuições-amostrais"><span class="header-section-number">8.6</span> Outras Distribuições Amostrais</a>
+  <ul class="collapse">
+  <li><a href="#distribuição-de-qui-quadrado" id="toc-distribuição-de-qui-quadrado" class="nav-link" data-scroll-target="#distribuição-de-qui-quadrado"><span class="header-section-number">8.6.1</span> Distribuição de Qui-quadrado</a></li>
+  </ul></li>
+  <li><a href="#distribuição-amostral-da-variância" id="toc-distribuição-amostral-da-variância" class="nav-link" data-scroll-target="#distribuição-amostral-da-variância"><span class="header-section-number">8.7</span> Distribuição Amostral da Variância</a>
+  <ul class="collapse">
+  <li><a href="#distribuição-t-student" id="toc-distribuição-t-student" class="nav-link" data-scroll-target="#distribuição-t-student"><span class="header-section-number">8.7.1</span> Distribuição t-Student</a></li>
+  <li><a href="#distribuição-f-snedecor" id="toc-distribuição-f-snedecor" class="nav-link" data-scroll-target="#distribuição-f-snedecor"><span class="header-section-number">8.7.2</span> Distribuição F-Snedecor</a></li>
+  </ul></li>
+  <li><a href="#exercícios-propostos" id="toc-exercícios-propostos" class="nav-link" data-scroll-target="#exercícios-propostos">Exercícios propostos</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-chap08" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Distribuições de Amostragem</span></span></h1>
+<h1 class="title"><span id="chap08" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Distribuição de Amostragem</span></span></h1>
 </div>
 
 
@@ -249,6 +302,1232 @@ div.csl-indent {
 </header>
 
 
+<section id="introdução" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">8.1</span> Introdução</h2>
+<p>Numa população de <span class="math inline">\(N\)</span> elementos podem-se extrair diferentes amostras aleatórias de <span class="math inline">\(n\)</span> elementos. Para cada amostra é possível determinar uma estatística, como por exemplo, a média e a variância. Os valores dessas estatísticas variam de amostra para amostra, apresentando uma distribuição amostral. Dessa forma, o conhecimento das distribuições amostrais é importante, para que as inferências sobre os parâmetros da população com base em informações contidas nas amostras tenham validade.</p>
+</section>
+<section id="distribuição-amostral-da-média" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="distribuição-amostral-da-média"><span class="header-section-number">8.2</span> Distribuição Amostral da Média</h2>
+<section id="sec-distmedia01" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="sec-distmedia01"><span class="header-section-number">8.2.1</span> Amostragem em Populações com Distribuição Normal</h3>
+<p>Suponha que várias amostras aleatórias de tamanho <span class="math inline">\(n\)</span>, sejam retiradas de uma população normalmente distribuída, de média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>, calculando para cada amostra a média amostral, então a distribuição das médias amostrais também possuirá uma distribuição normal com:</p>
+<ul>
+<li>Média:</li>
+</ul>
+<p><span class="math display">\[
+\mu_{\bar{x}}=\mu
+\]</span></p>
+<ul>
+<li>Variância:</li>
+</ul>
+<p><span class="math display">\[
+\sigma_{\bar{x}}^2=\frac{\sigma^2}{n}
+\]</span></p>
+<p>A <a href="#fig-damedia" class="quarto-xref">Figura&nbsp;<span>8.1</span></a> mostra a representação gráfica da distribuição.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-damedia" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-damedia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/damedia.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-damedia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.1: Distribuição de <span class="math inline">\(\bar{x}\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Em notação usa-se:</p>
+<p><span class="math display">\[
+\bar{x} \sim N\left(\mu; \frac{\sigma^2}{n} \right)
+\]</span></p>
+<p>A transformação de <span class="math inline">\(Z\)</span> é dada por:</p>
+<p><span id="eq-zmedia"><span class="math display">\[
+Z=\frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}}
+\tag{8.1}\]</span></span></p>
+<p>em que <span class="math inline">\(Z \sim N(0,0; 1,0)\)</span>.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 8.1</strong></span> Seja uma variedade de milho, em que a altura (<span class="math inline">\(X\)</span>) segue uma distribuição normal, de média 201,0 cm e variância 242,0 cm<span class="math inline">\(^2\)</span>.</p>
+<p>Assim,</p>
+<p><span class="math display">\[
+X \sim N(201,0; 242,0)
+\]</span></p>
+<p>Retirando-se nesta população amostras aleatórias de 25 plantas, a distribuição amostral da média é uma distribuição normal com:</p>
+<ul>
+<li>Média:</li>
+</ul>
+<p><span class="math display">\[
+\mu_{\bar{x}}=\mu=201,0 \text{ cm}
+\]</span></p>
+<ul>
+<li>Variância:</li>
+</ul>
+<p><span class="math display">\[
+\sigma_{\bar{x}}^2=\frac{\sigma^2}{n}=\frac{242,0}{25}=9,68 \text{ cm}^2
+\]</span></p>
+<p>Assim, pode-se, por exemplo, determinar a probabilidade de <span class="math inline">\(\bar{x}\)</span> ser maior que 205,0 cm.</p>
+<p><span class="math display">\[
+P(\bar{x}&gt;205,0)=?
+\]</span></p>
+<p>Tem-se que o valor de <span class="math inline">\(Z\)</span> calculado através da Equação <a href="#eq-zmedia" class="quarto-xref"><span>8.1</span></a>, é dado por:</p>
+<p><span class="math display">\[
+Z=\frac{205,0-201,0}{\frac{15,56}{\sqrt{25}}}=1,29
+\]</span></p>
+<p>Assim,</p>
+<p><span class="math display">\[
+P(\bar{x}&gt;205,0)=P(Z&gt;1,29)=0,5-P(0,0 &lt; Z &lt; 1,29)
+\]</span></p>
+<p>Consultando a Tabela de <span class="math inline">\(Z\)</span> (Tabela <a href="tabelas.html#tab-normal01" class="quarto-xref">Tabela A&nbsp;<span>1</span></a>), tem-se que:</p>
+<p><span class="math display">\[
+P(0,0 &lt; Z &lt; 1,29)=0,4015
+\]</span></p>
+<p>Logo,</p>
+<p><span class="math display">\[
+P(\bar{x}&gt;205,0)=0,5-0,4015=0,0985=9,85\%
+\]</span></p>
+<p>cuja representação gráfica é dada na <a href="#fig-exem81" class="quarto-xref">Figura&nbsp;<span>8.2</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-exem81" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-exem81-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/exem8.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-exem81-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.2: Área correspondente a probabilidade de <span class="math inline">\(\bar{x}\)</span> ser maior que 205,0 cm.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-distmedia02" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="sec-distmedia02"><span class="header-section-number">8.2.2</span> Amostragem em Populações com Qualquer Distribuição de Probabilidades</h3>
+<p>Suponha que várias amostras aleatórias de tamanho <span class="math inline">\(n\)</span>, sejam retiradas de uma população com qualquer distribuição de probabilidades, de média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>, a distribuição das médias amostrais será uma distribuição normal aproximada com:</p>
+<ul>
+<li>Média:</li>
+</ul>
+<p><span class="math display">\[
+\mu_{\bar{x}}=\mu
+\]</span></p>
+<ul>
+<li>Variância:</li>
+</ul>
+<p><span class="math display">\[
+\sigma_{\bar{x}}^2=\frac{\sigma^2}{n}
+\]</span></p>
+<p>Em notação usa-se:</p>
+<p><span class="math display">\[
+\bar{x} \sim N_{\text{Aproximada}}\left(\mu; \frac{\sigma^2}{n} \right)
+\]</span></p>
+<p>A representação gráfica é dada pela <a href="#fig-tlc" class="quarto-xref">Figura&nbsp;<span>8.3</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-tlc" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tlc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/damedia.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tlc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.3: Distribuição de <span class="math inline">\(\bar{x}\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Este resultado é conhecido como <strong>Teorema Central do Limite</strong>, cujo valor da transformação <span class="math inline">\(Z\)</span> é dado por:</p>
+<p><span id="eq-zmedia1"><span class="math display">\[
+Z=\frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}}
+\tag{8.2}\]</span></span></p>
+<p>em que <span class="math inline">\(Z \sim N(0,0; 1,0)\)</span>.</p>
+<div id="exm-tlcbinomial" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 8.2</strong></span> Numa população qualquer, determinada variável <span class="math inline">\(X\)</span> tem distribuição binomial com:</p>
+<p><span class="math display">\[
+\mu=5,0 \text{ e } \sigma^2=16,0
+\]</span></p>
+<p>Retirando-se nesta população amostras aleatórias com <span class="math inline">\(n = 16\)</span> elementos, calculando-se as médias em cada amostra, a distribuição amostral da média é uma distribuição normal aproximada com:</p>
+<ul>
+<li>Média:</li>
+</ul>
+<p><span class="math display">\[
+\mu_{\bar{x}}=\mu=5,0
+\]</span></p>
+<ul>
+<li>Variância:</li>
+</ul>
+<p><span class="math display">\[
+\sigma_{\bar{x}}^2=\frac{\sigma^2}{n}=\frac{16,0}{16}=1,0
+\]</span></p>
+<p>ou seja,</p>
+<p><span class="math display">\[
+\bar{x}\sim N_{\text{Aproximada}}(5,0; 1,0)
+\]</span></p>
+</div>
+<div id="exm-tlcdiscreta" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 8.3</strong></span> Seja uma população com distribuição uniforme discreta, composta dos números 1, 2, 3 e 4.</p>
+<p>Assim,</p>
+<p><span class="math display">\[
+P(X=x)=
+\begin{cases}
+\frac{1}{4} &amp; \textrm{para } x = 1, 2, 3, 4 \\
+0,0 &amp; \textrm{para outros valores de } x
+\end{cases}
+\]</span></p>
+<p>A média da população calculada através da Equação <a href="cap05.html#eq-expd" class="quarto-xref"><span>5.10</span></a> é dada por:</p>
+<p><span class="math display">\[
+\mu=
+1\left(\frac{1}{4} \right)+
+2\left(\frac{1}{4} \right)+
+3\left(\frac{1}{4} \right)+
+4\left(\frac{1}{4} \right)=
+\frac{10}{4}=
+\frac{5}{2}=2,5
+\]</span></p>
+<p>Para o cálculo da variância tem-se que a <span class="math inline">\(E(X^2)\)</span> é calculado através da Equação <a href="cap05.html#eq-vd" class="quarto-xref"><span>5.13</span></a>, e dada por:</p>
+<p><span class="math display">\[
+E(X^2)=
+1^2\left(\frac{1}{4} \right)+
+2^2\left(\frac{1}{4} \right)+
+3^2\left(\frac{1}{4} \right)+
+4^2\left(\frac{1}{4} \right)=
+\frac{30}{4}
+\]</span></p>
+<p>Logo, a variância da população calculada através da Equação <a href="cap05.html#eq-varal" class="quarto-xref"><span>5.12</span></a> é dada por:</p>
+<p><span class="math display">\[
+\sigma^2=
+\frac{30}{4}-
+\left(\frac{5}{2} \right)^2=
+\frac{5}{4}
+\]</span></p>
+<p>Assim, o desvio padrão calculado através da Equação <a href="cap04.html#eq-dpam" class="quarto-xref"><span>4.7</span></a> é dado por:</p>
+<p><span class="math display">\[
+\sigma=
+\sqrt{\frac{5}{4}}=
+\frac{\sqrt{5}}{2}
+\]</span></p>
+<p>Para determinar a distribuição amostral da média, considere todas as possíveis amostras com <span class="math inline">\(n = 2\)</span>, tomadas com reposição, e suas respectivas médias:</p>
+<table class="table-striped table-hover caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Amostras</th>
+<th style="text-align: center;">Médias</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">(1, 1) (2, 1) (3, 1) (4, 1)</td>
+<td style="text-align: center;">1,0 1,5 2,0 2,5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">(1, 2) (2, 2) (3, 2) (4, 2)</td>
+<td style="text-align: center;">1,5 2,0 2,5 3,0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">(1, 3) (2, 3) (3, 3) (4, 3)</td>
+<td style="text-align: center;">2,0 2,5 3,0 3,5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">(1, 4) (2, 4) (3, 4) (4, 4)</td>
+<td style="text-align: center;">2,5 3,0 3,5 4,0</td>
+</tr>
+</tbody>
+</table>
+<p>A distribuição amostral das médias é dada por:</p>
+<table class="table-striped table-hover caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(\bar{x_i}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(F_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P(\bar{x_i})\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1,0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{16}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1,5</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{2}{16}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2,0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{3}{16}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2,5</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{4}{16}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3,0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{3}{16}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3,5</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{2}{16}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4,0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{16}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"><strong>16</strong></td>
+<td style="text-align: center;"><strong>1,0</strong></td>
+</tr>
+</tbody>
+</table>
+<p>A média da distribuição amostral de <span class="math inline">\(\bar{x}\)</span> calculada através da Equação <a href="cap05.html#eq-expd" class="quarto-xref"><span>5.10</span></a> é dada por:</p>
+<p><span class="math display">\[
+\mu=
+1,0\left(\frac{1,0}{16} \right)+
+1,5\left(\frac{2}{16} \right)+
+\cdots+
+4,0\left(\frac{1}{16} \right)=
+\frac{40}{16}=
+\frac{10}{4}=2,5
+\]</span></p>
+<p>Tem-se que <span class="math inline">\(E(\bar{x}^2)\)</span> calculado através da Equação <a href="cap05.html#eq-vd" class="quarto-xref"><span>5.13</span></a> é dado por:</p>
+<p><span class="math display">\[
+E(\bar{x}^2)=
+1,0^2\left(\frac{1,0}{16} \right)+
+1,5^2\left(\frac{2}{16} \right)+
+\cdots+
+4,0^2\left(\frac{1}{16} \right)=
+\frac{110}{16}
+\]</span></p>
+<p>Assim, a variância da população calculada através da Equação <a href="cap05.html#eq-varal" class="quarto-xref"><span>5.12</span></a> é dada por:</p>
+<p><span class="math display">\[
+\sigma^2=
+\frac{110}{16}-
+\left(\frac{10}{4} \right)^2=
+\frac{5}{8}
+\]</span></p>
+<p>Logo, o desvio padrão calculado através da Equação <a href="cap04.html#eq-dpam" class="quarto-xref"><span>4.7</span></a> é dado por:</p>
+<p><span class="math display">\[
+\sigma=
+\sqrt{\frac{5}{8}}=
+\frac{\sqrt{5}}{2\sqrt{2}}
+\]</span></p>
+<p>Pelos resultados observa-se que:</p>
+<ul>
+<li>Média:</li>
+</ul>
+<p><span class="math display">\[
+\mu_{\bar{x}}=\mu
+\Rightarrow
+\frac{5}{2}=\frac{5}{2}
+\]</span></p>
+<ul>
+<li>Desvio padrão:</li>
+</ul>
+<p><span class="math display">\[
+\sigma_{\bar{x}}=
+\frac{\sigma}{\sqrt{n}}
+\Rightarrow
+\frac{\sqrt{5}}{2\sqrt{2}}=
+\frac{\frac{\sqrt{5}}{2}}{\sqrt{2}}=
+\frac{\sqrt{5}}{2\sqrt{2}}
+\]</span></p>
+<p>O que indica que os resultados estão de acordo com o Teorema Central do Limite.</p>
+<p>A <a href="#fig-distx" class="quarto-xref">Figura&nbsp;<span>8.4</span></a> mostra a distribuição da variável <span class="math inline">\(X\)</span>, e a <a href="#fig-tlcxbar" class="quarto-xref">Figura&nbsp;<span>8.5</span></a> a distribuição de <span class="math inline">\(\bar{x}\)</span>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-distx" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-distx-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/exem8.3a.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-distx-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.4: Distribuição de <span class="math inline">\(\bar{x}\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-tlcxbar" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tlcxbar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/exem8.3b.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tlcxbar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.5: Distribuição de <span class="math inline">\(\bar{x}\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="distribuição-amostral-da-diferença-entre-duas-médias" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="distribuição-amostral-da-diferença-entre-duas-médias"><span class="header-section-number">8.3</span> Distribuição Amostral da Diferença entre Duas Médias</h2>
+<p>Se várias amostras aleatórias independentes, de tamanhos <span class="math inline">\(n_1\)</span> e <span class="math inline">\(n_2\)</span>, são retiradas de duas populações, de médias <span class="math inline">\(\mu_1\)</span> e <span class="math inline">\(\mu_2\)</span>, e variâncias <span class="math inline">\(\sigma_1^2\)</span> e <span class="math inline">\(\sigma_2^2\)</span>, respectivamente, determinando-se em cada amostra a média amostral. A distribuição amostral das diferenças entre as médias amostrais <span class="math inline">\((\bar{x}_1 - \bar{x}_2)\)</span>, será uma distribuição normal aproximada com:</p>
+<ul>
+<li>Média:</li>
+</ul>
+<p><span class="math display">\[
+\mu_{\bar{x}_{1}-\bar{x}_{2}}=\mu_{1} - \mu_{2}
+\]</span></p>
+<ul>
+<li>Variância:</li>
+</ul>
+<p><span class="math display">\[
+\sigma_{\bar{x}_{1}-\bar{x}_{2}}^{2}=
+\frac{\sigma_{1}^2}{n_1}+
+\frac{\sigma_{2}^2}{n_2}
+\]</span></p>
+<p>Em notação, a distribuição para a diferença entre duas médias amostrais <span class="math inline">\((\bar{x}_1 - \bar{x}_2)\)</span>, é dada por:</p>
+<p><span class="math display">\[
+{\bar{x}_{1}-\bar{x}_{2}}
+\sim
+N_{\text{Aproximada}}
+\left(
+\mu_{1} - \mu_{2};
+\frac{\sigma_{1}^2}{n_1}+
+\frac{\sigma_{2}^2}{n_2}
+\right)
+\]</span></p>
+<p>A transformação de <span class="math inline">\(Z\)</span> é dada pela Equação <a href="#eq-zdifmedia" class="quarto-xref"><span>8.3</span></a>.</p>
+<p><span id="eq-zdifmedia"><span class="math display">\[
+Z=
+\frac{
+(\bar{x}_{1}-\bar{x}_{2})-(\mu_{1} - \mu_{2})
+}{
+\frac{\sigma_1}{\sqrt{n_1}}+
+\frac{\sigma_2}{\sqrt{n_2}}
+}
+\tag{8.3}\]</span></span></p>
+<p>em que <span class="math inline">\(Z \sim N(0,0; 1,0)\)</span>.</p>
+<p>A representação gráfica é dada pela <a href="#fig-damediaduasamostras" class="quarto-xref">Figura&nbsp;<span>8.6</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-damediaduasamostras" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-damediaduasamostras-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/damediaduasamostras.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-damediaduasamostras-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.6: Distribuição de <span class="math inline">\((\bar{x}_1 - \bar{x}_2)\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="exm-difduasmedias" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 8.4</strong></span> Sejam:</p>
+<p><span class="math display">\[
+X_1 : \text{Peso, em kg, de suínos da raça 1}
+\]</span></p>
+<p><span class="math display">\[
+X_2 : \text{Peso, em kg, de suínos da raça 2}
+\]</span></p>
+<p>Considere que:</p>
+<p><span class="math display">\[
+X_1 \sim N(110,0; 166,0)
+\]</span></p>
+<p><span class="math display">\[
+X_2 \sim N(107,0; 127,0)
+\]</span></p>
+<p>Se da população de suínos da raça 1 e da raça 2, são retiradas amostras de tamanhos <span class="math inline">\(n_{1} = 10\)</span> e <span class="math inline">\(n_{2} = 11\)</span>, respectivamente, determinar:</p>
+<p><span class="math display">\[
+P[(\bar{x}_{1}-\bar{x}_{2})&gt;4,0]
+\]</span></p>
+<p>Tem-se então que a distribuição amostral das diferenças entre as médias amostrais é uma distribuição normal com:</p>
+<ul>
+<li>Média:</li>
+</ul>
+<p><span class="math display">\[
+\mu_{\bar{x}_{1}-\bar{x}_{2}}=
+\mu_{1} - \mu_{2}=
+110,0-107,0=
+3,0 \text{ kg}
+\]</span></p>
+<ul>
+<li>Variância:</li>
+</ul>
+<p><span class="math display">\[
+\sigma_{\bar{x}_{1}-\bar{x}_{2}}^{2}=
+\frac{\sigma_{1}^2}{n_1}+
+\frac{\sigma_{2}^2}{n_2}=
+\frac{166,0}{10}+
+\frac{127,0}{11}=
+16,60+11,55=
+28,15 \text{ kg}^{2}
+\]</span></p>
+<p>O valor da transformação <span class="math inline">\(Z\)</span> é calculado através da Equação <a href="#eq-zdifmedia" class="quarto-xref"><span>8.3</span></a>, e dado por:</p>
+<p><span class="math display">\[
+Z=
+\frac{4,0-3,0}{\sqrt{28,15}}=
+0,19
+\]</span></p>
+<p>Consultando a Tabela de <span class="math inline">\(Z\)</span> (<a href="tabelas.html#tab-normal01" class="quarto-xref">Tabela A&nbsp;<span>1</span></a>), tem-se que:</p>
+<p><span class="math display">\[
+P(0,0&lt;Z&lt;0,19)=0,0753
+\]</span></p>
+<p>Logo, segue que:</p>
+<p><span class="math display">\[
+P[(\bar{x}_{1}-\bar{x}_{2})&gt;4,0]
+=
+P(Z&gt;0,19)=
+0,5-P(0,0&lt;Z&lt;0,19)
+\]</span></p>
+<p><span class="math display">\[
+=
+0,5-0,0753=
+0,4247=
+42,47\%
+\]</span></p>
+<p>cuja representação gráfica é apresentada na <a href="#fig-exem85" class="quarto-xref">Figura&nbsp;<span>8.7</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-exem85" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-exem85-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/exem8.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-exem85-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.7: Área correspondente à probabilidade de <span class="math inline">\((\bar{x}_1 - \bar{x}_2)\)</span> ser maior que <span class="math inline">\(4,0\)</span> kg.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="distribuição-amostral-das-proporções" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="distribuição-amostral-das-proporções"><span class="header-section-number">8.4</span> Distribuição Amostral das Proporções</h2>
+<p>Numa amostra aleatória de <span class="math inline">\(n\)</span> elementos, obtém-se uma estimativa da proporção <span class="math inline">\(p\)</span> de elementos com determinada característica da população, através da expressão <a href="#eq-prop" class="quarto-xref"><span>8.4</span></a>.</p>
+<p><span id="eq-prop"><span class="math display">\[
+\hat{p}=\frac{x}{n}
+\tag{8.4}\]</span></span></p>
+<p>em que <span class="math inline">\(x\)</span> é uma variável aleatória que representa o número de elementos da amostra com a característica desejada.</p>
+<p>Se todas as possíveis amostras aleatórias de tamanho <span class="math inline">\(n\)</span> são extraídas de uma população infinita com distribuição Binomial de parâmetros <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span>, cuja média é <span class="math inline">\(np\)</span> e variância <span class="math inline">\(np(1-p)\)</span>. A distribuição amostral da proporção <span class="math inline">\(\hat{p}\)</span> será uma distribuição binomial com:</p>
+<ul>
+<li>Média:</li>
+</ul>
+<p><span class="math display">\[
+\mu_{\hat{p}}=p
+\]</span></p>
+<ul>
+<li>Variância:</li>
+</ul>
+<p><span class="math display">\[
+\sigma_{\hat{p}}^{2}=\frac{p(1-p)}{n}
+\]</span></p>
+<p>Para <span class="math inline">\(n\)</span> grande, a distribuição é aproximadamente normal, em que de acordo com o Teorema Central do Limite, o valor da transformação <span class="math inline">\(Z\)</span> é dado pela expressão <a href="#eq-zprop" class="quarto-xref"><span>8.5</span></a>.</p>
+<p><span id="eq-zprop"><span class="math display">\[
+Z=
+\frac{
+\hat{p}-p
+}{
+\sqrt{
+\frac{p(1-p)}{n}
+}
+}
+\tag{8.5}\]</span></span></p>
+<p>em que <span class="math inline">\(Z\sim N(0,0; 1,0)\)</span>.</p>
+</section>
+<section id="distribuição-amostral-para-a-diferença-entre-duas-proporções" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="distribuição-amostral-para-a-diferença-entre-duas-proporções"><span class="header-section-number">8.5</span> Distribuição Amostral para a Diferença entre Duas Proporções</h2>
+<p>Sejam <span class="math inline">\(p_1\)</span> e <span class="math inline">\(p_2\)</span> a proporção de elementos em duas populações 1 e 2, respectivamente, com uma determinada característica. Os estimadores pontuais de <span class="math inline">\(p_1\)</span> e <span class="math inline">\(p_2\)</span> são dados por:</p>
+<p><span class="math display">\[
+\hat{p_1} = \frac{x_1}{n_1}
+\quad \text{e} \quad
+\hat{p_2} = \frac{x_2}{n_2},
+\]</span></p>
+<p>respectivamente.</p>
+<p>Em que <span class="math inline">\(x_1\)</span> e <span class="math inline">\(x_2\)</span> são o número de elementos nas amostras <span class="math inline">\(n_1\)</span> e <span class="math inline">\(n_2\)</span>, extraídas das populações 1 e 2, respectivamente, com a característica desejada.</p>
+<p>Tem-se que para <span class="math inline">\(n_1\)</span> e <span class="math inline">\(n_2\)</span> grandes, <span class="math inline">\(\hat{p_1} - \hat{p_2}\)</span> tem distribuição normal aproximada com:</p>
+<ul>
+<li>Média:</li>
+</ul>
+<p><span class="math display">\[
+\mu_{\hat{p_1}-\hat{p_2}}=p_{1}-p_{2}.
+\]</span></p>
+<ul>
+<li>Variância:</li>
+</ul>
+<p><span class="math display">\[
+\sigma_{\hat{p_1}-\hat{p_2}}^{2}=
+\frac{p_{1}(1-p_{1})}{n_1}+
+\frac{p_{2}(1-p_{2})}{n_2}.
+\]</span></p>
+<p>Em notação, tem-se:</p>
+<p><span class="math display">\[
+\hat{p_1}-\hat{p_2}
+\sim
+N_{\text{Aproximada}}
+\left(
+p_{1}-p_{2},
+\frac{p_{1}(1-p_{1})}{n_1}+
+\frac{p_{2}(1-p_{2})}{n_2}
+\right).
+\]</span></p>
+<p>O valor da transformação <span class="math inline">\(Z\)</span> é dado pela Equação <a href="#eq-z2prop022" class="quarto-xref"><span>8.6</span></a>.</p>
+<p><span id="eq-z2prop022"><span class="math display">\[
+Z=
+\frac{
+(\hat{p}_1-\hat{p}_2)-(p_{1}-p_{2})
+}{
+\sqrt{
+\frac{p_{1}(1-p_{1})}{n_1}+
+\frac{p_{2}(1-p_{2})}{n_2}
+}
+}
+\tag{8.6}\]</span></span></p>
+<p>em que <span class="math inline">\(Z \sim N(0,0; 1,0)\)</span>.</p>
+</section>
+<section id="outras-distribuições-amostrais" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="outras-distribuições-amostrais"><span class="header-section-number">8.6</span> Outras Distribuições Amostrais</h2>
+<p>Existem algumas outras distribuições teóricas de probabilidades, que são usadas como ferramentas para construção de intervalos de confiança e testes de hipóteses, os quais serão vistos nos próximos capítulos. A seguir são apresentadas algumas dessas distribuições.</p>
+<section id="distribuição-de-qui-quadrado" class="level3" data-number="8.6.1">
+<h3 data-number="8.6.1" class="anchored" data-anchor-id="distribuição-de-qui-quadrado"><span class="header-section-number">8.6.1</span> Distribuição de Qui-quadrado</h3>
+<p>A distribuição de Qui-quadrado (<span class="math inline">\(\chi^2\)</span>) corresponde à distribuição da soma de <span class="math inline">\(n\)</span> variáveis aleatórias independentes ao quadrado, com distribuição normal padronizada (<span class="math inline">\(Z\)</span>), ou seja:</p>
+<p><span class="math display">\[
+\chi^2=Z_{1}^{2}+Z_{2}^{2}+Z_{3}^{2}+\cdots+Z_{n}^{2}.
+\]</span></p>
+<p>Sua função densidade de probabilidade é dada por:</p>
+<p><span class="math display">\[
+f(y)=
+\frac{
+y^{\left(\frac{\nu}{2}\right)-1}e^{-\frac{\nu}{2}}
+}{
+2^{\frac{\nu}{2}}
+\Gamma\left(\frac{\nu}{2}\right)
+},
+\quad y \ge 0,
+\]</span></p>
+<p>em que:</p>
+<ul>
+<li><span class="math inline">\(y\)</span> é a variável aleatória com distribuição de Qui-quadrado com <span class="math inline">\(\nu\)</span> graus de liberdade;</li>
+<li><span class="math inline">\(e\)</span> é a base dos logaritmos neperianos, igual a <span class="math inline">\(2,7183\ldots\)</span>;</li>
+<li><span class="math inline">\(\Gamma\)</span> é a função Gama;</li>
+<li><span class="math inline">\(\nu\)</span> representa o parâmetro da distribuição, chamado de graus de liberdade, dado por: <span class="math inline">\(\nu=n-1\)</span>.</li>
+</ul>
+<p>A distribuição de <span class="math inline">\(\chi^2\)</span> é assimétrica à direita e apresenta uma curva para cada valor de <span class="math inline">\(\nu\)</span>.</p>
+<p>A média e a variância de uma distribuição de <span class="math inline">\(\chi^2\)</span> são dadas por:</p>
+<p><span class="math display">\[
+E(\chi^{2})=\mu=\nu
+\]</span></p>
+<p>e</p>
+<p><span class="math display">\[
+V(\chi^{2})=\sigma^{2}=2\nu.
+\]</span></p>
+<p>Valores de probabilidades na distribuição de <span class="math inline">\(\chi^2\)</span> são obtidos em tabelas. A tabela de <span class="math inline">\(\chi^2\)</span> fornece o valor acima do qual se encontra a área <span class="math inline">\(\alpha\)</span>, conforme a <a href="#fig-distchi" class="quarto-xref">Figura&nbsp;<span>8.8</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-distchi" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-distchi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/distquiq.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-distchi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.8: Curva representativa da distribuição de Qui-quadrado, com <span class="math inline">\(\nu\)</span> graus de liberdade.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>O valor <span class="math inline">\(\chi^{2}_{(\nu;\alpha)}\)</span> na distribuição de <span class="math inline">\(\chi^2\)</span> representa o ponto que deixa à direita a área <span class="math inline">\(\alpha\)</span> com <span class="math inline">\(\nu\)</span> graus de liberdade, que em notação diz-se que:</p>
+<p><span class="math display">\[
+P\left(\chi^{2} &gt; \chi^{2}_{(\nu;\alpha)}\right)=\alpha.
+\]</span></p>
+<div id="exm-chi01" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 8.5</strong></span> Seja uma amostra <span class="math inline">\(n = 20\)</span> e <span class="math inline">\(\alpha = 5,0\%\)</span>.</p>
+<p>Assim, tem-se que:</p>
+<p><span class="math display">\[
+\nu=n-1=20-1=19
+\]</span></p>
+<p>graus de liberdade;</p>
+<p><span class="math display">\[
+\alpha=5,0\%=0,05;
+\]</span></p>
+<p>e</p>
+<p><span class="math display">\[
+\chi^{2}_{(\nu;\alpha)}=\chi^{2}_{(19;0,05)}=?
+\]</span></p>
+<p>Consultando a Tabela de <span class="math inline">\(\chi^2\)</span>, tem-se que o valor de <span class="math inline">\(\chi^2\)</span> que deixa uma probabilidade acima dele de <span class="math inline">\(5,0\%\)</span> com <span class="math inline">\(19\)</span> graus de liberdade é igual a <span class="math inline">\(30,1435\)</span>.</p>
+<p><img src="tabs/tab8.1.png" class="img-fluid"></p>
+<p>Logo,</p>
+<p><span class="math display">\[
+\chi^{2}_{(19;0,05)}=30,1435,
+\]</span></p>
+<p>sendo sua representação gráfica apresentada na <a href="#fig-chisq86" class="quarto-xref">Figura&nbsp;<span>8.9</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-chisq86" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-chisq86-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/exem8.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chisq86-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.9: Área correspondente à probabilidade de <span class="math inline">\(\chi^2 &gt; 30,1435\)</span> com <span class="math inline">\(\nu = 19\)</span> graus de liberdade.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-chi02" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 8.6</strong></span> Seja uma amostra <span class="math inline">\(n = 20\)</span> e <span class="math inline">\(\alpha = 95,0\%\)</span>.</p>
+<p>Assim, tem-se que:</p>
+<p><span class="math display">\[
+\nu=n-1=20-1=19
+\]</span></p>
+<p>graus de liberdade;</p>
+<p><span class="math display">\[
+\alpha=95,0\%=0,95;
+\]</span></p>
+<p>e</p>
+<p><span class="math display">\[
+\chi^{2}_{(\nu;\alpha)}=\chi^{2}_{(19;0,95)}=?
+\]</span></p>
+<p>Consultando a Tabela de <span class="math inline">\(\chi^2\)</span>, tem-se que o valor de <span class="math inline">\(\chi^2\)</span> que deixa uma probabilidade acima dele de <span class="math inline">\(95,0\%\)</span> com <span class="math inline">\(19\)</span> graus de liberdade é igual a <span class="math inline">\(10,1170\)</span>.</p>
+<p><img src="tabs/tab8.2.png" class="img-fluid"></p>
+<p>Logo,</p>
+<p><span class="math display">\[
+\chi^{2}_{(19;0,95)}=10,1170,
+\]</span></p>
+<p>sendo sua representação gráfica apresentada na <a href="#fig-chi87" class="quarto-xref">Figura&nbsp;<span>8.10</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-chi87" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-chi87-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/exem8.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chi87-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.10: Área correspondente à probabilidade de <span class="math inline">\(\chi^2 &lt; 10,1170\)</span>, com <span class="math inline">\(\nu = 19\)</span> graus de liberdade.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-chi03" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 8.7</strong></span> Considerando uma amostra <span class="math inline">\(n = 20\)</span>, os valores de <span class="math inline">\(\chi^2\)</span>, cuja área (probabilidade) entre esses valores é de <span class="math inline">\(90,0\%\)</span>, são dados por:</p>
+<p><span class="math display">\[
+P\left(
+\chi^{2}_{(19;0,95)}
+&lt;
+\chi^{2}
+&lt;
+\chi^{2}_{(19;0,05)}
+\right)
+=
+P\left(
+10,1170
+&lt;
+\chi^{2}
+&lt;
+30,1435
+\right)
+=
+0,90
+=
+90,0\%.
+\]</span></p>
+<p>Sua representação gráfica é apresentada na <a href="#fig-chi88" class="quarto-xref">Figura&nbsp;<span>8.11</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-chi88" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-chi88-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/exem8.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chi88-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.11: Área correspondente à probabilidade de <span class="math inline">\(10,1170 &lt; \chi^2 &lt; 30,1435\)</span>, com <span class="math inline">\(\nu = 19\)</span> graus de liberdade.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="distribuição-amostral-da-variância" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="distribuição-amostral-da-variância"><span class="header-section-number">8.7</span> Distribuição Amostral da Variância</h2>
+<p>Um resultado importante envolvendo a distribuição de <span class="math inline">\(\chi^2\)</span> é descrito a seguir.</p>
+<p>Seja <span class="math inline">\(X\)</span> uma variável aleatória normalmente distribuída, ou seja,</p>
+<p><span class="math display">\[
+X \sim N(\mu;\sigma^2),
+\]</span></p>
+<p>associada a uma população. Se desta população são retiradas várias amostras aleatórias independentes de tamanho <span class="math inline">\(n\)</span>, e para cada amostra é calculada a variância amostral <span class="math inline">\(s^2\)</span>, então a variável aleatória definida pela Equação <a href="#eq-quiquad" class="quarto-xref"><span>8.7</span></a></p>
+<p><span id="eq-quiquad"><span class="math display">\[
+\chi^{2}=\frac{(n-1)s^2}{\sigma^2},
+\tag{8.7}\]</span></span></p>
+<p>segue uma distribuição <span class="math inline">\(\chi^2\)</span> com <span class="math inline">\(\nu=n-1\)</span> graus de liberdade, sendo <span class="math inline">\(\sigma^2\)</span> a variância populacional.</p>
+<p>A distribuição <span class="math inline">\(\chi^2\)</span> tem muita importância em Estatística, como veremos nos próximos capítulos, principalmente para realizar inferências sobre a variância populacional <span class="math inline">\(\sigma^2\)</span>.</p>
+<section id="distribuição-t-student" class="level3" data-number="8.7.1">
+<h3 data-number="8.7.1" class="anchored" data-anchor-id="distribuição-t-student"><span class="header-section-number">8.7.1</span> Distribuição t-Student</h3>
+<p>A distribuição <span class="math inline">\(t\)</span>-Student é uma distribuição teórica de probabilidades, especificamente utilizada quando se têm pequenas amostras (<span class="math inline">\(n &lt; 30\)</span>), e quando se desconhece o valor da variância populacional <span class="math inline">\(\sigma^2\)</span>. A distribuição <span class="math inline">\(t\)</span> é definida a seguir.</p>
+<p>Sejam <span class="math inline">\(Z\)</span> e <span class="math inline">\(Y\)</span> duas variáveis aleatórias independentes, tal que:</p>
+<p><span class="math display">\[
+Z \sim N(0,0;1,0)
+\quad \text{e} \quad
+Y \sim \chi^{2}_{1},
+\]</span></p>
+<p>então a variável aleatória definida por</p>
+<p><span class="math display">\[
+t=\frac{Z}{\sqrt{\frac{Y}{\nu}}}
+\]</span></p>
+<p>segue a distribuição <span class="math inline">\(t\)</span>, cuja função densidade de probabilidade é dada por:</p>
+<p><span class="math display">\[
+f(t)=
+\frac{
+\Gamma\left(\frac{\nu+1}{2}\right)
+}{
+\sqrt{\pi \nu}
+\Gamma\left(\frac{\nu}{2}\right)
+}
+\frac{
+1
+}{
+\left(
+1+\frac{t^2}{\nu}
+\right)^{\frac{(\nu+1)}{2}}
+},
+\quad -\infty &lt; t &lt; \infty,
+\]</span></p>
+<p>em que:</p>
+<ul>
+<li><span class="math inline">\(t\)</span> é a variável aleatória com distribuição <span class="math inline">\(t\)</span>-Student com <span class="math inline">\(\nu\)</span> graus de liberdade;</li>
+<li><span class="math inline">\(\Gamma\)</span> é a função Gama;</li>
+<li><span class="math inline">\(\nu\)</span> representa o parâmetro da distribuição, chamado de graus de liberdade, dado por: <span class="math inline">\(\nu=n-1\)</span>.</li>
+</ul>
+<p>A média e a variância de uma distribuição <span class="math inline">\(t\)</span> são dadas por:</p>
+<p><span class="math display">\[
+E(t)=\mu=0,
+\quad \text{para} \quad \nu &gt; 1,
+\]</span></p>
+<p>e</p>
+<p><span class="math display">\[
+V(t)=\sigma^{2}=\frac{\nu}{\nu-2},
+\quad \text{para} \quad \nu &gt; 2,
+\]</span></p>
+<p>respectivamente.</p>
+<p>As características da distribuição <span class="math inline">\(t\)</span> são:</p>
+<ol type="1">
+<li><p>As curvas de <span class="math inline">\(t\)</span> são simétricas em relação à média, têm forma de sino e assemelham-se à curva normal. Os valores de <span class="math inline">\(t\)</span> são positivos à direita da média e negativos à sua esquerda;</p></li>
+<li><p>Para cada tamanho <span class="math inline">\(n\)</span> de amostra existe uma curva de <span class="math inline">\(t\)</span>. A função <span class="math inline">\(f(t)\)</span> depende de <span class="math inline">\(n\)</span>;</p></li>
+<li><p>À medida que <span class="math inline">\(n\)</span> cresce, a distribuição <span class="math inline">\(t\)</span> se aproxima da distribuição normal padronizada (<span class="math inline">\(Z\)</span>);</p></li>
+<li><p>O valor <span class="math inline">\(\nu = n - 1\)</span> (número de graus de liberdade) é usado para obtenção de probabilidades em tabelas.</p></li>
+</ol>
+<p>Valores de probabilidades na distribuição <span class="math inline">\(t\)</span> são obtidos em tabelas. A tabela de <span class="math inline">\(t\)</span> fornece o valor acima do qual se encontra a área <span class="math inline">\(\alpha\)</span>, conforme a <a href="#fig-tstudent" class="quarto-xref">Figura&nbsp;<span>8.12</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-tstudent" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tstudent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/tstudent.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tstudent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.12: Área <span class="math inline">\(\alpha\)</span> correspondente à probabilidade de <span class="math inline">\(t&gt;t_{(\nu;\alpha)}\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>O valor <span class="math inline">\(t_{(\nu;\alpha)}\)</span> representa, na distribuição <span class="math inline">\(t\)</span>, o ponto que deixa à sua direita a área <span class="math inline">\(\alpha\)</span> com <span class="math inline">\(\nu\)</span> graus de liberdade.</p>
+<p>Em notação, tem-se que:</p>
+<p><span class="math display">\[
+P\left(t&gt;t_{(\nu;\alpha)}\right)=\alpha.
+\]</span></p>
+<div id="exm-tdist01" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 8.8</strong></span> Seja uma amostra <span class="math inline">\(n = 15\)</span>. Qual o valor de <span class="math inline">\(t\)</span> acima do qual se tem <span class="math inline">\(5,0\%\)</span> de área (probabilidade)?</p>
+<p>Assim, tem-se que:</p>
+<p><span class="math display">\[
+\nu = n - 1 = 15 - 1 = 14
+\]</span></p>
+<p>graus de liberdade,</p>
+<p>e</p>
+<p><span class="math display">\[
+\alpha=5,0\%=0,05.
+\]</span></p>
+<p>Logo,</p>
+<p><span class="math display">\[
+t_{(\nu;\alpha)}=t_{(14;0,05)}=?
+\]</span></p>
+<p>Consultando a tabela da distribuição <span class="math inline">\(t\)</span>, o valor de <span class="math inline">\(t\)</span> que deixa uma área (probabilidade) acima dele de <span class="math inline">\(5,0\%\)</span> com <span class="math inline">\(14\)</span> graus de liberdade é igual a <span class="math inline">\(1,7613\)</span>.</p>
+<p><img src="tabs/tab8.3.png" class="img-fluid"></p>
+<p>Logo,</p>
+<p><span class="math display">\[
+t_{(14;0,05)}=1,7613,
+\]</span></p>
+<p>sendo sua representação gráfica apresentada na <a href="#fig-exem89" class="quarto-xref">Figura&nbsp;<span>8.13</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-exem89" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-exem89-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/exem8.9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-exem89-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.13: Área correspondente à probabilidade de <span class="math inline">\(t &gt; 1,7613\)</span>, com <span class="math inline">\(\nu = 14\)</span> graus de liberdade.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-tdist02" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 8.9</strong></span> Para uma amostra <span class="math inline">\(n = 15\)</span>, qual o valor de <span class="math inline">\(t\)</span> acima do qual tem-se <span class="math inline">\(95,0\%\)</span> de área (probabilidade)?</p>
+<p>Assim, tem-se que:</p>
+<p><span class="math display">\[
+\nu = n - 1 = 15 - 1 = 14
+\]</span></p>
+<p>graus de liberdade,</p>
+<p>e</p>
+<p><span class="math display">\[
+\alpha=95,0\%=0,95.
+\]</span></p>
+<p>Logo,</p>
+<p><span class="math display">\[
+t_{(\nu;\alpha)}=t_{(14;0,95)}=?
+\]</span></p>
+<p>Considerando-se a propriedade de simetria da distribuição <span class="math inline">\(t\)</span>, tem-se que o valor de <span class="math inline">\(t\)</span> que deixa uma área (probabilidade) abaixo dele de <span class="math inline">\(5,0\%\)</span> com <span class="math inline">\(14\)</span> graus de liberdade é igual a <span class="math inline">\(-1,7613\)</span>.</p>
+<p>Logo,</p>
+<p><span class="math display">\[
+t_{(14;0,95)}=-1,7613,
+\]</span></p>
+<p>sendo sua representação gráfica apresentada na <a href="#fig-exem810" class="quarto-xref">Figura&nbsp;<span>8.14</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-exem810" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-exem810-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/exem8.10.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-exem810-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.14: Área correspondente à probabilidade de <span class="math inline">\(t &gt; -1,7613\)</span>, com <span class="math inline">\(\nu = 14\)</span> graus de liberdade.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-tdist03" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 8.10</strong></span> Para uma amostra <span class="math inline">\(n = 15\)</span>, quais os valores de <span class="math inline">\(t\)</span> simétricos que encerram uma área (probabilidade) de <span class="math inline">\(90,0\%\)</span>?</p>
+<p>Assim, tem-se que:</p>
+<p><span class="math display">\[
+P\left(
+t_{(14;0,95)}
+&lt;
+t
+&lt;
+t_{(14;0,05)}
+\right)
+=
+P\left(
+-1,7613
+&lt;
+t
+&lt;
+1,7613
+\right)
+=
+0,90
+=
+90,0\%.
+\]</span></p>
+<p>Sua representação gráfica é apresentada na <a href="#fig-exem811" class="quarto-xref">Figura&nbsp;<span>8.15</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-exem811" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-exem811-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/exem8.11.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-exem811-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.15: Área correspondente à probabilidade de <span class="math inline">\(-1,7613 &lt; t &lt; 1,7613\)</span>, com <span class="math inline">\(\nu = 14\)</span> graus de liberdade.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Um resultado importante envolvendo a distribuição <span class="math inline">\(t\)</span> é descrito a seguir.</p>
+<p>Seja <span class="math inline">\(X\)</span> uma variável aleatória normalmente distribuída, ou seja,</p>
+<p><span class="math display">\[
+X \sim N(\mu;\sigma^2),
+\]</span></p>
+<p>associada a uma população. Se desta população são retiradas várias amostras aleatórias independentes de tamanho <span class="math inline">\(n\)</span>, e para cada amostra são calculadas a média amostral <span class="math inline">\(\bar{x}\)</span> e a variância amostral <span class="math inline">\(s^2\)</span>, então a variável aleatória definida pela Equação <a href="#eq-t" class="quarto-xref"><span>8.8</span></a></p>
+<p><span id="eq-t"><span class="math display">\[
+t=
+\frac{
+\bar{x}-\mu
+}{
+\frac{s}{\sqrt{n}}
+},
+\tag{8.8}\]</span></span></p>
+<p>segue uma distribuição <span class="math inline">\(t\)</span> com <span class="math inline">\(\nu=n-1\)</span> graus de liberdade, sendo <span class="math inline">\(s\)</span> o desvio padrão amostral.</p>
+<p>A distribuição <span class="math inline">\(t\)</span> é utilizada para se realizar inferências sobre a média, quando <span class="math inline">\(\sigma^2\)</span> for desconhecida, e a população normalmente distribuída, independentemente do tamanho da amostra, como será visto nos próximos capítulos.</p>
+</section>
+<section id="distribuição-f-snedecor" class="level3" data-number="8.7.2">
+<h3 data-number="8.7.2" class="anchored" data-anchor-id="distribuição-f-snedecor"><span class="header-section-number">8.7.2</span> Distribuição F-Snedecor</h3>
+<p>Definida teoricamente como sendo o quociente entre duas variáveis aleatórias independentes, com distribuições de <span class="math inline">\(\chi^2\)</span> com <span class="math inline">\(\nu\)</span> graus de liberdade, cada uma delas dividida pelos seus respectivos números de graus de liberdade.</p>
+<p>Sua função densidade de probabilidade é dada por:</p>
+<p><span class="math display">\[
+f(F)=
+\frac{
+\Gamma\left(\frac{\nu_{1}+\nu_{2}}{2}\right)
+}{
+\Gamma\left(\frac{\nu_1}{2}\right)
+\Gamma\left(\frac{\nu_2}{2}\right)
+}
+\left(
+\frac{\nu_1}{\nu_2}
+\right)^{\left(\frac{\nu_1}{2}\right)}
+\frac{
+F^{\left(\frac{\nu_{1}-2}{2}\right)}
+}{
+\left(
+1+\frac{\nu_1}{\nu_2}F
+\right)^{\frac{(\nu_{1}+\nu_{2})}{2}}
+},
+\quad F \geqslant 0
+\]</span></p>
+<p>em que:</p>
+<ul>
+<li><span class="math inline">\(F\)</span> é uma variável aleatória com distribuição F-Snedecor com <span class="math inline">\(\nu_1\)</span> e <span class="math inline">\(\nu_2\)</span> graus de liberdade;</li>
+<li><span class="math inline">\(\Gamma\)</span> é a função Gama;</li>
+<li><span class="math inline">\(\nu_1\)</span> e <span class="math inline">\(\nu_2\)</span> são os parâmetros da distribuição, chamados de graus de liberdade, dados por: <span class="math inline">\(\nu_{1}=n_{1}-1\)</span> e <span class="math inline">\(\nu_{2}=n_{2}-1\)</span>, respectivamente.</li>
+</ul>
+<p>A distribuição F é assimétrica à direita e depende dos parâmetros <span class="math inline">\(\nu_1\)</span> e <span class="math inline">\(\nu_2\)</span> e da ordem dos mesmos, pois existe uma curva para cada par <span class="math inline">\((\nu_1; \nu_2)\)</span>.</p>
+<p>Valores de probabilidades na distribuição F são obtidos em tabelas para as diferentes combinações de <span class="math inline">\((\nu_1; \nu_2)\)</span>.</p>
+<p>O valor <span class="math inline">\(F_{(\nu_{1}; \nu_{2}; \alpha)}\)</span> na distribuição F para <span class="math inline">\(\nu_1\)</span> e <span class="math inline">\(\nu_2\)</span> graus de liberdade, é o ponto que deixa a área (probabilidade) <span class="math inline">\(\alpha\)</span> à sua direita, conforme <a href="#fig-fdist" class="quarto-xref">Figura&nbsp;<span>8.16</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-fdist" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fdist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/fdist.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fdist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.16: Área correspondente à probabilidade de <span class="math inline">\(F &gt; F_{(\nu_1,~\nu_2;~\alpha)}\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Em notação diz-se:</p>
+<p><span class="math display">\[
+F_{(\nu_{1}, \nu_{2}; \alpha)}
+\text{ é um valor tal que: }
+P\left[
+F&gt;F_{(\nu_{1}, \nu_{2}; \alpha)}
+\right]
+=
+\alpha
+\]</span></p>
+<div id="exm-fdist" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 8.11</strong></span> Sejam as amostras <span class="math inline">\(n_{1} = 10\)</span> e <span class="math inline">\(n_{2} = 8\)</span>, e <span class="math inline">\(\alpha = 5,0\%\)</span>.</p>
+<p>Assim, tem-se que:</p>
+<p><span class="math display">\[
+\nu_{1}=n_{1}-1=10-1=9
+\text{ graus de liberdade}
+\]</span></p>
+<p><span class="math display">\[
+\nu_{2}=n_{2}-1=8-1=7
+\text{ graus de liberdade}
+\]</span></p>
+<p><span class="math display">\[
+\alpha = 5,0\% = 0,05
+\]</span></p>
+<p><span class="math display">\[
+F_{(\nu_{1}; \nu_{2}; \alpha)}
+=
+F_{(9; 7; 0,05)}
+=?
+\]</span></p>
+<p>Consultando a tabela da distribuição F, tem-se que o valor de F que deixa uma probabilidade acima dele de <span class="math inline">\(5,0\%\)</span>, com <span class="math inline">\(\nu_{1} = 9\)</span> e <span class="math inline">\(\nu_{2} = 7\)</span> graus de liberdade é igual a <span class="math inline">\(3,6767\)</span>.</p>
+<p><img src="tabs/tab8.4.png" class="img-fluid"></p>
+<p>Logo,</p>
+<p><span class="math display">\[
+F_{(9; 7; 0,05)}=3,6767
+\]</span></p>
+<p>sendo sua representação gráfica apresentada na <a href="#fig-exem812" class="quarto-xref">Figura&nbsp;<span>8.17</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-exem812" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-exem812-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/exem8.12.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-exem812-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.17: Área correspondente à probabilidade de <span class="math inline">\(F &gt; 3,6767\)</span> para <span class="math inline">\(\nu_1 = 9\)</span> e <span class="math inline">\(\nu_2 = 7\)</span> graus de liberdade.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-fdist02" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 8.12</strong></span> Sejam as amostras <span class="math inline">\(n_{1} = 18\)</span> e <span class="math inline">\(n_{2} = 20\)</span>, e <span class="math inline">\(\alpha = 1,0\%\)</span>.</p>
+<p>Assim, tem-se que:</p>
+<p><span class="math display">\[
+\nu_{1}=n_{1}-1=18-1=17
+\text{ graus de liberdade}
+\]</span></p>
+<p><span class="math display">\[
+\nu_{2}=n_{2}-1=20-1=19
+\text{ graus de liberdade}
+\]</span></p>
+<p><span class="math display">\[
+\alpha=1,0\%=0,01
+\]</span></p>
+<p><span class="math display">\[
+F_{(\nu_{1}; \nu_{2}; \alpha)}
+=
+F_{(17; 19; 0,01)}
+=?
+\]</span></p>
+<p>Consultando a tabela da distribuição F, tem-se que o valor de F que deixa uma probabilidade acima dele de <span class="math inline">\(1,0\%\)</span>, com <span class="math inline">\(\nu_1 = 17\)</span> e <span class="math inline">\(\nu_2 = 19\)</span> graus de liberdade, é igual a <span class="math inline">\(3,0836\)</span>.</p>
+<p><img src="tabs/tab8.5.png" class="img-fluid"></p>
+<p>Logo,</p>
+<p><span class="math display">\[
+F_{(17; 19; 0,01)}=3,0836
+\]</span></p>
+<p>sendo sua representação gráfica apresentada na <a href="#fig-exem813" class="quarto-xref">Figura&nbsp;<span>8.18</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-exem813" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-exem813-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/exem8.13.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-exem813-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.18: Área correspondente à probabilidade de <span class="math inline">\(F &gt; 3,0836\)</span> para <span class="math inline">\(\nu_1 = 17\)</span> e <span class="math inline">\(\nu_2 = 19\)</span> graus de liberdade.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Um resultado importante envolvendo a distribuição F é descrito a seguir.</p>
+<p>Seja <span class="math inline">\(X_1\)</span> uma variável aleatória normalmente distribuída, ou seja,</p>
+<p><span class="math display">\[
+X_{1} \sim N(\mu_{1}; \sigma_{1}^2)
+\]</span></p>
+<p>associada a uma população 1.</p>
+<p>E seja <span class="math inline">\(X_2\)</span> uma variável aleatória normalmente distribuída, ou seja,</p>
+<p><span class="math display">\[
+X_{2} \sim N(\mu_{2}; \sigma_{2}^2)
+\]</span></p>
+<p>associada a uma população 2.</p>
+<p>Se destas populações são retiradas várias amostras aleatórias independentes de tamanhos <span class="math inline">\(n_1\)</span> e <span class="math inline">\(n_2\)</span>, respectivamente, e para cada amostra são calculadas as variâncias amostrais, <span class="math inline">\(s_{1}^2\)</span> e <span class="math inline">\(s_{2}^2\)</span>, então a variável aleatória definida por <a href="#eq-F" class="quarto-xref"><span>8.9</span></a>:</p>
+<p><span id="eq-F"><span class="math display">\[
+F=
+\frac{
+s_{1}^2 / \sigma_{1}^2
+}{
+s_{2}^2 / \sigma_{2}^2
+}
+\tag{8.9}\]</span></span></p>
+<p>segue uma distribuição F com <span class="math inline">\(\nu_{1} = n_{1} - 1\)</span> e <span class="math inline">\(\nu_{2} = n_{2} - 1\)</span> graus de liberdade, sendo <span class="math inline">\(\sigma_{1}^2\)</span> e <span class="math inline">\(\sigma_{2}^2\)</span> as variâncias associadas às populações 1 e 2, respectivamente.</p>
+<p>A distribuição F é uma das mais importantes distribuições amostrais em Estatística. Seu desenvolvimento permitiu um grande avanço na Estatística Aplicada, principalmente pela aplicação na metodologia da análise de variância. Como será visto mais adiante, a distribuição F é utilizada para comparar duas variâncias populacionais.</p>
+</section>
+</section>
+<section id="exercícios-propostos" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercícios-propostos">Exercícios propostos</h2>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 8.1</strong></span> Os pesos dos animais de um rebanho bovino tem distribuição normal com média 245,0 kg e variância 576,0 kg<span class="math inline">\(^2\)</span>.</p>
+<ol type="a">
+<li><p>Qual a probabilidade de um animal pesar menos de 240,0 kg;</p></li>
+<li><p>Qual a probabilidade de um lote de 18 animais ter média menor que 240,0 kg;</p></li>
+<li><p>Uma balança tem capacidade máxima para pesar 2.100,0 kg. Qual a probabilidade de ultrapassar a capacidade da balança uma amostra de:</p></li>
+</ol>
+<ul>
+<li>8 bovinos;</li>
+<li>9 bovinos;</li>
+<li>10 bovinos.</li>
+</ul>
+<ol start="4" type="a">
+<li><p>Que orientação você passaria baseando nos resultados do item (c) para o funcionamento racional da balança;</p></li>
+<li><p>Se o rebanho tem 210 bovinos, qual a probabilidade de um lote de 16 animais ter média menor que 240,0 kg.</p></li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 8.2</strong></span> Uma máquina de empacotar café o faz segundo uma distribuição normal, com média <span class="math inline">\(\mu\)</span> e variância 100,0 g<span class="math inline">\(^2\)</span>.</p>
+<ol type="a">
+<li><p>Em quanto deve ser regulado o peso médio <span class="math inline">\(\mu\)</span> para que apenas 10,0% dos pacotes tenham menos do que 500,0 g;</p></li>
+<li><p>Com a máquina assim regulada, qual é a probabilidade de que o peso total de 4 pacotes escolhidos ao acaso seja inferior a 2,0 kg.</p></li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 8.3</strong></span> A produção de tubérculos de batata segue uma distribuição normal de média 200,0 g e variância 6.400,0 g<span class="math inline">\(^2\)</span>.</p>
+<ol type="a">
+<li><p>Qual a probabilidade de uma amostra de 40 tubérculos tomados ao acaso possuir uma média entre 200,0 e 210,0 g;</p></li>
+<li><p>Qual a probabilidade desta mesma amostra possuir um média entre 185,0 e 220,0 g.</p></li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 8.4</strong></span> Um Engenheiro Agrícola quer dimensionar galpões de frangos para uma granja, de tal maneira que cada galpão seja a carga de frangos de um caminhão. O máximo que um caminhão pode transportar é 5.000,0 kg de peso de frangos, descontado o peso das gaiolas. O Engenheiro sabe que os frangos têm peso final segundo uma distribuição normal de média 2,10 kg e variância 0,0225 kg<span class="math inline">\(^2\)</span>. Se os galpões forem dimensionados para conterem 2.375 pintinhos, o total de peso de frangos excederá a capacidade de carga do caminhão?</p>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 8.5</strong></span> Um Engenheiro Florestal conduziu um estudo em um povoamento florestal, e verificou que o DAP (diâmetro à altura do peito) médio das árvores é de 18,0 cm e o desvio padrão de 2,5 cm. A probabilidade de que o DAP médio em uma amostra com 11 árvores seja maior que um certo valor é de 10,0%. Qual é este valor?</p>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 8.6</strong></span> Sabe-se que o rendimento, em ton/ha, de dois sistemas de plantio de arroz, sequeiro e irrigado por inundação, obedecem a distribuição normal, com médias 2,5 e 3,0 ton/ha, e variâncias 4,0 e 10,0 (ton/ha)<span class="math inline">\(^2\)</span>, respectivamente. Foram cultivadas 10 parcelas com arroz de sequeiro e 9 parcelas com arroz irrigado por inundação. Qual é a probabilidade de que a diferença do rendimento médio nestas parcelas seja menor do que 0,5 ton/ha.</p>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 8.7</strong></span> Sabe-se que 20,0% das plantas de uma lavoura de milho estão contaminadas por uma certa doença.</p>
+<ol type="a">
+<li>Qual a probabilidade de uma amostra de 100 plantas apresentar proporção de contaminação?</li>
+</ol>
+<ul>
+<li>acima de 15,0%;</li>
+<li>acima de 30,0%;</li>
+<li>abaixo de 14,0%.</li>
+</ul>
+<ol start="2" type="a">
+<li>Qual a probabilidade de uma amostra de 50 plantas apresentar proporção de contaminação?</li>
+</ol>
+<ul>
+<li>acima de 15,0%;</li>
+<li>acima de 30,0%;</li>
+<li>abaixo de 14,0%.</li>
+</ul>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 8.8</strong></span> Use a Tabela de <span class="math inline">\(\chi^2\)</span> para obter as seguintes probabilidades com representação gráfica.</p>
+<ol type="a">
+<li><p><span class="math inline">\(\chi_{0,01}^2\)</span> com <span class="math inline">\(\nu=2\)</span>;</p></li>
+<li><p><span class="math inline">\(\chi_{0,05}^2\)</span> com <span class="math inline">\(n=5\)</span>;</p></li>
+<li><p><span class="math inline">\(\chi_{0,975}^2\)</span> com <span class="math inline">\(n=16\)</span>;</p></li>
+<li><p><span class="math inline">\(\chi_{0,50}^2\)</span> com <span class="math inline">\(\nu=10\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 8.9</strong></span> Use a Tabela de <span class="math inline">\(t\)</span> para obter as seguintes probabilidades com representação gráfica.</p>
+<ol type="a">
+<li><p><span class="math inline">\(t_{0,10}\)</span> com <span class="math inline">\(n=5\)</span>;</p></li>
+<li><p><span class="math inline">\(t_{0,025}\)</span> com <span class="math inline">\(\nu=8\)</span>;</p></li>
+<li><p><span class="math inline">\(t_{0,95}\)</span> com <span class="math inline">\(n=12\)</span>;</p></li>
+<li><p><span class="math inline">\(t_{0,50}\)</span> com <span class="math inline">\(\nu=20\)</span>.</p></li>
+</ol>
+</div>
+<div id="exr-" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 8.10</strong></span> Use a Tabela de F para obter as seguintes probabilidades com representação gráfica.</p>
+<ol type="a">
+<li><p><span class="math inline">\(F_{0,01}\)</span> com <span class="math inline">\(n_{1}=5\)</span> e <span class="math inline">\(n_{2}=21\)</span>;</p></li>
+<li><p><span class="math inline">\(F_{0,05}\)</span> com <span class="math inline">\(\nu_{1}=12\)</span> e <span class="math inline">\(\nu_{2}=4\)</span>;</p></li>
+<li><p><span class="math inline">\(F_{0,05}\)</span> com <span class="math inline">\(n_{1}=7\)</span> e <span class="math inline">\(n_{2}=11\)</span>;</p></li>
+<li><p><span class="math inline">\(F_{0,01}\)</span> com <span class="math inline">\(\nu_{1}=6\)</span> e <span class="math inline">\(\nu_{2}=10\)</span>.</p></li>
+</ol>
+</div>
 
 
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
@@ -310,6 +1589,7 @@ SOUZA, G. S. <strong>Introdução aos <span>M</span>odelos de <span>R</span>egre
 STEEL, R. G. D.; TORRIE, J. H. <strong>Principles and procedures of statistics: A biometrical approach</strong>. 2. ed. New York: McGraw-Hill Book Company, 1980. p. 512
 </div>
 </div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
